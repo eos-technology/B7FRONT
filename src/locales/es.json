@@ -1,0 +1,11 @@
+{
+  "hello": "Hola !!!",
+  "login": {
+    "welcome": "Bienvenido",
+    "youhere": "Es bueno que estés aquí.",
+    "login": "Inicia sesión con tu correo electrónico y contraseña.",
+    "forgot": "Olvidé mi contraseña.",
+    "access": "Iniciar sesión",
+    "register": "Registrarme"
+  }
+}

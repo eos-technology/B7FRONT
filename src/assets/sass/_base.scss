@@ -1,0 +1,15 @@
+$base-font-size: 62.5%;
+
+:root {
+  font-size: $base-font-size;
+  body,
+  html {
+    box-sizing: border-box;
+    font-size: 2rem;
+  }
+  * {
+    margin: 0;
+    box-sizing: inherit;
+  }
+}
+
