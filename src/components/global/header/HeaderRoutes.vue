@@ -32,6 +32,14 @@ const routes = [
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+  @media (max-width:400px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width:385px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   a {
     color: #b5c2d7;
     font-size: 14px;

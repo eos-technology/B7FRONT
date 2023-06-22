@@ -37,6 +37,9 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    @media (max-width: 405px) {
+      gap: 8px;
+    }
   }
 }
 </style>

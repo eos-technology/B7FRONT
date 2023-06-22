@@ -71,7 +71,7 @@
               alt=""
             />
             <div class="text-center">
-              <p class="sm-light">Diego Pastrana</p>
+              <p class="sm-light sm-user">Diego Pastrana</p>
               <p class="b-bold">90</p>
             </div>
           </div>
@@ -82,8 +82,8 @@
               alt=""
             />
             <div class="text-center">
-              <p class="b-bold text-primary">María Quintero</p>
-              <h4 class="h4-bold text-primary">250</h4>
+              <p class="b-bold text-primary big-user">María Quintero</p>
+              <h4 class="h4-bold text-primary big-user-bold">250</h4>
             </div>
           </div>
           <div class="down__user">
@@ -93,7 +93,7 @@
               alt=""
             />
             <div class="text-center">
-              <p class="sm-light">Luis Perez</p>
+              <p class="sm-light sm-user">Luis Perez</p>
               <p class="b-bold">45</p>
             </div>
           </div>
@@ -104,7 +104,55 @@
         <ChartDonut />
       </div>
       <div class="down__card down__card--green">
-        <h4 class="h4-bold">Beneficios</h4>
+        <div class="down__card-header">
+          <div class="down__card-box">
+            <i class="b7-cup"></i>
+            <h4 class="h4-bold">Beneficios</h4>
+          </div>
+          <div class="down__card-tag">
+            <p class="h6-bold text-black">PRO</p>
+          </div>
+        </div>
+        <div class="down__card-body">
+          <div class="down__card-info">
+            <div class="d-flex align-items-center gap-2">
+              <i class="b7-withdrawl"></i>
+              <p class="l-light">Retiros</p>
+            </div>
+            <i class="b7-check text-primary"></i>
+          </div>
+          <div class="down__card-info">
+            <div class="d-flex align-items-center gap-2">
+              <i class="b7-chart"></i>
+              <p class="l-light">Señales</p>
+            </div>
+            <i class="b7-check text-primary"></i>
+          </div>
+          <div class="down__card-info">
+            <div class="d-flex align-items-center gap-2">
+              <i class="b7-graduated"></i>
+              <p class="l-light">Academia</p>
+            </div>
+            <i class="b7-check text-primary"></i>
+          </div>
+          <div class="down__card-info">
+            <div class="d-flex align-items-center gap-2">
+              <i class="b7-trading"></i>
+              <p class="l-light">Trading Plans</p>
+            </div>
+            <i class="b7-check text-primary"></i>
+          </div>
+          <div class="down__card-info">
+            <div class="d-flex align-items-center gap-2">
+              <i class="b7-live"></i>
+              <p class="l-light">Trading Live</p>
+            </div>
+            <i class="b7-check text-primary"></i>
+          </div>
+        </div>
+        <b-button variant="primary">{{
+          $t("globals.availablePlans")
+        }}</b-button>
       </div>
     </article>
   </section>
@@ -156,6 +204,9 @@ import ChartDonut from "./charts/ChartDonut.vue";
         grid-template-columns: 50% 1fr;
         padding: 7.8rem 6rem;
       }
+      @media (max-width: 600px) {
+        padding: 12px;
+      }
       img {
         width: 100%;
       }
@@ -205,11 +256,14 @@ import ChartDonut from "./charts/ChartDonut.vue";
     display: flex;
     flex-direction: column;
     padding: 32px;
-
-    gap: 24px;
+    justify-content: space-between;
+    gap: 16px;
     flex: 1;
     align-self: stretch;
     border-radius: 16px;
+    @media (max-width: 430px) {
+      padding: 16px;
+    }
     &--light-blue {
       border: 1px solid #3bbeee;
       background: rgba(59, 190, 238, 0.1);
@@ -222,6 +276,51 @@ import ChartDonut from "./charts/ChartDonut.vue";
       border: 1px solid var(--brand-verde, #48a254);
       background: rgba(72, 162, 84, 0.1);
     }
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    &-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    &-tag {
+      display: flex;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      gap: 4px;
+      border-radius: 8px;
+      background: #fff;
+      @media (max-width: 340px) {
+        width: 100%;
+      }
+    }
+    .b7-cup {
+      display: flex;
+      padding: 8px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+    &-body {
+      display: grid;
+      gap: 8px;
+    }
   }
   &__users {
     display: flex;
@@ -233,14 +332,42 @@ import ChartDonut from "./charts/ChartDonut.vue";
     display: grid;
     gap: 1.6rem;
     justify-items: center;
+    @media (max-width: 430px) {
+      gap: 1.2rem;
+    }
     &-sm {
       width: 9rem;
       height: 9rem;
+      @media (max-width: 430px) {
+        width: 6rem;
+        height: 7rem;
+      }
     }
     &-big {
       width: 10rem;
       height: 10rem;
+      @media (max-width: 430px) {
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+  }
+  .sm-user {
+    @media (max-width: 380px) {
+      font-size: 10px;
+    }
+  }
+  .big-user {
+    @media (max-width: 380px) {
+      font-size: 12px;
+    }
+    &-bold {
+      @media (max-width: 430px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
   }
 }
+
 </style>

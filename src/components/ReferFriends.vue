@@ -2,7 +2,7 @@
   <section class="refer">
     <p class="b-regular">{{ $t("globals.refer") }}</p>
     <div class="refer__copy">
-      <p class="sm-regular">https://app.upcademy.net//#/aut</p>
+      <p class="sm-regular text">https://app.upcademy.net//#/aut</p>
       <i class="b7-copy"></i>
     </div>
   </section>
@@ -35,6 +35,14 @@
     &:hover {
       color: #ee8722;
       cursor: pointer;
+    }
+  }
+  .text {
+    @media (max-width: 400px) {
+      text-overflow: ellipsis;
+      max-width: 150px;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }

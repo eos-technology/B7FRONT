@@ -2,11 +2,25 @@
 
 $primary: #EE8722;
 $secondary: #3C3987;
-$success:  #48A254;
-$danger: rgb(255, 81, 0);
-$warning: rgb(255, 217, 0);
+$success:  #0EC564;
+$danger: #FF595A;
+$warning: #FFAB1B;
 $info: transparent;
 $light: rgb(196, 129, 216);
 $dark: rgb(38, 5, 92);
+
+.text-lila{
+  color: #7367E9;
+}
+.text-pink{
+  color: #FF4E78;
+}
+.bg-lila{
+  background-color: #7367E9;
+}
+.bg-pink{
+  background-color: #FF4E78;
+}
+
 
 
