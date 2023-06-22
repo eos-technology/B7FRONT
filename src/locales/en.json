@@ -1,5 +1,8 @@
 {
-  "hello": "Hello !!!",
+  "globals": {
+    "availablePlans": "See available plans",
+    "refer": "Refer friends and earn!"
+  },
   "login": {
     "welcome": "Welcome",
     "youhere": "It's good that you're here.",
@@ -7,5 +10,18 @@
     "forgot": "I forgot my password.",
     "access": "Log in",
     "register": "sign up"
+  },
+  "header": {
+    "options": "Options",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "estimated": "Estimated",
+    "referredUsers": "Referred users",
+    "earning": "START EARNING",
+    "whileLearn": "WHILE YOU LEARN",
+    "withb7": "With B7 Academy you can earn while you learn, you can Staking or buy a membership in which you will get benefits and monthly earnings.",
+    "activeMembership": "Active membership"
   }
 }

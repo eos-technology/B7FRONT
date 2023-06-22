@@ -33,7 +33,7 @@ body {
   font-size: 1.7rem;
   font-weight: 500;
   line-height: 2.4rem;
-  color: #9BA3AE;
+  color: #9ba3ae;
 }
 
 /* Buttons */
@@ -70,4 +70,38 @@ body {
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: none;
   --bs-btn-hover-border-color: none;
+}
+
+.btn-outline-light {
+  background: rgba(59, 190, 238, 0.07);
+  border: 1px dashed #3bbeee;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2rem;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #3bbeee;
+  --bs-btn-active-border-color: #3bbeee;
+  color: #fff;
+  &:hover {
+    border: 1px dashed #3bbeee;
+    background: rgba(59, 190, 238, 0.07);
+    color: #3bbeee;
+  }
+  .btn-content {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+}
+
+.btn-success {
+  color: #fff;
+  width: fit-content;
+}
+
+/* Avatar */
+
+.b-avatar {
+  width: 4.8rem;
+  height: 4.8rem;
 }

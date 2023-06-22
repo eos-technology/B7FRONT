@@ -1,5 +1,8 @@
 {
-  "hello": "Hola !!!",
+  "globals": {
+    "availablePlans": "Ver planes disponibles",
+    "refer": "Recomienda amigos y gana!"
+  },
   "login": {
     "welcome": "Bienvenido",
     "youhere": "Es bueno que estés aquí.",
@@ -7,5 +10,18 @@
     "forgot": "Olvidé mi contraseña.",
     "access": "Iniciar sesión",
     "register": "Registrarme"
+  },
+  "header": {
+    "options": "Opciones",
+    "profile": "Perfil",
+    "logout": "Cerrar sesión"
+  },
+  "dashboard": {
+    "estimated": "Estimado",
+    "referredUsers": "Usuarios referidos",
+    "earning": "EMPEZAR A GANAR",
+    "whileLearn": "MIENTRAS APRENDES",
+    "withb7": "Con B7 Academy puedes ganar mientras aprendes, puedes hacer Staking o compra una membresía en la que obtendrás beneficios y mensualidades ganancias.",
+    "activeMembership": "Membresía activa"
   }
 }
