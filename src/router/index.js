@@ -23,12 +23,12 @@ const routes = [
       {
         path: "trading",
         name: "Trading-Live",
-        component: () => import("@/views/trading/Index.vue"),
+        component: () => import("@/views/tradingLive/Index.vue"),
       },
       {
         path: "plans",
         name: "Plans",
-        component: () => import("@/views/plans/Index.vue"),
+        component: () => import("@/views/tradingPlan/Index.vue"),
       },
       {
         path: "memberships",
