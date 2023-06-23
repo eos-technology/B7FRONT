@@ -22,6 +22,10 @@
     "earning": "START EARNING",
     "whileLearn": "WHILE YOU LEARN",
     "withb7": "With B7 Academy you can earn while you learn, you can Staking or buy a membership in which you will get benefits and monthly earnings.",
-    "activeMembership": "Active membership"
+    "activeMembership": "Active membership",
+    "clock": "Clock"
+  },
+  "signs": {
+    "signs": "signs"
   }
 }
