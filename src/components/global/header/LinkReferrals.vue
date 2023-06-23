@@ -15,6 +15,7 @@
   }
 }
 .referrals {
+  
   padding: 6px;
   background: #3bbeee;
   border: 1px solid #3bbeee;
