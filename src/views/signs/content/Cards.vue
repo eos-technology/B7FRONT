@@ -1,6 +1,6 @@
 <template>
   <b-card no-body>
-    <img :src="getFile('images', `${img}`, 'webp')" alt="" />
+    <img class="c-body__img" :src="getFile('images', img, 'webp')" alt="" />
     <b-card-body class="c-body">
       <div class="c-body__title">
         <i class="b7-btc text-primary"></i>
@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-const props = defineProps({ img: String, btn: String });
+defineProps({ img: String, btn: String });
 </script>
 
 <style lang="scss" scoped>
@@ -59,6 +59,9 @@ const props = defineProps({ img: String, btn: String });
       align-items: center;
       gap: 8px;
     }
+  }
+  &__img{
+    border-radius: 1.6rem;
   }
 }
 </style>
