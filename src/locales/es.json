@@ -22,6 +22,10 @@
     "earning": "EMPEZAR A GANAR",
     "whileLearn": "MIENTRAS APRENDES",
     "withb7": "Con B7 Academy puedes ganar mientras aprendes, puedes hacer Staking o compra una membresía en la que obtendrás beneficios y mensualidades ganancias.",
-    "activeMembership": "Membresía activa"
+    "activeMembership": "Membresía activa",
+    "clock": "Hora"
+  },
+  "signs": {
+    "signs": "Señales"
   }
 }

@@ -1,11 +1,7 @@
 <template>
   <header class="header">
     <div class="header__up">
-      <img
-        class="header__img"
-        :src="getFile('images', 'logo', 'webp')"
-        alt="Logo"
-      />
+      <img class="header__img" :src="getFile('images', 'logo', 'webp')" alt="Logo" />
       <div class="header__box">
         <LinkReferrals />
         <DropdownUser />
