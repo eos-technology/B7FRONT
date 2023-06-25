@@ -3,28 +3,27 @@
     <img class="c-body__img" :src="getFile(course.imagePath, course.imageName, course.imageExtension)" alt="" />
     <b-card-body class="c-body">
       <h6 class="l-medium">{{ course.name }}</h6>
-      <div class="price">
-        <h2 class="h4-bold">${{ course.price }}</h2>
-        <h3 class="h6-light">/usd</h3>
-      </div>
       <span class="curse-topic sm-light text-primary">{{ course.topic }}</span>
+      <div class="progress-bar">
+        <div class="bar">
+          <div v-for="progress in 5" :key="progress" class="white-slots"
+            :class="{ 'bg-primary': progress <= (course.progressPercentage / 20) }"></div>
+        </div>
+        <div class="percentage xs-medium">{{ course.progressPercentage }}%</div>
+      </div>
       <div class="details">
         <div class="number-videos">
           <i class="b7-video"></i>
           <p class="b-regular">{{ course.numberOfVideos }} videos</p>
         </div>
-        <div class="start">
-          <i class="b7-calendar"></i>
-          <p class="b-regular">{{ course.startDate }}</p>
-        </div>
       </div>
     </b-card-body>
-    <b-card-footer><b-button variant="primary" class="w-100">Ver curso</b-button></b-card-footer>
+    <b-card-footer><b-button variant="primary" class="w-100">Ir al curso</b-button></b-card-footer>
   </b-card>
 </template>
 
 <script setup>
-defineProps({ course: Object });
+defineProps({ course: Object })
 </script>
 
 <style lang="scss" scoped>
@@ -32,6 +31,28 @@ defineProps({ course: Object });
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  .progress-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .bar {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      flex-grow: 1;
+
+
+      .white-slots {
+        height: 0.5rem;
+        width: 20%;
+        background: white;
+        border-radius: 0.5rem;
+      }
+    }
+  }
 
   .price {
     display: flex;

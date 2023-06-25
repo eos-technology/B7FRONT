@@ -5,8 +5,10 @@
     <Section>
       <header>
         <div class="courses-picker">
-          <b-button variant="primary" class="w-50">Cursos</b-button>
-          <b-button variant="transparent" class="w-50">Cursos</b-button>
+          <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
+            @click="toggleCourses('all')">Cursos</b-button>
+          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50" @click="toggleCourses('own')">Mis
+            cursos</b-button>
         </div>
         <div class="search-filter">
           <div class="field-search">
@@ -18,15 +20,8 @@
       </header>
       <h3 class="h3-medium">Todos los cursos</h3>
       <div class="courses-grid">
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
-        <CourseCard img="students" />
+        <CourseCard v-show="showAllCourses" v-for="(course, index) in allCourses" :key="index" :course="course" />
+        <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
       </div>
     </Section>
   </Main>
@@ -35,6 +30,141 @@
 <script setup>
 import Slider from "./content/Slider.vue"
 import CourseCard from "./content/CourseCard.vue"
+import MyCourseCard from "./content/MyCourseCard.vue"
+
+import { ref } from 'vue'
+
+let showAllCourses = ref(true)
+
+let allCourses = [
+  {
+    name: 'Nombre del curso',
+    price: 80,
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    startDate: 'Inicia 11 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 70,
+    topic: 'Coding',
+    numberOfVideos: 15,
+    startDate: 'Inicia 15 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 80,
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    startDate: 'Inicia 11 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 70,
+    topic: 'Coding',
+    numberOfVideos: 15,
+    startDate: 'Inicia 15 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 80,
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    startDate: 'Inicia 11 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 70,
+    topic: 'Coding',
+    numberOfVideos: 15,
+    startDate: 'Inicia 15 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 80,
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    startDate: 'Inicia 11 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  },
+  {
+    name: 'Nombre del curso',
+    price: 70,
+    topic: 'Coding',
+    numberOfVideos: 15,
+    startDate: 'Inicia 15 de Julio',
+    imagePath: 'images',
+    imageName: 'students',
+    imageExtension: 'webp',
+  }
+]
+
+let myCourses = [
+  {
+    name: 'Nombre del curso',
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    imagePath: 'images',
+    imageName: 'students-books',
+    imageExtension: 'webp',
+    progressPercentage: 20,
+  },
+  {
+    name: 'Nombre del curso',
+    topic: 'Coding',
+    numberOfVideos: 15,
+    imagePath: 'images',
+    imageName: 'students-books',
+    imageExtension: 'webp',
+    progressPercentage: 60,
+  },
+  {
+    name: 'Nombre del curso',
+    topic: 'Finanzas',
+    numberOfVideos: 20,
+    imagePath: 'images',
+    imageName: 'students-books',
+    imageExtension: 'webp',
+    progressPercentage: 20,
+  },
+  {
+    name: 'Nombre del curso',
+    topic: 'Coding',
+    numberOfVideos: 15,
+    imagePath: 'images',
+    imageName: 'students-books',
+    imageExtension: 'webp',
+    progressPercentage: 60,
+  },
+]
+
+function toggleCourses(whichCourses) {
+  if (whichCourses === 'own') {
+    showAllCourses.value = false
+  } else {
+    showAllCourses.value = true
+  }
+}
 </script>
 
 <style lang="scss" scoped>
