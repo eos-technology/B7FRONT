@@ -1,76 +1,40 @@
 <template>
-  <section class="academy">
+  <Main class="academy">
     <h2 class="h2-bold">Academy</h2>
-    <div class="courses__slider">
-      <swiper @swiper="onSwiper" centeredSlides="true" :spaceBetween="16" :loop="true" :slidesPerView="'auto'"
-        :modules="modules" class="mySwiper transparent" :pagination="{
-          clickable: true,
-        }" :autoplay="{ pauseOnMouseEnter: true, }">
-        <swiper-slide v-for="index in 5" :key="index" class="swiper bg-secondary">
-          <div class="info-wrap">
-            <div class="info">
-              <h6 class="h6-regular">Nombre Curso</h6>
-              <div class="price">
-                <h2 class="h2-bold">$80</h2>
-                <h3 class="h3-light">/usd</h3>
-              </div>
-              <span class="curse-topic sm-light text-primary">Finanzas</span>
-              <div class="details">
-                <div class="number-videos">
-                  <i class="b7-video"></i>
-                  <p class="b-light">20 videos</p>
-                </div>
-                <div class="start">
-                  <i class="b7-calendar"></i>
-                  <p class="b-light">Inicia 11 de Julio</p>
-                </div>
-              </div>
-            </div>
-            <div class="actions bg-dark">
-              <b-button class="detail-button" variant="transparent">Detalle</b-button>
-              <b-button class="buy-button" variant="primary btn-sm">Comprar</b-button>
-            </div>
+    <Slider />
+    <Section>
+      <header>
+        <div class="courses-picker">
+          <b-button variant="primary" class="w-50">Cursos</b-button>
+          <b-button variant="transparent" class="w-50">Cursos</b-button>
+        </div>
+        <div class="search-filter">
+          <div class="field-search">
+            <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+            <i class="b7-search"></i>
           </div>
-          <img :src="getFile(
-            'images/academy',
-            'students-having-video-call-with-teacher',
-            'webp'
-          )
-            " alt="" />
-        </swiper-slide>
-      </swiper>
-    </div>
-  </section>
+
+        </div>
+      </header>
+      <h3 class="h3-medium">Todos los cursos</h3>
+      <div class="courses-grid">
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+        <CourseCard img="students" />
+      </div>
+    </Section>
+  </Main>
 </template>
 
-<script>
-// Import Swiper Vue.js components
-import { ref } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-
-// import required modules
-import { Autoplay } from "swiper";
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const slider = ref(null);
-    const onSwiper = (swiper) => {
-      slider.value = swiper;
-    };
-    return {
-      modules: [Autoplay],
-      slider,
-      onSwiper,
-    };
-  },
-};
+<script setup>
+import Slider from "./content/Slider.vue"
+import CourseCard from "./content/CourseCard.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -79,102 +43,59 @@ export default {
   flex-direction: column;
   gap: 1.5rem;
 
-  .courses__slider {
+  section {
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
-    .swiper {
-      width: 100%;
+    header {
+      display: flex;
+      justify-content: space-between;
 
-      .swiper-slide {
-        aspect-ratio: 16/9;
-        width: 40%;
-        height: min-content;
-        text-align: center;
+      .courses-picker {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 16px;
-        opacity: 0.5;
-        transform: scale(0.95);
-        transition: all 0.5s ease;
+        width: 320px;
+        border-radius: 100px;
+        background: rgba(246, 248, 250, 0.05);
+        padding: 0.25rem;
 
-        &-active {
-          opacity: 1;
-          margin: 0;
-          transform: scale(1);
+        button {
+          padding: 0.5rem;
         }
 
-        .info-wrap {
+
+      }
+
+      .search-filter {
+        .field-search {
           display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-          height: 100%;
+          align-items: center;
+          position: relative;
 
-          .info {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem 1.5rem 0rem 1.5rem;
-            gap: 0.5rem;
-            justify-content: center;
+          input {
+            border-radius: 16px;
+            background: rgba(246, 248, 250, 0.05);
+            padding: 0.75rem 1.25rem 0.75rem 3.5rem;
+            color: white;
 
-            .price {
-              display: flex;
-              align-items: baseline;
-            }
-
-            .curse-topic {
-              background: rgba(238, 135, 34, 0.2);
-              padding: 0.25rem 0.5rem;
-              border-radius: 8px;
-            }
-
-            .details {
-              display: flex;
-              flex-direction: column;
-
-              .number-videos,
-              .start {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-
-                i {
-                  font-size: 1.125rem;
-                }
-              }
+            &::placeholder {
+              color: white;
             }
           }
 
-          .actions {
-            margin-top: auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            align-items: center;
-
-            .detail-button {
-              padding: 0;
-              font-weight: 500;
-            }
-
-            .buy-button {
-              padding: 0.5rem 2rem;
-              font-weight: 500;
-            }
+          i {
+            position: absolute;
+            left: 1.25rem;
+            font-size: 1.25rem;
           }
-        }
-
-        img {
-          aspect-ratio: 1/1;
-          height: 100%;
-          max-width: 50%;
-          object-fit: cover;
-          border-radius: 16px;
         }
       }
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 1.5rem 1rem;
     }
   }
 }
