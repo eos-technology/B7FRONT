@@ -75,6 +75,10 @@ export default {
 
 <style lang="scss" scoped>
 .academy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
   .courses__slider {
     display: flex;
 
