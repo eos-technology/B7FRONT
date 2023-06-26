@@ -210,3 +210,112 @@ body {
 .accordion-body {
   padding: 1.6rem 2.4rem;
 }
+
+/* Table */
+
+.table {
+  background: transparent;
+  overflow: hidden;
+  --bs-table-bg: rgba(249, 249, 249, 0.1);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  th {
+    padding: 16px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    &.left {
+      text-align: left;
+    }
+  }
+  td {
+    height: 6rem;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    background-color: transparent;
+    i {
+      font-size: 2.4rem;
+      cursor: pointer;
+      &:hover {
+        color: #ee8722;
+      }
+    }
+    &.left {
+      text-align: left;
+    }
+  }
+  &__container {
+    width: 100%;
+  }
+  &__tr {
+    background-color: transparent !important;
+    border: none;
+  }
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    border: none;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+}
+
+/* Pagination */
+
+.pagination {
+  --bs-pagination-padding-x: 1rem;
+  --bs-pagination-padding-y: 1rem;
+  --bs-pagination-font-size: 1.4rem;
+  --bs-pagination-color: var(--bs-link-color);
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-width: var(--bs-border-width);
+  --bs-pagination-border-color: var(--bs-border-color);
+  --bs-pagination-border-radius: var(--bs-border-radius);
+  --bs-pagination-hover-color: var(--bs-link-hover-color);
+  --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+  --bs-pagination-hover-border-color: var(--bs-border-color);
+  --bs-pagination-focus-color: var(--bs-link-hover-color);
+  --bs-pagination-focus-bg: var(--bs-secondary-bg);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(238, 135, 34, 0.25);
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #ee8722;
+  --bs-pagination-active-border-color: #ee8722;
+  --bs-pagination-disabled-color: var(--bs-secondary-color);
+  --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+  --bs-pagination-disabled-border-color: var(--bs-border-color);
+  display: flex;
+  gap: 8px;
+  padding-left: 0;
+  list-style: none;
+  @media (max-width: 500px) {
+    gap: 4px;
+  }
+}
+
+.b-pagination-pills .page-item .page-link {
+  border-radius: 50rem !important;
+  line-height: 0;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  color: #fff;
+  @media (max-width: 500px) {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}

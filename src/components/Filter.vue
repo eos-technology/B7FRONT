@@ -146,12 +146,15 @@ export default {
     position: absolute;
     top: 110%;
     right: 0px;
-    z-index: 2;
+    z-index: 20;
     border: 1px solid rgba(35, 57, 99, 0.05);
     background-color: #ffffff;
     box-shadow: 0px 4px 6px -4px rgba(16, 24, 40, 0.1),
       0px 10px 15px -3px rgba(16, 24, 40, 0.1);
     border-radius: 16px;
+    @media (max-width:344px) {
+      min-width: 100%;
+    }
 
     &__header {
       display: flex;
