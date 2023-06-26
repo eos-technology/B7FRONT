@@ -10,6 +10,7 @@
       </div>
       <div class="accordion" role="tablist">
         <BAccordion free>
+          <!-- Category -->
           <BAccordionItem class="text-black" title="Categoría">
             <div class="type__box check text-black">
               <p class="sm-regular">{{ $t("filter.category") }}</p>
@@ -79,72 +80,11 @@
             </div>
           </BAccordionItem>
         </BAccordion>
-        <!-- Type -->
-        <!-- <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button
-              block
-              v-b-toggle.accordion-1
-              class="btn-accordion"
-              @click="arrowRotated = !arrowRotated"
-            >
-              <p class="l-medium menu__option--text">
-                {{ $t("filter.category") }}
-              </p>
-              <i class="b7-arrow-down arrow" :class="{ rotate: showMenu }"></i>
-            </b-button>
-          </b-card-header>
-          <b-collapse
-            id="accordion-1"
-            visible
-            accordion="my-accordion"
-            role="tabpanel"
-          >
-            <b-card-body>
-              <b-card-text>
-                <div class="type__box check text-black">
-                  <p class="sm-regular">{{ $t("filter.category") }}</p>
-                  <b-form-checkbox
-                    id="checkbox-1"
-                    v-model="form.balance"
-                    name="checkbox-1"
-                    value="1"
-                    unchecked-value="0"
-                  >
-                  </b-form-checkbox>
-                </div>
-              </b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card> -->
-
-        <!-- <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-2 variant="outline" @click="arrowRotated = !arrowRotated">
-              <h5 class="h5-medium-l menu__option--text">{{ $t('filter.validation') }}</h5>
-              <i class="b7-arrow-down arrow" :class="{ rotate: showMenu }"></i>
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-2" visible accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>
-                <div class="type__box check">
-                  <b-form-checkbox id="checkbox-2" v-model="form.verified" name="checkbox-2" value="1"
-                    unchecked-value="0">
-                    {{ $t('filter.verificate') }}
-                  </b-form-checkbox>
-                </div>
-              </b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card> -->
         <div class="type__footer">
-          <b-button variant="outline" class="text-black">{{
+          <b-button variant="outline" class="text-black out">{{
             $t("globals.cancel")
           }}</b-button>
           <b-button variant="primary">{{ $t("globals.save") }}</b-button>
-
-          <BaseButton @click="onSave()" :label="$t('filter.save')" class="w" />
         </div>
       </div>
     </div>
@@ -182,12 +122,14 @@ export default {
   &__btn {
     background: transparent;
     color: #fff;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
+    border-radius: 16px;
+    background: rgba(239, 239, 239, 0.05);
+    outline: none;
+    border: none;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 11px 16px;
+    padding: 12px 16px;
     outline: none;
   }
 
@@ -234,6 +176,7 @@ export default {
       display: flex;
       padding: 2.4rem 1.6rem;
       justify-content: center;
+      gap: 1.6rem;
     }
   }
   .btn {
@@ -258,11 +201,12 @@ export default {
   }
 }
 
-.check{
+.check {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.out {
+  padding: 0;
+}
 </style>
-
-<style></style>
