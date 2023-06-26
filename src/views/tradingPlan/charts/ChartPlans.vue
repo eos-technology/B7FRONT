@@ -55,11 +55,11 @@
           </div>
         </div>
         <div class="chart-trading__box">
-          <b-button>1H</b-button>
-          <b-button>1D</b-button>
-          <b-button>1W</b-button>
-          <b-button>1M</b-button>
-          <b-button>ALL</b-button>
+          <b-button size="sm">1H</b-button>
+          <b-button size="sm">1D</b-button>
+          <b-button size="sm">1W</b-button>
+          <b-button size="sm" active>1M</b-button>
+          <b-button size="sm">ALL</b-button>
         </div>
       </div>
       <apexchart
@@ -196,6 +196,7 @@ const chartOptions = {
   &__header {
     display: flex;
     justify-content: space-between;
+    height: min-content;
   }
   &__box {
     display: flex;

@@ -8,6 +8,22 @@
     <div class="plan__chart">
       <ChartPlans />
     </div>
+
+    <div class="plan__table">
+      <div class="plan__filter">
+        <div class="search-filter">
+          <div class="field-search">
+            <b-form-input
+              type="search"
+              placeholder="Search"
+              class="b-light"
+            ></b-form-input>
+            <i class="b7-search"></i>
+          </div>
+        </div>
+        <Filter />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,6 +39,11 @@ import ChartPlans from "./charts/ChartPlans.vue";
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &__filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 }
 </style>

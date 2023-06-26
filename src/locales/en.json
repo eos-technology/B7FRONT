@@ -1,7 +1,10 @@
 {
   "globals": {
     "availablePlans": "See available plans",
-    "refer": "Refer friends and earn!"
+    "refer": "Refer friends and earn!",
+    "filter": "Filter",
+    "cancel": "Cancel",
+    "save": "Save"
   },
   "login": {
     "welcome": "Welcome",
@@ -27,5 +30,9 @@
   },
   "signs": {
     "signs": "signs"
+  },
+  "filter": {
+    "filter": "Filter",
+    "category": "Category"
   }
 }

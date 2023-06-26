@@ -1,7 +1,10 @@
 {
   "globals": {
     "availablePlans": "Ver planes disponibles",
-    "refer": "Recomienda amigos y gana!"
+    "refer": "Recomienda amigos y gana!",
+    "filter": "Filtro",
+    "cancel": "Cancelar",
+    "save": "Guardar"
   },
   "login": {
     "welcome": "Bienvenido",
@@ -27,5 +30,9 @@
   },
   "signs": {
     "signs": "Señales"
+  },
+  "filter": {
+    "filter": "Filtrar",
+    "category": "Categoría"
   }
 }
