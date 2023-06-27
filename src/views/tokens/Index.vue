@@ -35,6 +35,134 @@
         </div>
         <b-button variant="primary">Comprar Tokens</b-button>
       </div>
+
+      <div class="select">
+        <label
+          class="select__item"
+          :class="select.q === 'Q1' ? 'select__item--blue' : ''"
+        >
+          <b-form-radio
+            v-model="select.q"
+            :aria-describedby="ariaDescribedby"
+            name="some-radios"
+            value="Q1"
+          ></b-form-radio>
+          <div class="select__text">
+            <h3 class="h3-semibold">Q1</h3>
+            <h5 class="h5-medium">Upcademy</h5>
+          </div>
+        </label>
+        <label
+          class="select__item"
+          :class="select.q == 'Q2' ? 'bg-success' : ''"
+        >
+          <b-form-radio
+            v-model="select.q"
+            :aria-describedby="ariaDescribedby"
+            name="some-radios"
+            value="Q2"
+          ></b-form-radio>
+          <div class="select__text">
+            <h3 class="h3-semibold">Q2</h3>
+            <h5 class="h5-medium">Upcademy</h5>
+          </div>
+        </label>
+        <label
+          class="select__item"
+          :class="select.q == 'Q3' ? 'bg-warning' : ''"
+        >
+          <b-form-radio
+            v-model="select.q"
+            :aria-describedby="ariaDescribedby"
+            name="some-radios"
+            value="Q3"
+          ></b-form-radio>
+          <div class="select__text">
+            <h3 class="h3-semibold">Q3</h3>
+            <h5 class="h5-medium">Upcademy</h5>
+          </div>
+        </label>
+        <label class="select__item" :class="select.q == 'Q4' ? 'bg-light' : ''">
+          <b-form-radio
+            v-model="select.q"
+            :aria-describedby="ariaDescribedby"
+            name="some-radios"
+            value="Q4"
+          ></b-form-radio>
+          <div class="select__text">
+            <h3 class="h3-semibold">Q4</h3>
+            <h5 class="h5-medium">Upcademy</h5>
+          </div>
+        </label>
+      </div>
+      <!-- Q1 -->
+      <section
+        v-if="select.q === 'Q1'"
+        class="token__card token__card--blue token__height"
+      >
+        <h3 class="h3-bold">Feb 15 - Mar 15</h3>
+        <div class="token__list">
+          <div
+            v-for="(item, index) in q1"
+            :key="index"
+            class="token__list-item"
+          >
+            <i class="b7-check-line token__list-icon"></i>
+            <p class="l-light">{{ item.item }}</p>
+          </div>
+        </div>
+      </section>
+      <!-- Q2 -->
+      <section
+        v-if="select.q === 'Q2'"
+        class="token__card token__card--green token__height"
+      >
+        <h3 class="h3-bold">Feb 15 - Mar 15</h3>
+        <div class="token__list">
+          <div
+            v-for="(item, index) in q2"
+            :key="index"
+            class="token__list-item"
+          >
+            <i class="b7-check-line token__list-icon bg-success"></i>
+            <p class="l-light">{{ item.item }}</p>
+          </div>
+        </div>
+      </section>
+      <!-- Q3 -->
+      <section
+        v-if="select.q === 'Q3'"
+        class="token__card token__card--yellow token__height"
+      >
+        <h3 class="h3-bold">Feb 15 - Mar 15</h3>
+        <div class="token__list">
+          <div
+            v-for="(item, index) in q3"
+            :key="index"
+            class="token__list-item"
+          >
+            <i class="b7-check-line token__list-icon bg-warning"></i>
+            <p class="l-light">{{ item.item }}</p>
+          </div>
+        </div>
+      </section>
+      <!-- Q4 -->
+      <section
+        v-if="select.q === 'Q4'"
+        class="token__card token__card--cyan token__height"
+      >
+        <h3 class="h3-bold">Feb 15 - Mar 15</h3>
+        <div class="token__list">
+          <div
+            v-for="(item, index) in q3"
+            :key="index"
+            class="token__list-item"
+          >
+            <i class="b7-check-line token__list-icon bg-light"></i>
+            <p class="l-light">{{ item.item }}</p>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 </template>
@@ -45,6 +173,33 @@ import ChartToken from "./charts/ChartToken.vue";
 
 const value = ref(18090);
 const max = ref(25000);
+
+const select = ref({
+  q: "Q1",
+});
+
+const q1 = [
+  { item: "67 % bonus" },
+  { item: "$0.000/ token" },
+  { item: "Token creation" },
+  { item: "Creations white book" },
+  { item: "Distribution" },
+  { item: "Creation of Upacademy" },
+];
+
+const q2 = [
+  { item: "67 % bonus" },
+  { item: "$0.000/ token" },
+  { item: "Venta privada" },
+  { item: "Exchange" },
+];
+
+const q3 = [
+  { item: "67 % bonus" },
+  { item: "$0.000/ token" },
+  { item: "Coinmarketcap" },
+  { item: "Price trackers" },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -71,13 +226,45 @@ const max = ref(25000);
       border: 1px solid #7d79e7;
       background: rgba(60, 57, 135, 0.1);
     }
+    &--green {
+      border: 1px solid var(--brand-verde, #48a254);
+      background: rgba(73, 135, 73, 0.1);
+    }
+    &--yellow {
+      border: 1px solid var(--inputs-radio-checkbox-toggle-active, #ee8722);
+      background: rgba(237, 135, 34, 0.1);
+    }
+    &--cyan {
+      border: 1px solid var(--brand-azul-claro, #3bbeee);
+      background: rgba(59, 190, 238, 0.1);
+    }
     @media ((max-width: 600px)) {
       padding: 1.2rem;
-  }
+    }
   }
   &__progress {
     display: grid;
     gap: 8px;
+  }
+  &__height {
+    height: fit-content;
+  }
+  &__list {
+    display: grid;
+    gap: 1.6rem;
+    &-item {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+    }
+    &-icon {
+      background-color: #3c3987;
+      border-radius: 100px;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: grid;
+      place-content: center;
+    }
   }
 }
 
@@ -99,6 +286,27 @@ const max = ref(25000);
       align-items: center;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.select {
+  display: grid;
+  gap: 2.4rem;
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 24px;
+    border-radius: 24px;
+    border: 1px solid var(--brand-border, rgba(255, 255, 255, 0.2));
+    &--blue {
+      background-color: #3c3987;
+      border: none;
+    }
+    &--green {
+      background-color: #48a254;
+      border: none;
     }
   }
 }

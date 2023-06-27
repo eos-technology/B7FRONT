@@ -248,7 +248,7 @@ const form = ref({
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: rgba(12, 12, 37, 0.7);
