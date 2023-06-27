@@ -55,11 +55,11 @@
           </div>
         </div>
         <div class="chart-trading__box">
-          <b-button>1H</b-button>
-          <b-button>1D</b-button>
-          <b-button>1W</b-button>
-          <b-button>1M</b-button>
-          <b-button>ALL</b-button>
+          <b-button size="sm">1H</b-button>
+          <b-button size="sm">1D</b-button>
+          <b-button size="sm">1W</b-button>
+          <b-button size="sm" active>1M</b-button>
+          <b-button size="sm">ALL</b-button>
         </div>
       </div>
       <apexchart
@@ -154,6 +154,12 @@ const chartOptions = {
   display: grid;
   gap: 4.8rem;
   grid-template-columns: min-content 1fr;
+  @media (max-width: 1100px) {
+    gap: 2.4rem;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
   i {
     padding-top: 4px;
     font-size: 2.4rem;
@@ -165,6 +171,9 @@ const chartOptions = {
     overflow: hidden;
     display: grid;
     gap: 8px;
+    @media (max-width:380px) {
+      min-width: 100%;
+    }
   }
   &__item {
     display: flex;
@@ -193,13 +202,20 @@ const chartOptions = {
   gap: 24px;
   border-radius: 16px;
   background: #201e61;
+  @media (max-width:600px) {
+    padding: 1.2rem;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
+    height: min-content;
+    flex-wrap: wrap;
+    gap: 1.6rem;
   }
   &__box {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
   }
   &__label {
     display: flex;

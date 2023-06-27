@@ -10,12 +10,14 @@
           <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50" @click="toggleCourses('own')">Mis
             cursos</b-button>
         </div>
-        <div class="search-filter">
-          <div class="field-search">
-            <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
-            <i class="b7-search"></i>
+        <div class="filter-box">
+          <div class="search-filter">
+            <div class="field-search">
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+              <i class="b7-search"></i>
+            </div>
           </div>
-
+          <Filter />
         </div>
       </header>
       <h3 class="h3-medium">Todos los cursos</h3>
@@ -36,137 +38,137 @@ import MyCourseCard from "./content/MyCourseCard.vue"
 import SingleCourse from "./content/SingleCourse.vue"
 import SingleVideo from "./content/SingleVideo.vue"
 
-import { ref } from 'vue'
+import { ref } from "vue";
 
-let showAllCourses = ref(true)
+let showAllCourses = ref(true);
 
 let allCourses = [
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 80,
-    topic: 'Finanzas',
+    topic: "Finanzas",
     numberOfVideos: 20,
-    startDate: 'Inicia 11 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 11 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 70,
-    topic: 'Coding',
+    topic: "Coding",
     numberOfVideos: 15,
-    startDate: 'Inicia 15 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 15 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 80,
-    topic: 'Finanzas',
+    topic: "Finanzas",
     numberOfVideos: 20,
-    startDate: 'Inicia 11 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 11 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 70,
-    topic: 'Coding',
+    topic: "Coding",
     numberOfVideos: 15,
-    startDate: 'Inicia 15 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 15 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 80,
-    topic: 'Finanzas',
+    topic: "Finanzas",
     numberOfVideos: 20,
-    startDate: 'Inicia 11 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 11 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 70,
-    topic: 'Coding',
+    topic: "Coding",
     numberOfVideos: 15,
-    startDate: 'Inicia 15 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 15 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 80,
-    topic: 'Finanzas',
+    topic: "Finanzas",
     numberOfVideos: 20,
-    startDate: 'Inicia 11 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
+    startDate: "Inicia 11 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
   },
   {
-    name: 'Nombre del curso',
+    name: "Nombre del curso",
     price: 70,
-    topic: 'Coding',
+    topic: "Coding",
     numberOfVideos: 15,
-    startDate: 'Inicia 15 de Julio',
-    imagePath: 'images',
-    imageName: 'students',
-    imageExtension: 'webp',
-  }
-]
+    startDate: "Inicia 15 de Julio",
+    imagePath: "images",
+    imageName: "students",
+    imageExtension: "webp",
+  },
+];
 
 let myCourses = [
   {
-    name: 'Nombre del curso',
-    topic: 'Finanzas',
+    name: "Nombre del curso",
+    topic: "Finanzas",
     numberOfVideos: 20,
-    imagePath: 'images',
-    imageName: 'students-books',
-    imageExtension: 'webp',
+    imagePath: "images",
+    imageName: "students-books",
+    imageExtension: "webp",
     progressPercentage: 20,
   },
   {
-    name: 'Nombre del curso',
-    topic: 'Coding',
+    name: "Nombre del curso",
+    topic: "Coding",
     numberOfVideos: 15,
-    imagePath: 'images',
-    imageName: 'students-books',
-    imageExtension: 'webp',
+    imagePath: "images",
+    imageName: "students-books",
+    imageExtension: "webp",
     progressPercentage: 60,
   },
   {
-    name: 'Nombre del curso',
-    topic: 'Finanzas',
+    name: "Nombre del curso",
+    topic: "Finanzas",
     numberOfVideos: 20,
-    imagePath: 'images',
-    imageName: 'students-books',
-    imageExtension: 'webp',
+    imagePath: "images",
+    imageName: "students-books",
+    imageExtension: "webp",
     progressPercentage: 20,
   },
   {
-    name: 'Nombre del curso',
-    topic: 'Coding',
+    name: "Nombre del curso",
+    topic: "Coding",
     numberOfVideos: 15,
-    imagePath: 'images',
-    imageName: 'students-books',
-    imageExtension: 'webp',
+    imagePath: "images",
+    imageName: "students-books",
+    imageExtension: "webp",
     progressPercentage: 60,
   },
-]
+];
 
 function toggleCourses(whichCourses) {
-  if (whichCourses === 'own') {
-    showAllCourses.value = false
+  if (whichCourses === "own") {
+    showAllCourses.value = false;
   } else {
-    showAllCourses.value = true
+    showAllCourses.value = true;
   }
 }
 </script>
@@ -196,41 +198,19 @@ function toggleCourses(whichCourses) {
         button {
           padding: 0.5rem;
         }
-
-
-      }
-
-      .search-filter {
-        .field-search {
-          display: flex;
-          align-items: center;
-          position: relative;
-
-          input {
-            border-radius: 16px;
-            background: rgba(246, 248, 250, 0.05);
-            padding: 0.75rem 1.25rem 0.75rem 3.5rem;
-            color: white;
-
-            &::placeholder {
-              color: white;
-            }
-          }
-
-          i {
-            position: absolute;
-            left: 1.25rem;
-            font-size: 1.25rem;
-          }
-        }
       }
     }
 
     .courses-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-gap: 1.5rem 1rem;
+      grid-gap: 1.6rem;
     }
   }
+}
+
+.filter-box {
+  display: flex;
+  gap: 1rem;
 }
 </style>

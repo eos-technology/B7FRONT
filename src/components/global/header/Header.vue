@@ -30,6 +30,7 @@
     width: 150px;
   }
   &__box {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 16px;

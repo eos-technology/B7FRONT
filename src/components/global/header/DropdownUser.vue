@@ -43,12 +43,11 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .drop {
-  position: relative;
   cursor: pointer;
   &__menu {
     background-color: #fff;
-    top: 78px;
-    right: 4%;
+    top: 54px;
+    right: 0;
     position: absolute;
     width: 137px;
     background: #ffffff;
