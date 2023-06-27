@@ -4,7 +4,8 @@ body {
 
 /* Forms */
 
-.form-control, .form-select {
+.form-control,
+.form-select {
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
@@ -20,7 +21,8 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.form-select:focus, .form-control:focus {
+.form-select:focus,
+.form-control:focus {
   color: #596471;
   background-color: var(--bs-body-bg);
   border-color: #3c3987;
@@ -314,7 +316,7 @@ body {
   height: 4rem;
   border: none;
   color: #fff;
-  &:hover{
+  &:hover {
     color: #000;
   }
   @media (max-width: 500px) {
@@ -323,4 +325,39 @@ body {
   }
 }
 
+/* Progress */
 
+.progress,
+.progress-stacked {
+  --bs-progress-height: 1rem;
+  --bs-progress-font-size: 0.75rem;
+  --bs-progress-bg: var(--bs-secondary-bg);
+  --bs-progress-border-radius: 1.4rem;
+  --bs-progress-box-shadow: var(--bs-box-shadow-inset);
+  --bs-progress-bar-color: #fff;
+  --bs-progress-bar-bg: #ee8722;
+  --bs-progress-bar-transition: width 0.6s ease;
+  display: flex;
+  height: 1.4rem;
+  overflow: hidden;
+  font-size: var(--bs-progress-font-size);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  -moz-border-radius: 1.4rem;
+  -ms-border-radius: 1.4rem;
+  -o-border-radius: 1.4rem;
+}
+
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--bs-success-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  -moz-border-radius: 1.4rem;
+  -ms-border-radius: 1.4rem;
+  -o-border-radius: 1.4rem;
+}

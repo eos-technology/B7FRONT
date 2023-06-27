@@ -10,6 +10,7 @@ import "./assets/main.scss";
 import PrimeVue from "primevue/config";
 import VueApexCharts from "vue3-apexcharts";
 import VueDragscroll from "vue-dragscroll";
+import VueCountdown from "@chenfengyuan/vue-countdown";
 
 //theme
 import "primevue/resources/themes/bootstrap4-light-purple/theme.css";
@@ -26,5 +27,7 @@ app.mixin(mixing);
 app.use(VueDragscroll);
 app.use(PrimeVue);
 app.use(VueApexCharts);
+
+app.component(VueCountdown.name, VueCountdown);
 
 app.mount("#app");

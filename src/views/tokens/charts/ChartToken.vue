@@ -8,7 +8,7 @@
       ></apexchart>
     </div>
     <div class="chart-donut__info">
-    <h5 class="h5-medium mb-4">Tokens</h5>
+      <h5 class="h5-medium mb-4">Tokens</h5>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-success"></div>
@@ -90,7 +90,7 @@ const chartOptions = {
             },
           },
           value: {
-            show: true,
+            show: false,
             fontSize: "10px",
             fontFamily: "Urbanist, sans-serif",
             fontWeight: 300,
@@ -98,7 +98,7 @@ const chartOptions = {
             color: "#fff",
           },
           total: {
-            show: true,
+            show: false,
             showAlways: true,
             label: "Total",
             fontSize: "22px",
@@ -123,13 +123,14 @@ const chartOptions = {
 
 <style lang="scss" scoped>
 .chart-donut {
-  height: 28rem;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   &__info {
     display: grid;
     column-gap: 2.4rem;
-    justify-content: space-between;
+
     width: 100%;
     @media (max-width: 430px) {
       grid-template-columns: 1fr;
@@ -139,9 +140,9 @@ const chartOptions = {
     display: flex;
     align-items: center;
     gap: 1.6rem;
-      @media (max-width:580px) {
-    flex-direction: column;
-  }
+    @media (max-width: 580px) {
+      flex-direction: column;
+    }
   }
   &__item {
     display: flex;
