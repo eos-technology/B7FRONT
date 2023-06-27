@@ -1,5 +1,5 @@
 <template>
-  <section class="btnBack" @click="name">
+  <section class="btnBack">
     <i class="b7-back"></i>
     <p class="b-light">Regresar</p>
   </section>

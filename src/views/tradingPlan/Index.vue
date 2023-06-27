@@ -1,8 +1,8 @@
 <template>
-  <div class="plan">
+  <div class="plan" v-if="trade === false">
     <div class="plan__header">
       <h2 class="h2-bold">Trading plan</h2>
-      <b-button variant="primary" @click="trade">Añadir trade</b-button>
+      <b-button variant="primary" @click="trade = true">Añadir trade</b-button>
     </div>
 
     <div class="plan__chart">
@@ -98,8 +98,8 @@
     </div>
   </div>
 
-  <section class="trade">
-    <GoBackDummy name="trade" />
+  <section class="trade" v-if="trade">
+    <GoBackDummy @click="trade = false" />
     <AddTrader />
   </section>
 </template>
@@ -109,6 +109,7 @@ import { ref } from "vue";
 import ChartPlans from "./charts/ChartPlans.vue";
 import AddTrader from "./content/AddTrader.vue";
 
+const trade = ref(false);
 const rows = ref(100);
 const currentPage = ref(3);
 
@@ -145,8 +146,7 @@ const form = ref({
   }
 }
 
-.trade{
-  margin-top: 2.4rem;
+.trade {
   display: grid;
   gap: 4.8rem;
 }

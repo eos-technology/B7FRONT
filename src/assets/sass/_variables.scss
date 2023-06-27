@@ -4,7 +4,7 @@ body {
 
 /* Forms */
 
-.form-control {
+.form-control, .form-select {
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
@@ -20,7 +20,7 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.form-control:focus {
+.form-select:focus, .form-control:focus {
   color: #596471;
   background-color: var(--bs-body-bg);
   border-color: #3c3987;
