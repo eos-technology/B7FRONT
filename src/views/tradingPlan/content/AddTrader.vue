@@ -243,34 +243,4 @@ const form = ref({
   }
 }
 
-.root {
-  position: relative;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(12, 12, 37, 0.7);
-  backdrop-filter: blur(5px);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &__body {
-    border-radius: 24px;
-    background: #2a2b3d;
-    display: flex;
-    width: 728px;
-    padding: 48px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    &-img {
-      width: 30rem;
-    }
-  }
-}
 </style>
