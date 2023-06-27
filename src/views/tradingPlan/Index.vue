@@ -2,7 +2,7 @@
   <div class="plan">
     <div class="plan__header">
       <h2 class="h2-bold">Trading plan</h2>
-      <b-button variant="primary">Añadir trade</b-button>
+      <b-button variant="primary" @click="trade">Añadir trade</b-button>
     </div>
 
     <div class="plan__chart">
@@ -97,11 +97,17 @@
       ></b-pagination>
     </div>
   </div>
+
+  <section class="trade">
+    <GoBackDummy name="trade" />
+    <AddTrader />
+  </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import ChartPlans from "./charts/ChartPlans.vue";
+import AddTrader from "./content/AddTrader.vue";
 
 const rows = ref(100);
 const currentPage = ref(3);
@@ -120,6 +126,7 @@ const form = ref({
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1.2rem;
   }
   &__filter {
     display: flex;
@@ -132,14 +139,15 @@ const form = ref({
     gap: 2.4rem;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.05);
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       padding: 1.2rem;
     }
   }
 }
 
-
-
-
-
+.trade{
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 4.8rem;
+}
 </style>

@@ -30,6 +30,7 @@ const routes = [
         name: "Plans",
         component: () => import("@/views/tradingPlan/Index.vue"),
       },
+
       {
         path: "memberships",
         name: "Memberships",
