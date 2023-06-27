@@ -1,5 +1,5 @@
 <template>
-  Transactions
+  <h2 class="h2-bold">Tokens</h2>
 </template>
 
 <script setup>
