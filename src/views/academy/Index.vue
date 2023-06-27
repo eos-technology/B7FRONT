@@ -25,12 +25,16 @@
       </div>
     </Section>
   </Main>
+  <SingleCourse />
+  <SingleVideo />
 </template>
 
 <script setup>
 import Slider from "./content/Slider.vue"
 import CourseCard from "./content/CourseCard.vue"
 import MyCourseCard from "./content/MyCourseCard.vue"
+import SingleCourse from "./content/SingleCourse.vue"
+import SingleVideo from "./content/SingleVideo.vue"
 
 import { ref } from 'vue'
 
