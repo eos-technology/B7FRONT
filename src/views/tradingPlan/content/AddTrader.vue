@@ -158,19 +158,33 @@
 
       <div class="form__btns">
         <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary">Agregar</b-button>
+        <b-button variant="primary" @click="isOpen = true">Agregar</b-button>
       </div>
     </b-form>
   </section>
 
   <section class="root">
-  
-  
+    <teleport to="body">
+      <div class="modal" v-if="isOpen">
+        <div class="modal__body" @click="isOpen = false">
+          <img
+            class="modal__body-img"
+            :src="getFile('images', 'auth', 'webp')"
+            alt=""
+          />
+          <h3 class="h3-medium text-center">
+            ¡Se ha agregado nuevo trade éxitosamente!
+          </h3>
+        </div>
+      </div>
+    </teleport>
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+const isOpen = ref(false);
 
 const options = [
   { value: null, text: "Please select an option" },
@@ -226,6 +240,37 @@ const form = ref({
   &__btns {
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+.root {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(12, 12, 37, 0.7);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__body {
+    border-radius: 24px;
+    background: #2a2b3d;
+    display: flex;
+    width: 728px;
+    padding: 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    &-img {
+      width: 30rem;
+    }
   }
 }
 </style>

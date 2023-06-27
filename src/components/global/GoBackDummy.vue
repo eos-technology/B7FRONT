@@ -15,6 +15,7 @@ defineProps: {
 .btnBack {
   display: flex;
   align-items: center;
+  width: fit-content;
   gap: 8px;
   cursor: pointer;
   &:hover{
