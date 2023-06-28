@@ -316,6 +316,107 @@ const q3 = [
 </script>
 
 <style lang="scss" scoped>
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(12, 12, 37, 0.7);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  &__content {
+    display: grid;
+    gap: 2.4rem;
+    justify-items: end;
+  }
+  &__close {
+    &:hover {
+      filter: brightness(60%);
+      cursor: pointer;
+    }
+  }
+  &__body {
+    border-radius: 24px;
+    background: #2a2b3d;
+    display: flex;
+    width: 728px;
+    padding: 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    &-img {
+      width: 30rem;
+    }
+  }
+  &__body-qr {
+    display: grid;
+    gap: 2.4rem;
+    justify-items: center;
+    min-width: 58rem;
+  }
+  &__img {
+    width: 17rem;
+  }
+  &__btns {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: flex-end;
+  }
+  &__card {
+    cursor: pointer;
+    padding: 1.6rem;
+    display: flex;
+    gap: 1.6rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    justify-content: space-between;
+    &:hover {
+      filter: brightness(60%);
+    }
+    &-box {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+  }
+  &__buy {
+    display: grid;
+    gap: 2.4rem;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #2a2b3d;
+    &-link {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 2.3rem;
+      text-decoration: none;
+      margin-bottom: 1.6rem;
+    }
+    &-header {
+      padding: 5rem 4.2rem;
+      display: flex;
+      gap: 1.6rem;
+      justify-content: space-between;
+      align-items: center;
+      height: 16.2rem;
+      background-image: url("@/assets/images/banner-modal.webp");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &-body {
+      padding: 0 2.4rem 2.4rem;
+      display: grid;
+      gap: 2.4rem;
+    }
+    &-title {
+      display: grid;
+      gap: 8px;
+    }
+  }
+}
 .token {
   display: grid;
   gap: 2.4rem;
