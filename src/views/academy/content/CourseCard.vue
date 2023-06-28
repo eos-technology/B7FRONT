@@ -19,12 +19,22 @@
         </div>
       </div>
     </b-card-body>
-    <b-card-footer><b-button variant="primary" class="w-100">Ver curso</b-button></b-card-footer>
+    <b-card-footer><b-button variant="primary" class="w-100" @click="showCourse">Ver
+        curso</b-button></b-card-footer>
   </b-card>
 </template>
 
 <script setup>
-defineProps({ course: Object });
+import { ref, defineEmits } from 'vue'
+
+defineProps({ course: Object })
+
+defineEmits(['changeSingleCourse']);
+
+const showCourse = () => {
+  // Cambiar el valor de la variable en el componente padre
+  context.emit('changeSingleCourse', true);
+};
 </script>
 
 <style lang="scss" scoped>
