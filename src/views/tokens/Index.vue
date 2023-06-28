@@ -33,7 +33,9 @@
           <p>${{ value }} pledget of ${{ max }} goal</p>
           <b-progress variant="success" :value="value" :max="max"></b-progress>
         </div>
-        <b-button variant="primary">Comprar Tokens</b-button>
+        <b-button variant="primary" @click="isOpen = true"
+          >Comprar Tokens</b-button
+        >
       </div>
 
       <div class="select">
@@ -165,6 +167,28 @@
       </section>
     </div>
   </section>
+  <!-- Modals Buy-->
+  <section class="root">
+    <teleport to="body">
+      <div class="modal" v-if="isOpen">
+        <div class="modal__buy">
+          <div class="modal__buy-header">
+            <img
+              class="modal__body-top"
+              :src="getFile('images', 'banner-modal', 'webp')"
+              alt=""
+            />
+          </div>
+          <div class="modal__buy-body" @click="isOpen = false">
+            <div class="modal__buy-title">
+              <h4 class="h4-semibold">Método de pago</h4>
+              <p class="b-regular">1USD = 1B7T. Send to the wallet the amount equivalent to B7T that you want to receive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </teleport>
+  </section>
 </template>
 
 <script setup>
@@ -173,6 +197,8 @@ import ChartToken from "./charts/ChartToken.vue";
 
 const value = ref(18090);
 const max = ref(25000);
+
+const isOpen = ref(false);
 
 const select = ref({
   q: "Q1",
@@ -203,6 +229,46 @@ const q3 = [
 </script>
 
 <style lang="scss" scoped>
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(12, 12, 37, 0.7);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__body {
+    border-radius: 24px;
+    background: #2a2b3d;
+    display: flex;
+    width: 728px;
+    padding: 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    &-img {
+      width: 30rem;
+    }
+  }
+  &__buy {
+    display: grid;
+    gap: 2.4rem;
+    border-radius: 24px;
+    background: #2a2b3d;
+    &-body{
+      padding:0 2.4rem 2.4rem;
+    }
+    &-title{
+      display: grid;
+      gap: 8px;
+    } 
+
+  }
+}
 .token {
   display: grid;
   gap: 2.4rem;
@@ -294,6 +360,7 @@ const q3 = [
   display: grid;
   gap: 2.4rem;
   &__item {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding: 16px 24px;
