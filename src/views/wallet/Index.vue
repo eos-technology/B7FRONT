@@ -68,7 +68,7 @@ import AccordionTransactions from "./content/AccordionTransactions.vue"
 
 import { ref } from "vue"
 
-let showModal = ref(true)
+let showModal = ref(false)
 </script>
 
 <style lang="scss" scoped>
