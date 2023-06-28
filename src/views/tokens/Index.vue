@@ -167,22 +167,108 @@
       </section>
     </div>
   </section>
-  <!-- Modals Buy-->
+  <!-- Modals Buy -->
   <section class="root">
     <teleport to="body">
       <div class="modal" v-if="isOpen">
-        <div class="modal__buy">
-          <div class="modal__buy-header">
-            <img
-              class="modal__body-top"
-              :src="getFile('images', 'banner-modal', 'webp')"
-              alt=""
-            />
+        <div class="modal__content">
+          <img
+            class="modal__close"
+            :src="getFile('icons', 'close')"
+            alt=""
+            @click="isOpen = false"
+          />
+          <div class="modal__buy">
+            <div class="modal__buy-header">
+              <h2 class="h2-bold">Compra Tokens</h2>
+              <img class="modal__img" src="@/assets/images/logo.webp" alt="" />
+            </div>
+            <div class="modal__buy-body" @click="isOpen = false">
+              <div class="modal__buy-title">
+                <h4 class="h4-semibold">Método de pago</h4>
+                <p class="b-regular">
+                  1USD = 1B7T. Send to the wallet the amount equivalent to B7T
+                  that you want to receive
+                </p>
+              </div>
+              <div class="modal__card">
+                <div class="modal__card-box">
+                  <img
+                    width="40"
+                    :src="getFile('images', 'crypto-ico', 'png')"
+                    alt=""
+                  />
+                  <div>
+                    <h6 class="h6-medium">Tether</h6>
+                    <p class="l-light">USDT</p>
+                  </div>
+                </div>
+                <img :src="getFile('icons', 'arrow-right')" alt="" />
+              </div>
+              <div class="modal__card">
+                <div class="modal__card-box">
+                  <img
+                    width="40"
+                    :src="getFile('images', 'crypto-ico', 'png')"
+                    alt=""
+                  />
+                  <div>
+                    <h6 class="h6-medium">Tether</h6>
+                    <p class="l-light">USDT</p>
+                  </div>
+                </div>
+                <img :src="getFile('icons', 'arrow-right')" alt="" />
+              </div>
+              <div class="modal__btns">
+                <b-button variant="outline">Cancelar</b-button>
+                <b-button variant="primary" @click="payment = true"
+                  >Confirmar compra</b-button
+                >
+              </div>
+            </div>
           </div>
-          <div class="modal__buy-body" @click="isOpen = false">
-            <div class="modal__buy-title">
-              <h4 class="h4-semibold">Método de pago</h4>
-              <p class="b-regular">1USD = 1B7T. Send to the wallet the amount equivalent to B7T that you want to receive</p>
+        </div>
+      </div>
+
+      <!-- Modals Payment -->
+
+      <div class="modal" v-if="payment">
+        <div class="modal__content">
+          <img
+            class="modal__close"
+            :src="getFile('icons', 'close')"
+            alt=""
+            @click="payment = false"
+          />
+          <div class="modal__buy">
+            <div class="modal__buy-header">
+              <h2 class="h2-bold">Payment</h2>
+              <img class="modal__img" src="@/assets/images/logo.webp" alt="" />
+            </div>
+            <div class="modal__buy-body" @click="payment = false">
+              <div class="modal__buy-title">
+                <h2 class="h2-semibold text-center">Payment address</h2>
+              </div>
+
+              <div class="modal__body-qr">
+                <img :src="getFile('images', 'qr')" alt="" />
+                <div class="modal__buy-title text-center">
+                  <p class="b-regular">Quantity</p>
+                  <h6 class="h6-regular">0 USD</h6>
+                </div>
+                <div class="modal__buy-title text-center">
+                  <p class="b-regular">Wallet Address</p>
+                  <h6 class="h6-regular">TQerdfbNi7SyfTzs6PSgesHjZqL1NVQm5X</h6>
+                  <router-link class="modal__buy-link" to="#"
+                    >Copy Wallet</router-link
+                  >
+                </div>
+              </div>
+
+              <div class="modal__btns">
+                <b-button variant="outline">Cancelar</b-button>
+                <b-button variant="primary">Verify payment</b-button>
+              </div>
             </div>
           </div>
         </div>
@@ -199,6 +285,7 @@ const value = ref(18090);
 const max = ref(25000);
 
 const isOpen = ref(false);
+const payment = ref(false);
 
 const select = ref({
   q: "Q1",
@@ -229,46 +316,6 @@ const q3 = [
 </script>
 
 <style lang="scss" scoped>
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(12, 12, 37, 0.7);
-  backdrop-filter: blur(5px);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &__body {
-    border-radius: 24px;
-    background: #2a2b3d;
-    display: flex;
-    width: 728px;
-    padding: 48px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    &-img {
-      width: 30rem;
-    }
-  }
-  &__buy {
-    display: grid;
-    gap: 2.4rem;
-    border-radius: 24px;
-    background: #2a2b3d;
-    &-body{
-      padding:0 2.4rem 2.4rem;
-    }
-    &-title{
-      display: grid;
-      gap: 8px;
-    } 
-
-  }
-}
 .token {
   display: grid;
   gap: 2.4rem;
