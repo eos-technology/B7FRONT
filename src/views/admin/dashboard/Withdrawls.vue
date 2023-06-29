@@ -44,12 +44,11 @@
             <td>USDT</td>
             <td>$0.00</td>
             <td>00/00/00 1:00</td>
+            <td>TJazxW....eEExQFhR</td>
             <td>$0.00</td>
-            <td>Estado</td>
             <td class="table__actions">
-              <i class="b7-eye"></i>
-              <i class="b7-pen"></i>
-              <i class="b7-trash"></i>
+              <b-button>Rechazar</b-button>
+              <b-button>Rechazar</b-button>
             </td>
           </tr>
         </tbody>
@@ -83,6 +82,7 @@ const currentPage = ref(3);
     &-box {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
     }
   }
   &__filter {

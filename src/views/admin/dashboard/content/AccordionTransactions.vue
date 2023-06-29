@@ -2,29 +2,29 @@
   <div class="accordion" role="tablist">
     <div class="tab">
       <div v-b-toggle.collapse-1 class="movement">
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
             <span class="sm-light">Usuario</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
             <span class="sm-light">Quantity</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Tipo</span>
           <span class="b-medium">Type 000</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Fecha</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Estado</span>
           <span class="b-medium">En proceso</span>
         </div>
@@ -46,29 +46,29 @@
     </div>
     <div class="tab">
       <div v-b-toggle.collapse-2 class="movement">
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
             <span class="sm-light">Usuario</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
             <span class="sm-light">Quantity</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Tipo</span>
           <span class="b-medium">Type 000</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Fecha</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Estado</span>
           <span class="b-medium">En proceso</span>
         </div>
@@ -90,29 +90,29 @@
     </div>
     <div class="tab">
       <div v-b-toggle.collapse-3 class="movement">
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
             <span class="sm-light">Usuario</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
-        <div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
             <span class="sm-light">Quantity</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Tipo</span>
           <span class="b-medium">Type 000</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Fecha</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
-        <div class="item">
+        <div class="item item-flex">
           <span class="sm-light">Estado</span>
           <span class="b-medium">En proceso</span>
         </div>
@@ -132,6 +132,7 @@
         </div>
       </b-collapse>
     </div>
+
     <b-pagination align="center" v-model="currentPage" pills :total-rows="rows"></b-pagination>
   </div>
 </template>
@@ -161,6 +162,7 @@ const currentPage = ref(3);
       justify-content: space-between;
       gap: 1rem;
       align-items: center;
+      flex-wrap: wrap;
 
       :first-child,
       :nth-child(2) {
@@ -178,6 +180,9 @@ const currentPage = ref(3);
         flex-direction: column;
         gap: 0;
         align-items: flex-start;
+        &-flex{
+          flex: 1 0 100px;
+        }
 
         .sm-light {
           color: #b5c2d7;

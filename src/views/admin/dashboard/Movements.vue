@@ -20,7 +20,7 @@
           <Filter />
         </div>
       </div>
-      <AccordionTransactions />
+      <AccordionTransactions v-dragscroll/>
     </section>
   </main>
 </template>
@@ -44,6 +44,7 @@ main {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .signal-cards {
@@ -54,6 +55,7 @@ main {
   }
 
   .movements {
+      overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -69,11 +71,13 @@ main {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .filter-box {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 }
