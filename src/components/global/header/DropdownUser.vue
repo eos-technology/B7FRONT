@@ -1,6 +1,10 @@
 <template>
   <div class="drop" @click="toggleMenu">
-    <b-avatar badge="7" :src="getFile('icons', 'avatar')" />
+    <img class="drop__avatar" :src="getFile('icons', 'avatar')" alt="" />
+    <i
+      class="drop__arrow b7-arrow-down"
+      :class="menu === true ? 'drop__arrow-down' : ''"
+    ></i>
   </div>
   <div v-show="menu" class="drop__menu">
     <div class="drop__menu-header">
@@ -44,6 +48,24 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .drop {
   cursor: pointer;
+  &__avatar {
+    position: relative;
+  }
+  &__arrow {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    border-radius: 75px;
+    border: 0.75px solid rgba(236, 236, 238, 0.11);
+    background: var(--brand-bg, #070721);
+    width: 1.8rem;
+    height: 1.8rem;
+    display: grid;
+    place-content: center;
+    &-down {
+      transform: rotate(180deg);
+    }
+  }
   &__menu {
     background-color: #fff;
     top: 54px;

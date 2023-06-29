@@ -72,6 +72,7 @@
           autoplay
           loop
         ></video>
+        <div class="anim"></div>
         <h3 class="h3-bold">Beneficios Basic</h3>
         <div class="token__list">
           <div

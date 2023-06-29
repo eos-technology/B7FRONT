@@ -2,6 +2,17 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
+    path: "/auth",
+    component: () => import("@/layouts/Auth.vue"),
+    children: [
+      {
+        path: "",
+        name: "Login",
+        component: () => import("@/views/auth/Index.vue"),
+      },
+    ],
+  },
+  {
     path: "/",
     component: () => import("@/layouts/App.vue"),
     children: [
@@ -64,13 +75,13 @@ const routes = [
     ],
   },
   {
-    path: "/auth",
-    component: () => import("@/layouts/Auth.vue"),
+    path: "/admin",
+    component: () => import("@/layouts/Admin.vue"),
     children: [
       {
         path: "",
-        name: "Login",
-        component: () => import("@/views/auth/Index.vue"),
+        name: "Admin",
+        component: () => import("@/views/admin/dashboard/Index.vue"),
       },
     ],
   },
