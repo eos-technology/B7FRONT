@@ -4,7 +4,7 @@
     <div class="plan__header">
       <h3 class="h3-medium">Retiros</h3>
       <div class="plan__header-box">
-        <b-button class="btns" variant="outline">Ver todos</b-button>
+        <b-button class="btns btns--white" >Ver todos</b-button>
         <b-button class="btns" variant="primary"
           >Eliminar seleccionados</b-button
         >
@@ -47,8 +47,8 @@
             <td>TJazxW....eEExQFhR</td>
             <td>$0.00</td>
             <td class="table__actions">
-              <b-button>Rechazar</b-button>
-              <b-button>Rechazar</b-button>
+              <b-button class="btns btns--white">Rechazar</b-button>
+              <b-button class="btns" variant="primary">Aprobar</b-button>
             </td>
           </tr>
         </tbody>
@@ -102,8 +102,5 @@ const currentPage = ref(3);
   }
 }
 
-.btns {
-  height: 44px;
-  padding: 0 16px;
-}
+
 </style>

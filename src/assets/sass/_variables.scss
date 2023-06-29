@@ -139,6 +139,16 @@ body {
   }
 }
 
+.btns {
+  height: 44px;
+  padding: 0 16px;
+  &--white {
+    color: #000;
+    border-radius: 100px;
+    background: var(--inputs-fondo-2, #c2ccd6);
+  }
+}
+
 /* Avatar */
 
 .b-avatar {
