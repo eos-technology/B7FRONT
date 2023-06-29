@@ -37,7 +37,10 @@
     </article>
     <!-- Movements -->
     <article class="movements">
-    <Movements/>
+      <Movements />
+    </article>
+    <article class="content">
+      <Withdrawls />
     </article>
     <!-- Down Cards -->
     <article class="down">
@@ -140,6 +143,7 @@
 
 <script setup>
 import Movements from "./Movements.vue";
+import Withdrawls from "./Withdrawls.vue";
 import ChartDonut from "./charts/ChartDonut.vue";
 </script>
 
