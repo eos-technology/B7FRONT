@@ -9,7 +9,7 @@
 const routes = [
   { name: "Dashboard", route: "Admin" },
   { name: "Compras", route: "Purchases" },
-  { name: "Retiros", route: "Signs" },
+  { name: "Retiros", route: "Withdraw" },
   { name: "Academia", route: "Trading-Live" },
   { name: "Señales", route: "Plans" },
   { name: "Trading live", route: "Memberships" },

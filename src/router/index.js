@@ -88,6 +88,11 @@ const routes = [
         name: "Purchases",
         component: () => import("@/views/admin/purchases/Index.vue"),
       },
+      {
+        path: "withdraw",
+        name: "Withdraw",
+        component: () => import("@/views/admin/withdraw/Index.vue"),
+      },
     ],
   },
 ];

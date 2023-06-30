@@ -1,21 +1,16 @@
 <template>
-  <div class="plan" v-if="trade === false">
+  <div class="plan">
     <div class="plan__header">
       <h2 class="h2-bold">Compras</h2>
-      <b-button variant="primary" @click="trade = true">Añadir trade</b-button>
     </div>
-
     <div class="plan__chart">
       <ChartPlans />
     </div>
-
-
-
     <!-- TABLE -->
     <div class="plan__table">
       <div class="plan__header">
         <h3 class="h3-bold">Movimientos</h3>
-        <b-button variant="primary" class="ml-auto">Descargar Reporte</b-button>
+        <b-button variant="primary" class="ml-auto">Descargar reporte</b-button>
         <div class="plan__filter">
           <div class="search-filter">
             <div class="field-search">
@@ -55,25 +50,15 @@
       <b-pagination align="center" v-model="currentPage" pills :total-rows="rows"></b-pagination>
     </div>
   </div>
-
-  <section class="trade" v-if="trade">
-    <GoBackDummy @click="trade = false" />
-    <AddTrader />
-  </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import ChartPlans from "./charts/ChartPlans.vue";
-import AddTrader from "./content/AddTrader.vue";
 
-const trade = ref(false);
 const rows = ref(100);
 const currentPage = ref(3);
 
-const form = ref({
-  active: "",
-});
 </script>
 
 <style lang="scss" scoped>
