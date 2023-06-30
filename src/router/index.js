@@ -84,6 +84,16 @@ const routes = [
         component: () => import("@/views/admin/dashboard/Index.vue"),
       },
       {
+        path: "purchases",
+        name: "Purchases",
+        component: () => import("@/views/admin/purchases/Index.vue"),
+      },
+      {
+        path: "withdraw",
+        name: "Withdraw",
+        component: () => import("@/views/admin/withdraw/Index.vue"),
+      },
+      {
         path: "academy",
         name: "Admin-Academy",
         component: () => import("@/views/admin/academy/Index.vue"),

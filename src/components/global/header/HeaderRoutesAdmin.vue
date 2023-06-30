@@ -1,20 +1,15 @@
 <template>
   <div class="routes">
-    <router-link
-      class="routes__item"
-      v-for="(item, index) in routes"
-      :key="index"
-      :to="{ name: item.route }"
-      >{{ item.name }}</router-link
-    >
+    <router-link class="routes__item" v-for="(item, index) in routes" :key="index"
+      :to="{ name: item.route }">{{ item.name }}</router-link>
   </div>
 </template>
 
 <script setup>
 const routes = [
   { name: "Dashboard", route: "Admin" },
-  { name: "Compras", route: "Signs" },
-  { name: "Retiros", route: "Signs" },
+  { name: "Compras", route: "Purchases" },
+  { name: "Retiros", route: "Withdraw" },
   { name: "Academia", route: "Admin-Academy" },
   { name: "Señales", route: "Plans" },
   { name: "Trading live", route: "Memberships" },
@@ -32,14 +27,17 @@ const routes = [
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+
   @media (max-width:400px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
   @media (max-width:385px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
   a {
     color: #b5c2d7;
     font-size: 14px;
@@ -47,12 +45,14 @@ const routes = [
     line-height: 20px;
     text-align: center;
     text-decoration: none;
+
     &.exact-active {
       background-color: #ee8722;
       font-weight: 500;
       color: #fff;
     }
   }
+
   &__item {
     padding: 8px 16px;
     gap: 10px;
