@@ -83,6 +83,11 @@ const routes = [
         name: "Admin",
         component: () => import("@/views/admin/dashboard/Index.vue"),
       },
+      {
+        path: "purchases",
+        name: "Purchases",
+        component: () => import("@/views/admin/purchases/Index.vue"),
+      },
     ],
   },
 ];

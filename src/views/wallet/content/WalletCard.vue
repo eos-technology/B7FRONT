@@ -28,8 +28,6 @@
     </div>
 </template>
 <script setup>
-import { defineEmits } from 'vue'
-
 defineEmits(['openwithdrawModal', 'openReceiveModal'])
 </script>
 <style lang="scss" scoped>
