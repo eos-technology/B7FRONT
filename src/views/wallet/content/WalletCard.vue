@@ -18,8 +18,8 @@
                         <span class="l-light">Saldo disponible</span>
                         <h4 class="h4-bold text-primary">16,540.83</h4>
                     </div>
-                    <b-button pill variant="outline-primary" size="sm">Enviar</b-button>
-                    <b-button pill variant="primary" size="sm">Retirar</b-button>
+                    <b-button pill variant="outline-primary" size="sm" @click="$emit('openReceiveModal')">Enviar</b-button>
+                    <b-button pill variant="primary" size="sm" @click="$emit('openwithdrawModal')">Retirar</b-button>
                 </div>
             </b-collapse>
         </div>
@@ -27,7 +27,11 @@
 
     </div>
 </template>
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue'
+
+defineEmits(['openwithdrawModal', 'openReceiveModal'])
+</script>
 <style lang="scss" scoped>
 .accordion {
     display: flex;

@@ -3,11 +3,11 @@
     <header>
       <div class="header">
         <h2 class="h2-bold">Billetera</h2>
-        <b-button variant="primary" @click="showModal = true">Nueva wallet</b-button>
+        <b-button variant="primary" @click="newWalletModal = true">Nueva wallet</b-button>
       </div>
     </header>
     <div class="wallet">
-      <WalletCard />
+      <WalletCard @openwithdrawModal="withdrawModal = true" @openReceiveModal="receiveModal = true" />
       <section class="transactions">
         <div class="transactions-header">
           <h3 class="h3-bold">Transacciones</h3>
@@ -23,7 +23,8 @@
         <AccordionTransactions />
       </section>
     </div>
-    <div class="modal" v-if="showModal">
+    <!-- Modal Retirar fondos -->
+    <div class="modal withdraw" v-if="withdrawModal">
       <div class="modal__body">
         <div class="header-modal">
           <h2 class="h2-bold">Retirar</h2>
@@ -53,7 +54,114 @@
             </div>
           </div>
           <div class="buttons-modal d-flex justify-content-end mt-3">
-            <b-button variant="outline-primary" @click="showModal = false">Cancelar</b-button>
+            <b-button variant="outline-primary" @click="withdrawModal = false">Cancelar</b-button>
+            <b-button variant="primary">Realizar retiro</b-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Recibir fondos -->
+    <div class="modal receive" v-if="receiveModal">
+      <div class="modal__body">
+        <div class="header-modal">
+          <h2 class="h2-bold">Recibir</h2>
+          <img :src="getFile('images', 'logo', 'webp')" alt="" />
+        </div>
+        <div class="content-modal">
+          <div class="info d-flex flex-column align-items-center">
+            <h2 class="h3-medium text-center">Your receiving USDT address</h2>
+            <img :src="getFile('images', 'qr', 'webp')" alt="" class="w-50">
+            <div class="wallet-address d-flex flex-column align-items-center">
+              <p class="b-regular">Wallet Address</p>
+              <h6 class="h6-regular">TQerdfbNi7SyfTzs6PSgesHjZqL1NVQm5X</h6>
+            </div>
+          </div>
+          <div class="buttons-modal d-flex justify-content-end mt-3">
+            <b-button variant="outline-primary" @click="receiveModal = false">Cancelar</b-button>
+            <b-button variant="primary">Copy Address</b-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Nueva Wallet -->
+    <div class="modal new-wallet" v-if="newWalletModal">
+      <div class="modal__body">
+        <div class="header-modal">
+          <h2 class="h2-bold">Nueva wallet</h2>
+
+          <img :src="getFile('images', 'logo', 'webp')" alt="" />
+        </div>
+        <div class="content-modal">
+          <div>
+            <h4 class="h4-semibold">Datos de Wallet</h4>
+            <p class="b-regular">Asegúrese de tener bsc en esta billetera para cubrir la tarifa</p>
+          </div>
+          <div class="inputs-modal">
+            <div>
+              <label for="new-wallet" class="l-medium">Nombre de wallet <span>*</span></label>
+              <b-form-input id="new-wallet" type="text" placeholder="Wallet Address"></b-form-input>
+            </div>
+          </div>
+
+          <!-- Currency selector -->
+          <b-form-group label="Criptomonedas disponibles" class="holi" v-slot="{ ariaDescribedby }">
+            <!-- Tether -->
+            <div class="dropdown d-flex justify-content-between">
+              <b-form-radio v-model="availableCurrencies" :aria-describedby="ariaDescribedby" name="currencies"
+                value="Tether">
+                <div class="label">
+                  <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
+                  <div class="item">
+                    <span class="l-semibold">Tether</span>
+                    <span class="sm-regular">USDT</span>
+                  </div>
+                </div>
+              </b-form-radio>
+            </div>
+            <!-- Bitcoin -->
+            <div class="dropdown d-flex justify-content-between">
+              <b-form-radio v-model="availableCurrencies" :aria-describedby="ariaDescribedby" name="currencies"
+                value="Bitcoin">
+                <div class="label">
+                  <img :src="getFile('images', 'bitcoin', 'png')" alt="">
+                  <div class="item">
+                    <span class="l-semibold">Bitcoin</span>
+                    <span class="sm-regular">BTC</span>
+                  </div>
+                </div>
+              </b-form-radio>
+            </div>
+            <!-- Binance -->
+            <div class="dropdown d-flex justify-content-between">
+              <b-form-radio v-model="availableCurrencies" :aria-describedby="ariaDescribedby" name="currencies"
+                value="Binance">
+                <div class="label">
+                  <img :src="getFile('images', 'binance', 'png')" alt="">
+                  <div class="item">
+                    <span class="l-semibold">Binance</span>
+                    <span class="sm-regular">BNB</span>
+                  </div>
+                </div>
+              </b-form-radio>
+            </div>
+            <!-- Etherium -->
+            <div class="dropdown d-flex justify-content-between">
+              <b-form-radio v-model="availableCurrencies" :aria-describedby="ariaDescribedby" name="currencies"
+                value="Etherium">
+                <div class="label">
+                  <img :src="getFile('images', 'etherium', 'png')" alt="">
+                  <div class="item">
+                    <span class="l-semibold">Etherium</span>
+                    <span class="sm-regular">ETH</span>
+                  </div>
+                </div>
+              </b-form-radio>
+            </div>
+          </b-form-group>
+          <!-- End currency selector -->
+
+          <div class="buttons-modal d-flex justify-content-end mt-3">
+            <b-button variant="outline-primary" @click="newWalletModal = false">Cancelar</b-button>
             <b-button variant="primary">Realizar retiro</b-button>
           </div>
         </div>
@@ -68,7 +176,13 @@ import AccordionTransactions from "./content/AccordionTransactions.vue"
 
 import { ref } from "vue"
 
-let showModal = ref(false)
+//Modals
+let withdrawModal = ref(false)
+let receiveModal = ref(false)
+let newWalletModal = ref(false)
+
+//value of currencies associated to model in new wallet modal
+let availableCurrencies = ref('')
 </script>
 
 <style lang="scss" scoped>
@@ -189,6 +303,56 @@ main {
 
       .buttons-modal {
         gap: 1rem
+      }
+    }
+  }
+}
+
+.modal.receive {
+  .content-modal {
+    .info {
+      gap: 1.5rem;
+
+      .wallet-address {
+        gap: 0.5rem;
+
+        .b-regular {
+          color: #B5C2D7;
+        }
+      }
+    }
+  }
+}
+
+.new-wallet .dropdown {
+  margin-bottom: 1rem;
+
+  .form-check {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    :last-child {
+      flex-grow: 1;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .item {
+        span:first-child {
+          color: white;
+        }
+      }
+
+      &:last-child {
+        color: #B5C2D7;
       }
     }
   }
