@@ -64,70 +64,223 @@
       <div class="down__card down__card--green">
         <div class="down__card-header">
           <div class="down__card-box">
-            <i class="b7-cup"></i>
-            <h4 class="h4-bold">Beneficios</h4>
-          </div>
-          <div class="down__card-tag">
-            <p class="h6-bold text-black">PRO</p>
+            <h4 class="h4-bold">Membresias</h4>
           </div>
         </div>
-        <div class="down__card-body">
-          <div class="down__card-info">
-            <div class="d-flex align-items-center gap-2">
-              <i class="b7-withdrawl"></i>
-              <p class="l-light">Retiros</p>
-            </div>
-            <i class="b7-check text-primary"></i>
+        <div class="bar">
+          <div class="bar__flex">
+            <p class="b-medium">Basic</p>
+            <p class="b-medium">$0.000</p>
           </div>
-          <div class="down__card-info">
-            <div class="d-flex align-items-center gap-2">
-              <i class="b7-chart"></i>
-              <p class="l-light">Señales</p>
-            </div>
-            <i class="b7-check text-primary"></i>
-          </div>
-          <div class="down__card-info">
-            <div class="d-flex align-items-center gap-2">
-              <i class="b7-graduated"></i>
-              <p class="l-light">Academia</p>
-            </div>
-            <i class="b7-check text-primary"></i>
-          </div>
-          <div class="down__card-info">
-            <div class="d-flex align-items-center gap-2">
-              <i class="b7-trading"></i>
-              <p class="l-light">Trading Plans</p>
-            </div>
-            <i class="b7-check text-primary"></i>
-          </div>
-          <div class="down__card-info">
-            <div class="d-flex align-items-center gap-2">
-              <i class="b7-live"></i>
-              <p class="l-light">Trading Live</p>
-            </div>
-            <i class="b7-check text-primary"></i>
+
+          <div class="bar__content">
+            <b-progress
+              class="bar__progress w-100"
+              variant="secondary"
+              :value="value"
+              :max="max"
+            ></b-progress>
+            <p class="sm-medium">{{ value }}%</p>
           </div>
         </div>
-        <b-button variant="primary">{{
-          $t("globals.availablePlans")
-        }}</b-button>
+        <div class="bar">
+          <div class="bar__flex">
+            <p class="b-medium">Premiun</p>
+            <p class="b-medium">$0.000</p>
+          </div>
+
+          <div class="bar__content">
+            <b-progress
+              class="bar__progress w-100"
+              variant="success"
+              :value="premium"
+              :max="max"
+            ></b-progress>
+            <p class="sm-medium">{{ premium }}%</p>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar__flex">
+            <p class="b-medium">Prime</p>
+            <p class="b-medium">$0.000</p>
+          </div>
+
+          <div class="bar__content">
+            <b-progress
+              class="bar__progress w-100"
+              variant="primary"
+              :value="prime"
+              :max="max"
+            ></b-progress>
+            <p class="sm-medium">{{ prime }}%</p>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar__flex">
+            <p class="b-medium">Personalizado</p>
+            <p class="b-medium">$0.000</p>
+          </div>
+
+          <div class="bar__content">
+            <b-progress
+              class="bar__progress w-100"
+              variant="light"
+              :value="custom"
+              :max="max"
+            ></b-progress>
+            <p class="sm-medium">{{ custom }}%</p>
+          </div>
+        </div>
       </div>
     </article>
+
+    <!--  Tokens -->
+    <div class="dashboard__header">
+      <h2 class="h3-medium">Tokens</h2>
+      <b-button variant="primary" @click="trade = true">Crear tokens</b-button>
+    </div>
+
+    <div class="dashboard__tokens">
+      <div class="token__card token__card--blue">
+        <h4 class="h4-bold">Token sale ends in</h4>
+        <div class="count">
+          <div class="count__date">
+            <p class="b-medium">Permitir desde</p>
+            <div class="count__date-box">
+              <div class="count__box">
+                <p class="l-medium">Days</p>
+                <div class="count__box-data">03</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Mes</p>
+                <div class="count__box-data">10</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Año</p>
+                <div class="count__box-data">23</div>
+              </div>
+            </div>
+          </div>
+          <div class="count__line"></div>
+          <div class="count__date">
+            <p class="b-medium">Permitir hasta</p>
+            <div class="count__date-box">
+              <div class="count__box">
+                <p class="l-medium">Days</p>
+                <div class="count__box-data">03</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Mes</p>
+                <div class="count__box-data">11</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Año</p>
+                <div class="count__box-data">23</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="token__progress">
+          <p>${{ token }} pledget of ${{ maxToken }} goal</p>
+          <b-progress
+            variant="success"
+            :value="token"
+            :max="maxToken"
+          ></b-progress>
+        </div>
+        <div class="count__flex">
+          <b-button class="btns--white w-100">Eliminar</b-button>
+          <b-button variant="primary" class="w-100" @click="isOpen = true"
+            >Editar</b-button
+          >
+        </div>
+      </div>
+      <div class="token__card token__card--blue">
+        <h4 class="h4-bold">Token sale ends in</h4>
+        <div class="count">
+          <div class="count__date">
+            <p class="b-medium">Permitir desde</p>
+            <div class="count__date-box">
+              <div class="count__box">
+                <p class="l-medium">Days</p>
+                <div class="count__box-data">03</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Mes</p>
+                <div class="count__box-data">10</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Año</p>
+                <div class="count__box-data">23</div>
+              </div>
+            </div>
+          </div>
+          <div class="count__line"></div>
+          <div class="count__date">
+            <p class="b-medium">Permitir hasta</p>
+            <div class="count__date-box">
+              <div class="count__box">
+                <p class="l-medium">Days</p>
+                <div class="count__box-data">03</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Mes</p>
+                <div class="count__box-data">11</div>
+              </div>
+              <div class="count__box">
+                <p class="l-medium">Año</p>
+                <div class="count__box-data">23</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="token__progress">
+          <p>${{ token }} pledget of ${{ maxToken }} goal</p>
+          <b-progress
+            variant="success"
+            :value="token"
+            :max="maxToken"
+          ></b-progress>
+        </div>
+        <div class="count__flex">
+          <b-button class="btns--white w-100">Eliminar</b-button>
+          <b-button variant="primary" class="w-100" @click="isOpen = true"
+            >Editar</b-button
+          >
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Movements from "./Movements.vue";
 import Withdrawls from "./Withdrawls.vue";
 import ChartAcademy from "./charts/ChartAcademy.vue";
 import ChartBuys from "./charts/ChartBuys.vue";
 import ChartDonut from "./charts/ChartDonut.vue";
+
+const value = ref(90);
+const premium = ref(60);
+const prime = ref(80);
+const custom = ref(80);
+const token = ref(18090);
+const max = ref(100);
+const maxToken = ref(25000);
 </script>
 
 <style lang="scss" scoped>
 .dashboard {
   display: grid;
   gap: 2.4rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__banner {
     &-box {
       display: grid;
@@ -206,6 +359,15 @@ import ChartDonut from "./charts/ChartDonut.vue";
     }
     &-refer {
       flex: 1;
+    }
+  }
+  &__tokens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+    @media (max-width:1200px) {
+      grid-template-columns: 1fr;
+      
     }
   }
 }
@@ -329,6 +491,131 @@ import ChartDonut from "./charts/ChartDonut.vue";
         line-height: 24px;
       }
     }
+  }
+}
+
+.bar {
+  display: grid;
+  gap: 8px;
+  &__progress {
+    background-color: #fff;
+    height: 8px;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.token {
+  display: grid;
+  gap: 2.4rem;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+    @media ((max-width: 1100px)) {
+      grid-template-columns: 1fr;
+      gap: 2.4rem;
+    }
+  }
+  &__card {
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.4rem;
+    border-radius: 16px;
+    &--blue {
+      border: 1px solid #7d79e7;
+      background: rgba(60, 57, 135, 0.1);
+    }
+    &--green {
+      border: 1px solid var(--brand-verde, #48a254);
+      background: rgba(73, 135, 73, 0.1);
+    }
+    &--yellow {
+      border: 1px solid var(--inputs-radio-checkbox-toggle-active, #ee8722);
+      background: rgba(237, 135, 34, 0.1);
+    }
+    &--cyan {
+      border: 1px solid var(--brand-azul-claro, #3bbeee);
+      background: rgba(59, 190, 238, 0.1);
+    }
+    @media ((max-width: 600px)) {
+      padding: 1.2rem;
+    }
+  }
+  &__progress {
+    display: grid;
+    gap: 8px;
+  }
+  &__height {
+    height: fit-content;
+  }
+  &__list {
+    display: grid;
+    gap: 1.6rem;
+    &-item {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+    }
+    &-icon {
+      background-color: #3c3987;
+      border-radius: 100px;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+
+.count {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  gap: 2.4rem;
+  @media (max-width:700px) {
+    grid-template-columns: 1fr;
+  }
+  &__date {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    &-box {
+      display: grid;
+      gap: 2.4rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__line {
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+  }
+  &__box {
+    display: grid;
+    gap: 8px;
+    text-align: center;
+    &-data {
+      display: flex;
+      padding: 16px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+  &__flex {
+    display: flex;
+    width: 100%;
+    gap: 2.4rem;
   }
 }
 </style>

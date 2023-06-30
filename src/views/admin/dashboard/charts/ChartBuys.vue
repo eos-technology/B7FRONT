@@ -20,7 +20,7 @@ const chartOptions = {
     width: 1,
   },
   fill: {
-    opacity: 0.8,
+    opacity: 1,
   },
   yaxis: {
     show: false,
@@ -36,6 +36,7 @@ const chartOptions = {
     },
   },
   labels: ["Cursos 30%", "Token 60%", "Membership 80%"],
+  colors: ["#48A254", "#3C3987", "#EE8722"],
   legend: {
     position: "bottom",
   },
