@@ -7,7 +7,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">{{ $t("dashboard.estimated") }}</p>
+            <p class="b-regular">Available USD</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -17,7 +17,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">{{ $t("dashboard.activeMembership") }}</p>
+            <p class="b-regular">Total USD</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -27,60 +27,35 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">{{ $t("dashboard.referredUsers") }}</p>
+            <p class="b-regular">Total direct</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
         </div>
       </div>
-      <ReferFriends class="dashboard__banner-refer" />
+      <div class="dashboard__banner-card">
+        <img :src="getFile('images', 'brand', 'png')" alt="" />
+        <div class="dashboard__banner-text">
+          <div>
+            <p class="b-regular">Total indirect</p>
+            <p class="l-bold">$0.000</p>
+          </div>
+          <i class="b7-dollar dashboard__banner-icon"></i>
+        </div>
+      </div>
     </article>
     <!-- Movements -->
-    <article class="movements">
-      <Movements />
-    </article>
-    <article class="content">
-      <Withdrawls />
-    </article>
+    <Movements />
+    <!-- Withdrawls -->
+    <Withdrawls />
+    <!-- Chart Academy -->
+    <ChartAcademy />
+
     <!-- Down Cards -->
     <article class="down">
       <div class="down__card down__card--purple">
-        <h4 class="h4-bold">Ranking Referral</h4>
-        <div class="down__users">
-          <div class="down__user">
-            <img
-              class="down__user-sm"
-              :src="getFile('icons', 'user1')"
-              alt=""
-            />
-            <div class="text-center">
-              <p class="sm-light sm-user">Diego Pastrana</p>
-              <p class="b-bold">90</p>
-            </div>
-          </div>
-          <div class="down__user">
-            <img
-              class="down__user-big"
-              :src="getFile('icons', 'user2')"
-              alt=""
-            />
-            <div class="text-center">
-              <p class="b-bold text-primary big-user">María Quintero</p>
-              <h4 class="h4-bold text-primary big-user-bold">250</h4>
-            </div>
-          </div>
-          <div class="down__user">
-            <img
-              class="down__user-sm"
-              :src="getFile('icons', 'user3')"
-              alt=""
-            />
-            <div class="text-center">
-              <p class="sm-light sm-user">Luis Perez</p>
-              <p class="b-bold">45</p>
-            </div>
-          </div>
-        </div>
+        <h4 class="h4-bold">Compras | $0.00</h4>
+        <ChartBuys />
       </div>
       <div class="down__card down__card--light-blue">
         <h4 class="h4-bold">Mis Wallets</h4>
@@ -144,6 +119,8 @@
 <script setup>
 import Movements from "./Movements.vue";
 import Withdrawls from "./Withdrawls.vue";
+import ChartAcademy from "./charts/ChartAcademy.vue";
+import ChartBuys from "./charts/ChartBuys.vue";
 import ChartDonut from "./charts/ChartDonut.vue";
 </script>
 
@@ -354,5 +331,4 @@ import ChartDonut from "./charts/ChartDonut.vue";
     }
   }
 }
-
 </style>

@@ -2,7 +2,7 @@
   <main>
     <section class="movements">
       <div class="movements-header">
-        <h3 class="h3-bold">Movimientos</h3>
+        <h3 class="h3-medium">Movimientos</h3>
         <div class="filter-box">
           <b-button class="movements__btn" variant="primary"
             >Aprobar todo</b-button
@@ -20,7 +20,7 @@
           <Filter />
         </div>
       </div>
-      <AccordionTransactions v-dragscroll/>
+      <AccordionTransactions/>
     </section>
   </main>
 </template>
@@ -55,7 +55,6 @@ main {
   }
 
   .movements {
-      overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
