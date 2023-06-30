@@ -2,18 +2,31 @@
   <Main class="academy" v-if="showAcademyMain">
     <h2 class="h2-bold">Academy</h2>
     <Slider />
-    <Section>
+    <section>
+    <!-- Tabs -->
       <header>
         <div class="courses-picker">
-          <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
-            @click="toggleCourses('all')">Cursos</b-button>
-          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50" @click="toggleCourses('own')">Mis
-            cursos</b-button>
+          <b-button
+            :variant="showAllCourses ? 'primary' : 'transparent'"
+            class="w-50"
+            @click="toggleCourses('all')"
+            >Cursos</b-button
+          >
+          <b-button
+            :variant="!showAllCourses ? 'primary' : 'transparent'"
+            class="w-50"
+            @click="toggleCourses('own')"
+            >Mis cursos</b-button
+          >
         </div>
         <div class="filter-box">
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+              <b-form-input
+                type="search"
+                placeholder="search"
+                class="b-light"
+              ></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -22,30 +35,40 @@
       </header>
       <h3 class="h3-medium">Todos los cursos</h3>
       <div class="courses-grid">
-        <CourseCard v-show="showAllCourses" v-for="(course, index) in allCourses" :key="index" :course="course"
-          :showSingleCourse="showSingleCourse" @changeSingleCourse="showSingleCourse = $event" />
-        <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
+        <CourseCard
+          v-show="showAllCourses"
+          v-for="(course, index) in allCourses"
+          :key="index"
+          :course="course"
+          :showSingleCourse="showSingleCourse"
+          @changeSingleCourse="showSingleCourse = $event"
+        />
+        <MyCourseCard
+          v-show="!showAllCourses"
+          v-for="(course, index) in myCourses"
+          :key="index"
+          :course="course"
+        />
       </div>
-    </Section>
+    </section>
   </Main>
   <SingleCourse v-if="showSingleCourse" />
   <SingleVideo v-if="showSingleVideo" />
 </template>
 
 <script setup>
-import Slider from "./content/Slider.vue"
-import CourseCard from "./content/CourseCard.vue"
-import MyCourseCard from "./content/MyCourseCard.vue"
-import SingleCourse from "./content/SingleCourse.vue"
-import SingleVideo from "./content/SingleVideo.vue"
+import Slider from "./content/Slider.vue";
+import CourseCard from "./content/CourseCard.vue";
+import MyCourseCard from "./content/MyCourseCard.vue";
+import SingleCourse from "./content/SingleCourse.vue";
+import SingleVideo from "./content/SingleVideo.vue";
 
 import { ref } from "vue";
 
-
-let showAcademyMain = ref(true)
-let showAllCourses = ref(true)
-let showSingleCourse = ref(false)
-let showSingleVideo = ref(false)
+let showAcademyMain = ref(true);
+let showAllCourses = ref(true);
+let showSingleCourse = ref(false);
+let showSingleVideo = ref(false);
 
 let allCourses = [
   {

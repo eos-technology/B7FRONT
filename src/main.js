@@ -11,6 +11,7 @@ import PrimeVue from "primevue/config";
 import VueApexCharts from "vue3-apexcharts";
 import VueDragscroll from "vue-dragscroll";
 import VueCountdown from "@chenfengyuan/vue-countdown";
+import VueUploadComponent from "vue-upload-component";
 
 //theme
 import "primevue/resources/themes/bootstrap4-light-purple/theme.css";
@@ -28,6 +29,7 @@ app.use(VueDragscroll);
 app.use(PrimeVue);
 app.use(VueApexCharts);
 
-app.component(VueCountdown.name, VueCountdown);
 
+app.component(VueCountdown.name, VueCountdown);
+app.component("file-upload", VueUploadComponent);
 app.mount("#app");

@@ -1,11 +1,12 @@
 <template>
     <main>
-        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
+        <GoBackDummy @click="$emit('back')"/>
         <h2 class="h2-bold">Clase de Trading - Operaciones Binarías</h2>
         <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="" />
     </main>
 </template>
 <script setup>
+defineEmits('back')
 
 
 </script>

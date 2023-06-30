@@ -4,13 +4,15 @@
       <h2 class="h2-bold">Trading Live</h2>
       <div class="banner">
         <div class="info">
-          <img :src="getFile('images', 'logo', 'webp')" alt="">
+          <img :src="getFile('images', 'logo', 'webp')" alt="" />
           <h2 class="h2-bold">Clase de Trading Operaciones Binarías</h2>
           <p class="b-medium"><i class="b7-calendar"></i>Lunes 30 de Junio - 18:30</p>
-          <p class="b-regular">Nunc imperdiet diam vitae fringilla laoreet. Ut sodales purus eu diam posuere congue.
-            Vestibulum eleifend ut ligula tempus blandit.</p>
+          <p class="b-regular">
+            Nunc imperdiet diam vitae fringilla laoreet. Ut sodales purus eu diam posuere
+            congue. Vestibulum eleifend ut ligula tempus blandit.
+          </p>
         </div>
-        <img :src="getFile('images', 'banner-image', 'webp')" alt="">
+        <img :src="getFile('images', 'banner-image', 'webp')" alt="" />
       </div>
     </section>
     <section>
@@ -21,16 +23,24 @@
         </div>
       </div>
       <div class="courses-grid">
-        <TradingClassCard v-for="(course, index) in 8" :key="index" />
+        <TradingClassCard
+          v-for="(course, index) in 8"
+          :key="index"
+          @showCourse="show = true"
+          v-if="!show"
+        />
       </div>
     </section>
   </main>
-  <SingleClass />
+  <SingleClass v-if="show" @back="show = false" />
 </template>
 
 <script setup>
-import TradingClassCard from "./content/TradingClassCard.vue"
+import { ref } from "vue";
+import TradingClassCard from "./content/TradingClassCard.vue";
 import SingleClass from "./content/SingleClass.vue";
+
+const show = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -46,7 +56,7 @@ main {
     align-items: flex-start;
 
     .banner {
-      background: #0E4F66;
+      background: #0e4f66;
       border-radius: 1rem;
       display: flex;
       padding: 0 3rem;

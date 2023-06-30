@@ -8,13 +8,13 @@
             </p>
         </b-card-body>
         <b-card-footer>
-            <b-button variant="primary" class="w-100">Ver curso</b-button>
+            <b-button variant="primary" class="w-100" @click="$emit('showCourse')">Ver curso</b-button>
         </b-card-footer>
     </b-card>
 </template>
 
 <script setup>
-
+defineEmits('showCourse')
 </script>
 
 <style lang="scss" scoped>

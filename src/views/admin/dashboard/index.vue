@@ -253,7 +253,12 @@
       </div>
     </div>
   </section>
+
+
+
+
 </template>
+
 
 <script setup>
 import { ref } from "vue";
@@ -618,4 +623,7 @@ const maxToken = ref(25000);
     gap: 2.4rem;
   }
 }
+
+
+
 </style>

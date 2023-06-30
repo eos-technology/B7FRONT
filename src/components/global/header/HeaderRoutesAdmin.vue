@@ -13,9 +13,9 @@
 <script setup>
 const routes = [
   { name: "Dashboard", route: "Admin" },
-  { name: "Compras", route: "Academy" },
+  { name: "Compras", route: "Signs" },
   { name: "Retiros", route: "Signs" },
-  { name: "Academia", route: "Trading-Live" },
+  { name: "Academia", route: "Admin-Academy" },
   { name: "Señales", route: "Plans" },
   { name: "Trading live", route: "Memberships" },
   { name: "Membresías", route: "Team" },

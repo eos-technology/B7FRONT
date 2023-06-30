@@ -18,9 +18,7 @@
           <p class="l-light">
             {{ $t("dashboard.withb7") }}
           </p>
-          <b-button variant="success">{{
-            $t("globals.availablePlans")
-          }}</b-button>
+          <b-button variant="success">{{ $t("globals.availablePlans") }}</b-button>
         </div>
         <img :src="getFile('images', 'dashboard-learning', 'png')" alt="" />
       </div>
@@ -65,33 +63,21 @@
         <h4 class="h4-bold">Ranking Referral</h4>
         <div class="down__users">
           <div class="down__user">
-            <img
-              class="down__user-sm"
-              :src="getFile('icons', 'user1')"
-              alt=""
-            />
+            <img class="down__user-sm" :src="getFile('icons', 'user1')" alt="" />
             <div class="text-center">
               <p class="sm-light sm-user">Diego Pastrana</p>
               <p class="b-bold">90</p>
             </div>
           </div>
           <div class="down__user">
-            <img
-              class="down__user-big"
-              :src="getFile('icons', 'user2')"
-              alt=""
-            />
+            <img class="down__user-big" :src="getFile('icons', 'user2')" alt="" />
             <div class="text-center">
               <p class="b-bold text-primary big-user">María Quintero</p>
               <h4 class="h4-bold text-primary big-user-bold">250</h4>
             </div>
           </div>
           <div class="down__user">
-            <img
-              class="down__user-sm"
-              :src="getFile('icons', 'user3')"
-              alt=""
-            />
+            <img class="down__user-sm" :src="getFile('icons', 'user3')" alt="" />
             <div class="text-center">
               <p class="sm-light sm-user">Luis Perez</p>
               <p class="b-bold">45</p>
@@ -150,9 +136,7 @@
             <i class="b7-check text-primary"></i>
           </div>
         </div>
-        <b-button variant="primary">{{
-          $t("globals.availablePlans")
-        }}</b-button>
+        <b-button variant="primary">{{ $t("globals.availablePlans") }}</b-button>
       </div>
     </article>
   </section>
@@ -369,5 +353,4 @@ import ChartDonut from "./charts/ChartDonut.vue";
     }
   }
 }
-
 </style>
