@@ -1,5 +1,5 @@
 <template>
-  <section class="plan" v-if="course === false">
+  <section class="plan" v-if="showContent">
     <div class="plan__header">
       <h2 class="h2-bold">Academy</h2>
       <b-button variant="primary" @click="course = true">Crear curso</b-button>
@@ -61,6 +61,7 @@
           v-for="(course, index) in allCourses"
           :key="index"
           :course="course"
+          @editCourse="show = true"
         />
       </div>
       <Withdrawls v-show="activeTab === 'showUsers'" />
@@ -72,6 +73,11 @@
     <GoBackDummy @click="course = false" />
     <CreateCourse />
   </section>
+
+  <section class="edit" v-if="show">
+    <GoBackDummy @click="show = false" />
+    <EditCourse />
+  </section>
 </template>
 
 <script setup>
@@ -81,8 +87,14 @@ import CourseCard from "./content/CourseCard.vue";
 import Withdrawls from "./content/Withdrawls.vue";
 import TeachersList from "./content/TeachersList.vue";
 import CreateCourse from "./content/CreateCourse.vue";
+import EditCourse from "./content/EditCourse.vue";
 
-const course = ref(false);
+let course = ref(false);
+let show = ref(false);
+
+const showContent = computed(
+  () => course.value === false && show.value === false
+);
 
 // Estado de las tabs
 const tabs = reactive({
@@ -191,8 +203,7 @@ let allCourses = [
 </script>
 
 <style lang="scss" scoped>
-
-.edit{
+.edit {
   display: grid;
   gap: 4.8rem;
 }
