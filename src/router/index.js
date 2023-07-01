@@ -108,6 +108,11 @@ const routes = [
         name: "Admin-Trading-Live",
         component: () => import("@/views/admin/tradingLive/Index.vue"),
       },
+      {
+        path: "memberships",
+        name: "Admin-Memberships",
+        component: () => import("@/views/admin/memberships/Index.vue"),
+      },
     ],
   },
 ];
