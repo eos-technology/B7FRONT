@@ -118,6 +118,11 @@ const routes = [
         name: "kyc",
         component: () => import("@/views/admin/kyc/Index.vue"),
       },
+      {
+        path: "admin-tokens",
+        name: "Admin-Tokens",
+        component: () => import("@/views/admin/admin-tokens/Index.vue"),
+      },
     ],
   },
 ];

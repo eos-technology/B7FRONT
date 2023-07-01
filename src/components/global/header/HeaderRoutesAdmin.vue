@@ -16,7 +16,7 @@ const routes = [
   { name: "Membresías", route: "Admin-Memberships" },
   { name: "Usuarios", route: "Wallet" },
   { name: "Transacciones", route: "Transactions" },
-  { name: "Tokens", route: "Tokens" },
+  { name: "Tokens", route: "Admin-Tokens" },
   { name: "KYC", route: "kyc" },
 ];
 </script>
