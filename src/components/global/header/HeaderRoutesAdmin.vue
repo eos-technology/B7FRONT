@@ -14,9 +14,9 @@ const routes = [
   { name: "Señales", route: "Admin-Signs" },
   { name: "Trading live", route: "Admin-Trading-Live" },
   { name: "Membresías", route: "Admin-Memberships" },
-  { name: "Usuarios", route: "Wallet" },
-  { name: "Transacciones", route: "Transactions" },
-  { name: "Tokens", route: "Admin-Tokens" },
+  { name: "Usuarios", route: "Admin-Users" },
+  { name: "Transacciones", route: "Admin-Transactions" },
+  { name: "Tokens", route: "Tokens" },
   { name: "KYC", route: "kyc" },
 ];
 </script>

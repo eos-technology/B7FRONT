@@ -215,6 +215,8 @@ function toggleCourses(whichCourses) {
     header {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.6rem;
 
       .courses-picker {
         display: flex;
@@ -240,5 +242,6 @@ function toggleCourses(whichCourses) {
 .filter-box {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 </style>

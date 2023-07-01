@@ -5,42 +5,87 @@
       <div class="form__content">
         <!-- Name -->
         <b-form-group id="input-name" label="Nombre *" label-for="name">
-          <b-form-input id="name" v-model="form.name" placeholder="Input placerholder" required></b-form-input>
+          <b-form-input
+            id="name"
+            v-model="form.name"
+            placeholder="Input placerholder"
+            required
+          ></b-form-input>
         </b-form-group>
         <!-- Tipo -->
         <b-form-group id="input-category" label="Tipo *" label-for="tipo">
-          <b-form-select id="tipo" v-model="form.type" :options="options"></b-form-select>
+          <b-form-select
+            id="tipo"
+            v-model="form.type"
+            :options="options"
+          ></b-form-select>
         </b-form-group>
         <!-- Gesto -->
         <b-form-group id="input-category" label="Gesto *" label-for="gesto">
-          <b-form-select id="gesto" v-model="form.gesto" :options="options"></b-form-select>
+          <b-form-select
+            id="gesto"
+            v-model="form.gesto"
+            :options="options"
+          ></b-form-select>
         </b-form-group>
         <!-- win -->
         <b-form-group id="input-price" label="Win *" label-for="win">
-          <b-form-input id="win" v-model="form.win" placeholder="Input placerholder" type="number"
-            required></b-form-input>
+          <b-form-input
+            id="win"
+            v-model="form.win"
+            placeholder="Input placerholder"
+            type="number"
+            required
+          ></b-form-input>
         </b-form-group>
         <!-- Loss -->
         <b-form-group id="input-price" label="Loss *" label-for="loss">
-          <b-form-input id="loss" v-model="form.loss" placeholder="Input placerholder" type="number"
-            required></b-form-input>
+          <b-form-input
+            id="loss"
+            v-model="form.loss"
+            placeholder="Input placerholder"
+            type="number"
+            required
+          ></b-form-input>
         </b-form-group>
         <!-- Total -->
         <b-form-group id="input-price" label="Total *" label-for="total">
-          <b-form-input id="total" v-model="form.total" placeholder="Input placerholder" type="number"
-            required></b-form-input>
+          <b-form-input
+            id="total"
+            v-model="form.total"
+            placeholder="Input placerholder"
+            type="number"
+            required
+          ></b-form-input>
         </b-form-group>
       </div>
       <!-- Total profit -->
-      <b-form-group id="input-total-profit" label="Total Profit *" label-for="total-profit" class="w-100">
-        <b-form-input id="total-profit" v-model="form.totalProfit" placeholder="Enter something..."
-          class="w-100"></b-form-input>
+      <b-form-group
+        id="input-total-profit"
+        label="Total Profit *"
+        label-for="total-profit"
+        class="w-100"
+      >
+        <b-form-input
+          id="total-profit"
+          v-model="form.totalProfit"
+          placeholder="Enter something..."
+          class="w-100"
+        ></b-form-input>
       </b-form-group>
       <!-- Dropzone -->
-      <b-form-group id="input-dropzone" label="Seleccionar imagen *" label-for="dropzone">
-        <DropZone id="dropzone" @drop.prevent="drop" @change="selectedFile" class="mb-4" />
+      <b-form-group
+        id="input-dropzone"
+        label="Seleccionar imagen *"
+        label-for="dropzone"
+      >
+        <DropZone
+          id="dropzone"
+          @drop.prevent="drop"
+          @change="selectedFile"
+          class="mb-4"
+        />
       </b-form-group>
-
 
       <div class="form__btns">
         <b-button variant="outline">
@@ -55,7 +100,11 @@
     <teleport to="body">
       <div class="modal" v-if="isOpen">
         <div class="modal__body" @click="isOpen = false">
-          <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
+          <img
+            class="modal__body-img"
+            :src="getFile('images', 'auth', 'webp')"
+            alt=""
+          />
           <h3 class="h3-medium text-center">
             ¡Se ha creado nueva señal éxitosamente!
           </h3>

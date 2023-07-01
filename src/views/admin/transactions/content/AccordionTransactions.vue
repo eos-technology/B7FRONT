@@ -3,6 +3,13 @@
     <div class="tab">
       <div v-b-toggle.collapse-1 class="movement">
         <div class="item-flex">
+          <img :src="getFile('icons', 'avatar')" alt="" />
+          <div class="item">
+            <span class="sm-light">Usuario</span>
+            <span class="b-bold">email@email.com</span>
+          </div>
+        </div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
             <span class="sm-light">Quantity</span>
@@ -39,6 +46,13 @@
     </div>
     <div class="tab">
       <div v-b-toggle.collapse-2 class="movement">
+        <div class="item-flex">
+          <img :src="getFile('icons', 'avatar')" alt="" />
+          <div class="item">
+            <span class="sm-light">Usuario</span>
+            <span class="b-bold">email@email.com</span>
+          </div>
+        </div>
         <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
@@ -77,6 +91,13 @@
     <div class="tab">
       <div v-b-toggle.collapse-3 class="movement">
         <div class="item-flex">
+          <img :src="getFile('icons', 'avatar')" alt="" />
+          <div class="item">
+            <span class="sm-light">Usuario</span>
+            <span class="b-bold">email@email.com</span>
+          </div>
+        </div>
+        <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
             <span class="sm-light">Quantity</span>
@@ -112,19 +133,11 @@
       </b-collapse>
     </div>
 
-    <b-pagination
-      align="center"
-      v-model="currentPage"
-      pills
-      :total-rows="rows"
-    ></b-pagination>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const rows = ref(100);
-const currentPage = ref(3);
+
 </script>
 
 <style lang="scss" scoped>
@@ -148,7 +161,8 @@ const currentPage = ref(3);
       align-items: center;
       flex-wrap: wrap;
 
-      :first-child {
+      :first-child,
+      :nth-child(2) {
         display: flex;
         align-items: center;
         gap: 1.6rem;
@@ -163,7 +177,7 @@ const currentPage = ref(3);
         flex-direction: column;
         gap: 0;
         align-items: flex-start;
-        &-flex {
+        &-flex{
           flex: 1 0 100px;
         }
 
@@ -192,7 +206,7 @@ const currentPage = ref(3);
       display: none;
     }
 
-    .movement[aria-expanded="true"] + .divider {
+    .movement[aria-expanded="true"]+.divider {
       display: block;
     }
   }

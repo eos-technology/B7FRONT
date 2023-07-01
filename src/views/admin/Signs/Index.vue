@@ -2,7 +2,9 @@
   <section class="signs" v-if="!createSign">
     <div class="header d-flex justify-content-between align-items-center">
       <h2 class="h2-bold">{{ $t("signs.signs") }}</h2>
-      <b-button variant="primary" @click="createSign = true">Crear señal</b-button>
+      <b-button variant="primary" @click="createSign = true"
+        >Crear señal</b-button
+      >
     </div>
     <div class="signs__cards">
       <Cards img="crypto" />
@@ -25,9 +27,9 @@
 import Cards from "./content/Cards.vue";
 import CreateSign from "./content/CreateSign.vue";
 
-import { ref } from 'vue'
+import { ref } from "vue";
 
-let createSign = ref(false)
+let createSign = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -52,5 +54,10 @@ let createSign = ref(false)
       grid-template-columns: 1fr;
     }
   }
+}
+
+.edit {
+  display: grid;
+  gap: 4.8rem;
 }
 </style>
