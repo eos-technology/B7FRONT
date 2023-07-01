@@ -11,7 +11,7 @@ const routes = [
   { name: "Compras", route: "Purchases" },
   { name: "Retiros", route: "Withdraw" },
   { name: "Academia", route: "Admin-Academy" },
-  { name: "Señales", route: "Plans" },
+  { name: "Señales", route: "Admin-Signs" },
   { name: "Trading live", route: "Memberships" },
   { name: "Membresías", route: "Team" },
   { name: "Usuarios", route: "Wallet" },

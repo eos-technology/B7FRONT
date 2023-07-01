@@ -98,6 +98,11 @@ const routes = [
         name: "Admin-Academy",
         component: () => import("@/views/admin/academy/Index.vue"),
       },
+      {
+        path: "signs",
+        name: "Admin-Signs",
+        component: () => import("@/views/admin/signs/Index.vue"),
+      },
     ],
   },
 ];
