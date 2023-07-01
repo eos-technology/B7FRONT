@@ -103,6 +103,11 @@ const routes = [
         name: "Admin-Signs",
         component: () => import("@/views/admin/signs/Index.vue"),
       },
+      {
+        path: "tradingLive",
+        name: "Admin-Trading-Live",
+        component: () => import("@/views/admin/tradingLive/Index.vue"),
+      },
     ],
   },
 ];
