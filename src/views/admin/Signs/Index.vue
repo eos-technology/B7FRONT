@@ -1,8 +1,8 @@
 <template>
-  <section class="signs">
-    <div class="header d-flex">
+  <section class="signs" v-if="!createSign">
+    <div class="header d-flex justify-content-between align-items-center">
       <h2 class="h2-bold">{{ $t("signs.signs") }}</h2>
-      <b-button variant="primary">Crear señal</b-button>
+      <b-button variant="primary" @click="createSign = true">Crear señal</b-button>
     </div>
     <div class="signs__cards">
       <Cards img="crypto" />
@@ -15,10 +15,19 @@
       <Cards img="crypto" />
     </div>
   </section>
+  <section class="edit" v-if="createSign">
+    <GoBackDummy @click="createSign = false" />
+    <CreateSign />
+  </section>
 </template>
 
 <script setup>
 import Cards from "./content/Cards.vue";
+import CreateSign from "./content/CreateSign.vue";
+
+import { ref } from 'vue'
+
+let createSign = ref(false)
 </script>
 
 <style lang="scss" scoped>
