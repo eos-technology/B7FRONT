@@ -1,5 +1,5 @@
 <template>
-  <section class="add-trade">
+  <section>
     <h3 class="h3-medium">Editar curso</h3>
     <b-form class="form" @submit.stop.prevent>
       <div class="form__content">
@@ -97,10 +97,14 @@
           class="mb-4"
         />
       </b-form-group>
-
       <div class="form__btns">
-        <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+        <b-button variant="info">Eliminar curso</b-button>
+        <div class="d-flex gap-4 ">
+          <b-button variant="outline"
+            ><p class="btn-info">Cancelar</p></b-button
+          >
+          <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+        </div>
       </div>
     </b-form>
   </section>
@@ -147,7 +151,6 @@ const form = ref({
 </script>
 
 <style lang="scss" scoped>
-
 .form {
   display: grid;
   gap: 2.4rem;
@@ -164,7 +167,7 @@ const form = ref({
   }
   &__btns {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 </style>
