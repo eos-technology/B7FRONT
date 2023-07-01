@@ -283,7 +283,7 @@
       </label>
     </div>
     <div class="time__btns">
-      <b-button variant="outline">Cancelar</b-button>
+      <b-button variant="outline" @click="step = 1">Cancelar</b-button>
       <b-button variant="primary">Confirmar paquete</b-button>
     </div>
   </section>

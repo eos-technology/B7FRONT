@@ -123,6 +123,11 @@ const routes = [
         name: "Admin-Users",
         component: () => import("@/views/admin/users/Index.vue"),
       },
+      {
+        path: "transactions",
+        name: "Admin-Transactions",
+        component: () => import("@/views/admin/transactions/Index.vue"),
+      },
     ],
   },
 ];
