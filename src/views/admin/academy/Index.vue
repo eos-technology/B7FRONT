@@ -242,14 +242,20 @@ let allCourses = [
   header {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    
     .courses-picker {
       display: flex;
       width: 320px;
       border-radius: 100px;
       background: rgba(246, 248, 250, 0.05);
-      padding: 0.25rem;
-
+      padding: 4px;
+      @media (max-width:500px) {
+        width: 100%;
+        flex-direction: column;
+        border-radius: 1.8rem;
+      }
       button {
         padding: 0.5rem;
       }
