@@ -114,6 +114,11 @@ const routes = [
         component: () => import("@/views/admin/memberships/Index.vue"),
       },
       {
+        path: "kyc",
+        name: "kyc",
+        component: () => import("@/views/admin/kyc/Index.vue"),
+      },
+      {
         path: "users",
         name: "Admin-Users",
         component: () => import("@/views/admin/users/Index.vue"),
