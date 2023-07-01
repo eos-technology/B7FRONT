@@ -168,6 +168,7 @@ const form = ref({
   &__btns {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 </style>

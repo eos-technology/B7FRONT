@@ -119,9 +119,6 @@ const selectedFile = () => {
     padding: 16px;
     width: 100%;
 
-    @media (max-width: 460px) {
-      width: 90%;
-    }
   }
   &__input {
     display: none;
