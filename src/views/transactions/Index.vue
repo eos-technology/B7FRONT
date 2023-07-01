@@ -15,7 +15,11 @@
         <div class="filter-box">
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+              <b-form-input
+                type="search"
+                placeholder="search"
+                class="b-light"
+              ></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -33,10 +37,12 @@
         <div class="content-modal">
           <div>
             <h4 class="h4-semibold">Dirección de billetera</h4>
-            <p class="b-regular">Asegúrese de tener bsc en esta billetera para cubrir la tarifa</p>
+            <p class="b-regular">
+              Asegúrese de tener bsc en esta billetera para cubrir la tarifa
+            </p>
           </div>
           <div class="dropdown d-flex flex-row justify-content-between">
-            <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
+            <img :src="getFile('images', 'crypto-ico', 'png')" alt="" />
             <div class="item">
               <span class="l-light">Saldo disponible</span>
               <span class="h6-medium">15.543.04</span>
@@ -45,16 +51,30 @@
           </div>
           <div class="inputs-modal">
             <div>
-              <label for="wallet" class="l-medium">Destination wallet <span>*</span></label>
-              <b-form-input id="wallet" type="text" placeholder="Wallet Address"></b-form-input>
+              <label for="wallet" class="l-medium"
+                >Destination wallet <span>*</span></label
+              >
+              <b-form-input
+                id="wallet"
+                type="text"
+                placeholder="Wallet Address"
+              ></b-form-input>
             </div>
             <div>
-              <label for="amount" class="l-medium">Amount to withdraw <span>*</span></label>
-              <b-form-input id="amount" type="number" placeholder="$0.00"></b-form-input>
+              <label for="amount" class="l-medium"
+                >Amount to withdraw <span>*</span></label
+              >
+              <b-form-input
+                id="amount"
+                type="number"
+                placeholder="$0.00"
+              ></b-form-input>
             </div>
           </div>
           <div class="buttons-modal d-flex justify-content-end mt-3">
-            <b-button variant="outline-primary" @click="showModal = false">Cancelar</b-button>
+            <b-button variant="outline-primary" @click="showModal = false"
+              >Cancelar</b-button
+            >
             <b-button variant="primary">Realizar retiro</b-button>
           </div>
         </div>
@@ -65,11 +85,11 @@
 
 <script setup>
 import SignalCard from "./content/SignalCard.vue";
-import AccordionTransactions from "./content/AccordionTransactions.vue"
+import AccordionTransactions from "./content/AccordionTransactions.vue";
 
-import { ref } from "vue"
+import { ref } from "vue";
 
-let showModal = ref(false)
+let showModal = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -82,9 +102,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-
+    flex-wrap: wrap;
+    
     .header {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
     }
@@ -93,6 +115,7 @@ main {
       display: flex;
       justify-content: space-between;
       gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 
@@ -103,14 +126,17 @@ main {
     border-radius: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
-
+    
     .movements-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
       justify-content: space-between;
       align-items: center;
     }
-
+    
     .filter-box {
+      flex-wrap: wrap;
       display: flex;
       gap: 0.625rem;
     }
@@ -161,29 +187,29 @@ main {
           flex-direction: column;
 
           :first-child {
-            color: #B5C2D7;
+            color: #b5c2d7;
           }
         }
 
         i {
           padding: 0.5rem;
           border-radius: 100%;
-          background: rgba(255, 255, 255, 0.10);
+          background: rgba(255, 255, 255, 0.1);
         }
       }
 
       .inputs-modal {
         label {
-          color: #9BA3AE;
+          color: #9ba3ae;
 
           span {
-            color: #EF4444;
+            color: #ef4444;
           }
         }
       }
 
       .buttons-modal {
-        gap: 1rem
+        gap: 1rem;
       }
     }
   }
