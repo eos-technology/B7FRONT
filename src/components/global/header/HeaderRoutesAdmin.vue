@@ -22,7 +22,7 @@ const routes = [
 </script>
 
 <style lang="scss" scoped>
-.routes {
+.routes { 
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

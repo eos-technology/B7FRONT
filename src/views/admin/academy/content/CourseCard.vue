@@ -23,23 +23,19 @@
         </div>
       </div>
     </b-card-body>
-    <b-card-footer
-      ><b-button variant="primary" class="w-100" @click="showCourse"
-        >Ver curso</b-button
-      ></b-card-footer
-    >
+    <b-card-footer class="d-flex gap-3"
+      ><b-button class="btns--white w-100">Eliminar</b-button>
+      <b-button variant="primary" class="w-100" @click="$emit('editCourse')"
+        >Editar</b-button
+      >
+    </b-card-footer>
   </b-card>
 </template>
 
 <script setup>
 defineProps({ course: Object });
 
-defineEmits(["changeSingleCourse"]);
-
-const showCourse = () => {
-  // Cambiar el valor de la variable en el componente padre
-  context.emit("changeSingleCourse", true);
-};
+defineEmits("editCourse");
 </script>
 
 <style lang="scss" scoped>
