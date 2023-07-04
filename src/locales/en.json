@@ -34,5 +34,16 @@
   "filter": {
     "filter": "Filter",
     "category": "Category"
+  },
+  "auth": {
+    "username": "Username",
+    "names": "Names",
+    "email": "Email",
+    "country": "Country",
+    "numberPhone": "Number phone",
+    "password": "Password"
+  },
+  "manager": {
+    "search": "Start typing to search"
   }
 }

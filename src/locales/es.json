@@ -34,5 +34,16 @@
   "filter": {
     "filter": "Filtrar",
     "category": "Categoría"
+  },
+  "auth": {
+    "username": "Usuario",
+    "names": "Nombres",
+    "email": "Correo electrónico",
+    "country": "País",
+    "numberPhone": "Número de telefóno",
+    "password": "Contraseña"
+  },
+  "manager": {
+    "search": "Empieza a escribir para buscar"
   }
 }

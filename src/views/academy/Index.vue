@@ -3,30 +3,18 @@
     <h2 class="h2-bold">Academy</h2>
     <Slider />
     <section>
-    <!-- Tabs -->
+      <!-- Tabs -->
       <header>
         <div class="courses-picker">
-          <b-button
-            :variant="showAllCourses ? 'primary' : 'transparent'"
-            class="w-50"
-            @click="toggleCourses('all')"
-            >Cursos</b-button
-          >
-          <b-button
-            :variant="!showAllCourses ? 'primary' : 'transparent'"
-            class="w-50"
-            @click="toggleCourses('own')"
-            >Mis cursos</b-button
-          >
+          <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
+            @click="toggleCourses('all')">Cursos</b-button>
+          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50" @click="toggleCourses('own')">Mis
+            cursos</b-button>
         </div>
         <div class="filter-box">
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input
-                type="search"
-                placeholder="search"
-                class="b-light"
-              ></b-form-input>
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -35,20 +23,12 @@
       </header>
       <h3 class="h3-medium">Todos los cursos</h3>
       <div class="courses-grid">
-        <CourseCard
-          v-show="showAllCourses"
-          v-for="(course, index) in allCourses"
-          :key="index"
-          :course="course"
-          :showSingleCourse="showSingleCourse"
-          @changeSingleCourse="showSingleCourse = $event"
-        />
-        <MyCourseCard
-          v-show="!showAllCourses"
-          v-for="(course, index) in myCourses"
-          :key="index"
-          :course="course"
-        />
+        <div>
+          <CourseCard v-for="(course, index) in allCourses" :key="index" :course="course" />
+        </div>
+        <div>
+          <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
+        </div>
       </div>
     </section>
   </Main>
@@ -56,147 +36,165 @@
   <SingleVideo v-if="showSingleVideo" />
 </template>
 
-<script setup>
+<script>
+import { mapActions, mapState } from "vuex";
 import Slider from "./content/Slider.vue";
 import CourseCard from "./content/CourseCard.vue";
 import MyCourseCard from "./content/MyCourseCard.vue";
 import SingleCourse from "./content/SingleCourse.vue";
 import SingleVideo from "./content/SingleVideo.vue";
-
-import { ref } from "vue";
-
-let showAcademyMain = ref(true);
-let showAllCourses = ref(true);
-let showSingleCourse = ref(false);
-let showSingleVideo = ref(false);
-
-let allCourses = [
-  {
-    name: "Nombre del curso",
-    price: 80,
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    startDate: "Inicia 11 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
+export default {
+  components: {
+    Slider,
+    CourseCard,
+    MyCourseCard,
+    SingleCourse,
+    SingleVideo
   },
-  {
-    name: "Nombre del curso",
-    price: 70,
-    topic: "Coding",
-    numberOfVideos: 15,
-    startDate: "Inicia 15 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
+  data() {
+    return {
+      showAcademyMain: true,
+      showAllCourses: true,
+      showSingleCourse: false,
+      showSingleVideo: false,
+      payload: {
+        page: 1,
+        course: null,
+        category: null
+      },
+      allCourses: [
+        {
+          name: "Nombre del curso",
+          price: 80,
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          startDate: "Inicia 11 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 70,
+          topic: "Coding",
+          numberOfVideos: 15,
+          startDate: "Inicia 15 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 80,
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          startDate: "Inicia 11 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 70,
+          topic: "Coding",
+          numberOfVideos: 15,
+          startDate: "Inicia 15 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 80,
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          startDate: "Inicia 11 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 70,
+          topic: "Coding",
+          numberOfVideos: 15,
+          startDate: "Inicia 15 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 80,
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          startDate: "Inicia 11 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+        {
+          name: "Nombre del curso",
+          price: 70,
+          topic: "Coding",
+          numberOfVideos: 15,
+          startDate: "Inicia 15 de Julio",
+          imagePath: "images",
+          imageName: "students",
+          imageExtension: "webp",
+        },
+      ],
+      myCourses: [
+        {
+          name: "Nombre del curso",
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 20,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Coding",
+          numberOfVideos: 15,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 60,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 20,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Coding",
+          numberOfVideos: 15,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 60,
+        },
+      ]
+    }
   },
-  {
-    name: "Nombre del curso",
-    price: 80,
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    startDate: "Inicia 11 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
+  created() {
+    this.getData()
   },
-  {
-    name: "Nombre del curso",
-    price: 70,
-    topic: "Coding",
-    numberOfVideos: 15,
-    startDate: "Inicia 15 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
+  methods: {
+    ...mapActions('academy', ['getCourses', 'getSubscribed']),
+    getData() {
+      this.getCourses(this.payload)
+    }
   },
-  {
-    name: "Nombre del curso",
-    price: 80,
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    startDate: "Inicia 11 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
-  },
-  {
-    name: "Nombre del curso",
-    price: 70,
-    topic: "Coding",
-    numberOfVideos: 15,
-    startDate: "Inicia 15 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
-  },
-  {
-    name: "Nombre del curso",
-    price: 80,
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    startDate: "Inicia 11 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
-  },
-  {
-    name: "Nombre del curso",
-    price: 70,
-    topic: "Coding",
-    numberOfVideos: 15,
-    startDate: "Inicia 15 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
-  },
-];
-
-let myCourses = [
-  {
-    name: "Nombre del curso",
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 20,
-  },
-  {
-    name: "Nombre del curso",
-    topic: "Coding",
-    numberOfVideos: 15,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 60,
-  },
-  {
-    name: "Nombre del curso",
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 20,
-  },
-  {
-    name: "Nombre del curso",
-    topic: "Coding",
-    numberOfVideos: 15,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 60,
-  },
-];
-
-function toggleCourses(whichCourses) {
-  if (whichCourses === "own") {
-    showAllCourses.value = false;
-  } else {
-    showAllCourses.value = true;
+  computed: {
+    ...mapState('academy', ['courses'])
   }
 }
 </script>

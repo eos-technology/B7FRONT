@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import store from '../store'
 
 const routes = [
   {
@@ -9,6 +10,12 @@ const routes = [
         path: "",
         name: "Login",
         component: () => import("@/views/auth/Index.vue"),
+      },
+      {
+        path: "register/:username?",
+        name: "Signup",
+        component: () => import("@/views/auth/Signup.vue"),
+        props: true
       },
     ],
   },
@@ -25,6 +32,16 @@ const routes = [
         path: "academy",
         name: "Academy",
         component: () => import("@/views/academy/Index.vue"),
+      },
+      {
+        path: "academy/course",
+        name: "Academy-Course",
+        component: () => import("@/views/academy/content/SingleCourse.vue"),
+      },
+      {
+        path: "academy/video",
+        name: "Academy-Video",
+        component: () => import("@/views/academy/content/SingleVideo.vue"),
       },
       {
         path: "signs",
@@ -127,5 +144,32 @@ const router = createRouter({
   routes,
   linkExactActiveClass: "exact-active",
 });
+
+router.beforeEach((to, from, next) => {
+  const loggedIn = store.state.auth.user
+
+  /* to.name !== 'login' &&  */
+
+  const publicPages = ['Login', 'RecoverPassword', 'Signup', 'RestorePassword']
+
+  const authRequired = !publicPages.includes(to.name)
+
+  if (authRequired && loggedIn === null) {
+    next({
+      name: 'Login',
+      replace: true
+    })
+  } else {
+    
+    if(loggedIn != null && loggedIn.validated == 0 && loggedIn.validated != null && loggedIn.validated != undefined && to.name != 'Payment-Initial' && to.name != 'Cart') {
+      next({
+        path: '/payment-initial',
+        replace: true
+      })
+    } else {
+      next()
+    }
+  }
+})
 
 export default router;
