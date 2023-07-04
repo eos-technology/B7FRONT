@@ -3,7 +3,7 @@
     <h2 class="h2-bold">Academy</h2>
     <Slider />
     <section>
-    <!-- Tabs -->
+      <!-- Tabs -->
       <header>
         <div class="courses-picker">
           <b-button
@@ -205,12 +205,12 @@ function toggleCourses(whichCourses) {
 .academy {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
 
   section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.6rem;
 
     header {
       display: flex;
@@ -233,8 +233,17 @@ function toggleCourses(whichCourses) {
 
     .courses-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       grid-gap: 1.6rem;
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
