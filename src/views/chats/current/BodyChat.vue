@@ -1,27 +1,43 @@
 <template>
-    <div class="body-chat d-flex flex-column align-items-stretch">
+    <div ref="chatContainer" class="body-chat d-flex flex-column align-items-stretch">
         <div class="chat-bubble incoming">
             <p class="message b-regular">Hola buenos días</p>
+            <span class="time xs-regular">00:00 PM</span>
+        </div>
+        <div class="chat-bubble incoming">
+            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
+            <span class="time xs-regular">00:00 PM</span>
+        </div>
+        <div class="chat-bubble incoming">
+            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
             <span class="time xs-regular">00:00 PM</span>
         </div>
         <div class="chat-bubble outgoing">
             <p class="message b-regular">Hola buenos días</p>
             <span class="time xs-regular">00:00 PM</span>
         </div>
-        <div class="chat-bubble incoming">
-            <p class="message b-regular">Hola buenos días</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
         <div class="chat-bubble outgoing">
-            <p class="message b-regular">Hola buenos días</p>
+            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
             <span class="time xs-regular">00:00 PM</span>
         </div>
-        <FieldChat />
+        <div class="chat-bubble incoming">
+            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim</p>
+            <span class="time xs-regular">00:00 PM</span>
+        </div>
+
     </div>
 </template>
 
 <script setup>
-import FieldChat from "./FieldChat.vue";
+import { ref, onMounted } from 'vue'
+
+const chatContainer = ref(null)
+
+const scrollChatToBottom = () => {
+    chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
+}
+
+onMounted(scrollChatToBottom)
 </script>
 
 <style lang="scss" scoped>

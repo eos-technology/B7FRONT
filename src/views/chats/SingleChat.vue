@@ -21,6 +21,7 @@
 <style lang="scss" scoped>
 .single-chat {
     gap: 16px;
+    cursor: pointer;
 
     img {
         width: 40px;
