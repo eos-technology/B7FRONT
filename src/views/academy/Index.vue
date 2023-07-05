@@ -1,59 +1,40 @@
 <template>
-  <Main class="academy" v-if="showAcademyMain">
-    <h2 class="h2-bold">Academy</h2>
-    <Slider />
-    <section>
-      <!-- Tabs -->
-      <header>
-        <div class="courses-picker">
-          <b-button
-            :variant="showAllCourses ? 'primary' : 'transparent'"
-            class="w-50"
-            @click="toggleCourses('all')"
-            >Cursos</b-button
-          >
-          <b-button
-            :variant="!showAllCourses ? 'primary' : 'transparent'"
-            class="w-50"
-            @click="toggleCourses('own')"
-            >Mis cursos</b-button
-          >
-        </div>
-        <div class="filter-box">
-          <div class="search-filter">
-            <div class="field-search">
-              <b-form-input
-                type="search"
-                placeholder="search"
-                class="b-light"
-              ></b-form-input>
-              <i class="b7-search"></i>
-            </div>
+  <div v-if="!purchase">
+    <Main class="academy" v-if="showAcademyMain">
+      <h2 class="h2-bold">Academy</h2>
+      <Slider @purchase="purchase = true" />
+      <section>
+        <!-- Tabs -->
+        <header>
+          <div class="courses-picker">
+            <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
+              @click="toggleCourses('all')">Cursos</b-button>
+            <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50"
+              @click="toggleCourses('own')">Mis
+              cursos</b-button>
           </div>
-          <Filter />
+          <div class="filter-box">
+            <div class="search-filter">
+              <div class="field-search">
+                <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+                <i class="b7-search"></i>
+              </div>
+            </div>
+            <Filter />
+          </div>
+        </header>
+        <h3 class="h3-medium">Todos los cursos</h3>
+        <div class="courses-grid">
+          <CourseCard v-show="showAllCourses" v-for="(course, index) in allCourses" :key="index" :course="course"
+            :showSingleCourse="showSingleCourse" @changeSingleCourse="showSingleCourse = $event" />
+          <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
         </div>
-      </header>
-      <h3 class="h3-medium">Todos los cursos</h3>
-      <div class="courses-grid">
-        <CourseCard
-          v-show="showAllCourses"
-          v-for="(course, index) in allCourses"
-          :key="index"
-          :course="course"
-          :showSingleCourse="showSingleCourse"
-          @changeSingleCourse="showSingleCourse = $event"
-        />
-        <MyCourseCard
-          v-show="!showAllCourses"
-          v-for="(course, index) in myCourses"
-          :key="index"
-          :course="course"
-        />
-      </div>
-    </section>
-  </Main>
-  <SingleCourse v-if="showSingleCourse" />
-  <SingleVideo v-if="showSingleVideo" />
+      </section>
+    </Main>
+    <SingleCourse v-if="showSingleCourse" />
+    <SingleVideo v-if="showSingleVideo" />
+  </div>
+  <PurchaseCourse v-if="purchase" @back="purchase = false" />
 </template>
 
 <script setup>
@@ -62,6 +43,7 @@ import CourseCard from "./content/CourseCard.vue";
 import MyCourseCard from "./content/MyCourseCard.vue";
 import SingleCourse from "./content/SingleCourse.vue";
 import SingleVideo from "./content/SingleVideo.vue";
+import PurchaseCourse from "./purchase/PurchaseCourse.vue"
 
 import { ref } from "vue";
 
@@ -69,6 +51,8 @@ let showAcademyMain = ref(true);
 let showAllCourses = ref(true);
 let showSingleCourse = ref(false);
 let showSingleVideo = ref(false);
+
+let purchase = ref(false)
 
 let allCourses = [
   {
@@ -235,12 +219,15 @@ function toggleCourses(whichCourses) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 1.6rem;
+
       @media (max-width: 1200px) {
         grid-template-columns: repeat(3, 1fr);
       }
+
       @media (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
       }
+
       @media (max-width: 500px) {
         grid-template-columns: 1fr;
       }
