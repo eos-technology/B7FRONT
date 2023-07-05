@@ -72,6 +72,11 @@ const routes = [
         name: "Chats",
         component: () => import("@/views/chats/Index.vue"),
       },
+      {
+        path: "profile",
+        name: "Profile",
+        component: () => import("@/views/profile/Index.vue"),
+      },
     ],
   },
   {
