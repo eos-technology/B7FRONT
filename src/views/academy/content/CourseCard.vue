@@ -25,7 +25,6 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue'
 
 defineProps({ course: Object })
 
