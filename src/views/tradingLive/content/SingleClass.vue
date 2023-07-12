@@ -5,6 +5,7 @@
         <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="" />
     </main>
 </template>
+
 <script setup>
 defineEmits('back')
 
