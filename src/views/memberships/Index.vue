@@ -1,5 +1,5 @@
 <template>
-  <section class="token">
+  <section class="token" v-if="!purchase">
     <h2 class="h2-bold">Membership</h2>
     <div class="token__grid">
       <div class="select">
@@ -48,7 +48,7 @@
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button>Comprar Paquete</b-button>
+        <b-button @click="purchase = true">Comprar Paquete</b-button>
       </section>
       <!-- Q2 -->
       <section v-if="select.q === 'Q2'" class="token__card token__card--green token__height">
@@ -60,7 +60,7 @@
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button variant="success" class="w-100">Comprar Paquete</b-button>
+        <b-button variant="success" class="w-100" @click="purchase = true">Comprar Paquete</b-button>
       </section>
       <!-- Q3 -->
       <section v-if="select.q === 'Q3'" class="token__card token__card--yellow token__height">
@@ -72,7 +72,7 @@
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button variant="primary">Comprar Paquete</b-button>
+        <b-button variant="primary" @click="purchase = true">Comprar Paquete</b-button>
       </section>
       <!-- Q4 -->
       <section v-if="select.q === 'Q4'" class="token__card token__card--cyan token__height">
@@ -88,10 +88,11 @@
           <b-form-input id="invest" v-model="form.invest" placeholder="0" type="number" required></b-form-input>
           <p class="b-regular mt-2" style="color: #626c87">Monto Mínimo $0,00</p>
         </b-form-group>
-        <b-button variant="light">Comprar Paquete</b-button>
+        <b-button variant="light" @click="purchase = true">Comprar Paquete</b-button>
       </section>
     </div>
   </section>
+  <PurchaseMembership v-if="purchase" @back="purchase = false" />
 </template>
 
 <script>

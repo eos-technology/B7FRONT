@@ -177,6 +177,9 @@ export default {
   }
 }
 
+
+
+
 .filter-box {
   display: flex;
   gap: 1rem;

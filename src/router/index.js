@@ -91,6 +91,11 @@ const routes = [
         name: "Chats",
         component: () => import("@/views/chats/Index.vue"),
       },
+      {
+        path: "profile",
+        name: "Profile",
+        component: () => import("@/views/profile/Index.vue"),
+      },
     ],
   },
   {
@@ -133,9 +138,24 @@ const routes = [
         component: () => import("@/views/admin/memberships/Index.vue"),
       },
       {
+        path: "admin-tokens",
+        name: "Admin-Tokens",
+        component: () => import("@/views/admin/admin-tokens/Index.vue"),
+      },
+      {
         path: "kyc",
         name: "kyc",
         component: () => import("@/views/admin/kyc/Index.vue"),
+      },
+      {
+        path: "users",
+        name: "Admin-Users",
+        component: () => import("@/views/admin/users/Index.vue"),
+      },
+      {
+        path: "transactions",
+        name: "Admin-Transactions",
+        component: () => import("@/views/admin/transactions/Index.vue"),
       },
     ],
   },

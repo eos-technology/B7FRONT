@@ -1,28 +1,18 @@
 <template>
   <div class="courses__slider">
-    <swiper
-      @swiper="onSwiper"
-      centeredSlides="true"
-      :spaceBetween="16"
-      :loop="true"
-      :slidesPerView="1"
-      :modules="modules"
-      class="mySwiper transparent"
-      :pagination="{
+    <swiper @swiper="onSwiper" centeredSlides="true" :spaceBetween="16" :loop="true" :slidesPerView="1" :modules="modules"
+      class="mySwiper transparent" :pagination="{
         clickable: true,
-      }"
-      :autoplay="{ pauseOnMouseEnter: true }"
-      :breakpoints="{
-        '800': {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        '1200': {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-      }"
-    >
+      }" :autoplay="{ pauseOnMouseEnter: true }" :breakpoints="{
+  '800': {
+    slidesPerView: 2,
+    spaceBetween: 20,
+  },
+  '1200': {
+    slidesPerView: 3,
+    spaceBetween: 20,
+  },
+}">
       <swiper-slide v-for="index in 5" :key="index" class="swiper bg-secondary">
         <div class="info-wrap">
           <div class="info">
@@ -44,24 +34,18 @@
             </div>
           </div>
           <div class="actions bg-dark">
-            <b-button class="detail-button" variant="transparent"
-              >Detalle</b-button
-            >
-            <b-button class="buy-button" variant="primary btn-sm"
-              >Comprar</b-button
-            >
+            <b-button class="detail-button" variant="transparent">Detalle</b-button>
+            <b-button class="buy-button" variant="primary btn-sm" @click="$emit('purchase')">
+              Comprar
+            </b-button>
           </div>
         </div>
-        <img
-          :src="
-            getFile(
-              'images/academy',
-              'students-having-video-call-with-teacher',
-              'webp'
-            )
-          "
-          alt=""
-        />
+        <img :src="getFile(
+          'images/academy',
+          'students-having-video-call-with-teacher',
+          'webp'
+        )
+          " alt="" />
       </swiper-slide>
     </swiper>
   </div>
@@ -69,7 +53,7 @@
 
 <script>
 // Import Swiper Vue.js components
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
@@ -95,12 +79,15 @@ export default {
     };
   },
 };
+
+defineEmits('purchase')
 </script>
 
 <style lang="scss" scoped>
 .swiper-wraper {
   min-height: 300px;
 }
+
 .courses__slider {
   display: flex;
   margin-bottom: 3rem;
@@ -196,8 +183,9 @@ export default {
         max-width: 50%;
         object-fit: cover;
         border-radius: 16px;
+
         @media (max-width:520px) {
-            display: none;
+          display: none;
         }
       }
     }
