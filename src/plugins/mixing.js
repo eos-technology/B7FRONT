@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import store from '../store';
 const mixing = {
   data() {

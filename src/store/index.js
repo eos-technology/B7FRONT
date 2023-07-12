@@ -5,10 +5,16 @@ import auth from './modules/auth'
 import interceptors from './modules/interceptors'
 import utils from './modules/utils'
 import academy from './modules/academy'
+import section from './modules/section'
+import lesson from './modules/lesson'
+import signal from './modules/signal'
+import tradingLive from './modules/tradingLive'
+import tradingPlan from './modules/tradingPlan'
+import membership from './modules/membership'
 
 export default createStore({
   state: {
-    appName: 'KodexPay',
+    appName: 'B7Academy',
     loading: false,
     progressBar: null
   },
@@ -18,7 +24,13 @@ export default createStore({
     auth,
     interceptors,
     utils,
-    academy
+    academy,
+    section,
+    lesson,
+    signal,
+    tradingLive,
+    tradingPlan,
+    membership
   },
   plugins: [vuexPersistence.plugin]
 })

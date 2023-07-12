@@ -3,8 +3,11 @@
         <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
         <section>
             <div class="video">
-                <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="">
-                <AccordionVideos />
+                <video style="width: 100%;border-radius: 20px;" controls>
+                    <source src="https://www.youtube.com/watch?v=khTFWdcBiOs" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+                <AccordionVideos @selectVideo="selectVideo" />
             </div>
             <div class="video-description">
                 <h5 class="h5-medium">Nombre del video</h5>
@@ -39,10 +42,48 @@
         </section>
     </main>
 </template>
-<script setup>
+<script>
+import { mapActions, mapState } from "vuex"
 import AccordionVideos from "./AccordionVideos.vue"
+export default {
+    props: ['id', 'name'],
+    components: {
+        AccordionVideos
+    },
+    data() {
+        return {
+            video: null
+        }
+    },
+    created() {
+        this.getData()
+        this.getSectionsResponse()
+    },
+    methods: {
+        ...mapActions('academy', ['getCourse']),
+        ...mapActions('section', ['getSections']),
+        getData() {
+            this.loading = true
+            this.getCourse(this.id).then(() => {
+                this.loading = false
+            })
+        },
+        getSectionsResponse() {
+            this.loading = true
+            this.getSections(this.id).then(() => {
+                this.loading = false
+            })
+        },
+        selectVideo(data) {
+            this.video = data
+        }
+    },
+    computed: {
+        ...mapState('academy', ['course']),
+        ...mapState('section', ['sections'])
+    }
 
-
+}
 </script>
 <style lang="scss" scoped>
 main {

@@ -34,14 +34,16 @@ const routes = [
         component: () => import("@/views/academy/Index.vue"),
       },
       {
-        path: "academy/course",
+        path: "academy/course/:id/:name",
         name: "Academy-Course",
         component: () => import("@/views/academy/content/SingleCourse.vue"),
+        props: true
       },
       {
-        path: "academy/video",
+        path: "academy/video/:id/:name",
         name: "Academy-Video",
         component: () => import("@/views/academy/content/SingleVideo.vue"),
+        props: true
       },
       {
         path: "signs",

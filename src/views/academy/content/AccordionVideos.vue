@@ -1,60 +1,40 @@
 <template>
     <div class="aside">
         <h6 class="h6-medium">Contenido</h6>
-        <div class="accordion" role="tablist">
-            <div v-b-toggle.collapse-1 class="category">
-                <p class="l-medium">U1: Categoría</p>
+        <div class="accordion" role="tablist" v-for="(section, index) in sections" :key="section.id">
+            <div v-b-toggle="`collapse-${index}`" v-b-toggle.collapse-1 class="category">
+                <p class="l-medium">U{{ index + 1 }}: {{ section.name }}</p>
                 <i class="b7-arrow-down"></i>
             </div>
-            <b-collapse visible id="collapse-1" class="collapse">
-                <div class="unit">
-                    <b-form-checkbox id="checkbox-1" name="checkbox-1">
-                        <p class="l-light">Nombre</p>
+            <b-collapse visible :id="`collapse-${index}`" class="collapse">
+                <div class="unit click" @click="showVideo(lesson)" v-for="lesson in section.lessons" :key="lesson.id">
+                    <b-form-checkbox readonly :checked="lesson.viewed ? false : true" id="checkbox-1" name="checkbox-1">
+                        <p class="l-light">{{ lesson.name }}</p>
                         <div class="duration">
                             <i class="b7-play text-primary"></i>
-                            <span class="xs-light">3min</span>
-                        </div>
-                    </b-form-checkbox>
-                </div>
-                <div class="unit">
-                    <b-form-checkbox id="checkbox-1" name="checkbox-1">
-                        <p class="l-light">Nombre</p>
-                        <div class="duration">
-                            <i class="b7-play text-primary"></i>
-                            <span class="xs-light">3min</span>
+                            <span class="xs-light">{{ lesson.duration }}</span>
+                            <!-- {{ lesson }} -->
                         </div>
                     </b-form-checkbox>
                 </div>
             </b-collapse>
-            <div v-b-toggle.collapse-2 class="category">
-                <p class="l-medium">U1: Categoría</p>
-                <i class="b7-arrow-down"></i>
-            </div>
-            <b-collapse id="collapse-2" class="collapse">
-                <div class="unit">
-                    <b-form-checkbox id="checkbox-1" name="checkbox-1">
-                        <p class="l-light">Nombre</p>
-                        <div class="duration">
-                            <i class="b7-play text-primary"></i>
-                            <span class="xs-light">3min</span>
-                        </div>
-                    </b-form-checkbox>
-                </div>
-                <div class="unit">
-                    <b-form-checkbox id="checkbox-1" name="checkbox-1">
-                        <p class="l-light">Nombre</p>
-                        <div class="duration">
-                            <i class="b7-play text-primary"></i>
-                            <span class="xs-light">3min</span>
-                        </div>
-                    </b-form-checkbox>
-                </div>
-            </b-collapse>
-
         </div>
     </div>
 </template>
-<script setup></script>
+<script>
+import { mapActions, mapState } from 'vuex';
+
+export default {
+    computed: {
+        ...mapState('section', ['sections'])
+    },
+    methods: {
+        showVideo(data) {
+            this.$emit('selectVideo', data)
+        }
+    }
+}
+</script>
 <style lang="scss" scoped>
 .aside {
     width: 33%;
@@ -74,7 +54,6 @@
             padding: 1rem;
             border-radius: 1rem;
             background: rgba(255, 255, 255, 0.05);
-
         }
 
         .collapse {

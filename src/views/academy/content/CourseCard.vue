@@ -16,7 +16,9 @@
       </div>
     </b-card-body>
     <b-card-footer>
-      <b-button variant="primary" class="w-100" @click="showCourse">Ver curso</b-button>
+      <b-button variant="primary" class="w-100" v-if="course.name"
+        @click="$router.push({ name: 'Academy-Course', params: { name: course.name.toLowerCase().replace(/ /g, '-'), id: course.id } })">Ver
+        curso</b-button>
     </b-card-footer>
   </b-card>
 </template>

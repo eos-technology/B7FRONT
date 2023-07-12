@@ -1,5 +1,5 @@
 <template>
-  <Main class="academy" v-if="showAcademyMain">
+  <Main class="academy">
     <h2 class="h2-bold">Academy</h2>
     <Slider />
     <section>
@@ -7,27 +7,31 @@
       <header>
         <div class="courses-picker">
           <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
-            @click="toggleCourses('all')">Cursos</b-button>
-          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50" @click="toggleCourses('own')">Mis
+            @click="showAllCourses = !showAllCourses">Cursos</b-button>
+          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50"
+            @click="showAllCourses = !showAllCourses">Mis
             cursos</b-button>
         </div>
-        <div class="filter-box">
+        <div class="filter-box" v-if="showAllCourses">
           <div class="search-filter">
             <div class="field-search">
               <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
-          <Filter />
+          <FilterCourses />
         </div>
       </header>
-      <h3 class="h3-medium">Todos los cursos</h3>
-      <div class="courses-grid">
-        <div>
-          <CourseCard v-for="(course, index) in allCourses" :key="index" :course="course" />
+      <div v-if="showAllCourses">
+        <h3 class="h3-medium">Todos los cursos</h3>
+        <div class="courses-grid">
+          <CourseCard v-for="(course, index) in courses" :key="index" :course="course" />
         </div>
-        <div>
-          <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
+      </div>
+      <div v-else>
+        <h3 class="h3-medium">Mis cursos</h3>
+        <div class="courses-grid">
+          <MyCourseCard v-for="(course, index) in subscriptions" :key="index" :course="course" />
         </div>
       </div>
     </section>
@@ -43,8 +47,10 @@ import CourseCard from "./content/CourseCard.vue";
 import MyCourseCard from "./content/MyCourseCard.vue";
 import SingleCourse from "./content/SingleCourse.vue";
 import SingleVideo from "./content/SingleVideo.vue";
+import FilterCourses from './content/Filter.vue'
 export default {
   components: {
+    FilterCourses,
     Slider,
     CourseCard,
     MyCourseCard,
@@ -53,7 +59,6 @@ export default {
   },
   data() {
     return {
-      showAcademyMain: true,
       showAllCourses: true,
       showSingleCourse: false,
       showSingleVideo: false,
@@ -62,88 +67,6 @@ export default {
         course: null,
         category: null
       },
-      allCourses: [
-        {
-          name: "Nombre del curso",
-          price: 80,
-          topic: "Finanzas",
-          numberOfVideos: 20,
-          startDate: "Inicia 11 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 70,
-          topic: "Coding",
-          numberOfVideos: 15,
-          startDate: "Inicia 15 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 80,
-          topic: "Finanzas",
-          numberOfVideos: 20,
-          startDate: "Inicia 11 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 70,
-          topic: "Coding",
-          numberOfVideos: 15,
-          startDate: "Inicia 15 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 80,
-          topic: "Finanzas",
-          numberOfVideos: 20,
-          startDate: "Inicia 11 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 70,
-          topic: "Coding",
-          numberOfVideos: 15,
-          startDate: "Inicia 15 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 80,
-          topic: "Finanzas",
-          numberOfVideos: 20,
-          startDate: "Inicia 11 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-        {
-          name: "Nombre del curso",
-          price: 70,
-          topic: "Coding",
-          numberOfVideos: 15,
-          startDate: "Inicia 15 de Julio",
-          imagePath: "images",
-          imageName: "students",
-          imageExtension: "webp",
-        },
-      ],
       myCourses: [
         {
           name: "Nombre del curso",
@@ -186,15 +109,20 @@ export default {
   },
   created() {
     this.getData()
+    this.getCategories()
+    this.getSubscribed()
   },
   methods: {
-    ...mapActions('academy', ['getCourses', 'getSubscribed']),
+    ...mapActions('academy', ['getCourses', 'getSubscribed', 'getCategories']),
     getData() {
       this.getCourses(this.payload)
+    },
+    toggleCourses() {
+
     }
   },
   computed: {
-    ...mapState('academy', ['courses'])
+    ...mapState('academy', ['courses', 'subscriptions'])
   }
 }
 </script>
@@ -233,12 +161,15 @@ export default {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 1.6rem;
+
       @media (max-width: 1200px) {
         grid-template-columns: repeat(3, 1fr);
       }
+
       @media (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
       }
+
       @media (max-width: 500px) {
         grid-template-columns: 1fr;
       }
