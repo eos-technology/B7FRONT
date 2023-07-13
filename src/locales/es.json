@@ -71,5 +71,9 @@
   },
   "academ": {
     "confirmPurchase": "Confirmar compra"
+  },
+  "auth": {
+    "email": "Correo electrónico",
+    "password": "Contraseña"
   }
 }
