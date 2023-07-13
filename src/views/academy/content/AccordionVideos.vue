@@ -1,9 +1,9 @@
 <template>
     <div class="aside">
-        <h6 class="h6-medium">Contenido</h6>
+        <h6 class="h6-medium">{{ $t('academy.contenido') }}</h6>
         <div class="accordion" role="tablist">
             <div v-b-toggle.collapse-1 class="category">
-                <p class="l-medium">U1: Categoría</p>
+                <p class="l-medium">U1: {{ $t('academy.category') }}</p>
                 <i class="b7-arrow-down"></i>
             </div>
             <b-collapse visible id="collapse-1" class="collapse">
@@ -27,7 +27,7 @@
                 </div>
             </b-collapse>
             <div v-b-toggle.collapse-2 class="category">
-                <p class="l-medium">U1: Categoría</p>
+                <p class="l-medium">U2: {{ $t('academy.category') }}</p>
                 <i class="b7-arrow-down"></i>
             </div>
             <b-collapse id="collapse-2" class="collapse">

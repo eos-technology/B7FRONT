@@ -1,6 +1,6 @@
 <template>
     <main>
-        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
+        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> {{ $t('academy.goBack') }}</b-button>
         <section>
             <div class="video">
                 <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="">
@@ -19,13 +19,14 @@
                             </div>
                         </div>
                     </b-card-body>
-                    <b-card-footer><b-button variant="primary" class="w-100">Ir al curso</b-button></b-card-footer>
+                    <b-card-footer><b-button variant="primary"
+                            class="w-100">{{ $t('academy.goToCourse') }}</b-button></b-card-footer>
                 </b-card>
             </div>
             <div class="content">
-                <h3 class="h3-medium">Contenido</h3>
+                <h3 class="h3-medium">{{ $t('academy.contenido') }}</h3>
                 <div class="category">
-                    <h5 class="h5-medium">U1: Categoría</h5>
+                    <h5 class="h5-medium">U1: {{ $t('academy.category') }}</h5>
                     <div class="category-units">
                         <div class="unit">
                             <i class="b7-lock"></i>
@@ -38,7 +39,7 @@
                     </div>
                 </div>
                 <div class="category">
-                    <h5 class="h5-medium">U2: Categoría</h5>
+                    <h5 class="h5-medium">U2: {{ $t('academy.category') }}</h5>
                     <div class="category-units">
                         <div class="unit">
                             <i class="b7-lock"></i>
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <div class="content">
-                <h3 class="h3-medium">Contenido</h3>
+                <h3 class="h3-medium">{{ $t('academy.contenido') }}</h3>
                 <div class="courses-grid">
                     <CourseCard v-for="(course, index) in allCourses" :key="index" :course="course" />
                 </div>

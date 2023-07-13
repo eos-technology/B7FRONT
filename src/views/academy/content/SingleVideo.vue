@@ -1,6 +1,6 @@
 <template>
     <main>
-        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
+        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> {{ $t('academy.goBack') }}</b-button>
         <section>
             <div class="video">
                 <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="">
@@ -17,7 +17,7 @@
         </section>
         <section class="comments-section">
             <div class="comment-input">
-                <p class="l-medium">Comentarios</p>
+                <p class="l-medium">{{ $t('academy.comments') }}</p>
                 <b-form-textarea id="comments" size="sm" placeholder="Mensaje" class="b-light"></b-form-textarea>
             </div>
             <div class="comments">
@@ -32,7 +32,7 @@
                             turpis. Proin viverra felis quis lacus consectetur bibendum. Praesent pharetra mi ut odio
                             vulputate ultricies. Integer aliquam lacus quis ipsum lacinia condimentum.
                         </p>
-                        <b-button variant="transparent" class="text-primary">Responder</b-button>
+                        <b-button variant="transparent" class="text-primary">{{ $t('academy.reply') }}</b-button>
                     </div>
                 </div>
             </div>

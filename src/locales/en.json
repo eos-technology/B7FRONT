@@ -34,5 +34,42 @@
   "filter": {
     "filter": "Filter",
     "category": "Category"
+  },
+  "academy": {
+    "title": "Academy",
+    "courses": "Courses",
+    "myCourses": "My Courses",
+    "search": "Search",
+    "allCourses": "All courses",
+    "courseName": "Course name",
+    "finances": "Finances",
+    "seeCourse": "See course",
+    "goToCourse": "Go to course",
+    "goBack": "Go back",
+    "contenido": "Content",
+    "category": "Category",
+    "comments": "Comments",
+    "reply": "Reply",
+    "detail": "Detail",
+    "buy": "Buy",
+    "paymentMethod": "Payment method",
+    "purchaseLegend": "Send to the wallet the amount equivalent to B7T that you want to receive",
+    "cancel": "Cancel",
+    "payment": "Payment",
+    "paymentAddress": "Payment address",
+    "quantity": "Quantity",
+    "walletASddress": "Wallet Address",
+    "copyWallet": "Copy wallet",
+    "verifyPayment": "Verify payment",
+    "purchase": "Purchase",
+    "successfulPurchase": "Successful purchase",
+    "successfulPurchaseLegend": "The purchase of the membership has been successful.",
+    "continueShopping": "Continue shopping"
+  },
+  "acadey": {
+    "purchase": "Purchase"
+  },
+  "academ": {
+    "confirmPurchase": "Confirm purchase"
   }
 }

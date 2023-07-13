@@ -34,9 +34,9 @@
             </div>
           </div>
           <div class="actions bg-dark">
-            <b-button class="detail-button" variant="transparent">Detalle</b-button>
+            <b-button class="detail-button" variant="transparent">{{ $t('academy.detail') }}</b-button>
             <b-button class="buy-button" variant="primary btn-sm" @click="$emit('purchase')">
-              Comprar
+              {{ $t('academy.buy') }}
             </b-button>
           </div>
         </div>
