@@ -5,16 +5,10 @@
       <div class="movements-header">
         <h3 class="h3-medium">Todos los usuarios</h3>
         <div class="filter-box">
-          <b-button class="movements__btn" variant="primary"
-            >Descargar reporte</b-button
-          >
+          <b-button class="movements__btn" variant="primary">Descargar reporte</b-button>
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input
-                type="search"
-                placeholder="search"
-                class="b-light"
-              ></b-form-input>
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -25,6 +19,7 @@
     </section>
   </main>
   <section class="user" v-if="step === 2">
+    <GoBackDummy @click="step = 1" />
     <UserTabs />
   </section>
 </template>
@@ -33,6 +28,7 @@
 import { ref } from "vue";
 import AccordionTransactions from "./content/AccordionTransactions.vue";
 import UserTabs from './content/UserTabs.vue'
+import GoBackDummy from "../../../components/global/GoBackDummy.vue";
 
 const step = ref(1);
 </script>
@@ -69,6 +65,7 @@ main {
     border-radius: 1rem;
     padding: 1.6rem;
     background: rgba(255, 255, 255, 0.05);
+
     &__btn {
       height: 44px;
       padding: 0 16px;

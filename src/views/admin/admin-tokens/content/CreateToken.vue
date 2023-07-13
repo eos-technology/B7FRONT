@@ -97,7 +97,8 @@ let enable = ref('')
         }
     }
 }
-
+</style>
+<style>
 .form-check-input,
 input[type="radio"] {
     margin: 0 !important;
