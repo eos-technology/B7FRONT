@@ -1,7 +1,7 @@
 <template>
   <section class="chart-plans">
     <!-- Chart -->
-
+    <h3 class="h3-medium">Academy</h3>
     <div class="chart-trading">
       <div class="chart-trading__header">
         <div class="chart-trading__box">
@@ -26,13 +26,7 @@
           <b-button size="sm">ALL</b-button>
         </div>
       </div>
-      <apexchart
-        type="line"
-        height="320px"
-        width="100%"
-        :options="chartOptions"
-        :series="series"
-      ></apexchart>
+      <apexchart type="line" height="320px" width="100%" :options="chartOptions" :series="series"></apexchart>
     </div>
   </section>
 </template>
@@ -114,8 +108,6 @@ const chartOptions = {
 </script>
 
 <style lang="scss" scoped>
-
-
 .chart-trading {
   display: flex;
   padding: 24px;
@@ -124,9 +116,11 @@ const chartOptions = {
   border-radius: 16px;
   border: 1px solid #7d79e7;
   background: var(--brand-bg, #070721);
+
   @media (max-width: 600px) {
     padding: 1.2rem;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -134,11 +128,13 @@ const chartOptions = {
     flex-wrap: wrap;
     gap: 1.6rem;
   }
+
   &__box {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
   }
+
   &__label {
     display: flex;
     padding: 8px 12px;
@@ -146,12 +142,15 @@ const chartOptions = {
     align-items: center;
     gap: 8px;
     border-radius: 8px;
+
     &--blue {
       background: rgba(60, 118, 255, 0.1);
     }
+
     &--yellow {
       background: rgba(255, 171, 27, 0.1);
     }
+
     &--purple {
       background: rgba(144, 90, 220, 0.1);
     }

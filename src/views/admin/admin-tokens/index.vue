@@ -107,7 +107,7 @@
       </div>
     </div>
   </section>
-  <section class="create-token d-flex flex-column">
+  <section v-if="createToken" class="create-token d-flex flex-column">
     <GoBackDummy @click="createToken = false" />
     <createToken />
   </section>
@@ -120,7 +120,7 @@ import CreateToken from "./content/CreateToken.vue"
 const token = ref(18090);
 const maxToken = ref(25000);
 
-let createToken = ref(true)
+let createToken = ref(false)
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
     <div class="accordion" role="tablist">
         <div class="tab">
-            <div v-b-toggle.collapse-1 class="movement">
+            <div v-b-toggle.collapse-1 class="movement flex-wrap">
                 <div>
                     <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
                     <div class="item">

@@ -14,77 +14,52 @@
       <div class="form__content">
         <!-- Name -->
         <b-form-group id="input-name" label="Nombre *" label-for="name">
-          <b-form-input
-            id="name"
-            v-model="form.name"
-            placeholder="Input placerholder"
-            required
-          ></b-form-input>
+          <b-form-input id="name" v-model="form.name" placeholder="Input placerholder" required></b-form-input>
         </b-form-group>
         <!-- Email -->
         <b-form-group id="input-email" label="Email *" label-for="email">
-          <b-form-input
-            id="email"
-            v-model="form.email"
-            placeholder="Input placerholder"
-            required
-            type="email"
-          ></b-form-input>
+          <b-form-input id="email" v-model="form.email" placeholder="Input placerholder" required
+            type="email"></b-form-input>
         </b-form-group>
         <!-- Country -->
         <b-form-group id="input-country" label="País *" label-for="country">
-          <b-form-select
-            id="country"
-            v-model="form.country"
-            :options="options"
-          ></b-form-select>
+          <b-form-select id="country" v-model="form.country" :options="options"></b-form-select>
         </b-form-group>
         <!-- Phone -->
         <b-form-group id="input-phone" label="Teléfono *" label-for="phone">
-          <b-form-input
-            id="phone"
-            v-model="form.phone"
-            placeholder="Input placerholder"
-            type="tel"
-            required
-          ></b-form-input>
+          <b-form-input id="phone" v-model="form.phone" placeholder="Input placerholder" type="tel"
+            required></b-form-input>
         </b-form-group>
         <!-- Teacher -->
-        <b-form-group
-          id="input-teacher"
-          label="Is teacher *"
-          label-for="teacher"
-        >
-          <b-form-select
-            id="teacher"
-            v-model="form.teacher"
-            :options="options"
-          ></b-form-select>
+        <b-form-group id="input-teacher" label="Is teacher *" label-for="teacher">
+          <b-form-select id="teacher" v-model="form.teacher" :options="options"></b-form-select>
         </b-form-group>
         <!-- Signals -->
         <b-form-group id="input-signal" label="Is signals *" label-for="signal">
-          <b-form-select
-            id="signal"
-            v-model="form.signal"
-            :options="options"
-          ></b-form-select>
+          <b-form-select id="signal" v-model="form.signal" :options="options"></b-form-select>
         </b-form-group>
         <!-- Initial pay -->
         <b-form-group id="input-pay" label="Initial pay *" label-for="pay">
-          <b-form-select
-            id="pay"
-            v-model="form.pay"
-            :options="options"
-          ></b-form-select>
+          <b-form-select id="pay" v-model="form.pay" :options="options"></b-form-select>
         </b-form-group>
+      </div>
+      <div class="2fa-module d-flex flex-column gap-4">
+        <h5 class="h5-medium">Habilitar 2FA</h5>
+        <div class="field d-flex justify-content-between align-items-center gap-3">
+          <div class="label d-flex flex-column">
+            <span class="b-medium">Habilitar</span>
+            <span class="sm-light">Habilitar ó deshabilitar 2FA </span>
+          </div>
+          <b-form-checkbox switch></b-form-checkbox>
+        </div>
       </div>
 
       <div class="form__btns">
         <b-button variant="info">Eliminar membresia</b-button>
         <div class="d-flex gap-2">
-          <b-button variant="outline"
-            ><p class="btn-info">Cancelar</p></b-button
-          >
+          <b-button variant="outline">
+            <p class="btn-info">Cancelar</p>
+          </b-button>
           <b-button variant="primary" @click="isOpen = true">Crear</b-button>
         </div>
       </div>
@@ -95,11 +70,7 @@
     <teleport to="body">
       <div class="modal" v-if="isOpen">
         <div class="modal__body" @click="isOpen = false">
-          <img
-            class="modal__body-img"
-            :src="getFile('images', 'auth', 'webp')"
-            alt=""
-          />
+          <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
           <h3 class="h3-medium text-center">
             ¡Se ha editado membresía éxitosamente!
           </h3>
@@ -137,17 +108,21 @@ const form = ref({
 .form {
   display: grid;
   gap: 2.4rem;
+
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem 1.6rem;
+
     @media (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @media (max-width: 720px) {
       grid-template-columns: 1fr;
     }
   }
+
   &__btns {
     display: flex;
     justify-content: space-between;
@@ -158,13 +133,16 @@ const form = ref({
   .sm-light {
     color: #b5c2d7;
   }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem;
+
     @media (max-width: 600px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @media (max-width: 450px) {
       grid-template-columns: 1fr;
     }

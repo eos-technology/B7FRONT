@@ -1,7 +1,7 @@
 <template>
     <div class="accordion" role="tablist">
         <div class="tab">
-            <div v-b-toggle.wallet-detail class="wallet">
+            <div v-b-toggle.wallet-detail class="wallet flex-wrap">
                 <div>
                     <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
                     <div class="item">
@@ -13,13 +13,16 @@
             </div>
             <div class="divider"></div>
             <b-collapse visible id="wallet-detail" class="wallet-detail">
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                     <div class="item d-flex flex-column">
                         <span class="l-light">Saldo disponible</span>
                         <h4 class="h4-bold text-primary">16,540.83</h4>
                     </div>
-                    <b-button pill variant="outline-primary" size="sm" @click="$emit('openReceiveModal')">Enviar</b-button>
-                    <b-button pill variant="primary" size="sm" @click="$emit('openwithdrawModal')">Retirar</b-button>
+                    <div class="buttons d-flex gap-3">
+                        <b-button pill variant="outline-primary" size="sm"
+                            @click="$emit('openReceiveModal')">Enviar</b-button>
+                        <b-button pill variant="primary" size="sm" @click="$emit('openwithdrawModal')">Retirar</b-button>
+                    </div>
                 </div>
             </b-collapse>
         </div>
@@ -49,7 +52,7 @@ defineEmits(['openwithdrawModal', 'openReceiveModal'])
         .wallet {
             display: flex;
             justify-content: space-between;
-            gap: 4.5rem;
+            gap: 1rem;
             align-items: center;
 
             :first-child {

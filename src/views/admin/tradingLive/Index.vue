@@ -1,5 +1,5 @@
 <template>
-  <main v-if="step === 1 && show===false">
+  <main v-if="step === 1 && show === false">
     <article class="live__header">
       <h2 class="h2-bold">Trading Live</h2>
       <b-button variant="primary" @click="step = 2">Crear clase</b-button>
@@ -8,11 +8,7 @@
     <article class="live__filter">
       <div class="search-filter">
         <div class="field-search">
-          <b-form-input
-            type="search"
-            placeholder="search"
-            class="b-light"
-          ></b-form-input>
+          <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
           <i class="b7-search"></i>
         </div>
       </div>
@@ -20,12 +16,7 @@
     </article>
 
     <div class="courses-grid">
-      <TradingClassCard
-        v-for="(course, index) in 8"
-        :key="index"
-        @editClase="show = true"
-        v-if="!show"
-      />
+      <TradingClassCard v-for="(course, index) in 8" :key="index" @editClase="show = true" v-if="!show" />
     </div>
   </main>
 
@@ -36,7 +27,7 @@
 
   <section class="edit" v-if="show">
     <GoBackDummy @click="show = false" />
-  <EditClass/>
+    <EditClass />
   </section>
 </template>
 
@@ -56,6 +47,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
   .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -69,6 +61,7 @@ main {
   justify-content: space-between;
   gap: 1.6rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .live__filter {
@@ -77,7 +70,8 @@ main {
   gap: 1rem;
 }
 
-.create, .edit{
+.create,
+.edit {
   display: grid;
   gap: 3.2rem;
 }

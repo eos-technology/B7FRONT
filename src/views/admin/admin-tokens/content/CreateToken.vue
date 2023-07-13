@@ -1,7 +1,7 @@
 <template>
     <section class="add-token">
         <h3 class="h3-medium">Crear token</h3>
-        <div class="token-form">
+        <div class="token-form ">
             <div class="field">
                 <label for="" class="l-medium">Inicia <span>*</span></label>
                 <b-form-input id="" type="date"></b-form-input>
@@ -71,7 +71,7 @@ let enable = ref('')
 
 .token-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-gap: 2.6rem 1.6rem;
 
     label {

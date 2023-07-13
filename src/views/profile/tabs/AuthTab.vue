@@ -3,7 +3,7 @@
     <h3 class="h3-medium">Doble Factor de autenticación</h3>
     <div class="content d-flex flex-column align-content-stretch gap-4">
       <p class="b-light">Google authenticator</p>
-      <div class="d-flex gap-5">
+      <div class="d-flex gap-5 flex-wrap">
         <img :src="getFile('images', 'qr', 'png')" alt="" />
         <div class="d-flex flex-column flex-grow-1 gap-4">
           <p class="paragraph-12">Two factor authentication provides extra protection for your account by requiring a
@@ -12,7 +12,7 @@
           <p class="paragraph-12"><strong>Note:</strong> You are only activating two factor authentication for the main
             password.</p>
           <p class="b-semibold">Have a smart phone? Use Google Authenticator!</p>
-          <div class="stores">
+          <div class="stores flex-wrap">
             <img :src="getFile('images', 'app-store', 'png')" alt="" />
             <img :src="getFile('images', 'google-play', 'png')" alt="" />
           </div>

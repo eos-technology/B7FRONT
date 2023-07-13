@@ -1,15 +1,15 @@
 <template>
   <main>
     <header>
-      <div class="header">
+      <div class="header flex-wrap">
         <h2 class="h2-bold">Billetera</h2>
         <b-button variant="primary" @click="newWalletModal = true">Nueva wallet</b-button>
       </div>
     </header>
-    <div class="wallet">
+    <div class="wallet flex-wrap">
       <WalletCard @openwithdrawModal="withdrawModal = true" @openReceiveModal="receiveModal = true" />
       <section class="transactions">
-        <div class="transactions-header">
+        <div class="transactions-header gap-3 flex-wrap">
           <h3 class="h3-bold">Transacciones</h3>
           <div class="filter-box">
             <div class="search-filter">
