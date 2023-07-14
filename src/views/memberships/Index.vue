@@ -1,13 +1,13 @@
 <template>
   <section class="token" v-if="!purchase">
-    <h2 class="h2-bold">Membership</h2>
+    <h2 class="h2-bold">{{ $t('membership.title') }}</h2>
     <div class="token__grid">
       <div class="select">
         <label class="select__item" :class="select.q === 'Q1' ? 'select__item--blue' : ''">
           <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
             value="Q1"></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Basic</h3>
+            <h3 class="h3-semibold">{{ $t('membership.basic') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -15,7 +15,7 @@
           <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
             value="Q2"></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Premium</h3>
+            <h3 class="h3-semibold">{{ $t('membership.premium') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -23,7 +23,7 @@
           <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
             value="Q3"></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Prime</h3>
+            <h3 class="h3-semibold">{{ $t('membership.prime') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -31,7 +31,7 @@
           <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
             value="Q4"></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Personalizado</h3>
+            <h3 class="h3-semibold">{{ $t('membership.custom') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -40,43 +40,43 @@
       <section v-if="select.q === 'Q1'" class="token__card token__card--blue token__height">
         <video class="token__video" src="@/assets/video/Plan1.mp4" autoplay loop></video>
         <div class="anim"></div>
-        <h3 class="h3-bold">Beneficios Basic</h3>
+        <h3 class="h3-bold">{{ $t('membership.benefitsBasic') }}</h3>
         <div class="token__list">
           <div v-for="(item, index) in q1" :key="index" class="token__list-item">
             <p class="l-light">{{ item.item }}</p>
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button @click="purchase = true">Comprar Paquete</b-button>
+        <b-button @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
       </section>
       <!-- Q2 -->
       <section v-if="select.q === 'Q2'" class="token__card token__card--green token__height">
         <video class="token__video" src="@/assets/video/Plan2.mp4" autoplay loop></video>
-        <h3 class="h3-bold">Beneficios Premium</h3>
+        <h3 class="h3-bold">{{ $t('membership.benefitsPremium') }}</h3>
         <div class="token__list">
           <div v-for="(item, index) in q2" :key="index" class="token__list-item">
             <p class="l-light">{{ item.item }}</p>
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button variant="success" class="w-100" @click="purchase = true">Comprar Paquete</b-button>
+        <b-button variant="success" class="w-100" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
       </section>
       <!-- Q3 -->
       <section v-if="select.q === 'Q3'" class="token__card token__card--yellow token__height">
         <video class="token__video" src="@/assets/video/Plan3.mp4" autoplay loop></video>
-        <h3 class="h3-bold">Beneficios Prime</h3>
+        <h3 class="h3-bold">{{ $t('membership.benefitsPrime') }}</h3>
         <div class="token__list">
           <div v-for="(item, index) in q3" :key="index" class="token__list-item">
             <p class="l-light">{{ item.item }}</p>
             <i :class="`b7-${item.icon}`"></i>
           </div>
         </div>
-        <b-button variant="primary" @click="purchase = true">Comprar Paquete</b-button>
+        <b-button variant="primary" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
       </section>
       <!-- Q4 -->
       <section v-if="select.q === 'Q4'" class="token__card token__card--cyan token__height">
         <video class="token__video" src="@/assets/video/Plan4.mp4" autoplay loop></video>
-        <h3 class="h3-bold">Beneficios Personalizado</h3>
+        <h3 class="h3-bold">{{ $t('membership.BenefitsCustom') }}</h3>
         <div class="token__list">
           <div v-for="(item, index) in q4" :key="index" class="token__list-item">
             <p class="l-light">{{ item.item }}</p>
@@ -85,9 +85,9 @@
         </div>
         <b-form-group id="input-invest" label="Ingrese inversión *" label-for="invest">
           <b-form-input id="invest" v-model="form.invest" placeholder="0" type="number" required></b-form-input>
-          <p class="b-regular mt-2" style="color: #626c87">Monto Mínimo $0,00</p>
+          <p class="b-regular mt-2" style="color: #626c87">{{ $t('membership.minimumAmount') }} $0,00</p>
         </b-form-group>
-        <b-button variant="light" @click="purchase = true">Comprar Paquete</b-button>
+        <b-button variant="light" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
       </section>
     </div>
   </section>

@@ -1,7 +1,7 @@
 <template>
   <section class="plan" v-if="showContent">
     <div class="plan__header">
-      <h2 class="h2-bold">{{ $t('academy.academy') }}</h2>
+      <h2 class="h2-bold">{{ $t('academyadmin.academy') }}</h2>
       <b-button variant="primary" @click="course = true">{{ $t('createcourse.createcourse') }}</b-button>
     </div>
 

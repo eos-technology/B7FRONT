@@ -18,7 +18,9 @@
         </div>
       </div>
     </b-card-body>
-    <b-card-footer><b-button variant="primary" class="w-100">Ir al curso</b-button></b-card-footer>
+    <b-card-footer>
+      <b-button variant="primary" class="w-100">{{ $t('academy.goToCourse') }}</b-button>
+    </b-card-footer>
   </b-card>
 </template>
 

@@ -26,7 +26,15 @@
     "whileLearn": "WHILE YOU LEARN",
     "withb7": "With B7 Academy you can earn while you learn, you can Staking or buy a membership in which you will get benefits and monthly earnings.",
     "activeMembership": "Active membership",
-    "clock": "Clock"
+    "clock": "Clock",
+    "rankingReferral": "Ranking Referral",
+    "myWallets": "My Wallets",
+    "benefits": "Benefits",
+    "withdrawals": "Withdrawals",
+    "signs": "Signs",
+    "academy": "Academy",
+    "tradingPlans": "Trading Plans",
+    "tradingLive": "Trading Live"
   },
   "signs": {
     "signs": "signs"
@@ -35,7 +43,8 @@
     "filter": "Filter",
     "category": "Category"
   },
-  "academy":{
+
+  "academyadmin":{
     "academy": "Academy"
   },
   "createcourse":{
@@ -140,5 +149,79 @@
     "delete" : "Delete",
     "cancel" : "Cancel",
     "save" : "Save"
+  },
+  "academy": {
+    "title": "Academy",
+    "courses": "Courses",
+    "myCourses": "My Courses",
+    "search": "Search",
+    "allCourses": "All courses",
+    "courseName": "Course name",
+    "finances": "Finances",
+    "seeCourse": "See course",
+    "goToCourse": "Go to course",
+    "goBack": "Go back",
+    "contenido": "Content",
+    "category": "Category",
+    "comments": "Comments",
+    "reply": "Reply",
+    "detail": "Detail",
+    "buy": "Buy",
+    "paymentMethod": "Payment method",
+    "purchaseLegend": "Send to the wallet the amount equivalent to B7T that you want to receive",
+    "cancel": "Cancel",
+    "payment": "Payment",
+    "paymentAddress": "Payment address",
+    "quantity": "Quantity",
+    "walletASddress": "Wallet Address",
+    "copyWallet": "Copy wallet",
+    "verifyPayment": "Verify payment",
+    "purchase": "Purchase",
+    "successfulPurchase": "Successful purchase",
+    "successfulPurchaseLegend": "The purchase of the membership has been successful.",
+    "continueShopping": "Continue shopping"
+  },
+  "acadey": {
+    "purchase": "Purchase"
+  },
+  "academ": {
+    "confirmPurchase": "Confirm purchase"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "membership": {
+    "title": "Membership",
+    "basic": "Basic",
+    "premium": "Premium",
+    "prime": "Prime",
+    "custom": "Custom",
+    "benefitsBasic": "Benefits Basic",
+    "buyPack": "Buy Pack",
+    "benefitsPremium": "Benefits Premium",
+    "benefitsPrime": "Benefits Prime",
+    "BenefitsCustom": "Benefits Custom",
+    "minimumAmount": "Minimum Amount",
+    "goBack": "Go back",
+    "purchase": "Purchase",
+    "chooseTime": "Choose time",
+    "oneMonth": "One Month",
+    "profit": "Profit",
+    "threeMonths": "Three Months",
+    "sixMonths": "Six Months",
+    "twelveMonths": "Twelve Months",
+    "cancel": "Cancel",
+    "confirmPurchase": "Confirm purchase",
+    "paymentMethod": "Payment method",
+    "paymentMethodLegend": "Send to the wallet the amount equivalent to B7T that you want to receive",
+    "payment": "Payment",
+    "paymentAddress": "Payment address",
+    "quantity": "Quantity",
+    "walletAddress": "Wallet Address",
+    "verifyPayment": "Verify payment",
+    "successfulPurchase": "Successful purchase",
+    "successfullPurchaseLegend": "The purchase of the membership has been successful.",
+    "continueShopping": "Continue shopping"
   }
 }

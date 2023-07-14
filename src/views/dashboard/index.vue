@@ -4,7 +4,7 @@
     <iframe scrolling="no" allowtransparency="true" frameborder="0"
       src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22US%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A76%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22www.tradingview.com%2Fwidget%2Fticker-tape%2F%22%7D"
       style="box-sizing: border-box; display: block;  width: 100%"></iframe>
-    <h2 class="h2-bold">{{ $t('dashboard.title') }}</h2>
+    <h2 class="h2-bold">Dashboard</h2>
     <!-- Banner -->
     <article class="dashboard__banner">
       <div class="dashboard__banner-box">
@@ -56,7 +56,7 @@
     <!-- Down Cards -->
     <article class="down">
       <div class="down__card down__card--light-blue">
-        <h4 class="h4-bold">Ranking Referral</h4>
+        <h4 class="h4-bold">{{ $t('dashboard.rankingReferral') }}</h4>
         <div class="down__users">
           <div class="down__user">
             <img class="down__user-sm" :src="getFile('icons', 'user1')" alt="" />
@@ -82,14 +82,14 @@
         </div>
       </div>
       <div class="down__card down__card--purple">
-        <h4 class="h4-bold">Mis Wallets</h4>
+        <h4 class="h4-bold">{{ $t('dashboard.myWallets') }}</h4>
         <ChartDonut />
       </div>
       <div class="down__card down__card--green">
         <div class="down__card-header">
           <div class="down__card-box">
             <i class="b7-cup"></i>
-            <h4 class="h4-bold">Beneficios</h4>
+            <h4 class="h4-bold">{{ $t('dashboard.benefits') }}</h4>
           </div>
           <div class="down__card-tag">
             <p class="h6-bold text-black">PRO</p>
@@ -99,35 +99,35 @@
           <div class="down__card-info">
             <div class="d-flex align-items-center gap-2">
               <i class="b7-withdrawl"></i>
-              <p class="l-light">Retiros</p>
+              <p class="l-light">{{ $t('dashboard.withdrawals') }}</p>
             </div>
             <i class="b7-check text-primary"></i>
           </div>
           <div class="down__card-info">
             <div class="d-flex align-items-center gap-2">
               <i class="b7-chart"></i>
-              <p class="l-light">Señales</p>
+              <p class="l-light">{{ $t('dashboard.signs') }}</p>
             </div>
             <i class="b7-check text-primary"></i>
           </div>
           <div class="down__card-info">
             <div class="d-flex align-items-center gap-2">
               <i class="b7-graduated"></i>
-              <p class="l-light">Academia</p>
+              <p class="l-light">{{ $t('dashboard.academy') }}</p>
             </div>
             <i class="b7-check text-primary"></i>
           </div>
           <div class="down__card-info">
             <div class="d-flex align-items-center gap-2">
               <i class="b7-trading"></i>
-              <p class="l-light">Trading Plans</p>
+              <p class="l-light">{{ $t('dashboard.tradingPlans') }}</p>
             </div>
             <i class="b7-check text-primary"></i>
           </div>
           <div class="down__card-info">
             <div class="d-flex align-items-center gap-2">
               <i class="b7-live"></i>
-              <p class="l-light">Trading Live</p>
+              <p class="l-light">{{ $t('dashboard.tradingLive') }}</p>
             </div>
             <i class="b7-check text-primary"></i>
           </div>

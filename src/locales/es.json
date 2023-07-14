@@ -26,7 +26,15 @@
     "whileLearn": "MIENTRAS APRENDES",
     "withb7": "Con B7 Academy puedes ganar mientras aprendes, puedes hacer Staking o compra una membresía en la que obtendrás beneficios y mensualidades ganancias.",
     "activeMembership": "Membresía activa",
-    "clock": "Hora"
+    "clock": "Hora",
+    "rankingReferral": "Ranking de Referidos",
+    "myWallets": "Mis billeteras",
+    "benefits": "Beneficios",
+    "withdrawals": "Retiros",
+    "signs": "Señales",
+    "academy": "Academia",
+    "tradingPlans": "Planes de Trading",
+    "tradingLive": "Trading en vivo"
   },
   "signs": {
     "signs": "Señales"
@@ -35,7 +43,8 @@
     "filter": "Filtrar",
     "category": "Categoría"
   },
-  "academy":{
+
+  "academyadmin":{
     "academy": "Academia"
   },
   "createcourse":{
@@ -140,5 +149,79 @@
     "delete" : "Eliminar",
     "cancel" : "Cancelar",
     "save" : "Guardar"
+  },
+  "academy": {
+    "title": "Academia",
+    "courses": "Cursos",
+    "myCourses": "Mis cursos",
+    "search": "Buscar",
+    "allCourses": "Todos los cursos",
+    "courseName": "Nombre del curso",
+    "finances": "Finanzas",
+    "seeCourse": "Ver curso",
+    "goToCourse": "Ir al curso",
+    "goBack": "Regresar",
+    "contenido": "Contenido",
+    "category": "Categoría",
+    "comments": "Comentarios",
+    "reply": "Responder",
+    "detail": "Detalle",
+    "buy": "Comprar",
+    "paymentMethod": "Método de pago",
+    "purchaseLegend": "Envía a la billetera la cantidad equivalente a B7T que deseas recibir",
+    "cancel": "Cancelar",
+    "payment": "Pago",
+    "paymentAddress": "Dirección de Pago",
+    "quantity": "Cantidad",
+    "walletASddress": "Dirección de la billetera",
+    "copyWallet": "Copiar billetera",
+    "verifyPayment": "Verificar pago",
+    "purchase": "Compra",
+    "successfulPurchase": "Compra exitosa",
+    "successfulPurchaseLegend": "La compra de la membresía ha sido exitosa.",
+    "continueShopping": "Seguir comprando"
+  },
+  "acadey": {
+    "purchase": "Compra"
+  },
+  "academ": {
+    "confirmPurchase": "Confirmar compra"
+  },
+  "auth": {
+    "email": "Correo electrónico",
+    "password": "Contraseña"
+  },
+  "membership": {
+    "title": "Membresía",
+    "basic": "Básico",
+    "premium": "Premium",
+    "prime": "Principal",
+    "custom": "Personalizado",
+    "benefitsBasic": "Beneficios Básico",
+    "buyPack": "Comprar paquete",
+    "benefitsPremium": "Beneficios Priemium",
+    "benefitsPrime": "Beneficios Prime",
+    "BenefitsCustom": "Beneficios personalizados",
+    "minimumAmount": "Monto Mínimo",
+    "goBack": "Regresar",
+    "purchase": "Compra",
+    "chooseTime": "Seleccionar tiempo",
+    "oneMonth": "Un mes",
+    "profit": "Ganancia",
+    "threeMonths": "Tres meses",
+    "sixMonths": "Seis meses",
+    "twelveMonths": "Doce meses",
+    "cancel": "Cancelar",
+    "confirmPurchase": "Confirmar compra",
+    "paymentMethod": "Método de pago",
+    "paymentMethodLegend": "Envía a la billetera la cantidad equivalente a B7T que deseas recibir",
+    "payment": "Pago",
+    "paymentAddress": "Dirección de Pago",
+    "quantity": "Cantidad",
+    "walletAddress": "Dirección de la billetera",
+    "verifyPayment": "Verificar pago",
+    "successfulPurchase": "Compra exitosa",
+    "successfullPurchaseLegend": "La compra de la membresía ha sido exitosa.",
+    "continueShopping": "Seguir comprando"
   }
 }

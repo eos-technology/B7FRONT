@@ -1,29 +1,28 @@
 <template>
   <div v-if="!purchase">
     <Main class="academy" v-if="showAcademyMain">
-      <h2 class="h2-bold">Academy</h2>
+      <h2 class="h2-bold">{{ $t('academy.title') }}</h2>
       <Slider @purchase="purchase = true" />
       <section>
         <!-- Tabs -->
         <header>
           <div class="courses-picker">
             <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
-              @click="toggleCourses('all')">Cursos</b-button>
+              @click="toggleCourses('all')">{{ $t('academy.courses') }}</b-button>
             <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50"
-              @click="toggleCourses('own')">Mis
-              cursos</b-button>
+              @click="toggleCourses('own')">{{ $t('academy.myCourses') }}</b-button>
           </div>
           <div class="filter-box">
             <div class="search-filter">
               <div class="field-search">
-                <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+                <b-form-input type="search" placeholder="$t('academy.search')" class="b-light"></b-form-input>
                 <i class="b7-search"></i>
               </div>
             </div>
             <Filter />
           </div>
         </header>
-        <h3 class="h3-medium">Todos los cursos</h3>
+        <h3 class="h3-medium">{{ $t('academy.allCourses') }}</h3>
         <div class="courses-grid">
           <CourseCard v-show="showAllCourses" v-for="(course, index) in allCourses" :key="index" :course="course"
             :showSingleCourse="showSingleCourse" @changeSingleCourse="showSingleCourse = $event" />
@@ -56,7 +55,7 @@ let purchase = ref(false)
 
 let allCourses = [
   {
-    name: "Nombre del curso",
+    name: "academy.courseName",
     price: 80,
     topic: "Finanzas",
     numberOfVideos: 20,
