@@ -223,5 +223,28 @@
     "successfulPurchase": "Successful purchase",
     "successfullPurchaseLegend": "The purchase of the membership has been successful.",
     "continueShopping": "Continue shopping"
+  },
+  "tokensadmin": {
+    "createTokens": "Create tokens",
+    "tokenSale" : "Token sale ends in",
+    "allowFrom" : "Allow from",
+    "allowUp" : "Allow up",
+    "days" : "Days",
+    "month" : "Month",
+    "age" : "Age",
+    "edit" : "Edit",
+    "delete" : "Delete"
+  },
+  "createtoken": {
+    "title" : "Create token",
+    "start" : "Start",
+    "until" : "Until",
+    "topSale" : "Top sale",
+    "usdPrice" : "USD price",
+    "enable" : "Enable",
+    "disable" : "Disable",
+    "cancel" : "Cancel",
+    "create" : "Create",
+    "teleport" : "¡New token has been successfully created!"
   }
 }
