@@ -246,5 +246,60 @@
     "cancel" : "Cancelar",
     "create" : "Crear",
     "teleport" : "¡Se ha creado nuevo token éxitosamente!"
+  },
+  "dashboardadmin": {
+    "available" : "USD disponibles",
+    "totalDirect" : "Total directo",
+    "totalIndirect" : "Total Indirecto",
+    "shopping" : "Compras",
+    "wallets" : "Mis Wallets",
+    "memberships" : "Membresias",
+    "basic" : "Básico",
+    "personalized" : "Personalizado",
+    "tokens" : "Tokens",
+    "createTokens": "Crear tokens",
+    "tokenSale" : "La venta de tokens finaliza en",
+    "allowFrom" : "Permitir desde",
+    "allowUp" : "Permitir hasta",
+    "days" : "Dias",
+    "month" : "Mes",
+    "age" : "Año",
+    "edit" : "Editar",
+    "delete" : "Eliminar"
+  },
+  "movements" : {
+    "title" : "Movimientos",
+    "approveAll" : "Aprovar todo",
+    "search" : "Buscar",
+    "user" : "Usuario",
+    "quantity" : "Cantidad",
+    "type" : "Tipo",
+    "date" : "Fecha",
+    "state" : "Estado",
+    "inprogress" : "En proceso",
+    "from" : "Desde",
+    "to" : "Hasta"
+  },
+  "withdrawals" : {
+    "title" : "Retiros",
+    "seeAll" : "Ver todos",
+    "deleteSelected" : "Eliminar Seleccionados",
+    "search" : "Buscar",
+    "user" : "USUARIO",
+    "email" : "CORREO",
+    "membership" : "MEMBRESIA",
+    "amount" : "CANTIDAD",
+    "available" : "DISPONIBLE",
+    "date" : "FECHA",
+    "wallet" : "BILLETERA",
+    "state" : "ESTADO",
+    "options" : "OPCIONES",
+    "decline" : "Rechazar",
+    "approve" : "Aprovar"
+  },
+  "chartacademy" : {
+    "title" : "Academia",
+    "revenue" : "Ganancia",
+    "riskbenefit" : "Riesgo/Beneficio"
   }
 }

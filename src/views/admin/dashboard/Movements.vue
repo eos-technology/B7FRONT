@@ -2,16 +2,16 @@
   <main>
     <section class="movements">
       <div class="movements-header">
-        <h3 class="h3-medium">Movimientos</h3>
+        <h3 class="h3-medium">{{ $t('movements.title') }}</h3>
         <div class="filter-box">
           <b-button class="movements__btn" variant="primary"
-            >Aprobar todo</b-button
+            >{{ $t('movements.approveAll') }}</b-button
           >
           <div class="search-filter">
             <div class="field-search">
               <b-form-input
                 type="search"
-                placeholder="search"
+                :placeholder="$t('movements.search')"
                 class="b-light"
               ></b-form-input>
               <i class="b7-search"></i>
