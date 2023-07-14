@@ -46,7 +46,7 @@
     <GoBackDummy @click="step = 2" />
     <div class="up-video__header d-flex justify-content-between align-items-center">
       <h3 class="h3-medium">Módulo 1</h3>
-      <b-button variant="primary">Subir video</b-button>
+      <b-button variant="primary">{{ $t('moduletab.uploadvideo') }}</b-button>
     </div>
     <div class="up-video__card">
       <img :src="getFile('images', 'modul-card', 'png')" alt="" />
@@ -62,8 +62,8 @@
           </p>
         </div>
         <div class="d-flex gap-4">
-          <b-button variant="outline">Editar</b-button>
-          <b-button variant="info">Eliminar</b-button>
+          <b-button variant="outline">{{ $t('moduletab.edit') }}</b-button>
+          <b-button variant="info">{{ $t('moduletab.delete') }}</b-button>
         </div>
       </div>
     </div>
@@ -107,35 +107,35 @@
     </div>
     <div class="new-module__btns">
       <b-button variant="outline">
-        <p class="btn-info">Cancelar</p>
+        <p class="btn-info">{{ $t('moduletab.cancel') }}</p>
       </b-button>
-      <b-button variant="primary" @click="step = 4">Crear</b-button>
+      <b-button variant="primary" @click="step = 4">{{ $t('moduletab.create') }}</b-button>
     </div>
   </section>
 
   <section class="up-video" v-if="step === 4">
     <GoBackDummy @click="step = 3" />
-    <h3 class="h3-medium">Nuevo módulo</h3>
+    <h3 class="h3-medium">{{ $t('upvideo.title') }}</h3>
     <b-form class="form" @submit.stop.prevent>
       <!-- Name -->
-      <b-form-group id="input-name" label="Nombre del video *" label-for="name">
+      <b-form-group id="input-name" :label="$t('upvideo.videoname')" label-for="name">
         <b-form-input id="name" v-model="form.name" placeholder="Input placerholder" required></b-form-input>
       </b-form-group>
 
       <!-- Message -->
-      <b-form-group id="input-textarea" label="Description *" label-for="textarea">
+      <b-form-group id="input-textarea" :label="$t('upvideo.description')" label-for="textarea">
         <b-form-textarea id="textarea" v-model="text" placeholder="Enter something..." rows="3"
           max-rows="6"></b-form-textarea>
       </b-form-group>
       <!-- Dropzone -->
-      <b-form-group id="input-dropzone" label="Seleccionar imagen *" label-for="dropzone">
+      <b-form-group id="input-dropzone" :label="$t('upvideo.selectimage')" label-for="dropzone">
         <DropZone id="dropzone" @drop.prevent="drop" @change="selectedFile" class="mb-4" />
       </b-form-group>
       <div class="form__btns">
         <b-button variant="outline">
-          <p class="btn-info">Cancelar</p>
+          <p class="btn-info">{{ $t('upvideo.cancel') }}</p>
         </b-button>
-        <b-button variant="primary">Guardar</b-button>
+        <b-button variant="primary">{{ $t('upvideo.save') }}</b-button>
       </div>
     </b-form>
   </section>

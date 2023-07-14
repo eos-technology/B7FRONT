@@ -19,8 +19,8 @@
         </p>
       </div>
       <div class="comments__btns">
-        <b-button variant="outline">Responder</b-button>
-        <b-button variant="info">Eliminar</b-button>
+        <b-button variant="outline">{{ $t('commenstab.respond') }}</b-button>
+        <b-button variant="info">{{ $t('commenstab.delete') }}</b-button>
       </div>
     </div>
     <div class="comments__card">
@@ -117,8 +117,8 @@
     </div>
     <div class="form__btns">
       <div class="d-flex gap-4">
-        <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary">Guardar</b-button>
+        <b-button variant="outline"><p class="btn-info">{{ $t('commenstab.cancel') }}</p></b-button>
+        <b-button variant="primary">{{ $t('commenstab.save') }}</b-button>
       </div>
     </div>
   </section>

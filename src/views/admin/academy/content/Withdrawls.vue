@@ -4,13 +4,13 @@
     <div class="plan__header">
       <div></div>
       <div class="plan__header-box">
-        <b-button class="btns btns--white">Descargar reporte</b-button>
+        <b-button class="btns btns--white">{{ $t('plantable.downloadreport') }}</b-button>
 
         <div class="search-filter">
           <div class="field-search">
             <b-form-input
               type="search"
-              placeholder="search"
+              :placeholder="$t('search.search')"
               class="b-light"
             ></b-form-input>
             <i class="b7-search"></i>
@@ -23,12 +23,12 @@
       <table class="table__container">
         <thead>
           <tr>
-            <th>USUARIO</th>
-            <th>EMAIL</th>
-            <th>CURSO</th>
-            <th>FECHA</th>
-            <th>CATEGORIA</th>
-            <th>PRECIO</th>
+            <th>{{ $t('plantable.user') }}</th>
+            <th>{{ $t('plantable.email') }}</th>
+            <th>{{ $t('plantable.course') }}</th>
+            <th>{{ $t('plantable.date') }}</th>
+            <th>{{ $t('plantable.category') }}</th>
+            <th>{{ $t('plantable.price') }}</th>
 
           </tr>
         </thead>

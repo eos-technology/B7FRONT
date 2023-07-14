@@ -1,8 +1,8 @@
 <template>
   <section class="plan" v-if="showContent">
     <div class="plan__header">
-      <h2 class="h2-bold">Academy</h2>
-      <b-button variant="primary" @click="course = true">Crear curso</b-button>
+      <h2 class="h2-bold">{{ $t('academy.academy') }}</h2>
+      <b-button variant="primary" @click="course = true">{{ $t('createcourse.createcourse') }}</b-button>
     </div>
 
     <div class="plan__chart">
@@ -20,21 +20,21 @@
             class="w-100"
             @click="changeTab('showAllCourses')"
           >
-            Cursos
+          {{ $t('coursespicker.courses') }}
           </b-button>
           <b-button
             :variant="activeTab === 'showUsers' ? 'primary' : 'transparent'"
             class="w-100"
             @click="changeTab('showUsers')"
           >
-            Usuarios
+          {{ $t('coursespicker.users') }}
           </b-button>
           <b-button
             :variant="activeTab === 'showTeachers' ? 'primary' : 'transparent'"
             class="w-100"
             @click="changeTab('showTeachers')"
           >
-            Docentes
+          {{ $t('coursespicker.teachers') }}
           </b-button>
         </div>
         <div class="filter-box" v-if="activeTab === 'showAllCourses'">
@@ -42,7 +42,7 @@
             <div class="field-search">
               <b-form-input
                 type="search"
-                placeholder="search"
+                :placeholder="$t('search.search')"
                 class="b-light"
               ></b-form-input>
               <i class="b7-search"></i>
@@ -52,9 +52,9 @@
         </div>
       </header>
       <h3 class="h3-medium" v-if="activeTab === 'showAllCourses'">
-        Todos los cursos
+        {{ $t('allcourses.allcourses') }}
       </h3>
-      <h3 class="h3-medium" v-if="activeTab === 'showUsers'">Lista usuarios</h3>
+      <h3 class="h3-medium" v-if="activeTab === 'showUsers'">{{ $t('userlist.userlist') }}</h3>
       <div class="courses-grid">
         <CourseCard
           v-show="activeTab === 'showAllCourses'"

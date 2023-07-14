@@ -5,20 +5,20 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Nombre docente</span>
+            <span class="sm-light">{{ $t('tabteachers.nameteachers') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Teléfono</span>
+          <span class="sm-light">{{ $t('tabteachers.phone') }}</span>
           <span class="b-medium">+ 51 000 00 00 </span>
         </div>
 
         <div class="item item-flex">
-          <span class="sm-light">Estado</span>
+          <span class="sm-light">{{ $t('tabteachers.state') }}</span>
           <span class="b-medium">En proceso</span>
         </div>
-        <b-button class="btns" variant="primary">Aprobar</b-button>
+        <b-button class="btns" variant="primary">{{ $t('tabteachers.approve') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
@@ -29,7 +29,7 @@
             <span class="b-medium">Dni docente</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Categoría</span>
+            <span class="sm-light">{{ $t('tabteachers.category') }}</span>
             <span class="b-medium">Finanzas</span>
           </div>
         </div>

@@ -5,9 +5,9 @@
       <div class="chart-plans__item bg-primary">
         <i class="b7-ratio"></i>
         <div class="chart-plans__info">
-          <p class="l-bold">Cursos total</p>
+          <p class="l-bold">{{ $t('chartplans.totalcourses') }}</p>
           <div class="chart-plans__flex">
-            <p class="b-medium">Total compras</p>
+            <p class="b-medium">{{ $t('chartplans.totalpurchases') }}</p>
             <h5 class="h5-bold text-end">$0.000</h5>
           </div>
         </div>
@@ -15,17 +15,7 @@
       <div class="chart-plans__item">
         <i class="b7-globe"></i>
         <div class="chart-plans__info">
-          <p class="l-bold">Adquiridos</p>
-          <div class="chart-plans__flex">
-            <p class="b-medium">Total </p>
-            <h5 class="h5-bold text-end">$0.000</h5>
-          </div>
-        </div>
-      </div>
-      <div class="chart-plans__item">
-        <i class="b7-globe"></i>
-        <div class="chart-plans__info">
-          <p class="l-bold">En proceso</p>
+          <p class="l-bold">{{ $t('chartplans.adquired') }}</p>
           <div class="chart-plans__flex">
             <p class="b-medium">Total </p>
             <h5 class="h5-bold text-end">$0.000</h5>
@@ -35,7 +25,17 @@
       <div class="chart-plans__item">
         <i class="b7-globe"></i>
         <div class="chart-plans__info">
-          <p class="l-bold">Fallidos</p>
+          <p class="l-bold">{{ $t('chartplans.inprogress') }}</p>
+          <div class="chart-plans__flex">
+            <p class="b-medium">Total </p>
+            <h5 class="h5-bold text-end">$0.000</h5>
+          </div>
+        </div>
+      </div>
+      <div class="chart-plans__item">
+        <i class="b7-globe"></i>
+        <div class="chart-plans__info">
+          <p class="l-bold">{{ $t('chartplans.failed') }}</p>
           <div class="chart-plans__flex">
             <p class="b-medium">Total </p>
             <h5 class="h5-bold text-end">$0.000</h5>
@@ -52,15 +52,15 @@
         <div class="chart-trading__box">
           <div class="chart-trading__label chart-trading__label--blue">
             <div class="dot-chart bg-blue"></div>
-            <p class="b-regular">{{ series[0].name }}</p>
+            <p class="b-regular">{{ $t(series[0].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--yellow">
             <div class="dot-chart bg-warning"></div>
-            <p class="b-regular">{{ series[1].name }}</p>
+            <p class="b-regular">{{ $t(series[1].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--purple">
             <div class="dot-chart bg-lila"></div>
-            <p class="b-regular">{{ series[2].name }}</p>
+            <p class="b-regular">{{ $t(series[2].name)}}</p>
           </div>
         </div>
         <div class="chart-trading__box">
@@ -85,11 +85,11 @@
 <script setup>
 const series = [
   {
-    name: "Ganancia",
+    name: "charttrading.revenue",
     data: [0, 33000, 54000, 3500, 54000, 4000, 0],
   },
   {
-    name: "Riesgo/Beneficio",
+    name: "charttrading.riskbenefit",
     data: [0, 8000, 50000, 62000, 4000, 500, 0],
   },
   {

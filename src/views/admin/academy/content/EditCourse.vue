@@ -2,9 +2,9 @@
   <section class="tabs-academy">
     <div class="center-tabs">
       <b-tabs pills align="center">
-        <b-tab title="Información" active><InformationTab/></b-tab>
-        <b-tab title="Módulo"><ModuleTab/></b-tab>
-        <b-tab title="Comentarios"><CommentsTab/></b-tab>
+        <b-tab :title="$t('editcourse.information')" active><InformationTab/></b-tab>
+        <b-tab :title="$t('editcourse.module')"><ModuleTab/></b-tab>
+        <b-tab :title="$t('editcourse.comments')"><CommentsTab/></b-tab>
       </b-tabs>
     </div>
   </section>

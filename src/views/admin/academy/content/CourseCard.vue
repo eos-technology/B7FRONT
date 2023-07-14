@@ -24,9 +24,9 @@
       </div>
     </b-card-body>
     <b-card-footer class="d-flex gap-3"
-      ><b-button class="btns--white w-100">Eliminar</b-button>
+      ><b-button class="btns--white w-100">{{ $t('card.delete') }}</b-button>
       <b-button variant="primary" class="w-100" @click="$emit('editCourse')"
-        >Editar</b-button
+        >{{ $t('card.edit') }}</b-button
       >
     </b-card-footer>
   </b-card>

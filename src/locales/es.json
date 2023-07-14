@@ -34,5 +34,111 @@
   "filter": {
     "filter": "Filtrar",
     "category": "Categoría"
+  },
+  "academy":{
+    "academy": "Academia"
+  },
+  "createcourse":{
+    "createcourse" : "Crear curso"
+  },
+  "chartplans":{
+    "totalcourses" : "Total cursos",
+    "totalpurchases" : "Total compras",
+    "adquired" : "Adquiridos",
+    "inprogress" : "En proceso",
+    "failed" : "Fallidos"
+  },
+  "charttrading":{
+    "revenue" : "ganancia",
+    "riskbenefit" : "Riesgo/Beneficio"
+  },
+  "coursespicker":{
+    "courses" : "Cursos",
+    "users" : "Usuarios",
+    "teachers" : "Docentes"
+  },
+  "allcourses":{
+    "allcourses" : "Todos los cursos"
+  },
+  "userlist":{
+    "userlist" : "Lista de usuarios"
+  },
+  "search":{
+    "search" : "buscar"
+  },
+  "card":{
+    "edit" : "Editar",
+    "delete" : "Eliminar"
+  },
+  "plantable":{
+    "downloadreport" : "Descargar reporte",
+    "user" : "USUARIO",
+    "email" : "EMAIL",
+    "course" : "CURSO",
+    "date" : "FECHA",
+    "category" : "CATEGORIA",
+    "price" : "PRECIO"
+  },
+  "tabteachers":{
+    "nameteachers" : "Nombre docente",
+    "phone" : "Telefono",
+    "state" : "Estado",
+    "approve" : "Aprovar",
+    "category" : "Categoria"
+  },
+  "formcourse":{
+    "name" : "Nombre *",
+    "category" : "Categoria *",
+    "lessons" : "Lecciones *",
+    "courseprice" : "Precio del curso *",
+    "start" : "Inicia *",
+    "end" : "Fin *",
+    "description" : "Descripcion *",
+    "selectimage" : "Seleccionar imagen *",
+    "cancel" : "Cancelar",
+    "create" : "Crear"
+  },
+  "teleport": {
+    "text" : "¡Se ha creado nuevo curso éxitosamente!"
+  },
+  "editcourse" : {
+    "information" : "Información",
+    "module" : "Módulo",
+    "comments" : "Comentarios"
+  },
+  "informationtab":{
+    "title" : "Editar curso",
+    "name" : "Nombre *",
+    "category" : "Categoria *",
+    "lessons" : "Lecciones *",
+    "courseprice" : "Precio del curso *",
+    "start" : "Inicia *",
+    "end" : "Fin *",
+    "description" : "Descripcion *",
+    "selectimage" : "Seleccionar imagen *",
+    "deletecourse" : "Eliminar curso",
+    "cancel" : "Cancelar",
+    "create" : "Crear"
+  },
+  "moduletab":{
+    "uploadvideo" : "Subir video",
+    "edit" : "Editar",
+    "delete" : "Eliminar",
+    "cancel" : "Cancelar",
+    "create" : "Crear"
+    },
+  "upvideo":{
+    "title":"Nuevo modulo",
+    "videoname" : "Nombre del video *",
+    "description" : "Descripción *",
+    "selectimage" : "Seleccionar imagen *",
+    "cancel" : "Cancelar",
+    "save" : "Guardar"
+  },
+  "commenstab":{
+    "respond" : "Responder",
+    "delete" : "Eliminar",
+    "cancel" : "Cancelar",
+    "save" : "Guardar"
   }
 }
