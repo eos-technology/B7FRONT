@@ -1,6 +1,6 @@
 <template>
   <section class="member">
-    <h2 class="h2-bold">Membership</h2>
+    <h2 class="h2-bold">{{ $t('member.membership') }}</h2>
     <div class="member__grid">
       <div class="select">
         <label
@@ -14,8 +14,8 @@
             value="Q1"
           ></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Basic</h3>
-            <h5 class="h5-medium">Upcademy</h5>
+            <h3 class="h3-semibold">{{ $t('member.basic') }}</h3>
+            <h5 class="h5-medium">{{ $t('member.upcademy') }}</h5>
           </div>
         </label>
         <label
@@ -30,7 +30,7 @@
           ></b-form-radio>
           <div class="select__text">
             <h3 class="h3-semibold">Premium</h3>
-            <h5 class="h5-medium">Upcademy</h5>
+            <h5 class="h5-medium">{{ $t('member.upcademy') }}</h5>
           </div>
         </label>
         <label
@@ -45,7 +45,7 @@
           ></b-form-radio>
           <div class="select__text">
             <h3 class="h3-semibold">Prime</h3>
-            <h5 class="h5-medium">Upcademy</h5>
+            <h5 class="h5-medium">{{ $t('member.upcademy') }}</h5>
           </div>
         </label>
         <label class="select__item" :class="select.q == 'Q4' ? 'bg-light' : ''">
@@ -56,8 +56,8 @@
             value="Q4"
           ></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Personalizado</h3>
-            <h5 class="h5-medium">Upcademy</h5>
+            <h3 class="h3-semibold">{{ $t('member.personalized') }}</h3>
+            <h5 class="h5-medium">{{ $t('member.upcademy') }}</h5>
           </div>
         </label>
       </div>
@@ -73,7 +73,7 @@
           loop
         ></video>
         <div class="anim"></div>
-        <h3 class="h3-bold">Beneficios Basic</h3>
+        <h3 class="h3-bold">{{ $t('member.benefits') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q1"
@@ -85,8 +85,8 @@
           </div>
         </div>
         <div class="member__card-btns">
-          <b-button variant="info">Eliminar membresia</b-button>
-          <b-button @click="$emit('showMembership')">Editar</b-button>
+          <b-button variant="info">{{ $t('member.delete') }}</b-button>
+          <b-button @click="$emit('showMembership')">{{ $t('member.edit') }}</b-button>
         </div>
       </section>
       <!-- Q2 -->
@@ -100,7 +100,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Premium</h3>
+        <h3 class="h3-bold">{{ $t('member.premium') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q2"
@@ -112,9 +112,9 @@
           </div>
         </div>
         <div class="member__card-btns">
-          <b-button variant="info">Eliminar membresia</b-button>
+          <b-button variant="info">{{ $t('member.delete') }}</b-button>
           <b-button @click="$emit('showMembership')" variant="success"
-            >Editar</b-button
+            >{{ $t('member.edit') }}</b-button
           >
         </div>
       </section>
@@ -129,7 +129,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Prime</h3>
+        <h3 class="h3-bold">{{ $t('member.prime') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q3"
@@ -141,8 +141,8 @@
           </div>
         </div>
           <div class="member__card-btns">
-          <b-button variant="info">Eliminar membresia</b-button>
-          <b-button @click="$emit('showMembership')" variant="primary">Editar</b-button>
+          <b-button variant="info">{{ $t('member.delete') }}</b-button>
+          <b-button @click="$emit('showMembership')" variant="primary">{{ $t('member.edit') }}</b-button>
         </div>
       </section>
       <!-- Q4 -->
@@ -156,7 +156,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Personalizado</h3>
+        <h3 class="h3-bold">{{ $t('member.perso') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q4"
@@ -169,7 +169,7 @@
         </div>
         <b-form-group
           id="input-invest"
-          label="Ingrese inversión *"
+          :label="$t('member.investment')"
           label-for="invest"
         >
           <b-form-input
@@ -180,12 +180,12 @@
             required
           ></b-form-input>
           <p class="b-regular mt-2" style="color: #626c87">
-            Monto Mínimo $0,00
+           {{ $t('member.minimum') }} $0,00
           </p>
         </b-form-group>
           <div class="member__card-btns">
-          <b-button variant="info">Eliminar membresia</b-button>
-          <b-button @click="$emit('showMembership')" variant="light">Editar</b-button>
+          <b-button variant="info">{{ $t('member.delete') }}</b-button>
+          <b-button @click="$emit('showMembership')" variant="light">{{ $t('member.edit') }}</b-button>
         </div>
       </section>
     </div>

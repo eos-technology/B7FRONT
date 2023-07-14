@@ -8,7 +8,7 @@
       ></apexchart>
     </div>
     <div class="chart-donut__info">
-      <h5 class="h5-medium mb-4">Primeros 5 meses</h5>
+      <h5 class="h5-medium mb-4">{{ $t('membershipadmin.chart') }}</h5>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-success"></div>
