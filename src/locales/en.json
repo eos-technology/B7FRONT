@@ -83,5 +83,38 @@
   "auth": {
     "email": "Email",
     "password": "Password"
+  },
+  "membership": {
+    "title": "Membership",
+    "basic": "Basic",
+    "premium": "Premium",
+    "prime": "Prime",
+    "custom": "Custom",
+    "benefitsBasic": "Benefits Basic",
+    "buyPack": "Buy Pack",
+    "benefitsPremium": "Benefits Premium",
+    "benefitsPrime": "Benefits Prime",
+    "BenefitsCustom": "Benefits Custom",
+    "minimumAmount": "Minimum Amount",
+    "goBack": "Go back",
+    "purchase": "Purchase",
+    "chooseTime": "Choose time",
+    "oneMonth": "One Month",
+    "profit": "Profit",
+    "threeMonths": "Three Months",
+    "sixMonths": "Six Months",
+    "twelveMonths": "Twelve Months",
+    "cancel": "Cancel",
+    "confirmPurchase": "Confirm purchase",
+    "paymentMethod": "Payment method",
+    "paymentMethodLegend": "Send to the wallet the amount equivalent to B7T that you want to receive",
+    "payment": "Payment",
+    "paymentAddress": "Payment address",
+    "quantity": "Quantity",
+    "walletAddress": "Wallet Address",
+    "verifyPayment": "Verify payment",
+    "successfulPurchase": "Successful purchase",
+    "successfullPurchaseLegend": "The purchase of the membership has been successful.",
+    "continueShopping": "Continue shopping"
   }
 }
