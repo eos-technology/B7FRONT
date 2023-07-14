@@ -43,112 +43,111 @@
     "filter": "Filtrar",
     "category": "Categoría"
   },
-
-  "academyadmin":{
+  "academyadmin": {
     "academy": "Academia"
   },
-  "createcourse":{
-    "createcourse" : "Crear curso"
+  "createcourse": {
+    "createcourse": "Crear curso"
   },
-  "chartplans":{
-    "totalcourses" : "Total cursos",
-    "totalpurchases" : "Total compras",
-    "adquired" : "Adquiridos",
-    "inprogress" : "En proceso",
-    "failed" : "Fallidos"
+  "chartplans": {
+    "totalcourses": "Total cursos",
+    "totalpurchases": "Total compras",
+    "adquired": "Adquiridos",
+    "inprogress": "En proceso",
+    "failed": "Fallidos"
   },
-  "charttrading":{
-    "revenue" : "ganancia",
-    "riskbenefit" : "Riesgo/Beneficio"
+  "charttrading": {
+    "revenue": "ganancia",
+    "riskbenefit": "Riesgo/Beneficio"
   },
-  "coursespicker":{
-    "courses" : "Cursos",
-    "users" : "Usuarios",
-    "teachers" : "Docentes"
+  "coursespicker": {
+    "courses": "Cursos",
+    "users": "Usuarios",
+    "teachers": "Docentes"
   },
-  "allcourses":{
-    "allcourses" : "Todos los cursos"
+  "allcourses": {
+    "allcourses": "Todos los cursos"
   },
-  "userlist":{
-    "userlist" : "Lista de usuarios"
+  "userlist": {
+    "userlist": "Lista de usuarios"
   },
-  "search":{
-    "search" : "buscar"
+  "search": {
+    "search": "buscar"
   },
-  "card":{
-    "edit" : "Editar",
-    "delete" : "Eliminar"
+  "card": {
+    "edit": "Editar",
+    "delete": "Eliminar"
   },
-  "plantable":{
-    "downloadreport" : "Descargar reporte",
-    "user" : "USUARIO",
-    "email" : "EMAIL",
-    "course" : "CURSO",
-    "date" : "FECHA",
-    "category" : "CATEGORIA",
-    "price" : "PRECIO"
+  "plantable": {
+    "downloadreport": "Descargar reporte",
+    "user": "USUARIO",
+    "email": "EMAIL",
+    "course": "CURSO",
+    "date": "FECHA",
+    "category": "CATEGORIA",
+    "price": "PRECIO"
   },
-  "tabteachers":{
-    "nameteachers" : "Nombre docente",
-    "phone" : "Telefono",
-    "state" : "Estado",
-    "approve" : "Aprovar",
-    "category" : "Categoria"
+  "tabteachers": {
+    "nameteachers": "Nombre docente",
+    "phone": "Telefono",
+    "state": "Estado",
+    "approve": "Aprovar",
+    "category": "Categoria"
   },
-  "formcourse":{
-    "name" : "Nombre *",
-    "category" : "Categoria *",
-    "lessons" : "Lecciones *",
-    "courseprice" : "Precio del curso *",
-    "start" : "Inicia *",
-    "end" : "Fin *",
-    "description" : "Descripcion *",
-    "selectimage" : "Seleccionar imagen *",
-    "cancel" : "Cancelar",
-    "create" : "Crear"
+  "formcourse": {
+    "name": "Nombre *",
+    "category": "Categoria *",
+    "lessons": "Lecciones *",
+    "courseprice": "Precio del curso *",
+    "start": "Inicia *",
+    "end": "Fin *",
+    "description": "Descripcion *",
+    "selectimage": "Seleccionar imagen *",
+    "cancel": "Cancelar",
+    "create": "Crear"
   },
   "teleport": {
-    "text" : "¡Se ha creado nuevo curso éxitosamente!"
+    "text": "¡Se ha creado nuevo curso éxitosamente!"
   },
-  "editcourse" : {
-    "information" : "Información",
-    "module" : "Módulo",
-    "comments" : "Comentarios"
+  "editcourse": {
+    "information": "Información",
+    "module": "Módulo",
+    "comments": "Comentarios"
   },
-  "informationtab":{
-    "title" : "Editar curso",
-    "name" : "Nombre *",
-    "category" : "Categoria *",
-    "lessons" : "Lecciones *",
-    "courseprice" : "Precio del curso *",
-    "start" : "Inicia *",
-    "end" : "Fin *",
-    "description" : "Descripcion *",
-    "selectimage" : "Seleccionar imagen *",
-    "deletecourse" : "Eliminar curso",
-    "cancel" : "Cancelar",
-    "create" : "Crear"
+  "informationtab": {
+    "title": "Editar curso",
+    "name": "Nombre *",
+    "category": "Categoria *",
+    "lessons": "Lecciones *",
+    "courseprice": "Precio del curso *",
+    "start": "Inicia *",
+    "end": "Fin *",
+    "description": "Descripcion *",
+    "selectimage": "Seleccionar imagen *",
+    "deletecourse": "Eliminar curso",
+    "cancel": "Cancelar",
+    "create": "Crear"
   },
-  "moduletab":{
-    "uploadvideo" : "Subir video",
-    "edit" : "Editar",
-    "delete" : "Eliminar",
-    "cancel" : "Cancelar",
-    "create" : "Crear"
-    },
-  "upvideo":{
-    "title":"Nuevo modulo",
-    "videoname" : "Nombre del video *",
-    "description" : "Descripción *",
-    "selectimage" : "Seleccionar imagen *",
-    "cancel" : "Cancelar",
-    "save" : "Guardar"
+  "moduletab": {
+    "uploadvideo": "Subir video",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "create": "Crear"
   },
-  "commenstab":{
-    "respond" : "Responder",
-    "delete" : "Eliminar",
-    "cancel" : "Cancelar",
-    "save" : "Guardar"
+  "upvideo": {
+    "title": "Nuevo modulo",
+    "videoname": "Nombre del video *",
+    "description": "Descripción *",
+    "selectimage": "Seleccionar imagen *",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "commenstab": {
+    "respond": "Responder",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar"
   },
   "academy": {
     "title": "Academia",
@@ -226,80 +225,99 @@
   },
   "tokensadmin": {
     "createTokens": "Crear tokens",
-    "tokenSale" : "La venta de tokens finaliza en",
-    "allowFrom" : "Permitir desde",
-    "allowUp" : "Permitir hasta",
-    "days" : "Dias",
-    "month" : "Mes",
-    "age" : "Año",
-    "edit" : "Editar",
-    "delete" : "Eliminar"
+    "tokenSale": "La venta de tokens finaliza en",
+    "allowFrom": "Permitir desde",
+    "allowUp": "Permitir hasta",
+    "days": "Dias",
+    "month": "Mes",
+    "age": "Año",
+    "edit": "Editar",
+    "delete": "Eliminar"
   },
   "createtoken": {
-    "title" : "Crear token",
-    "start" : "Inicia",
-    "until" : "Hasta",
-    "topSale" : "Maxima venta",
-    "usdPrice" : "precio USD",
-    "enable" : "Habilitar",
-    "disable" : "Deshabilitar",
-    "cancel" : "Cancelar",
-    "create" : "Crear",
-    "teleport" : "¡Se ha creado nuevo token éxitosamente!"
+    "title": "Crear token",
+    "start": "Inicia",
+    "until": "Hasta",
+    "topSale": "Maxima venta",
+    "usdPrice": "precio USD",
+    "enable": "Habilitar",
+    "disable": "Deshabilitar",
+    "cancel": "Cancelar",
+    "create": "Crear",
+    "teleport": "¡Se ha creado nuevo token éxitosamente!"
   },
   "dashboardadmin": {
-    "available" : "USD disponibles",
-    "totalDirect" : "Total directo",
-    "totalIndirect" : "Total Indirecto",
-    "shopping" : "Compras",
-    "wallets" : "Mis Wallets",
-    "memberships" : "Membresias",
-    "basic" : "Básico",
-    "personalized" : "Personalizado",
-    "tokens" : "Tokens",
+    "available": "USD disponibles",
+    "totalDirect": "Total directo",
+    "totalIndirect": "Total Indirecto",
+    "shopping": "Compras",
+    "wallets": "Mis Wallets",
+    "memberships": "Membresias",
+    "basic": "Básico",
+    "personalized": "Personalizado",
+    "tokens": "Tokens",
     "createTokens": "Crear tokens",
-    "tokenSale" : "La venta de tokens finaliza en",
-    "allowFrom" : "Permitir desde",
-    "allowUp" : "Permitir hasta",
-    "days" : "Dias",
-    "month" : "Mes",
-    "age" : "Año",
-    "edit" : "Editar",
-    "delete" : "Eliminar"
+    "tokenSale": "La venta de tokens finaliza en",
+    "allowFrom": "Permitir desde",
+    "allowUp": "Permitir hasta",
+    "days": "Dias",
+    "month": "Mes",
+    "age": "Año",
+    "edit": "Editar",
+    "delete": "Eliminar"
   },
-  "movements" : {
-    "title" : "Movimientos",
-    "approveAll" : "Aprovar todo",
-    "search" : "Buscar",
-    "user" : "Usuario",
-    "quantity" : "Cantidad",
-    "type" : "Tipo",
-    "date" : "Fecha",
-    "state" : "Estado",
-    "inprogress" : "En proceso",
-    "from" : "Desde",
-    "to" : "Hasta"
+  "movements": {
+    "title": "Movimientos",
+    "approveAll": "Aprovar todo",
+    "search": "Buscar",
+    "user": "Usuario",
+    "quantity": "Cantidad",
+    "type": "Tipo",
+    "date": "Fecha",
+    "state": "Estado",
+    "inprogress": "En proceso",
+    "from": "Desde",
+    "to": "Hasta"
   },
-  "withdrawals" : {
-    "title" : "Retiros",
-    "seeAll" : "Ver todos",
-    "deleteSelected" : "Eliminar Seleccionados",
-    "search" : "Buscar",
-    "user" : "USUARIO",
-    "email" : "CORREO",
-    "membership" : "MEMBRESIA",
-    "amount" : "CANTIDAD",
-    "available" : "DISPONIBLE",
-    "date" : "FECHA",
-    "wallet" : "BILLETERA",
-    "state" : "ESTADO",
-    "options" : "OPCIONES",
-    "decline" : "Rechazar",
-    "approve" : "Aprovar"
+  "withdrawals": {
+    "title": "Retiros",
+    "seeAll": "Ver todos",
+    "deleteSelected": "Eliminar Seleccionados",
+    "search": "Buscar",
+    "user": "USUARIO",
+    "email": "CORREO",
+    "membership": "MEMBRESIA",
+    "amount": "CANTIDAD",
+    "available": "DISPONIBLE",
+    "date": "FECHA",
+    "wallet": "BILLETERA",
+    "state": "ESTADO",
+    "options": "OPCIONES",
+    "decline": "Rechazar",
+    "approve": "Aprovar"
   },
-  "chartacademy" : {
-    "title" : "Academia",
-    "revenue" : "Ganancia",
-    "riskbenefit" : "Riesgo/Beneficio"
+  "chartacademy": {
+    "title": "Academia",
+    "revenue": "Ganancia",
+    "riskbenefit": "Riesgo/Beneficio"
+  },
+  "kyc": {
+    "approveall": "Aprovar Todo",
+    "user": "USUARIO",
+    "email": "CORREO",
+    "addres": "DIRECCIÓN",
+    "type": "TIPO",
+    "options": "OPCIONES",
+    "search": "Buscar",
+    "download": "Descargar",
+    "decline": "Rechazar",
+    "approve": "Aprovar",
+    "message": "¿Estás seguro de rechazar esta solicitud KYC?",
+    "cancel": "Cancelar",
+    "acept": "Aceptar",
+    "succesful": "KYC exitoso",
+    "withdrawal": "Retiro",
+    "withdrawaldenied": "Retiro negado",
+    "messagemodal": "El retiro ha sido negado."
   }
 }

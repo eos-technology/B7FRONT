@@ -43,112 +43,111 @@
     "filter": "Filter",
     "category": "Category"
   },
-
-  "academyadmin":{
+  "academyadmin": {
     "academy": "Academy"
   },
-  "createcourse":{
-    "createcourse" : "Create course"
+  "createcourse": {
+    "createcourse": "Create course"
   },
-  "chartplans":{
-    "totalcourses" : "Total courses",
-    "totalpurchases" : "Total purchases",
-    "adquired" : "Adquired",
-    "inprogress" : "In progress",
-    "failed" : "Failed"
+  "chartplans": {
+    "totalcourses": "Total courses",
+    "totalpurchases": "Total purchases",
+    "adquired": "Adquired",
+    "inprogress": "In progress",
+    "failed": "Failed"
   },
-  "charttrading":{
-    "revenue" : "revenue",
-    "riskbenefit" : "Risk/Benefit"
+  "charttrading": {
+    "revenue": "revenue",
+    "riskbenefit": "Risk/Benefit"
   },
-  "coursespicker":{
-    "courses" : "Courses",
-    "users" : "Users",
-    "teachers" : "Teachers"
+  "coursespicker": {
+    "courses": "Courses",
+    "users": "Users",
+    "teachers": "Teachers"
   },
-  "allcourses":{
-    "allcourses" : "All courses"
+  "allcourses": {
+    "allcourses": "All courses"
   },
-  "userlist":{
-    "userlist" : "User list"
+  "userlist": {
+    "userlist": "User list"
   },
-  "search":{
-    "search" : "search"
+  "search": {
+    "search": "search"
   },
-  "card":{
-    "edit" : "Edit",
-    "delete" : "Delete"
+  "card": {
+    "edit": "Edit",
+    "delete": "Delete"
   },
-  "plantable":{
-    "downloadreport" : "Download report",
-    "user" : "USER",
-    "email" : "EMAIL",
-    "course" : "COURSE",
-    "date" : "DATE",
-    "category" : "CATEGORY",
-    "price" : "PRICE"
+  "plantable": {
+    "downloadreport": "Download report",
+    "user": "USER",
+    "email": "EMAIL",
+    "course": "COURSE",
+    "date": "DATE",
+    "category": "CATEGORY",
+    "price": "PRICE"
   },
-  "tabteachers":{
-    "nameteachers" : "Name Teachers",
-    "phone" : "Phone",
-    "state" : "State",
-    "approve" : "Approve",
-    "category" : "Category"
+  "tabteachers": {
+    "nameteachers": "Name Teachers",
+    "phone": "Phone",
+    "state": "State",
+    "approve": "Approve",
+    "category": "Category"
   },
-  "formcourse":{
-    "name" : "Name *",
-    "category" : "Category *",
-    "lessons" : "Lessons *",
-    "courseprice" : "Course price *",
-    "start" : "Start *",
-    "end" : "End *",
-    "description" : "Description *",
-    "selectimage" : "Select image *",
-    "cancel" : "Cancel",
-    "create" : "Create"
+  "formcourse": {
+    "name": "Name *",
+    "category": "Category *",
+    "lessons": "Lessons *",
+    "courseprice": "Course price *",
+    "start": "Start *",
+    "end": "End *",
+    "description": "Description *",
+    "selectimage": "Select image *",
+    "cancel": "Cancel",
+    "create": "Create"
   },
   "teleport": {
-    "text" : "¡New course has been successfully created!"
+    "text": "¡New course has been successfully created!"
   },
-  "editcourse" : {
-    "information" : "Information",
-    "module" : "Module",
-    "comments" : "Comments"
+  "editcourse": {
+    "information": "Information",
+    "module": "Module",
+    "comments": "Comments"
   },
-  "informationtab":{
-    "title" : "Edit course",
-    "name" : "Name *",
-    "category" : "Category *",
-    "lessons" : "Lessons *",
-    "courseprice" : "Course price *",
-    "start" : "Start *",
-    "end" : "End *",
-    "description" : "Description *",
-    "selectimage" : "Select image *",
-    "deletecourse" : "Delete course",
-    "cancel" : "Cancel",
-    "create" : "Create"
+  "informationtab": {
+    "title": "Edit course",
+    "name": "Name *",
+    "category": "Category *",
+    "lessons": "Lessons *",
+    "courseprice": "Course price *",
+    "start": "Start *",
+    "end": "End *",
+    "description": "Description *",
+    "selectimage": "Select image *",
+    "deletecourse": "Delete course",
+    "cancel": "Cancel",
+    "create": "Create"
   },
-  "moduletab":{
-    "uploadvideo" : "Upload video",
-    "edit" : "Edit",
-    "delete" : "Delete",
-    "cancel" : "Cancel",
-    "create" : "Create"
-    },
-  "upvideo":{
-    "title":"New module",
-    "videoname" : "Video name *",
-    "description" : "Description *",
-    "selectimage" : "Select image *",
-    "cancel" : "Cancel",
-    "save" : "Save"
+  "moduletab": {
+    "uploadvideo": "Upload video",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "create": "Create"
   },
-  "commenstab":{
-    "respond" : "Respond",
-    "delete" : "Delete",
-    "cancel" : "Cancel",
-    "save" : "Save"
+  "upvideo": {
+    "title": "New module",
+    "videoname": "Video name *",
+    "description": "Description *",
+    "selectimage": "Select image *",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "commenstab": {
+    "respond": "Respond",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save"
   },
   "academy": {
     "title": "Academy",
@@ -226,80 +225,99 @@
   },
   "tokensadmin": {
     "createTokens": "Create tokens",
-    "tokenSale" : "Token sale ends in",
-    "allowFrom" : "Allow from",
-    "allowUp" : "Allow up",
-    "days" : "Days",
-    "month" : "Month",
-    "age" : "Age",
-    "edit" : "Edit",
-    "delete" : "Delete"
+    "tokenSale": "Token sale ends in",
+    "allowFrom": "Allow from",
+    "allowUp": "Allow up",
+    "days": "Days",
+    "month": "Month",
+    "age": "Age",
+    "edit": "Edit",
+    "delete": "Delete"
   },
   "createtoken": {
-    "title" : "Create token",
-    "start" : "Start",
-    "until" : "Until",
-    "topSale" : "Top sale",
-    "usdPrice" : "USD price",
-    "enable" : "Enable",
-    "disable" : "Disable",
-    "cancel" : "Cancel",
-    "create" : "Create",
-    "teleport" : "¡New token has been successfully created!"
+    "title": "Create token",
+    "start": "Start",
+    "until": "Until",
+    "topSale": "Top sale",
+    "usdPrice": "USD price",
+    "enable": "Enable",
+    "disable": "Disable",
+    "cancel": "Cancel",
+    "create": "Create",
+    "teleport": "¡New token has been successfully created!"
   },
   "dashboardadmin": {
-    "available" : "Available USD",
-    "totalDirect" : "Total direct",
-    "totalIndirect" : "Total Indirect",
-    "shopping" : "Shopping",
-    "wallets" : "My Wallets",
-    "memberships" : "Memberships",
-    "basic" : "Basic",
-    "personalized" : "Personalized",
-    "tokens" : "Tokens",
+    "available": "Available USD",
+    "totalDirect": "Total direct",
+    "totalIndirect": "Total Indirect",
+    "shopping": "Shopping",
+    "wallets": "My Wallets",
+    "memberships": "Memberships",
+    "basic": "Basic",
+    "personalized": "Personalized",
+    "tokens": "Tokens",
     "createTokens": "Create tokens",
-    "tokenSale" : "Token sale ends in",
-    "allowFrom" : "Allow from",
-    "allowUp" : "Allow up",
-    "days" : "Days",
-    "month" : "Month",
-    "age" : "Age",
-    "edit" : "Edit",
-    "delete" : "Delete"
+    "tokenSale": "Token sale ends in",
+    "allowFrom": "Allow from",
+    "allowUp": "Allow up",
+    "days": "Days",
+    "month": "Month",
+    "age": "Age",
+    "edit": "Edit",
+    "delete": "Delete"
   },
-  "movements" : {
-    "title" : "Movements",
-    "approveAll" : "Approve all",
-    "search" : "Search",
-    "user" : "User",
-    "quantity" : "Quantity",
-    "type" : "Type",
-    "date" : "Date",
-    "state" : "State",
-    "inprogress" : "In progress",
-    "from" : "From",
-    "to" : "To"
+  "movements": {
+    "title": "Movements",
+    "approveAll": "Approve all",
+    "search": "Search",
+    "user": "User",
+    "quantity": "Quantity",
+    "type": "Type",
+    "date": "Date",
+    "state": "State",
+    "inprogress": "In progress",
+    "from": "From",
+    "to": "To"
   },
-  "withdrawals" : {
-    "title" : "Withdrawals",
-    "seeAll" : "See all",
-    "deleteSelected" : "Delete selected",
-    "search" : "Search",
-    "user" : "USER",
-    "email" : "EMAIL",
-    "membership" : "MEMBERSHIP",
-    "amount" : "AMOUNT",
-    "available" : "AVAILABLE",
-    "date" : "DATE",
-    "wallet" : "WALLET",
-    "state" : "STATE",
-    "options" : "OPTIONS",
-    "decline" : "Decline",
-    "approve" : "Approve"
+  "withdrawals": {
+    "title": "Withdrawals",
+    "seeAll": "See all",
+    "deleteSelected": "Delete selected",
+    "search": "Search",
+    "user": "USER",
+    "email": "EMAIL",
+    "membership": "MEMBERSHIP",
+    "amount": "AMOUNT",
+    "available": "AVAILABLE",
+    "date": "DATE",
+    "wallet": "WALLET",
+    "state": "STATE",
+    "options": "OPTIONS",
+    "decline": "Decline",
+    "approve": "Approve"
   },
-  "chartacademy" : {
-    "title" : "Academy",
-    "revenue" : "Revenue",
-    "riskbenefit" : "Risk/Benefit"
+  "chartacademy": {
+    "title": "Academy",
+    "revenue": "Revenue",
+    "riskbenefit": "Risk/Benefit"
+  },
+  "kyc": {
+    "approveall": "Approve All",
+    "user": "USER",
+    "email": "EMAIL",
+    "addres": "ADDRESS",
+    "type": "TYPE",
+    "options": "OPTIONS",
+    "search": "Search",
+    "download": "Download",
+    "decline": "Decline",
+    "approve": "Approve",
+    "message": "Are you sure to reject this KYC request?",
+    "cancel": "Cancel",
+    "acept": "Accept",
+    "succesful": "successful KYC",
+    "withdrawal": "Withdrawal",
+    "withdrawaldenied": "withdrawal denied",
+    "messagemodal": "The withdrawal has been denied."
   }
 }
