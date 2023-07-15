@@ -685,5 +685,13 @@
     "add": "Add",
     "cancel": "cancel",
     "message": "¡New trade has been successfully added!"
+  },
+  "tradingLiveUser": {
+    "title": "Live trading",
+    "tradingClass": "Trading Class Binary Trades",
+    "calendar": "Monday June 30 - 18:30",
+    "search": "Search",
+    "nameClass": "Trading Class - Binary Trades",
+    "viewCourse": "See course"
   }
 }

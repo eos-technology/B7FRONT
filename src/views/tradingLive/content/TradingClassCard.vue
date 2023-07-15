@@ -2,13 +2,13 @@
     <b-card no-body>
         <img class="c-body__img" :src="getFile('images', 'trading-image', 'webp')" alt="" />
         <b-card-body class="c-body">
-            <h5 class="h5-bold">Clase de Trading - Operaciones Binarías</h5>
+            <h5 class="h5-bold">{{ $t('tradingLiveUser.nameClass') }}</h5>
             <p class="b-light">
                 Nunc imperdiet diam vitae fringilla laoreet. Ut sodales purus eu diam
             </p>
         </b-card-body>
         <b-card-footer>
-            <b-button variant="primary" class="w-100" @click="$emit('showCourse')">Ver curso</b-button>
+            <b-button variant="primary" class="w-100" @click="$emit('showCourse')">{{ $t('tradingLiveUser.viewCourse') }}</b-button>
         </b-card-footer>
     </b-card>
 </template>

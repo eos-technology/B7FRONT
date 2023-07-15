@@ -690,5 +690,13 @@
     "add": "Agregar",
     "cancel": "Cancelar",
     "message": " ¡Se ha agregado nuevo trade éxitosamente!"
+  },
+  "tradingLiveUser": {
+    "title": "Trading en vivo",
+    "tradingClass": "Clase de Trading Operaciones Binarías",
+    "calendar": "Lunes 30 de Junio - 18:30",
+    "search": "Buscar",
+    "nameClass": "Clase de Trading - Operaciones Binarías",
+    "viewCourse": "Ver curso"
   }
 }

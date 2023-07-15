@@ -1,7 +1,7 @@
 <template>
     <main>
         <GoBackDummy @click="$emit('back')"/>
-        <h2 class="h2-bold">Clase de Trading - Operaciones Binarías</h2>
+        <h2 class="h2-bold">{{ $t('tradingLiveUser.nameClass') }}</h2>
         <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="" />
     </main>
 </template>

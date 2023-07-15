@@ -1,13 +1,13 @@
 <template>
   <main v-if="step === 1">
     <section>
-      <h2 class="h2-bold">Trading Live</h2>
+      <h2 class="h2-bold">{{ $t('tradingLiveUser.title') }}</h2>
       <div class="banner">
         <div class="info">
           <img :src="getFile('images', 'logo', 'webp')" alt="" />
-          <h2 class="h2-bold">Clase de Trading Operaciones Binarías</h2>
+          <h2 class="h2-bold">{{ $t('tradingLiveUser.tradingClass') }}</h2>
           <p class="b-medium">
-            <i class="b7-calendar"></i>Lunes 30 de Junio - 18:30
+            <i class="b7-calendar"></i>{{ $t('tradingLiveUser.calendar') }}
           </p>
           <p class="b-regular">
             Nunc imperdiet diam vitae fringilla laoreet. Ut sodales purus eu
@@ -21,9 +21,9 @@
       <div class="search-filter">
         <div class="field-search">
           <b-form-input
-            type="search"
-            placeholder="search"
-            class="b-light"
+          type="text"
+          :placeholder="$t('tradingLiveUser.search')"
+          class="b-light"
           ></b-form-input>
           <i class="b7-search"></i>
         </div>
