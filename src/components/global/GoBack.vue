@@ -1,7 +1,7 @@
 <template>
   <section class="btnBack" @click="$router.back()">
     <i class="b7-back"></i>
-    <p class="b-light">Regresar</p>
+    <p class="b-light">{{ $t('users.goBack') }}</p>
   </section>
 </template>
 
