@@ -1,8 +1,8 @@
 <template>
   <div class="plan" v-if="trade === false">
     <div class="plan__header">
-      <h2 class="h2-bold">Trading plan</h2>
-      <b-button variant="primary" @click="trade = true">Añadir trade</b-button>
+      <h2 class="h2-bold">{{ $t('plans.title') }}</h2>
+      <b-button variant="primary" @click="trade = true">{{ $t('plans.addTrade') }}</b-button>
     </div>
 
     <div class="plan__chart">
@@ -14,7 +14,7 @@
         <div class="field-search">
           <b-form-input
             type="search"
-            placeholder="Search"
+            :placeholder="$t('plans.search')"
             class="b-light"
           ></b-form-input>
           <i class="b7-search"></i>
@@ -27,7 +27,7 @@
     <div class="plan__table">
       <div class="plan__header">
         <h6 class="h6-bold">Trades</h6>
-        <b-button variant="primary">Eliminar seleccionados</b-button>
+        <b-button variant="primary">{{ $t('plans.deleteSelected') }}</b-button>
       </div>
       <div class="table" v-dragscroll.x>
         <table class="table__container">
@@ -43,18 +43,18 @@
                     unchecked-value="0"
                   >
                   </b-form-checkbox>
-                  Activo
+                  {{ $t('plans.active') }}
                 </div>
               </th>
-              <th>GESTO</th>
-              <th>FECHA APERTURA</th>
-              <th>DURACIÓN</th>
-              <th>PRECIO ENTRADA</th>
-              <th>ESTRATEGIA</th>
-              <th>BENEFICIO NETO</th>
-              <th>RIESGO MONETARIO</th>
-              <th>ESTADO</th>
-              <th>ACTIONS</th>
+              <th>{{ $t('plans.gesture') }}</th>
+              <th>{{ $t('plans.date') }}</th>
+              <th>{{ $t('plans.duration') }}</th>
+              <th>{{ $t('plans.price') }}</th>
+              <th>{{ $t('plans.strategy') }}</th>
+              <th>{{ $t('plans.benefit') }}</th>
+              <th>{{ $t('plans.risk') }}</th>
+              <th>{{ $t('plans.state') }}</th>
+              <th>{{ $t('plans.actions') }}</th>
             </tr>
           </thead>
           <tbody class="table__body">

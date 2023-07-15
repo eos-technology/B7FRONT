@@ -1,9 +1,9 @@
 <template>
   <section class="add-trade">
-    <h3 class="h3-medium">Agregar trade</h3>
+    <h3 class="h3-medium">{{ $t('plans.addTrade') }}</h3>
     <b-form class="form" @submit.stop.prevent>
       <div class="form__content">
-        <b-form-group id="input-active" label="Activo *" label-for="active">
+        <b-form-group id="input-active" :label="$t('plans.activeTrade')" label-for="active">
           <b-form-select
             id="active"
             v-model="form.active"
@@ -12,7 +12,7 @@
         </b-form-group>
         <b-form-group
           id="input-broker"
-          label="Cuenta de broker *"
+          :label="$t('plans.acountBroker')"
           label-for="broker"
         >
           <b-form-select
@@ -21,7 +21,7 @@
             :options="options"
           ></b-form-select>
         </b-form-group>
-        <b-form-group id="input-gesture" label="Gesto *" label-for="gesture">
+        <b-form-group id="input-gesture" :label="$t('plans.gestureTrade')" label-for="gesture">
           <b-form-select
             id="gesture"
             v-model="form.gesture"
@@ -30,7 +30,7 @@
         </b-form-group>
         <b-form-group
           id="input-date"
-          label="Fecha de apertura *"
+          :label="$t('plans.dateTrader')"
           label-for="date"
         >
           <b-form-input
@@ -42,7 +42,7 @@
         </b-form-group>
         <b-form-group
           id="input-open"
-          label="Tiempo de apertura *"
+          :label="$t('plans.time')"
           label-for="open"
         >
           <b-form-input
@@ -54,7 +54,7 @@
         </b-form-group>
         <b-form-group
           id="input-price"
-          label="Precio de apertura *"
+          :label="$t('plans.priceTrade')"
           label-for="price"
         >
           <b-form-input
@@ -66,7 +66,7 @@
         </b-form-group>
         <b-form-group
           id="input-dateClose"
-          label="Fecha de cierre *"
+          :label="$t('plans.deadline')"
           label-for="dateClose"
         >
           <b-form-input
@@ -78,7 +78,7 @@
         </b-form-group>
         <b-form-group
           id="input-timeClose"
-          label="Tiempo de cierre *"
+          :label="$t('plans.closingTime')"
           label-for="timeClose"
         >
           <b-form-input
@@ -90,7 +90,7 @@
         </b-form-group>
         <b-form-group
           id="input-close"
-          label="Precio de cierre *"
+          :label="$t('plans.closingPrice')"
           label-for="close"
         >
           <b-form-input
@@ -102,7 +102,7 @@
         </b-form-group>
         <b-form-group
           id="input-stopLoss"
-          label="Precio de stop loss *"
+          :label="$t('plans.priceStop')"
           label-for="stopLoss"
         >
           <b-form-input
@@ -114,7 +114,7 @@
         </b-form-group>
         <b-form-group
           id="input-profit"
-          label="Beneficio bruto *"
+          :label="$t('plans.benefitBrute')"
           label-for="profit"
         >
           <b-form-input
@@ -126,7 +126,7 @@
         </b-form-group>
         <b-form-group
           id="input-trade"
-          label="Comisiones de trade *"
+          :label="$t('plans.commission')"
           label-for="trade"
         >
           <b-form-input
@@ -138,7 +138,7 @@
         </b-form-group>
         <b-form-group
           id="input-trading"
-          label="Estrategias de trading *"
+          :label="$t('plans.strategies')"
           label-for="trading"
         >
           <b-form-select
@@ -147,7 +147,7 @@
             :options="options"
           ></b-form-select>
         </b-form-group>
-        <b-form-group id="input-status" label="Estado *" label-for="status">
+        <b-form-group id="input-status" :label="$t('plans.stateTrade')" label-for="status">
           <b-form-select
             id="status"
             v-model="form.status"
@@ -157,8 +157,8 @@
       </div>
 
       <div class="form__btns">
-        <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary" @click="isOpen = true">Agregar</b-button>
+        <b-button variant="outline"><p class="btn-info">{{ $t('plans.cancel') }}</p></b-button>
+        <b-button variant="primary" @click="isOpen = true">{{ $t('plans.add') }}</b-button>
       </div>
     </b-form>
   </section>
@@ -173,7 +173,7 @@
             alt=""
           />
           <h3 class="h3-medium text-center">
-            ¡Se ha agregado nuevo trade éxitosamente!
+            {{ $t('plans.message') }}
           </h3>
         </div>
       </div>
