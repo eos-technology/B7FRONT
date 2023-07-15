@@ -1,24 +1,25 @@
 <template>
   <div class="routes">
     <router-link class="routes__item" v-for="(item, index) in routes" :key="index"
-      :to="{ name: item.route }">{{ item.name }}</router-link>
+      :to="{ name: item.route }">{{ $t(item.name) }}</router-link>
   </div>
+  
 </template>
 
 <script setup>
 const routes = [
   { name: "Dashboard", route: "Dashboard" },
-  { name: "Academia", route: "Academy" },
-  { name: "Señales", route: "Signs" },
-  { name: "Trading live", route: "Trading-Live" },
-  { name: "Planes", route: "Plans" },
-  { name: "Membresias", route: "Memberships" },
-  { name: "Equipo", route: "Team" },
-  { name: "Billetera", route: "Wallet" },
-  { name: "Transacciones", route: "Transactions" },
+  { name: "routes.academy", route: "Academy" },
+  { name: "routes.signals", route: "Signs" },
+  { name: "routes.tradingLive", route: "Trading-Live" },
+  { name: "routes.plans", route: "Plans" },
+  { name: "routes.memberships", route: "Memberships" },
+  { name: "routes.team", route: "Team" },
+  { name: "routes.wallet", route: "Wallet" },
+  { name: "routes.transactions", route: "Transactions" },
   { name: "Tokens", route: "Tokens" },
   { name: "Chats", route: "Chats" },
-  { name: "Perfil", route: "Profile" },
+  { name: "routes.profile", route: "Profile" },
 ];
 </script>
 

@@ -698,5 +698,16 @@
     "search": "Buscar",
     "nameClass": "Clase de Trading - Operaciones Binarías",
     "viewCourse": "Ver curso"
+  },
+  "routes": {
+    "academy": "Academia",
+    "signals" : "Señales",
+    "tradingLive" : "Trading en vivo",
+    "plans" : "Planes",
+    "memberships" : "Membresias",
+    "team" : "Equipo",
+    "wallet" : "Billetera",
+    "transactions" : "Transacciones",
+    "profile" : "Perfil"
   }
 }

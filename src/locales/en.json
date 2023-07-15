@@ -603,7 +603,7 @@
     "mensaje": "Message"
   },
   "transactionsUser": {
-    "title": "transactions",
+    "title": "Transactions",
     "withdraw": "Withdraw",
     "movements": "movements",
     "search": "Search",
@@ -693,5 +693,16 @@
     "search": "Search",
     "nameClass": "Trading Class - Binary Trades",
     "viewCourse": "See course"
+  },
+  "routes": {
+    "academy": "Academy",
+    "signals" : "Signals",
+    "tradingLive" : "Trading Live",
+    "plans" : "Plans",
+    "memberships" : "Memberships",
+    "team" : "Team",
+    "wallet" : "Wallet",
+    "transactions" : "Transactions",
+    "profile" : "Profile"
   }
 }
