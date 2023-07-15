@@ -37,7 +37,22 @@
     "tradingLive": "Trading Live"
   },
   "signs": {
-    "signs": "signs"
+    "signs": "signs",
+    "createSignal": "Create signal",
+    "win": "Win",
+    "loss": "Loss",
+    "profit": "Total benefit",
+    "delete": "Delete",
+    "name": "Name *",
+    "type": "Type *",
+    "gesture": "Gesture *",
+    "winLabel": "Win *",
+    "lossLabel": "Loss *",
+    "profitLabel": "Total benefit *",
+    "selectImage": "Select image *",
+    "cancel": "Cancel",
+    "create": "Create",
+    "message": "¡New signal has been created successfully!"
   },
   "filter": {
     "filter": "Filter",

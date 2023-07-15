@@ -1,10 +1,10 @@
 <template>
   <section class="add-trade">
-    <h3 class="h3-medium">Crear señal</h3>
+    <h3 class="h3-medium">{{ $t("signs.createSignal") }}</h3>
     <b-form class="form" @submit.stop.prevent>
       <div class="form__content">
         <!-- Name -->
-        <b-form-group id="input-name" label="Nombre *" label-for="name">
+        <b-form-group id="input-name" :label="$t('signs.name')" label-for="name">
           <b-form-input
             id="name"
             v-model="form.name"
@@ -13,7 +13,7 @@
           ></b-form-input>
         </b-form-group>
         <!-- Tipo -->
-        <b-form-group id="input-category" label="Tipo *" label-for="tipo">
+        <b-form-group id="input-category" :label="$t('signs.type')" label-for="tipo">
           <b-form-select
             id="tipo"
             v-model="form.type"
@@ -21,7 +21,7 @@
           ></b-form-select>
         </b-form-group>
         <!-- Gesto -->
-        <b-form-group id="input-category" label="Gesto *" label-for="gesto">
+        <b-form-group id="input-category" :label="$t('signs.gesture')" label-for="gesto">
           <b-form-select
             id="gesto"
             v-model="form.gesto"
@@ -29,7 +29,7 @@
           ></b-form-select>
         </b-form-group>
         <!-- win -->
-        <b-form-group id="input-price" label="Win *" label-for="win">
+        <b-form-group id="input-price" :label="$t('signs.winLabel')" label-for="win">
           <b-form-input
             id="win"
             v-model="form.win"
@@ -39,7 +39,7 @@
           ></b-form-input>
         </b-form-group>
         <!-- Loss -->
-        <b-form-group id="input-price" label="Loss *" label-for="loss">
+        <b-form-group id="input-price" :label="$t('signs.lossLabel')" label-for="loss">
           <b-form-input
             id="loss"
             v-model="form.loss"
@@ -62,7 +62,7 @@
       <!-- Total profit -->
       <b-form-group
         id="input-total-profit"
-        label="Total Profit *"
+        :label="$t('signs.profitLabel')"
         label-for="total-profit"
         class="w-100"
       >
@@ -76,7 +76,7 @@
       <!-- Dropzone -->
       <b-form-group
         id="input-dropzone"
-        label="Seleccionar imagen *"
+        :label="$t('signs.selectImage')"
         label-for="dropzone"
       >
         <DropZone
@@ -89,9 +89,9 @@
 
       <div class="form__btns">
         <b-button variant="outline">
-          <p class="btn-info">Cancelar</p>
+          <p class="btn-info">{{ $t('signs.cancel') }}</p>
         </b-button>
-        <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+        <b-button variant="primary" @click="isOpen = true">{{ $t('signs.create') }}</b-button>
       </div>
     </b-form>
   </section>
@@ -106,7 +106,7 @@
             alt=""
           />
           <h3 class="h3-medium text-center">
-            ¡Se ha creado nueva señal éxitosamente!
+            {{ $t('signs.message') }}
           </h3>
         </div>
       </div>
