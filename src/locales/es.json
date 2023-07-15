@@ -709,5 +709,15 @@
     "wallet" : "Billetera",
     "transactions" : "Transacciones",
     "profile" : "Perfil"
+  },
+  "routesAdmin": {
+    "purchases" : "Compras",
+    "withdrawals" : "Retiros",
+    "academy": "Academia",
+    "signals" : "Señales",
+    "tradingLive" : "Trading en vivo",
+    "memberships" : "Membresías",
+    "users" : "Usuarios",
+    "transactions" : "Transacciones"
   }
 }

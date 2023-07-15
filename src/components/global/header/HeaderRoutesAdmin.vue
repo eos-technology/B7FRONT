@@ -1,21 +1,21 @@
 <template>
   <div class="routes">
     <router-link class="routes__item" v-for="(item, index) in routes" :key="index"
-      :to="{ name: item.route }">{{ item.name }}</router-link>
+      :to="{ name: item.route }">{{ $t(item.name) }}</router-link>
   </div>
 </template>
 
 <script setup>
 const routes = [
   { name: "Dashboard", route: "Admin" },
-  { name: "Compras", route: "Purchases" },
-  { name: "Retiros", route: "Withdraw" },
-  { name: "Academia", route: "Admin-Academy" },
-  { name: "Señales", route: "Admin-Signs" },
-  { name: "Trading live", route: "Admin-Trading-Live" },
-  { name: "Membresías", route: "Admin-Memberships" },
-  { name: "Usuarios", route: "Admin-Users" },
-  { name: "Transacciones", route: "Admin-Transactions" },
+  { name: "routesAdmin.purchases", route: "Purchases" },
+  { name: "routesAdmin.withdrawals", route: "Withdraw" },
+  { name: "routesAdmin.academy", route: "Admin-Academy" },
+  { name: "routesAdmin.signals", route: "Admin-Signs" },
+  { name: "routesAdmin.tradingLive", route: "Admin-Trading-Live" },
+  { name: "routesAdmin.memberships", route: "Admin-Memberships" },
+  { name: "routesAdmin.users", route: "Admin-Users" },
+  { name: "routesAdmin.transactions", route: "Admin-Transactions" },
   { name: "Tokens", route: "Admin-Tokens" },
   { name: "KYC", route: "kyc" },
 ];
