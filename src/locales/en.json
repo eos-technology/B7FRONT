@@ -571,5 +571,30 @@
     "walletAddress": "wallet address",
     "copyWallet": "Copy wallet",
     "verifyPayment": "Verify payment"
+  },
+  "profile": {
+    "title": "Profile",
+    "basicInformation": "Basic information",
+    "changePhoto": "Change photo",
+    "name": "Name *",
+    "email": "Email *",
+    "phone": "Phone *",
+    "country": "Country *",
+    "city": "City *",
+    "save": "Save",
+    "message": "¡Membership has been edited successfully!",
+    "cancel": "Cancel",
+    "changePassword": "Change of password",
+    "newPassword": "New Password *",
+    "confirmPassword": "Confirm Password *",
+    "passwordMessage": "¡Password changed successfully!",
+    "doubleFactor": "Double Factor Authentication",
+    "googleAuth": "Google authenticator",
+    "doubleFactorText": "Two-factor authentication provides additional protection for your account by requiring a special code.",
+    "note": "Note:",
+    "textNote": "You're only turning on two-factor authentication for the master password.",
+    "haveSmart": "Do you have a smartphone? \nUse Google Authenticator!",
+    "secretKey": "secret key",
+    "copy": "Copy"
   }
 }

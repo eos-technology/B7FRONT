@@ -1,26 +1,24 @@
 <template>
   <section>
-    <h3 class="h3-medium">Doble Factor de autenticación</h3>
+    <h3 class="h3-medium">{{ $t('profile.doubleFactor') }}</h3>
     <div class="content d-flex flex-column align-content-stretch gap-4">
-      <p class="b-light">Google authenticator</p>
+      <p class="b-light">{{ $t('profile.googleAuth') }}</p>
       <div class="d-flex gap-5 flex-wrap">
         <img :src="getFile('images', 'qr', 'png')" alt="" />
         <div class="d-flex flex-column flex-grow-1 gap-4">
-          <p class="paragraph-12">Two factor authentication provides extra protection for your account by requiring a
-            special code.
+          <p class="paragraph-12">{{ $t('profile.doubleFactorText') }}
           </p>
-          <p class="paragraph-12"><strong>Note:</strong> You are only activating two factor authentication for the main
-            password.</p>
-          <p class="b-semibold">Have a smart phone? Use Google Authenticator!</p>
+          <p class="paragraph-12"><strong>{{ $t('profile.note') }}</strong>{{ $t('profile.textNote') }}</p>
+          <p class="b-semibold">{{ $t('profile.haveSmart') }}</p>
           <div class="stores flex-wrap">
             <img :src="getFile('images', 'app-store', 'png')" alt="" />
             <img :src="getFile('images', 'google-play', 'png')" alt="" />
           </div>
           <div class="secret-section d-flex flex-column gap-1">
-            <p class="b-medium">Secret Key</p>
+            <p class="b-medium">{{ $t('profile.secretKey') }}</p>
             <div class="secret">
               <input type="text" v-model="secretKey" class="sm-semibold">
-              <button>copy <img :src="getFile('images', 'copy-icon', 'svg')" alt="" /></button>
+              <button>{{ $t('profile.copy') }}<img :src="getFile('images', 'copy-icon', 'svg')" alt="" /></button>
             </div>
           </div>
         </div>
@@ -28,9 +26,9 @@
     </div>
     <div class="form__btns align-self-end">
       <b-button variant="outline">
-        <p class="btn-info">Cancelar</p>
+        <p class="btn-info">{{ $t('profile.cancel') }}</p>
       </b-button>
-      <b-button variant="primary" @click="isOpen = true">Guardar</b-button>
+      <b-button variant="primary" @click="isOpen = true">{{ $t('profile.save') }}</b-button>
     </div>
   </section>
 </template>

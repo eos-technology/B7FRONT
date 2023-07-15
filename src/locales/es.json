@@ -572,5 +572,30 @@
     "walletAddress": "Dirección de la billetera",
     "copyWallet": "Copiar billetera",
     "verifyPayment": "Verificar pago"
+  },
+  "profile": {
+    "title": "Perfil",
+    "basicInformation": "Información básica",
+    "changePhoto": "Cambiar foto",
+    "name": "Nombre *",
+    "email": "Correo *",
+    "phone": "Teléfono *",
+    "country": "País *",
+    "city": "Ciudad *",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "message": "¡Se ha editado membresía éxitosamente!",
+    "changePassword": "Cambio de contraseña",
+    "newPassword": "Nueva contraseña *",
+    "confirmPassword": "Confirmar contraseña *",
+    "passwordMessage": "¡Se ha cambiado la contraseña éxitosamente!",
+    "doubleFactor": "Doble Factor de autenticación",
+    "googleAuth": "Autenticador de Google",
+    "doubleFactorText": "La autenticación de dos factores brinda protección adicional para su cuenta al requerir un código especial.",
+    "note": "Nota:",
+    "textNote": "Solo está activando la autenticación de dos factores para la contraseña principal.",
+    "haveSmart": "¿Tienes un teléfono inteligente? ¡Usa el Autenticador de Google!",
+    "secretKey": "Llave secreta",
+    "copy": "Copiar"
   }
 }
