@@ -547,5 +547,8 @@
     "available": "USD available",
     "direct": "Total direct",
     "indirect": "Total indirect"
+  },
+  "team": {
+    "title": "Team"
   }
 }
