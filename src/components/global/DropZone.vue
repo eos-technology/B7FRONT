@@ -11,10 +11,10 @@
       <label for="dropzoneFile">
         <div class="card-profile__title">
           <p class="card-profile__text">
-            drag and drop file, or<span> Browse computer </span>
+            {{ $t('dropZone.filesP') }}<span>{{ $t('dropZone.browseComputer') }}  </span>
           </p>
           <img :src="getFile('icons','cloud')" alt="">
-          <p class="card-profile__subtitle">Upload files up to 8gb</p>
+          <p class="card-profile__subtitle">{{ $t('dropZone.uploadFiles') }}</p>
         </div>
       </label>
       <input type="file" id="dropzoneFile" class="dropzoneFile" />

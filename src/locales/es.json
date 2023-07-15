@@ -722,5 +722,10 @@
   },
   "referrals": {
     "referralsLink": "Enlace de referencias"
+  },
+  "dropZone": {
+    "filesP": "arrastrar y soltar el archivo, o ",
+    "browseComputer": "Explorar computadora",
+    "uploadFiles": "Sube archivos de hasta 8 gb"
   }
 }

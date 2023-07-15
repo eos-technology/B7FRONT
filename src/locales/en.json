@@ -717,5 +717,10 @@
   },
   "referrals": {
     "referralsLink": "Link Referrals"
+  },
+  "dropZone": {
+    "filesP": "drag and drop the file, or ",
+    "browseComputer": "Explore computer",
+    "uploadFiles": "Upload files up to 8 gb"
   }
 }
