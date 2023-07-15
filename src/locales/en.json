@@ -601,5 +601,26 @@
     "search": "Search",
     "online": "Online",
     "mensaje": "Message"
+  },
+  "transactionsUser": {
+    "title": "transactions",
+    "withdraw": "Withdraw",
+    "movements": "movements",
+    "search": "Search",
+    "walletDirection": "wallet address",
+    "message": "Make sure you have bsc in this wallet to cover the fee",
+    "availableBalance": "available balance",
+    "wallet": "destination wallet",
+    "amountWithdraw": "Amount to withdraw",
+    "cancel": "Cancel",
+    "makeWithdrawal": "Make withdrawal",
+    "walletAddres": "Wallet address",
+    "available": "Available USD",
+    "quantity": "Quantity",
+    "type": "Type",
+    "date": "Date",
+    "state": "State",
+    "from": "From",
+    "to": "To"
   }
 }

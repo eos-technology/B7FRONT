@@ -2,7 +2,7 @@
   <div class="signal-card">
     <img :src="getFile('images', 'brand', 'png')" alt="" />
     <div class="info">
-      <span class="b-regular">Available USD</span>
+      <span class="b-regular">{{ $t('transactionsUser.available') }}</span>
       <span class="l-bold">$0.000</span>
     </div>
     <i class="b7-dollar text-primary"></i>

@@ -2,8 +2,8 @@
   <main>
     <header>
       <div class="header">
-        <h2 class="h2-bold">Transacciones</h2>
-        <b-button variant="primary" @click="showModal = true">Retirar</b-button>
+        <h2 class="h2-bold">{{ $t('transactionsUser.title') }}</h2>
+        <b-button variant="primary" @click="showModal = true">{{ $t('transactionsUser.withdraw') }}</b-button>
       </div>
       <div class="signal-cards">
         <SignalCard v-for="card in 4" :key="card" />
@@ -11,13 +11,13 @@
     </header>
     <section class="movements">
       <div class="movements-header">
-        <h3 class="h3-bold">Movimientos</h3>
+        <h3 class="h3-bold">{{ $t('transactionsUser.movements') }}</h3>
         <div class="filter-box">
           <div class="search-filter">
             <div class="field-search">
               <b-form-input
                 type="search"
-                placeholder="search"
+                :placeholder="$t('transactionsUser.search')"
                 class="b-light"
               ></b-form-input>
               <i class="b7-search"></i>
@@ -31,20 +31,20 @@
     <div class="modal" v-if="showModal">
       <div class="modal__body">
         <div class="header-modal">
-          <h2 class="h2-bold">Retirar</h2>
+          <h2 class="h2-bold">{{ $t('transactionsUser.withdraw') }}</h2>
           <img :src="getFile('images', 'logo', 'webp')" alt="" />
         </div>
         <div class="content-modal">
           <div>
-            <h4 class="h4-semibold">Dirección de billetera</h4>
+            <h4 class="h4-semibold">{{ $t('transactionsUser.walletDirection') }}</h4>
             <p class="b-regular">
-              Asegúrese de tener bsc en esta billetera para cubrir la tarifa
+              {{ $t('transactionsUser.message') }}
             </p>
           </div>
           <div class="dropdown d-flex flex-row justify-content-between">
             <img :src="getFile('images', 'crypto-ico', 'png')" alt="" />
             <div class="item">
-              <span class="l-light">Saldo disponible</span>
+              <span class="l-light">{{ $t('transactionsUser.availableBalance') }}</span>
               <span class="h6-medium">15.543.04</span>
             </div>
             <i class="b7-arrow-down"></i>
@@ -52,17 +52,17 @@
           <div class="inputs-modal">
             <div>
               <label for="wallet" class="l-medium"
-                >Destination wallet <span>*</span></label
+                >{{ $t('transactionsUser.wallet') }}<span>*</span></label
               >
               <b-form-input
                 id="wallet"
                 type="text"
-                placeholder="Wallet Address"
+                :placeholder="$t('transactionsUser.walletAddres')"
               ></b-form-input>
             </div>
             <div>
               <label for="amount" class="l-medium"
-                >Amount to withdraw <span>*</span></label
+                >{{ $t('transactionsUser.amountWithdraw') }} <span>*</span></label
               >
               <b-form-input
                 id="amount"
@@ -73,9 +73,9 @@
           </div>
           <div class="buttons-modal d-flex justify-content-end mt-3">
             <b-button variant="outline-primary" @click="showModal = false"
-              >Cancelar</b-button
+              >{{ $t('transactionsUser.cancel') }}</b-button
             >
-            <b-button variant="primary">Realizar retiro</b-button>
+            <b-button variant="primary">{{ $t('transactionsUser.makeWithdrawal') }}</b-button>
           </div>
         </div>
       </div>

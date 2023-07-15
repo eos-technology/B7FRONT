@@ -602,5 +602,26 @@
     "search": "Buscar",
     "online": "En linea",
     "mensaje": "Mensaje"
+  },
+  "transactionsUser": {
+    "title": "Transacciones",
+    "withdraw": "Retirar",
+    "movements": "Movimientos",
+    "search": "Buscar",
+    "walletDirection": "Dirección de billetera",
+    "message": " Asegúrese de tener bsc en esta billetera para cubrir la tarifa",
+    "availableBalance": "Saldo disponible",
+    "wallet": "Billetera de destino",
+    "amountWithdraw": "Cantidad a retirar",
+    "cancel": "Cancelar",
+    "makeWithdrawal": "Realizar retiro",
+    "walletAddres": "Dirección de la billetera",
+    "available": "Disponible USD",
+    "quantity": "Cantidad",
+    "type": "Tipo",
+    "date": "Fecha",
+    "state": "Estado",
+    "from": "Desde",
+    "to": "Hasta"
   }
 }
