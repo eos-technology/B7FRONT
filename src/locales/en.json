@@ -622,5 +622,29 @@
     "state": "State",
     "from": "From",
     "to": "To"
+  },
+  "wallet": {
+    "newWallet": "new wallet",
+    "search": "Search",
+    "title": "Wallet",
+    "transactions": "transactions",
+    "withdraw": "Withdraw",
+    "walletDirection": "wallet address",
+    "message": "Make sure you have bsc in this wallet to cover the fee",
+    "availableBalance": "available balance",
+    "walletDestination": "destination wallet",
+    "amountToWithdraw": "Amount to withdraw",
+    "makeWithdrawal": "make withdrawal",
+    "walletAddress": "Wallet address",
+    "receive": "Receive",
+    "receiveAddress": "Your receiving USDT address",
+    "walletDates": "Wallet data",
+    "walletName": "Wallet name",
+    "availableCrypto": "Available cryptocurrencies",
+    "withdrawal": "Withdraw",
+    "quantity": "Quantity",
+    "date": "Date",
+    "state": "State",
+    "inProgress": "In progress"
   }
 }

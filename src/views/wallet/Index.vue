@@ -2,19 +2,19 @@
   <main>
     <header>
       <div class="header flex-wrap">
-        <h2 class="h2-bold">Billetera</h2>
-        <b-button variant="primary" @click="newWalletModal = true">Nueva wallet</b-button>
+        <h2 class="h2-bold">{{ $t('wallet.title') }}</h2>
+        <b-button variant="primary" @click="newWalletModal = true">{{ $t('wallet.newWallet') }}</b-button>
       </div>
     </header>
     <div class="wallet flex-wrap">
       <WalletCard @openwithdrawModal="withdrawModal = true" @openReceiveModal="receiveModal = true" />
       <section class="transactions">
         <div class="transactions-header gap-3 flex-wrap">
-          <h3 class="h3-bold">Transacciones</h3>
+          <h3 class="h3-bold">{{ $t('wallet.transactions') }}</h3>
           <div class="filter-box">
             <div class="search-filter">
               <div class="field-search">
-                <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+                <b-form-input type="search" :placeholder="$t('wallet.search')" class="b-light"></b-form-input>
                 <i class="b7-search"></i>
               </div>
             </div>
@@ -27,35 +27,35 @@
     <div class="modal withdraw" v-if="withdrawModal">
       <div class="modal__body">
         <div class="header-modal">
-          <h2 class="h2-bold">Retirar</h2>
+          <h2 class="h2-bold">{{ $t('wallet.withdraw') }}</h2>
           <img :src="getFile('images', 'logo', 'webp')" alt="" />
         </div>
         <div class="content-modal">
           <div>
-            <h4 class="h4-semibold">Dirección de billetera</h4>
-            <p class="b-regular">Asegúrese de tener bsc en esta billetera para cubrir la tarifa</p>
+            <h4 class="h4-semibold">{{ $t('wallet.walletDirection') }}</h4>
+            <p class="b-regular">{{ $t('wallet.message') }}</p>
           </div>
           <div class="dropdown d-flex flex-row justify-content-between">
             <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
             <div class="item">
-              <span class="l-light">Saldo disponible</span>
+              <span class="l-light">{{ $t('wallet.availableBalance') }}</span>
               <span class="h6-medium">15.543.04</span>
             </div>
             <i class="b7-arrow-down"></i>
           </div>
           <div class="inputs-modal">
             <div>
-              <label for="wallet" class="l-medium">Destination wallet <span>*</span></label>
-              <b-form-input id="wallet" type="text" placeholder="Wallet Address"></b-form-input>
+              <label for="wallet" class="l-medium">{{ $t('wallet.walletDestination') }} <span>*</span></label>
+              <b-form-input id="wallet" type="text" :placeholder="$t('wallet.walletAddress')"></b-form-input>
             </div>
             <div>
-              <label for="amount" class="l-medium">Amount to withdraw <span>*</span></label>
+              <label for="amount" class="l-medium">{{ $t('wallet.amountToWithdraw') }} <span>*</span></label>
               <b-form-input id="amount" type="number" placeholder="$0.00"></b-form-input>
             </div>
           </div>
           <div class="buttons-modal d-flex justify-content-end mt-3">
-            <b-button variant="outline-primary" @click="withdrawModal = false">Cancelar</b-button>
-            <b-button variant="primary">Realizar retiro</b-button>
+            <b-button variant="outline-primary" @click="withdrawModal = false">{{ $t('wallet.cancel') }}</b-button>
+            <b-button variant="primary">{{ $t('wallet.makeWithdrawal') }}</b-button>
           </div>
         </div>
       </div>
@@ -64,21 +64,21 @@
     <div class="modal receive" v-if="receiveModal">
       <div class="modal__body">
         <div class="header-modal">
-          <h2 class="h2-bold">Recibir</h2>
+          <h2 class="h2-bold">{{ $t('wallet.receive') }}</h2>
           <img :src="getFile('images', 'logo', 'webp')" alt="" />
         </div>
         <div class="content-modal">
           <div class="info d-flex flex-column align-items-center">
-            <h2 class="h3-medium text-center">Your receiving USDT address</h2>
+            <h2 class="h3-medium text-center">{{ $t('wallet.receiveAddress') }}</h2>
             <img :src="getFile('images', 'qr', 'webp')" alt="" class="w-50">
             <div class="wallet-address d-flex flex-column align-items-center">
-              <p class="b-regular">Wallet Address</p>
+              <p class="b-regular">{{ $t('wallet.walletAddress') }}</p>
               <h6 class="h6-regular">TQerdfbNi7SyfTzs6PSgesHjZqL1NVQm5X</h6>
             </div>
           </div>
           <div class="buttons-modal d-flex justify-content-end mt-3">
-            <b-button variant="outline-primary" @click="receiveModal = false">Cancelar</b-button>
-            <b-button variant="primary">Copy Address</b-button>
+            <b-button variant="outline-primary" @click="receiveModal = false">{{ $t('wallet.cancel') }}</b-button>
+            <b-button variant="primary">{{ $t('wallet.copyAddress') }}</b-button>
           </div>
         </div>
       </div>
@@ -87,24 +87,24 @@
     <div class="modal new-wallet" v-if="newWalletModal">
       <div class="modal__body">
         <div class="header-modal">
-          <h2 class="h2-bold">Nueva wallet</h2>
+          <h2 class="h2-bold">{{ $t('wallet.newWallet') }}</h2>
 
           <img :src="getFile('images', 'logo', 'webp')" alt="" />
         </div>
         <div class="content-modal">
           <div>
-            <h4 class="h4-semibold">Datos de Wallet</h4>
-            <p class="b-regular">Asegúrese de tener bsc en esta billetera para cubrir la tarifa</p>
+            <h4 class="h4-semibold">{{ $t('wallet.walletDates') }}</h4>
+            <p class="b-regular">{{ $t('wallet.message') }}</p>
           </div>
           <div class="inputs-modal">
             <div>
-              <label for="new-wallet" class="l-medium">Nombre de wallet <span>*</span></label>
-              <b-form-input id="new-wallet" type="text" placeholder="Wallet Address"></b-form-input>
+              <label for="new-wallet" class="l-medium">{{ $t('wallet.walletName') }} <span>*</span></label>
+              <b-form-input id="new-wallet" type="text" :placeholder="$t('wallet.walletAddress')"></b-form-input>
             </div>
           </div>
 
           <!-- Currency selector -->
-          <b-form-group label="Criptomonedas disponibles" class="holi" v-slot="{ ariaDescribedby }">
+          <b-form-group :label="$t('wallet.availableCrypto')" class="holi" v-slot="{ ariaDescribedby }">
             <!-- Tether -->
             <div class="dropdown d-flex justify-content-between">
               <b-form-radio v-model="availableCurrencies" :aria-describedby="ariaDescribedby" name="currencies"
@@ -161,8 +161,8 @@
           <!-- End currency selector -->
 
           <div class="buttons-modal d-flex justify-content-end mt-3">
-            <b-button variant="outline-primary" @click="newWalletModal = false">Cancelar</b-button>
-            <b-button variant="primary">Realizar retiro</b-button>
+            <b-button variant="outline-primary" @click="newWalletModal = false">{{ $t('wallet.cancel') }}</b-button>
+            <b-button variant="primary">{{ $t('wallet.makeWithdrawal') }}</b-button>
           </div>
         </div>
       </div>

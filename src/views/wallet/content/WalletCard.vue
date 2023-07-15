@@ -15,13 +15,13 @@
             <b-collapse visible id="wallet-detail" class="wallet-detail">
                 <div class="d-flex flex-wrap">
                     <div class="item d-flex flex-column">
-                        <span class="l-light">Saldo disponible</span>
+                        <span class="l-light">{{ $t('wallet.availableBalance') }}</span>
                         <h4 class="h4-bold text-primary">16,540.83</h4>
                     </div>
                     <div class="buttons d-flex gap-3">
                         <b-button pill variant="outline-primary" size="sm"
                             @click="$emit('openReceiveModal')">Enviar</b-button>
-                        <b-button pill variant="primary" size="sm" @click="$emit('openwithdrawModal')">Retirar</b-button>
+                        <b-button pill variant="primary" size="sm" @click="$emit('openwithdrawModal')">{{ $t('wallet.withdraw') }}</b-button>
                     </div>
                 </div>
             </b-collapse>
