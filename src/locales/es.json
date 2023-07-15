@@ -597,5 +597,10 @@
     "haveSmart": "¿Tienes un teléfono inteligente? ¡Usa el Autenticador de Google!",
     "secretKey": "Llave secreta",
     "copy": "Copiar"
+  },
+  "chats": {
+    "search": "Buscar",
+    "online": "En linea",
+    "mensaje": "Mensaje"
   }
 }

@@ -596,5 +596,10 @@
     "haveSmart": "Do you have a smartphone? \nUse Google Authenticator!",
     "secretKey": "secret key",
     "copy": "Copy"
+  },
+  "chats": {
+    "search": "Search",
+    "online": "Online",
+    "mensaje": "Message"
   }
 }

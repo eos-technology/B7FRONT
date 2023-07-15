@@ -3,7 +3,7 @@
         <img :src="getFile('images', 'avatar-chat', 'png')" alt="" class="avatar" />
         <div class="user-status mr-auto">
             <p class="l-medium">Yohana Ramirez</p>
-            <p class="status sm-regular">En linea</p>
+            <p class="status sm-regular">{{ $t('chats.online') }}</p>
         </div>
         <img :src="getFile('images', 'paper-clip', 'svg')" alt="" class="header-tools" />
         <img :src="getFile('images', 'search', 'svg')" alt="" class="header-tools" />

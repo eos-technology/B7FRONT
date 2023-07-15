@@ -1,6 +1,6 @@
 <template>
     <div class="field d-flex align-items-center">
-        <input type="text" class="flex-grow-1 b-light" placeholder="Mensaje">
+        <input type="text" class="flex-grow-1 b-light" :placeholder="$t('chats.mensaje')">
         <button>
             <img :src="getFile('images', 'send-message', 'svg')" alt="" />
         </button>
