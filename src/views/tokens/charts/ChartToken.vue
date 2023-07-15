@@ -12,42 +12,42 @@
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-success"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ $t('tokens.nameTokens') }}</p>
         </div>
         |
-        <p class="b-bold text-success">Porcentaje %</p>
+        <p class="b-bold text-success">{{ $t('tokens.porcent') }} %</p>
       </div>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-danger"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ $t('tokens.nameTokens') }}</p>
         </div>
         |
-        <p class="b-bold text-danger">Porcentaje %</p>
+        <p class="b-bold text-danger">{{ $t('tokens.porcent') }} %</p>
       </div>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-lila"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ $t('tokens.nameTokens') }}</p>
         </div>
         |
-        <p class="b-bold text-lila">Porcentaje %</p>
+        <p class="b-bold text-lila">{{ $t('tokens.porcent') }} %</p>
       </div>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-warning"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ $t('tokens.nameTokens') }}</p>
         </div>
         |
-        <p class="b-bold text-warning">Porcentaje %</p>
+        <p class="b-bold text-warning">{{ $t('tokens.porcent') }} %</p>
       </div>
       <div class="chart-donut__item">
         <div class="chart-donut__text">
           <div class="dot bg-pink"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ $t('tokens.nameTokens') }}</p>
         </div>
         |
-        <p class="b-bold text-pink">Porcentaje %</p>
+        <p class="b-bold text-pink">{{ $t('tokens.porcent') }} %</p>
       </div>
     </div>
   </div>

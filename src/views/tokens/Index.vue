@@ -4,7 +4,7 @@
     <div class="token__grid">
       <div class="token__card token__card--blue"><ChartToken /></div>
       <div class="token__card token__card--blue">
-        <h4 class="h4-bold">Token sale ends in</h4>
+        <h4 class="h4-bold">{{ $t('tokens.tokenSale') }}</h4>
 
         <vue-countdown
           :time="4 * 24 * 60 * 60 * 1000"
@@ -12,19 +12,19 @@
         >
           <div class="count">
             <div class="count__box">
-              <p class="l-medium">Days</p>
+              <p class="l-medium">{{ $t('tokens.days') }}</p>
               <div class="count__box-data">{{ days }}</div>
             </div>
             <div class="count__box">
-              <p class="l-medium">Hours</p>
+              <p class="l-medium">{{ $t('tokens.hours') }}</p>
               <div class="count__box-data">{{ hours }}</div>
             </div>
             <div class="count__box">
-              <p class="l-medium">Minutes</p>
+              <p class="l-medium">{{ $t('tokens.minutes') }}</p>
               <div class="count__box-data">{{ minutes }}</div>
             </div>
             <div class="count__box">
-              <p class="l-medium">Seconds</p>
+              <p class="l-medium">{{ $t('tokens.seconds') }}</p>
               <div class="count__box-data">{{ seconds }}</div>
             </div>
           </div>
@@ -34,7 +34,7 @@
           <b-progress variant="success" :value="value" :max="max"></b-progress>
         </div>
         <b-button variant="primary" @click="isOpen = true"
-          >Comprar Tokens</b-button
+          >{{ $t('tokens.buyTokens') }}</b-button
         >
       </div>
 
@@ -180,12 +180,12 @@
           />
           <div class="modal__buy">
             <div class="modal__buy-header">
-              <h2 class="h2-bold">Compra Tokens</h2>
+              <h2 class="h2-bold">{{ $t('tokens.nameToken') }}</h2>
               <img class="modal__img" src="@/assets/images/logo.webp" alt="" />
             </div>
             <div class="modal__buy-body" @click="isOpen = false">
               <div class="modal__buy-title">
-                <h4 class="h4-semibold">Método de pago</h4>
+                <h4 class="h4-semibold">{{ $t('tokens.metodPay') }}</h4>
                 <p class="b-regular">
                   1USD = 1B7T. Send to the wallet the amount equivalent to B7T
                   that you want to receive
@@ -220,9 +220,9 @@
                 <img :src="getFile('icons', 'arrow-right')" alt="" />
               </div>
               <div class="modal__btns">
-                <b-button variant="outline">Cancelar</b-button>
+                <b-button variant="outline">{{ $t('tokens.cancel') }}</b-button>
                 <b-button variant="primary" @click="payment = true"
-                  >Confirmar compra</b-button
+                  >{{ $t('tokens.confirm') }}</b-button
                 >
               </div>
             </div>
@@ -242,32 +242,32 @@
           />
           <div class="modal__buy">
             <div class="modal__buy-header">
-              <h2 class="h2-bold">Payment</h2>
+              <h2 class="h2-bold">{{ $t('tokens.payment') }}</h2>
               <img class="modal__img" src="@/assets/images/logo.webp" alt="" />
             </div>
             <div class="modal__buy-body" @click="payment = false">
               <div class="modal__buy-title">
-                <h2 class="h2-semibold text-center">Payment address</h2>
+                <h2 class="h2-semibold text-center">{{ $t('tokens.paymentAddress') }}</h2>
               </div>
 
               <div class="modal__body-qr">
                 <img :src="getFile('images', 'qr')" alt="" />
                 <div class="modal__buy-title text-center">
-                  <p class="b-regular">Quantity</p>
+                  <p class="b-regular">{{ $t('tokens.quantity') }}</p>
                   <h6 class="h6-regular">0 USD</h6>
                 </div>
                 <div class="modal__buy-title text-center">
-                  <p class="b-regular">Wallet Address</p>
+                  <p class="b-regular">{{ $t('tokens.walletAddress') }}</p>
                   <h6 class="h6-regular">TQerdfbNi7SyfTzs6PSgesHjZqL1NVQm5X</h6>
                   <router-link class="modal__buy-link" to="#"
-                    >Copy Wallet</router-link
+                    >{{ $t('tokens.copyWallet') }}</router-link
                   >
                 </div>
               </div>
 
               <div class="modal__btns">
-                <b-button variant="outline">Cancelar</b-button>
-                <b-button variant="primary">Verify payment</b-button>
+                <b-button variant="outline">{{ $t('tokens.cancel') }}</b-button>
+                <b-button variant="primary">{{ $t('tokens.verifyPayment') }}</b-button>
               </div>
             </div>
           </div>

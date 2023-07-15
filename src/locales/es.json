@@ -52,7 +52,9 @@
     "selectImage": "Seleccionar imagen *",
     "cancel": "Cancelar",
     "create": "Crear",
-    "message": "¡Se ha creado nueva señal éxitosamente!"
+    "message": "¡Se ha creado nueva señal éxitosamente!",
+    "sell": "Vender",
+    "buy": "Comprar"
   },
   "filter": {
     "filter": "Filtrar",
@@ -550,5 +552,25 @@
   },
   "team": {
     "title": "Equipo"
+  },
+  "tokens": {
+    "tokenSale": "La venta de tokens termina en",
+    "days": "Dias",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "buyTokens": "Comprar Tokens",
+    "nameTokens": "Nombre tokens",
+    "porcent": "Porcentaje",
+    "nameToken": "Compra Tokens",
+    "metodPay": "Método de pago",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar compra",
+    "payment": "Pago",
+    "paymentAddress": "Dirección de Pago",
+    "quantity": "Cantidad",
+    "walletAddress": "Dirección de la billetera",
+    "copyWallet": "Copiar billetera",
+    "verifyPayment": "Verificar pago"
   }
 }

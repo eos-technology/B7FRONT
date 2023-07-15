@@ -2,14 +2,14 @@
   <section class="signs">
     <h2 class="h2-bold">{{ $t("signs.signs") }}</h2>
     <div class="signs__cards">
-      <Cards img="crypto" btn="Sell" />
-      <Cards img="crypto" btn="Buy" />
-      <Cards img="crypto" btn="Buy" />
-      <Cards img="crypto" btn="Sell" />
-      <Cards img="crypto" btn="Sell" />
-      <Cards img="crypto" btn="Buy" />
-      <Cards img="crypto" btn="Buy" />
-      <Cards img="crypto" btn="Sell" />
+      <Cards img="crypto" btn="signs.sell" />
+      <Cards img="crypto" btn="signs.buy" />
+      <Cards img="crypto" btn="signs.buy" />
+      <Cards img="crypto" btn="signs.sell" />
+      <Cards img="crypto" btn="signs.sell" />
+      <Cards img="crypto" btn="signs.buy" />
+      <Cards img="crypto" btn="signs.buy" />
+      <Cards img="crypto" btn="signs.sell" />
     </div>
   </section>
 </template>

@@ -31,7 +31,7 @@
     </b-card-body>
     <b-card-footer
       ><b-button variant="primary" class="w-100"
-        >{{btn}}</b-button
+        >{{$t(btn)}}</b-button
       ></b-card-footer
     >
   </b-card>

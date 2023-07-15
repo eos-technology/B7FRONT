@@ -52,7 +52,9 @@
     "selectImage": "Select image *",
     "cancel": "Cancel",
     "create": "Create",
-    "message": "¡New signal has been created successfully!"
+    "message": "¡New signal has been created successfully!",
+    "sell": "Sell",
+    "buy": "Buy"
   },
   "filter": {
     "filter": "Filter",
@@ -550,5 +552,24 @@
   },
   "team": {
     "title": "Team"
+  },
+  "tokens": {
+    "tokenSale": "Token sale ends in",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "buyTokens": "Buy Tokens",
+    "nameTokens": "Token name",
+    "porcent": "Percentage",
+    "nameToken": "Buy Tokens",
+    "metodPay": "Payment method",
+    "cancel": "Cancel",
+    "confirm": "Confirm purchase",
+    "payment": "Payment",
+    "paymentAddress": "Payment Address",
+    "walletAddress": "wallet address",
+    "copyWallet": "Copy wallet",
+    "verifyPayment": "Verify payment"
   }
 }
