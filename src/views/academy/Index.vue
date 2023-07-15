@@ -15,7 +15,7 @@
           <div class="filter-box">
             <div class="search-filter">
               <div class="field-search">
-                <b-form-input type="search" placeholder="$t('academy.search')" class="b-light"></b-form-input>
+                <b-form-input type="search" :placeholder="$t('academy.search')" class="b-light"></b-form-input>
                 <i class="b7-search"></i>
               </div>
             </div>

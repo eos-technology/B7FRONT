@@ -9,12 +9,12 @@
       <div class="c-body__info">
         <div class="c-body__info-box">
           <i class="b7-cup"></i>
-          <p class="b-regular">Win</p>
+          <p class="b-regular">{{ $t("signs.win") }}</p>
         </div>
         <p class="b-bold text-end">5%</p>
         <div class="c-body__info-box">
           <i class="b7-loss"></i>
-          <p class="b-regular">Loss</p>
+          <p class="b-regular">{{ $t("signs.loss") }}</p>
         </div>
         <p class="b-bold text-end">1%</p>
         <div class="c-body__info-box">
@@ -24,7 +24,7 @@
         <p class="b-bold text-end">1:5</p>
         <div class="c-body__info-box">
           <i class="b7-profit"></i>
-          <p class="b-regular">Total profit</p>
+          <p class="b-regular">{{ $t("signs.profit") }}</p>
         </div>
         <p class="b-bold text-end">1000</p>
       </div>
