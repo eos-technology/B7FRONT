@@ -418,5 +418,31 @@
     "membership": "Membership",
     "total": "Total purchases",
     "courses": "Courses"
+  },
+  "withdraw": {
+    "title": "Withdrawals",
+    "download": "Download report",
+    "approve": "Approve all",
+    "search": "Search",
+    "user": "USER",
+    "email": "MAIL",
+    "membership": "MEMBERSHIP",
+    "amount": "AMOUNT",
+    "available": "AVAILABLE",
+    "date": "DATE",
+    "wallet": "WALLET",
+    "state": "STATE",
+    "options": "OPTIONS",
+    "decline": "Decline",
+    "approveBtn": "Approve",
+    "withdraw": "Withdrawal",
+    "request": "Withdrawal request",
+    "message": "Are you sure to reject this withdrawal request?",
+    "cancel": "Cancel",
+    "accept": "Accept",
+    "succesfull": "Successful withdrawal",
+    "messageSucces": "The withdrawal has been successfully approved.",
+    "denied": "Withdrawal denied",
+    "messageDenied": "The withdrawal has been denied."
   }
 }

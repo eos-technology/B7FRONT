@@ -418,5 +418,31 @@
     "membership": "Membresia",
     "total": "Total compras",
     "courses": "Cursos"
+  },
+  "withdraw": {
+    "title": "Retiros",
+    "download": "Descargar reporte",
+    "approve": "Aprobar todo",
+    "search": "Buscar",
+    "user": "USUARIO",
+    "email": "CORREO",
+    "membership": "MEMBRESIA",
+    "amount": "CANTIDAD",
+    "available": "DISPONIBLE",
+    "date": "FECHA",
+    "wallet": "BILLETERA",
+    "state": "ESTADO",
+    "options": "OPCIONES",
+    "decline": "Rechazar",
+    "approveBtn": "Aprobar",
+    "withdraw": "Retiro",
+    "request": "Petición de retiro",
+    "message": "¿Estás seguro de rechazar esta solicitud de retiro?",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "succesfull": "Retiro exitoso",
+    "messageSucces": "El retiro ha sido aprobado con éxito.",
+    "denied": "Retiro negado",
+    "messageDenied": "El retiro ha sido negado."
   }
 }
