@@ -400,7 +400,23 @@
     "referral": "Beneficios de referencia",
     "cancel": "Cancelar",
     "create": "Crear",
-    "delete" : "Eliminar membresia",
+    "delete": "Eliminar membresia",
     "message": "¡Se ha editado la membresía éxitosamente!"
+  },
+  "purchases": {
+    "title": "Compras",
+    "movements": "Movimientos",
+    "download": "Descargar reporte",
+    "search": "Buscar",
+    "user": "USUARIO",
+    "type": "TIPO",
+    "description": "DESCRIPCIÓN",
+    "pay": "PAGO",
+    "date": "FECHA",
+    "state": "ESTADO",
+    "price": "PRECIO",
+    "membership": "Membresia",
+    "total": "Total compras",
+    "courses": "Cursos"
   }
 }

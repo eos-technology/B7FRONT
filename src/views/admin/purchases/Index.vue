@@ -1,7 +1,7 @@
 <template>
   <div class="plan">
     <div class="plan__header">
-      <h2 class="h2-bold">Compras</h2>
+      <h2 class="h2-bold">{{ $t('purchases.title') }}</h2>
     </div>
     <div class="plan__chart">
       <ChartPlans />
@@ -9,12 +9,12 @@
     <!-- TABLE -->
     <div class="plan__table">
       <div class="plan__header">
-        <h3 class="h3-bold">Movimientos</h3>
-        <b-button variant="primary" class="ml-auto">Descargar reporte</b-button>
+        <h3 class="h3-bold">{{ $t('purchases.movements') }}</h3>
+        <b-button variant="primary" class="ml-auto">{{ $t('purchases.download') }}</b-button>
         <div class="plan__filter">
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input type="search" placeholder="Search" class="b-light"></b-form-input>
+              <b-form-input type="search" :placeholder="$t('purchases.search')" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -25,13 +25,13 @@
         <table class="table__container">
           <thead>
             <tr>
-              <th class="sm-bold">USUARIO</th>
-              <th class="sm-bold">TIPO</th>
-              <th class="sm-bold">DESCRIPCION</th>
-              <th class="sm-bold">PAGO</th>
-              <th class="sm-bold">FECHA</th>
-              <th class="sm-bold">ESTADO</th>
-              <th class="sm-bold">PRECIO</th>
+              <th class="sm-bold">{{ $t('purchases.user') }}</th>
+              <th class="sm-bold">{{ $t('purchases.type') }}</th>
+              <th class="sm-bold">{{ $t('purchases.description') }}</th>
+              <th class="sm-bold">{{ $t('purchases.pay') }}</th>
+              <th class="sm-bold">{{ $t('purchases.date') }}</th>
+              <th class="sm-bold">{{ $t('purchases.state') }}</th>
+              <th class="sm-bold">{{ $t('purchases.price') }}</th>
             </tr>
           </thead>
           <tbody class="table__body">

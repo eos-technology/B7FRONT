@@ -402,5 +402,21 @@
     "cancel": "Cancel",
     "create": "Create",
     "message": "¡New membership has been edited successfully!"
+  },
+  "purchases": {
+    "title": "Purchases",
+    "movements": "Movements",
+    "download": "Download report",
+    "search": "Search",
+    "user": "USER",
+    "type": "GUY",
+    "description": "DESCRIPTION",
+    "pay": "PAY",
+    "date": "DATE",
+    "state": "STATE",
+    "price": "PRICE",
+    "membership": "Membership",
+    "total": "Total purchases",
+    "courses": "Courses"
   }
 }
