@@ -1,66 +1,66 @@
 <template>
   <section class="add-trade">
     <b-form class="form" @submit.stop.prevent>
-      <h3 class="h3-medium">Información básica</h3>
+      <h3 class="h3-medium">{{ $t('usersInformation.title') }}</h3>
       <label for="user" class="user__profile">
         <img :src="getFile('icons', 'avatar')" alt="" />
         <div>
           <h4 class="h4-bold">Ricardo Gomez Armani</h4>
-          <p class="l-medium user__text">Cambiar foto</p>
+          <p class="l-medium user__text">{{ $t('usersInformation.changePhoto') }}</p>
         </div>
         <input class="user__input" type="file" id="user" />
       </label>
 
       <div class="form__content">
         <!-- Name -->
-        <b-form-group id="input-name" label="Nombre *" label-for="name">
+        <b-form-group id="input-name" :label="$t('usersInformation.name')" label-for="name">
           <b-form-input id="name" v-model="form.name" placeholder="Input placerholder" required></b-form-input>
         </b-form-group>
         <!-- Email -->
-        <b-form-group id="input-email" label="Email *" label-for="email">
+        <b-form-group id="input-email" :label="$t('usersInformation.email')" label-for="email">
           <b-form-input id="email" v-model="form.email" placeholder="Input placerholder" required
             type="email"></b-form-input>
         </b-form-group>
         <!-- Country -->
-        <b-form-group id="input-country" label="País *" label-for="country">
+        <b-form-group id="input-country" :label="$t('usersInformation.country')" label-for="country">
           <b-form-select id="country" v-model="form.country" :options="options"></b-form-select>
         </b-form-group>
         <!-- Phone -->
-        <b-form-group id="input-phone" label="Teléfono *" label-for="phone">
+        <b-form-group id="input-phone" :label="$t('usersInformation.phone')" label-for="phone">
           <b-form-input id="phone" v-model="form.phone" placeholder="Input placerholder" type="tel"
             required></b-form-input>
         </b-form-group>
         <!-- Teacher -->
-        <b-form-group id="input-teacher" label="Is teacher *" label-for="teacher">
+        <b-form-group id="input-teacher" :label="$t('usersInformation.teacher')" label-for="teacher">
           <b-form-select id="teacher" v-model="form.teacher" :options="options"></b-form-select>
         </b-form-group>
         <!-- Signals -->
-        <b-form-group id="input-signal" label="Is signals *" label-for="signal">
+        <b-form-group id="input-signal" :label="$t('usersInformation.signal')" label-for="signal">
           <b-form-select id="signal" v-model="form.signal" :options="options"></b-form-select>
         </b-form-group>
         <!-- Initial pay -->
-        <b-form-group id="input-pay" label="Initial pay *" label-for="pay">
+        <b-form-group id="input-pay" :label="$t('usersInformation.pay')" label-for="pay">
           <b-form-select id="pay" v-model="form.pay" :options="options"></b-form-select>
         </b-form-group>
       </div>
       <div class="2fa-module d-flex flex-column gap-4">
-        <h5 class="h5-medium">Habilitar 2FA</h5>
+        <h5 class="h5-medium">{{ $t('usersInformation.enableFa') }}</h5>
         <div class="field d-flex justify-content-between align-items-center gap-3">
           <div class="label d-flex flex-column">
-            <span class="b-medium">Habilitar</span>
-            <span class="sm-light">Habilitar ó deshabilitar 2FA </span>
+            <span class="b-medium">{{ $t('usersInformation.enable') }}</span>
+            <span class="sm-light">{{ $t('usersInformation.enableDisable') }}</span>
           </div>
           <b-form-checkbox switch></b-form-checkbox>
         </div>
       </div>
 
       <div class="form__btns">
-        <b-button variant="info">Eliminar membresia</b-button>
+        <b-button variant="info">{{ $t('usersInformation.delete') }}</b-button>
         <div class="d-flex gap-2">
           <b-button variant="outline">
-            <p class="btn-info">Cancelar</p>
+            <p class="btn-info">{{ $t('usersInformation.cancel') }}</p>
           </b-button>
-          <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+          <b-button variant="primary" @click="isOpen = true">{{ $t('usersInformation.create') }}</b-button>
         </div>
       </div>
     </b-form>
@@ -72,7 +72,7 @@
         <div class="modal__body" @click="isOpen = false">
           <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
           <h3 class="h3-medium text-center">
-            ¡Se ha editado membresía éxitosamente!
+            {{ $t('usersInformation.message') }}
           </h3>
         </div>
       </div>

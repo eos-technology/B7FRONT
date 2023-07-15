@@ -2,9 +2,9 @@
   <section class="tabs-academy">
     <div class="center-tabs">
       <b-tabs pills align="center">
-        <b-tab title="Información" active><InformationTab /></b-tab>
-        <b-tab title="Contraseña"><PasswordTab /></b-tab>
-        <b-tab title="Membership"><MemberShipsTab /></b-tab>
+        <b-tab :title="$t('users.information')" active><InformationTab /></b-tab>
+        <b-tab :title="$t('users.password')"><PasswordTab /></b-tab>
+        <b-tab :title="$t('users.membership')"><MemberShipsTab /></b-tab>
       </b-tabs>
     </div>
   </section>
