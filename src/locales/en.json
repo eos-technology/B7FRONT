@@ -541,5 +541,11 @@
     "sixMonths": "Six months",
     "twelveMonths": "Twelve months",
     "confirmPackage": "Confirm package"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "available": "USD available",
+    "direct": "Total direct",
+    "indirect": "Total indirect"
   }
 }

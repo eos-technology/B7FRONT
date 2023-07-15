@@ -5,28 +5,28 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('movements.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
-            <span class="sm-light">Quantity</span>
+            <span class="sm-light">{{ $t('movements.quantity') }}</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Tipo</span>
+          <span class="sm-light">{{ $t('movements.type') }}</span>
           <span class="b-medium">Type 000</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('movements.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Estado</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('movements.state') }}</span>
+          <span class="b-medium">{{ $t('movements.inprogress') }}</span>
         </div>
         <i class="b7-arrow-down"></i>
       </div>
@@ -34,12 +34,12 @@
       <b-collapse visible id="collapse-1" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">From</span>
-            <span class="b-medium">From</span>
+            <span class="sm-light">{{ $t('movements.from') }}</span>
+            <span class="b-medium">{{ $t('movements.from') }}</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">To</span>
-            <span class="b-medium">To</span>
+            <span class="sm-light">{{ $t('movements.to') }}</span>
+            <span class="b-medium">{{ $t('movements.to') }}</span>
           </div>
         </div>
       </b-collapse>
@@ -49,28 +49,28 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('movements.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
-            <span class="sm-light">Quantity</span>
+            <span class="sm-light">{{ $t('movements.quantity') }}</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Tipo</span>
+          <span class="sm-light">{{ $t('movements.type') }}</span>
           <span class="b-medium">Type 000</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('movements.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Estado</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('movements.state') }}</span>
+          <span class="b-medium">{{ $t('movements.inprogress') }}</span>
         </div>
         <i class="b7-arrow-down"></i>
       </div>
@@ -78,12 +78,12 @@
       <b-collapse id="collapse-2" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">From</span>
-            <span class="b-medium">From</span>
+            <span class="sm-light">{{ $t('movements.from') }}</span>
+            <span class="b-medium">{{ $t('movements.from') }}</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">To</span>
-            <span class="b-medium">To</span>
+            <span class="sm-light">{{ $t('movements.to') }}</span>
+            <span class="b-medium">{{ $t('movements.to') }}</span>
           </div>
         </div>
       </b-collapse>
@@ -93,28 +93,28 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('movements.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item-flex">
           <img :src="getFile('icons', 'crypto-ico')" alt="" />
           <div class="item">
-            <span class="sm-light">Quantity</span>
+            <span class="sm-light">{{ $t('movements.quantity') }}</span>
             <span class="b-bold text-success">+$0.00</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Tipo</span>
+          <span class="sm-light">{{ $t('movements.type') }}</span>
           <span class="b-medium">Type 000</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('movements.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Estado</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('movements.state') }}</span>
+          <span class="b-medium">{{ $t('movements.inprogress') }}</span>
         </div>
         <i class="b7-arrow-down"></i>
       </div>
@@ -122,12 +122,12 @@
       <b-collapse id="collapse-3" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">From</span>
-            <span class="b-medium">From</span>
+            <span class="sm-light">{{ $t('movements.from') }}</span>
+            <span class="b-medium">{{ $t('movements.from') }}</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">To</span>
-            <span class="b-medium">To</span>
+            <span class="sm-light">{{ $t('movements.to') }}</span>
+            <span class="b-medium">{{ $t('movements.to') }}</span>
           </div>
         </div>
       </b-collapse>
