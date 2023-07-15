@@ -701,23 +701,26 @@
   },
   "routes": {
     "academy": "Academia",
-    "signals" : "Señales",
-    "tradingLive" : "Trading en vivo",
-    "plans" : "Planes",
-    "memberships" : "Membresias",
-    "team" : "Equipo",
-    "wallet" : "Billetera",
-    "transactions" : "Transacciones",
-    "profile" : "Perfil"
+    "signals": "Señales",
+    "tradingLive": "Trading en vivo",
+    "plans": "Planes",
+    "memberships": "Membresias",
+    "team": "Equipo",
+    "wallet": "Billetera",
+    "transactions": "Transacciones",
+    "profile": "Perfil"
   },
   "routesAdmin": {
-    "purchases" : "Compras",
-    "withdrawals" : "Retiros",
+    "purchases": "Compras",
+    "withdrawals": "Retiros",
     "academy": "Academia",
-    "signals" : "Señales",
-    "tradingLive" : "Trading en vivo",
-    "memberships" : "Membresías",
-    "users" : "Usuarios",
-    "transactions" : "Transacciones"
+    "signals": "Señales",
+    "tradingLive": "Trading en vivo",
+    "memberships": "Membresías",
+    "users": "Usuarios",
+    "transactions": "Transacciones"
+  },
+  "referrals": {
+    "referralsLink": "Enlace de referencias"
   }
 }

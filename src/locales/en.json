@@ -696,23 +696,26 @@
   },
   "routes": {
     "academy": "Academy",
-    "signals" : "Signals",
-    "tradingLive" : "Trading Live",
-    "plans" : "Plans",
-    "memberships" : "Memberships",
-    "team" : "Team",
-    "wallet" : "Wallet",
-    "transactions" : "Transactions",
-    "profile" : "Profile"
+    "signals": "Signals",
+    "tradingLive": "Trading Live",
+    "plans": "Plans",
+    "memberships": "Memberships",
+    "team": "Team",
+    "wallet": "Wallet",
+    "transactions": "Transactions",
+    "profile": "Profile"
   },
   "routesAdmin": {
-    "purchases" : "Purchases",
-    "withdrawals" : "Withdrawals",
+    "purchases": "Purchases",
+    "withdrawals": "Withdrawals",
     "academy": "Academy",
-    "signals" : "Signals",
-    "tradingLive" : "Trading Live",
-    "memberships" : "Memberships",
-    "users" : "Users",
-    "transactions" : "Transactions"
+    "signals": "Signals",
+    "tradingLive": "Trading Live",
+    "memberships": "Memberships",
+    "users": "Users",
+    "transactions": "Transactions"
+  },
+  "referrals": {
+    "referralsLink": "Link Referrals"
   }
 }
