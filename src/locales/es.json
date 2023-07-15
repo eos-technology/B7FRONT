@@ -459,5 +459,22 @@
     "messageSucces": "El retiro ha sido aprobado con éxito.",
     "denied": "Retiro negado",
     "messageDenied": "El retiro ha sido negado."
+  },
+  "tradingLive": {
+    "title": "Trading en vivo",
+    "create": "Crear clase",
+    "search": "Buscar",
+    "titleCard": "Clase de Trading - Operaciones Binarías",
+    "edit": "Editar",
+    "getInto": "Ingresar",
+    "name": "Nombre *",
+    "category": "Categoria *",
+    "time": "Tiempo *",
+    "description": "Descripción *",
+    "selectImage": "Seleccionar Imagen *",
+    "cancel": "Cancelar",
+    "createBtn": "Crear",
+    "message": " ¡Se ha creado nueva clase éxitosamente!",
+    "editClass": "Editar clase"
   }
 }

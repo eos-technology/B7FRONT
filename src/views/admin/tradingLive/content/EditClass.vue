@@ -1,9 +1,9 @@
 <template>
   <section class="add-trade">
-    <h3 class="h3-medium">Editar clase</h3>
+    <h3 class="h3-medium">{{ $t('tradingLive.editClass') }}</h3>
     <b-form class="form" @submit.stop.prevent>
       <!-- Name -->
-      <b-form-group id="input-name" label="Nombre *" label-for="name">
+      <b-form-group id="input-name" :label="$t('tradingLive.name')" label-for="name">
         <b-form-input
           id="name"
           v-model="form.name"
@@ -15,7 +15,7 @@
         <!-- Category -->
         <b-form-group
           id="input-category"
-          label="Categoría *"
+          :label="$t('tradingLive.category')"
           label-for="category"
         >
           <b-form-select
@@ -25,7 +25,7 @@
           ></b-form-select>
         </b-form-group>
         <!-- Category -->
-        <b-form-group id="input-time" label="Tiempo *" label-for="time">
+        <b-form-group id="input-time" :label="$t('tradingLive.time')" label-for="time">
           <b-form-select
             id="time"
             v-model="form.time"
@@ -36,7 +36,7 @@
       <!-- Message -->
       <b-form-group
         id="input-textarea"
-        label="Description *"
+        :label="$t('tradingLive.description')"
         label-for="textarea"
       >
         <b-form-textarea
@@ -50,7 +50,7 @@
       <!-- Dropzone -->
       <b-form-group
         id="input-dropzone"
-        label="Seleccionar imagen *"
+        :label="$t('tradingLive.selectImage')"
         label-for="dropzone"
       >
         <DropZone
@@ -62,8 +62,8 @@
       </b-form-group>
 
       <div class="form__btns">
-        <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+        <b-button variant="outline"><p class="btn-info">{{ $t('tradingLive.cancel') }}</p></b-button>
+        <b-button variant="primary" @click="isOpen = true">{{ $t('tradingLive.create') }}</b-button>
       </div>
     </b-form>
   </section>
@@ -78,7 +78,7 @@
             alt=""
           />
           <h3 class="h3-medium text-center">
-            ¡Se ha creado nueva clase éxitosamente!
+            {{ $t('tradingLive.message') }}
           </h3>
         </div>
       </div>

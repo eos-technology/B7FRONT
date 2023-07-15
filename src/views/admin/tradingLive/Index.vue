@@ -1,14 +1,14 @@
 <template>
   <main v-if="step === 1 && show === false">
     <article class="live__header">
-      <h2 class="h2-bold">Trading Live</h2>
-      <b-button variant="primary" @click="step = 2">Crear clase</b-button>
+      <h2 class="h2-bold">{{ $t('tradingLive.title') }}</h2>
+      <b-button variant="primary" @click="step = 2">{{ $t('tradingLive.create') }}</b-button>
     </article>
 
     <article class="live__filter">
       <div class="search-filter">
         <div class="field-search">
-          <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+          <b-form-input type="search" :placeholder="$t('tradingLive.search')" class="b-light"></b-form-input>
           <i class="b7-search"></i>
         </div>
       </div>
