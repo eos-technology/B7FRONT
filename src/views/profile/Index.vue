@@ -1,5 +1,5 @@
 <template>
-  <h2 class="h2-bold">Perfil</h2>
+  <h2 class="h2-bold">{{ $t('profile.title') }}</h2>
   <section class="tabs-academy">
     <div class="center-tabs">
       <b-tabs pills align="center">

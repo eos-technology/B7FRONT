@@ -1,6 +1,6 @@
 <template>
   <section class="member" v-if="step === 1">
-    <h2 class="h2-bold">Membership</h2>
+    <h2 class="h2-bold">{{ $t('membershipAdmin.title') }}</h2>
     <div class="member__grid">
       <div class="select">
         <label
@@ -14,7 +14,7 @@
             value="Q1"
           ></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Basic</h3>
+            <h3 class="h3-semibold">{{ $t('membershipAdmin.basic') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -56,7 +56,7 @@
             value="Q4"
           ></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">Personalizado</h3>
+            <h3 class="h3-semibold">{{ $t('membershipAdmin.personalized') }}</h3>
             <h5 class="h5-medium">Upcademy</h5>
           </div>
         </label>
@@ -73,7 +73,7 @@
           loop
         ></video>
         <div class="anim"></div>
-        <h3 class="h3-bold">Beneficios Basic</h3>
+        <h3 class="h3-bold">{{ $t('membershipAdmin.benefitsBasic') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q1"
@@ -86,7 +86,7 @@
         </div>
         <div class="member__card-btns">
           <b-button class="w-100" @click="$emit('showMembership')"
-            >Comprar Paquete</b-button
+            >{{ $t('membershipAdmin.buyPackage') }}</b-button
           >
         </div>
       </section>
@@ -101,7 +101,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Premium</h3>
+        <h3 class="h3-bold">{{ $t('membershipAdmin.benefitsPrimium') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q2"
@@ -117,7 +117,7 @@
             class="w-100"
             @click="$emit('showMembership')"
             variant="success"
-            >Comprar Paquete</b-button
+            >{{ $t('membershipAdmin.buyPackage') }}</b-button
           >
         </div>
       </section>
@@ -132,7 +132,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Prime</h3>
+        <h3 class="h3-bold">{{ $t('membershipAdmin.benefitsPrime') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q3"
@@ -148,7 +148,7 @@
             @click="$emit('showMembership')"
             class="w-100"
             variant="primary"
-            >Comprar Paquete</b-button
+            >{{ $t('membershipAdmin.buyPackage') }}</b-button
           >
         </div>
       </section>
@@ -163,7 +163,7 @@
           autoplay
           loop
         ></video>
-        <h3 class="h3-bold">Beneficios Personalizado</h3>
+        <h3 class="h3-bold">{{ $t('membershipAdmin.benefitsPersonalized') }}</h3>
         <div class="member__list">
           <div
             v-for="(item, index) in q4"
@@ -176,7 +176,7 @@
         </div>
         <b-form-group
           id="input-invest"
-          label="Ingrese inversión *"
+          :label="$t('membershipAdmin.investment')"
           label-for="invest"
         >
           <b-form-input
@@ -187,7 +187,7 @@
             required
           ></b-form-input>
           <p class="b-regular mt-2" style="color: #626c87">
-            Monto Mínimo $0,00
+            {{ $t('membershipAdmin.amount') }} $0,00
           </p>
         </b-form-group>
         <div class="member__card-btns">
@@ -195,19 +195,19 @@
             @click="$emit('showMembership')"
             class="w-100"
             variant="light"
-            >Comprar Paquete</b-button
+            >{{ $t('membershipAdmin.buyPackage') }}</b-button
           >
         </div>
       </section>
     </div>
     <div class="member__btns">
-      <b-button variant="outline">Cancelar</b-button>
-      <b-button variant="primary" @click="step = 2">Continuar</b-button>
+      <b-button variant="outline">{{ $t('membershipAdmin.cancel') }}</b-button>
+      <b-button variant="primary" @click="step = 2">{{ $t('membershipAdmin.continue') }}</b-button>
     </div>
   </section>
 
   <section class="time" v-if="step === 2">
-    <h3 class="h3-medium">Seleccionar tiempo</h3>
+    <h3 class="h3-medium">{{ $t('membershipAdmin.selectTime') }}</h3>
     <div class="time__grid">
       <label
         class="time__card"
@@ -225,9 +225,9 @@
             value="profit"
           ></b-form-radio>
           <div class="time__card-box w-100">
-            <h4 class="h4-semibold">Three Months</h4>
+            <h4 class="h4-semibold">{{ $t('membershipAdmin.threeMonths') }}</h4>
             <div class="time__card-grid">
-              <h5 class="h5-regular">Profit</h5>
+              <h5 class="h5-regular">{{ $t('membershipAdmin.profit') }}</h5>
               <h4 class="h4-bold">9%</h4>
             </div>
           </div>
@@ -249,9 +249,9 @@
             value="six"
           ></b-form-radio>
           <div class="time__card-box w-100">
-            <h4 class="h4-semibold">Six Months</h4>
+            <h4 class="h4-semibold">{{ $t('membershipAdmin.sixMonths') }}</h4>
             <div class="time__card-grid">
-              <h5 class="h5-regular">Profit</h5>
+              <h5 class="h5-regular">{{ $t('membershipAdmin.profit') }}</h5>
               <h4 class="h4-bold">18%</h4>
             </div>
           </div>
@@ -273,9 +273,9 @@
             value="twelve"
           ></b-form-radio>
           <div class="time__card-box w-100">
-            <h4 class="h4-semibold">Twelve Months</h4>
+            <h4 class="h4-semibold">{{ $t('membershipAdmin.twelveMonths') }}</h4>
             <div class="time__card-grid">
-              <h5 class="h5-regular">Profit</h5>
+              <h5 class="h5-regular">{{ $t('membershipAdmin.profit') }}</h5>
               <h4 class="h4-bold">36%</h4>
             </div>
           </div>
@@ -283,8 +283,8 @@
       </label>
     </div>
     <div class="time__btns">
-      <b-button variant="outline" @click="step = 1">Cancelar</b-button>
-      <b-button variant="primary">Confirmar paquete</b-button>
+      <b-button variant="outline" @click="step = 1">{{ $t('membershipAdmin.cancel') }}</b-button>
+      <b-button variant="primary">{{ $t('membershipAdmin.confirmPackage') }}</b-button>
     </div>
   </section>
 </template>

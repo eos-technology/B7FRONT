@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="content">
-                <h3 class="h3-medium">Contenido</h3>
+                <h3 class="h3-medium">{{ $t('academy.contenido') }}</h3>
                 <div class="courses-grid">
                     <CourseCard v-for="(course, index) in allCourses" :key="index" :course="course" />
                 </div>

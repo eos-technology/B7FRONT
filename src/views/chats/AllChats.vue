@@ -5,7 +5,7 @@
             <img :src="getFile('images', 'edit-create', 'svg')" alt="" />
         </header>
         <div class="search-field d-flex align-items-center position-relative">
-            <input type="search" id="chat-search" name="search" class="b-light" placeholder="Search">
+            <input type="search" id="chat-search" name="search" class="b-light" :placeholder="$t('chats.search')">
             <i class="b7-search position-absolute"></i>
         </div>
         <div class="chats d-flex flex-column align-items-stretch">

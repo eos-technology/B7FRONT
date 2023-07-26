@@ -2,24 +2,24 @@
   <section class="membership" v-if="step === 1">
     <div class="membership__content">
       <div class="membership__header">
-        <h2 class="h2-bold">Membresias</h2>
-        <b-button variant="primary" @click="step = 2">Crear membresia</b-button>
+        <h2 class="h2-bold">{{ $t('membership.title') }}</h2>
+        <b-button variant="primary" @click="step = 2">{{ $t('membershipadmin.create') }}</b-button>
       </div>
       <div class="token__grid">
         <div class="token__card token__card--blue">
-          <h4 class="h4-bold">Token sale ends in</h4>
+          <h4 class="h4-bold">{{ $t('membershipadmin.sale') }}</h4>
 
           <div class="count">
             <div class="count__box">
-              <p class="l-medium">Total compras</p>
+              <p class="l-medium">{{ $t('membershipadmin.total') }}</p>
               <div class="count__box-data">$0.000</div>
             </div>
             <div class="count__box">
-              <p class="l-medium">Membresias activas</p>
+              <p class="l-medium">{{ $t('membershipadmin.memberships') }}</p>
               <div class="count__box-data">10608</div>
             </div>
             <div class="count__box">
-              <p class="l-medium">Todas</p>
+              <p class="l-medium">{{ $t('membershipadmin.all') }}</p>
               <div class="count__box-data">607000</div>
             </div>
           </div>
@@ -33,7 +33,7 @@
             ></b-progress>
           </div>
           <b-button variant="primary" @click="isOpen = true"
-            >Crear membresia</b-button
+            >{{ $t('membershipadmin.create') }}</b-button
           >
         </div>
         <div class="token__card token__card--blue"><ChartToken /></div>
@@ -42,8 +42,8 @@
 
     <div class="left-tabs">
       <b-tabs pills>
-        <b-tab title="Membresias " active><Memberships @showMembership="step = 3"/></b-tab>
-        <b-tab title="Adquiridas"><AcquiredTab /></b-tab>
+        <b-tab :title="$t('membershipadmin.tabMemberships')" active><Memberships @showMembership="step = 3"/></b-tab>
+        <b-tab :title="$t('membershipadmin.acquired')"><AcquiredTab /></b-tab>
       </b-tabs>
     </div>
   </section>

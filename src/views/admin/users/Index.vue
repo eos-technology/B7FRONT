@@ -1,9 +1,9 @@
 <template>
   <main v-if="step === 1">
-    <h2 class="h2-bold">Usuarios</h2>
+    <h2 class="h2-bold">{{ $t('users.title') }}</h2>
     <section class="movements">
       <div class="movements-header">
-        <h3 class="h3-medium">Todos los usuarios</h3>
+        <h3 class="h3-medium">{{ $t('users.allUsers') }}</h3>
         <div class="filter-box">
           <b-button class="movements__btn" variant="primary">Descargar reporte</b-button>
           <div class="search-filter">
@@ -19,6 +19,7 @@
     </section>
   </main>
   <section class="user" v-if="step === 2">
+    <GoBackDummy @click="step = 1" />
     <UserTabs />
   </section>
 </template>
@@ -27,6 +28,7 @@
 import { ref } from "vue";
 import AccordionTransactions from "./content/AccordionTransactions.vue";
 import UserTabs from './content/UserTabs.vue'
+import GoBackDummy from "../../../components/global/GoBackDummy.vue";
 
 const step = ref(1);
 </script>

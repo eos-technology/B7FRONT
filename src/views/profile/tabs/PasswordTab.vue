@@ -1,17 +1,17 @@
 <template>
   <section class="add-trade">
     <b-form class="form" @submit.stop.prevent>
-      <h3 class="h3-medium">Cambio de contraseña</h3>
+      <h3 class="h3-medium">{{ $t('profile.changePassword') }}</h3>
 
       <div class="form__content">
         <!-- Password -->
-        <b-form-group id="input-pass" label="Nueva contraseña *" label-for="pass">
+        <b-form-group id="input-pass" :label="$t('profile.newPassword')" label-for="pass">
           <b-form-input id="pass" v-model="form.pass" placeholder="Password" type="password" required>
           </b-form-input>
           <img :src="getFile('images', 'eye-cross', 'svg')" alt="" />
         </b-form-group>
         <!-- Confirm Password -->
-        <b-form-group id="confirm-pass" label="Confirmar contraseña *" label-for="confirmPass">
+        <b-form-group id="confirm-pass" :label="$t('profile.confirmPassword')" label-for="confirmPass">
           <b-form-input id="confirmPass" v-model="form.confirmPass" placeholder="Password" type="password" required>
           </b-form-input>
           <img :src="getFile('images', 'eye-cross', 'svg')" alt="" />
@@ -20,9 +20,9 @@
 
       <div class="form__btns">
         <b-button variant="outline">
-          <p class="btn-info">Cancelar</p>
+          <p class="btn-info">{{ $t('profile.cancel') }}</p>
         </b-button>
-        <b-button variant="primary" @click="isOpen = true">Guardar</b-button>
+        <b-button variant="primary" @click="isOpen = true">{{ $t('profile.save') }}</b-button>
       </div>
     </b-form>
   </section>
@@ -33,7 +33,7 @@
         <div class="modal__body" @click="isOpen = false">
           <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
           <h3 class="h3-medium text-center">
-            ¡Se ha cambiado la contraseña éxitosamente!
+            {{ $t('profile.passwordMessage') }}
           </h3>
         </div>
       </div>

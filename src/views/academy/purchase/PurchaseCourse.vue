@@ -1,18 +1,18 @@
 <template>
     <main>
-        <b-button variant="transparent" class="b-light" @click="$emit('back')"><i class="b7-back"></i> Regresar</b-button>
+        <b-button variant="transparent" class="b-light" @click="$emit('back')"><i class="b7-back"></i>
+            {{ $t('academy.goBack') }}</b-button>
         <section class="d-flex justify-content-center">
             <!-- Purchase: select payment method -->
             <div class="purchase-box" v-if="purchaseStep === 1">
                 <div class="purchase-header">
-                    <h2 class="h2-bold">Compra</h2>
+                    <h2 class="h2-bold">{{ $t('acadey.purchase') }}</h2>
                     <img :src="getFile('images', 'logo', 'webp')" alt="" />
                 </div>
                 <div class="purchase-content d-flex flex-column">
                     <div>
-                        <h4 class="h4-semibold">Método de pago</h4>
-                        <p class="b-regular">1USD = 1B7T. Send to the wallet the amount equivalent to B7T that you want to
-                            receive</p>
+                        <h4 class="h4-semibold">{{ $t('academy.paymentMethod') }}</h4>
+                        <p class="b-regular">1USD = 1B7T. {{ $t('academy.purchaseLegend') }}</p>
                     </div>
                     <div class="item d-flex justify-content-between align-items-center">
                         <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
@@ -31,52 +31,52 @@
                         <i class="b7-arrow-down"></i>
                     </div>
                     <div class="purchase-buttons d-flex justify-content-end mt-3">
-                        <b-button variant="outline-primary">Cancelar</b-button>
-                        <b-button variant="primary" @click="purchaseStep = 2">Confirmar compra</b-button>
+                        <b-button variant="outline-primary">{{ $t('academy.cancel') }}</b-button>
+                        <b-button variant="primary" @click="purchaseStep = 2">{{ $t('academ.confirmPurchase') }}</b-button>
                     </div>
                 </div>
             </div>
             <!-- Purchase: payment QR -->
             <div class="purchase-box" v-if="purchaseStep === 2">
                 <div class="purchase-header">
-                    <h2 class="h2-bold">Payment</h2>
+                    <h2 class="h2-bold">{{ $t('academy.payment') }}</h2>
                     <img :src="getFile('images', 'logo', 'webp')" alt="" />
                 </div>
                 <div class="purchase-content d-flex flex-column align-items-center">
                     <div>
-                        <h2 class="h2-semibold">Payment address</h2>
+                        <h2 class="h2-semibold">{{ $t('academy.paymentAddress') }}</h2>
                     </div>
                     <img :src="getFile('images', 'qr', 'svg')" alt="" />
                     <div>
-                        <p class="b-regular">Quantity</p>
+                        <p class="b-regular">{{ $t('academy.quantity') }}</p>
                         <p class="h6-regular">0 USD</p>
                     </div>
                     <div class="d-flex flex-column align-content-center">
-                        <span class="b-regular text-center">Wallet Address</span>
+                        <span class="b-regular text-center">{{ $t('academy.walletASddress') }}</span>
                         <span class="h6-regular text-center">TQerdfbNi7SyfTzs6PSgesHjZqL1NVQm5X</span>
-                        <b-button variant="transparent" class="text-primary">Copy Wallet</b-button>
+                        <b-button variant="transparent" class="text-primary">{{ $t('academy.copyWallet') }}</b-button>
                     </div>
                     <div class="purchase-buttons d-flex justify-content-end mt-3 align-self-end">
-                        <b-button variant="outline-primary">Cancelar</b-button>
-                        <b-button variant="primary" @click="purchaseStep = 3">Verify payment</b-button>
+                        <b-button variant="outline-primary">{{ $t('academy.cancel') }}</b-button>
+                        <b-button variant="primary" @click="purchaseStep = 3">{{ $t('academy.verifyPayment') }}</b-button>
                     </div>
                 </div>
             </div>
             <!-- Purchase: successful -->
             <div class="purchase-box" v-if="purchaseStep === 3">
                 <div class="purchase-header">
-                    <h2 class="h2-bold">Compra</h2>
+                    <h2 class="h2-bold">{{ $t('academy.purchase') }}</h2>
                     <img :src="getFile('images', 'logo', 'webp')" alt="" />
                 </div>
                 <div class="purchase-content d-flex flex-column align-items-center">
                     <i class="b7-done"></i>
                     <div>
-                        <p class="b-regular text-center">Compra exitosa</p>
-                        <p class="h6-regular text-center">La compra de la membresía ha sido exitosa.</p>
+                        <p class="b-regular text-center">{{ $t('academy.successfulPurchase') }}</p>
+                        <p class="h6-regular text-center">{{ $t('academy.successfulPurchaseLegend') }}</p>
                     </div>
                     <div class="purchase-buttons d-flex justify-content-end mt-3 align-self-end">
-                        <b-button variant="outline-primary">Cancelar</b-button>
-                        <b-button variant="primary" @click="$emit('back')">Seguir comprando</b-button>
+                        <b-button variant="outline-primary">{{ $t('academy.cancel') }}</b-button>
+                        <b-button variant="primary" @click="$emit('back')">{{ $t('academy.continueShopping') }}</b-button>
                     </div>
                 </div>
             </div>

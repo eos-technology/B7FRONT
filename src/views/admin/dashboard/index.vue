@@ -7,7 +7,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Available USD</p>
+            <p class="b-regular">{{ $t('dashboardadmin.available') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -27,7 +27,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Total direct</p>
+            <p class="b-regular">{{ $t('dashboardadmin.totalDirect') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -37,7 +37,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Total indirect</p>
+            <p class="b-regular">{{ $t('dashboardadmin.totalIndirect') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -54,22 +54,22 @@
     <!-- Down Cards -->
     <article class="down">
       <div class="down__card down__card--purple">
-        <h4 class="h4-bold">Compras | $0.00</h4>
+        <h4 class="h4-bold">{{ $t('dashboardadmin.shopping') }} | $0.00</h4>
         <ChartBuys />
       </div>
       <div class="down__card down__card--light-blue">
-        <h4 class="h4-bold">Mis Wallets</h4>
+        <h4 class="h4-bold">{{ $t('dashboardadmin.wallets') }}</h4>
         <ChartDonut />
       </div>
       <div class="down__card down__card--green">
         <div class="down__card-header">
           <div class="down__card-box">
-            <h4 class="h4-bold">Membresias</h4>
+            <h4 class="h4-bold">{{ $t('dashboardadmin.memberships') }}</h4>
           </div>
         </div>
         <div class="bar">
           <div class="bar__flex">
-            <p class="b-medium">Basic</p>
+            <p class="b-medium">{{ $t('dashboardadmin.basic') }}</p>
             <p class="b-medium">$0.000</p>
           </div>
 
@@ -117,7 +117,7 @@
         </div>
         <div class="bar">
           <div class="bar__flex">
-            <p class="b-medium">Personalizado</p>
+            <p class="b-medium">{{ $t('dashboardadmin.personalized') }}</p>
             <p class="b-medium">$0.000</p>
           </div>
 
@@ -136,45 +136,45 @@
 
     <!--  Tokens -->
     <div class="dashboard__header">
-      <h2 class="h3-medium">Tokens</h2>
-      <b-button variant="primary" @click="trade = true">Crear tokens</b-button>
+      <h2 class="h3-medium">{{ $t('dashboardadmin.tokens') }}</h2>
+      <b-button variant="primary" @click="trade = true">{{ $t('dashboardadmin.createTokens') }}</b-button>
     </div>
 
     <div class="dashboard__tokens">
       <div class="token__card token__card--blue">
-        <h4 class="h4-bold">Token sale ends in</h4>
+        <h4 class="h4-bold">{{ $t('dashboardadmin.tokenSale') }}</h4>
         <div class="count">
           <div class="count__date">
-            <p class="b-medium">Permitir desde</p>
+            <p class="b-medium">{{ $t('dashboardadmin.allowFrom') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('dashboardadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('dashboardadmin.month') }}</p>
                 <div class="count__box-data">10</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('dashboardadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
           </div>
           <div class="count__line"></div>
           <div class="count__date">
-            <p class="b-medium">Permitir hasta</p>
+            <p class="b-medium">{{ $t('dashboardadmin.allowUp') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('dashboardadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('dashboardadmin.month') }}</p>
                 <div class="count__box-data">11</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('dashboardadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
@@ -190,46 +190,46 @@
           ></b-progress>
         </div>
         <div class="count__flex">
-          <b-button class="btns--white w-100">Eliminar</b-button>
+          <b-button class="btns--white w-100">{{ $t('dashboardadmin.delete') }}</b-button>
           <b-button variant="primary" class="w-100" @click="isOpen = true"
-            >Editar</b-button
+            >{{ $t('dashboardadmin.edit') }}</b-button
           >
         </div>
       </div>
       <div class="token__card token__card--blue">
-        <h4 class="h4-bold">Token sale ends in</h4>
+        <h4 class="h4-bold">{{ $t('dashboardadmin.tokenSale') }}</h4>
         <div class="count">
           <div class="count__date">
-            <p class="b-medium">Permitir desde</p>
+            <p class="b-medium">{{ $t('dashboardadmin.allowFrom') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('dashboardadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('dashboardadmin.month') }}</p>
                 <div class="count__box-data">10</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('dashboardadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
           </div>
           <div class="count__line"></div>
           <div class="count__date">
-            <p class="b-medium">Permitir hasta</p>
+            <p class="b-medium">{{ $t('dashboardadmin.allowUp') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('dashboardadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('dashboardadmin.month') }}</p>
                 <div class="count__box-data">11</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('dashboardadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
@@ -245,12 +245,13 @@
           ></b-progress>
         </div>
         <div class="count__flex">
-          <b-button class="btns--white w-100">Eliminar</b-button>
+          <b-button class="btns--white w-100">{{ $t('dashboardadmin.delete') }}</b-button>
           <b-button variant="primary" class="w-100" @click="isOpen = true"
-            >Editar</b-button
+            >{{ $t('dashboardadmin.edit') }}</b-button
           >
         </div>
       </div>
+      
     </div>
   </section>
 

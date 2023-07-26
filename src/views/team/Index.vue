@@ -1,6 +1,6 @@
 <template>
   <section class="team">
-    <h2 class="h2-bold">Equipo</h2>
+    <h2 class="h2-bold">{{ $t('team.title') }}</h2>
     <div class="card overflow-x-auto">
       <OrganizationChart :value="data" collapsible>
         <template #person="slotProps">

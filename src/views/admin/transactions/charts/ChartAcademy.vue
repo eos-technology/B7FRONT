@@ -7,11 +7,11 @@
         <div class="chart-trading__box">
           <div class="chart-trading__label chart-trading__label--blue">
             <div class="dot-chart bg-blue"></div>
-            <p class="b-regular">{{ series[0].name }}</p>
+            <p class="b-regular">{{ $t(series[0].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--yellow">
             <div class="dot-chart bg-warning"></div>
-            <p class="b-regular">{{ series[1].name }}</p>
+            <p class="b-regular">{{ $t(series[1].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--purple">
             <div class="dot-chart bg-lila"></div>
@@ -40,11 +40,11 @@
 <script setup>
 const series = [
   {
-    name: "Ganancia",
+    name: "chartacademy.revenue",
     data: [0, 33000, 54000, 3500, 54000, 4000, 0],
   },
   {
-    name: "Riesgo/Beneficio",
+    name: "chartacademy.riskbenefit",
     data: [0, 8000, 50000, 62000, 4000, 500, 0],
   },
   {

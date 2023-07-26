@@ -1,10 +1,10 @@
 <template>
   <section>
-    <h3 class="h3-medium">Editar curso</h3>
+    <h3 class="h3-medium">{{ $t('informationtab.title') }}</h3>
     <b-form class="form" @submit.stop.prevent>
       <div class="form__content">
         <!-- Name -->
-        <b-form-group id="input-name" label="Nombre *" label-for="name">
+        <b-form-group id="input-name" :label="$t('informationtab.name')" label-for="name">
           <b-form-input
             id="name"
             v-model="form.name"
@@ -15,7 +15,7 @@
         <!-- Category -->
         <b-form-group
           id="input-category"
-          label="Categoría *"
+          :label="$t('informationtab.category')"
           label-for="category"
         >
           <b-form-select
@@ -27,7 +27,7 @@
         <!-- Lessons -->
         <b-form-group
           id="input-lessons"
-          label="Lecciones *"
+          :label="$t('informationtab.lessons')"
           label-for="lessons"
         >
           <b-form-input
@@ -40,7 +40,7 @@
         <!-- Price -->
         <b-form-group
           id="input-price"
-          label="Precio del curso *"
+          :label="$t('informationtab.courseprice')"
           label-for="price"
         >
           <b-form-input
@@ -52,7 +52,7 @@
           ></b-form-input>
         </b-form-group>
         <!-- Start -->
-        <b-form-group id="input-date" label="Inicia *" label-for="date">
+        <b-form-group id="input-date" :label="$t('informationtab.start')" label-for="date">
           <b-form-input
             id="date"
             v-model="form.date"
@@ -61,7 +61,7 @@
           ></b-form-input>
         </b-form-group>
         <!-- End -->
-        <b-form-group id="input-end" label="Fin *" label-for="end">
+        <b-form-group id="input-end" :label="$t('informationtab.end')" label-for="end">
           <b-form-input
             id="end"
             v-model="form.end"
@@ -73,7 +73,7 @@
       <!-- Message -->
       <b-form-group
         id="input-textarea"
-        label="Description *"
+        :label="$t('informationtab.description')"
         label-for="textarea"
       >
         <b-form-textarea
@@ -87,7 +87,7 @@
       <!-- Dropzone -->
       <b-form-group
         id="input-dropzone"
-        label="Seleccionar imagen *"
+        :label="$t('informationtab.selectimage')"
         label-for="dropzone"
       >
         <DropZone
@@ -98,12 +98,12 @@
         />
       </b-form-group>
       <div class="form__btns">
-        <b-button variant="info">Eliminar curso</b-button>
+        <b-button variant="info">{{ $t('informationtab.deletecourse') }}</b-button>
         <div class="d-flex gap-4 ">
           <b-button variant="outline"
-            ><p class="btn-info">Cancelar</p></b-button
+            ><p class="btn-info">{{ $t('informationtab.cancel') }}</p></b-button
           >
-          <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+          <b-button variant="primary" @click="isOpen = true">{{ $t('informationtab.create') }}</b-button>
         </div>
       </div>
     </b-form>
@@ -119,7 +119,7 @@
             alt=""
           />
           <h3 class="h3-medium text-center">
-            ¡Se ha creado nuevo curso éxitosamente!
+            {{ $t('teleport.text') }}
           </h3>
         </div>
       </div>

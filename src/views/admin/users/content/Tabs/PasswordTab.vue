@@ -1,11 +1,11 @@
 <template>
   <section class="add-trade">
     <b-form class="form" @submit.stop.prevent>
-      <h3 class="h3-medium">Cambio de contraseña</h3>
+      <h3 class="h3-medium">{{ $t('passwordAdmin.title') }}</h3>
 
       <div class="form__content">
         <!-- Password -->
-        <b-form-group id="input-pass" label="Nueva contraseña *" label-for="pass">
+        <b-form-group id="input-pass" :label="$t('passwordAdmin.newPassword')" label-for="pass">
           <b-form-input
             id="pass"
             v-model="form.pass"
@@ -15,7 +15,7 @@
           ></b-form-input>
         </b-form-group>
         <!-- New Password -->
-        <b-form-group id="input-newPass" label="Confirmar contraseña *" label-for="newPass">
+        <b-form-group id="input-newPass" :label="$t('passwordAdmin.confirmPassword')" label-for="newPass">
           <b-form-input
             id="newPass"
             v-model="form.newPass"
@@ -27,8 +27,8 @@
       </div>
 
       <div class="form__btns">
-        <b-button variant="outline"><p class="btn-info">Cancelar</p></b-button>
-        <b-button variant="primary" @click="isOpen = true">Guardar</b-button>
+        <b-button variant="outline"><p class="btn-info">{{ $t('passwordAdmin.cancel') }}</p></b-button>
+        <b-button variant="primary" @click="isOpen = true">{{ $t('passwordAdmin.save') }}</b-button>
       </div>
     </b-form>
   </section>
@@ -43,7 +43,7 @@
             alt=""
           />
           <h3 class="h3-medium text-center">
-            ¡Se ha cambiado la contraseña éxitosamente!
+            {{ $t('passwordAdmin.message') }}
           </h3>
         </div>
       </div>

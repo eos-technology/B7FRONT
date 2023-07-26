@@ -3,6 +3,7 @@
     <router-link class="routes__item" v-for="(item, index) in routes" :key="index" :to="{ name: item.route }">{{ item.name
     }}</router-link>
   </div>
+  
 </template>
 
 <script setup>
@@ -17,7 +18,7 @@ const routes = [
   { name: "Transacciones", route: "Transactions" },
   { name: "Tokens", route: "Tokens" },
   { name: "Chats", route: "Chats" },
-  { name: "Perfil", route: "Profile" },
+  { name: "routes.profile", route: "Profile" },
 ];
 </script>
 

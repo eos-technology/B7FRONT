@@ -5,16 +5,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -22,11 +22,11 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
         <b-button class="btns btns--white" @click="$emit('viewUser')"
-          >View</b-button
+          >{{ $t('users.view') }}</b-button
         >
         <i class="b7-arrow-down"></i>
       </div>
@@ -34,15 +34,15 @@
       <b-collapse visible id="collapse-1" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -54,16 +54,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -71,25 +71,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-2" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -101,16 +101,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -118,25 +118,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-3" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -148,16 +148,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -165,25 +165,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-4" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -195,16 +195,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -212,25 +212,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-5" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -242,16 +242,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -259,25 +259,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-6" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>
@@ -289,16 +289,16 @@
         <div class="item-flex">
           <img :src="getFile('icons', 'avatar')" alt="" />
           <div class="item">
-            <span class="sm-light">Usuario</span>
+            <span class="sm-light">{{ $t('users.user') }}</span>
             <span class="b-bold">email@email.com</span>
           </div>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Fecha</span>
+          <span class="sm-light">{{ $t('users.date') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Sponsor</span>
+          <span class="sm-light">{{ $t('users.sponsor') }}</span>
           <span class="b-medium">Febrero 23 2023</span>
         </div>
         <div class="item item-flex">
@@ -306,25 +306,25 @@
           <span class="b-medium text-success">+$0.00</span>
         </div>
         <div class="item item-flex">
-          <span class="sm-light">Available</span>
-          <span class="b-medium">En proceso</span>
+          <span class="sm-light">{{ $t('users.available') }}</span>
+          <span class="b-medium">{{ $t('users.Inprogress') }}</span>
         </div>
-        <b-button class="btns btns--white">View</b-button>
+        <b-button class="btns btns--white">{{ $t('users.view') }}</b-button>
         <i class="b7-arrow-down"></i>
       </div>
       <div class="divider"></div>
       <b-collapse id="collapse-7" class="">
         <div class="d-flex">
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Teacher</span>
+            <span class="sm-light">{{ $t('users.teacher') }}</span>
             <span class="b-medium">From</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Signals</span>
+            <span class="sm-light">{{ $t('users.signals') }}</span>
             <span class="b-medium">To</span>
           </div>
           <div class="item d-flex flex-column w-50">
-            <span class="sm-light">Initial pay</span>
+            <span class="sm-light">{{ $t('users.initialPay') }}</span>
             <span class="b-medium">To</span>
           </div>
         </div>

@@ -5,13 +5,13 @@
         <dir></dir>
         <div class="filter-box">
           <b-button class="movements__btn" variant="primary"
-            >Descargar reporte</b-button
+            >{{ $t('plantable.downloadreport') }}</b-button
           >
           <div class="search-filter">
             <div class="field-search">
               <b-form-input
                 type="search"
-                placeholder="search"
+                :placeholder="$t('search.search')"
                 class="b-light"
               ></b-form-input>
               <i class="b7-search"></i>

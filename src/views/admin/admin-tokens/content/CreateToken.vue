@@ -1,35 +1,35 @@
 <template>
     <section class="add-token">
-        <h3 class="h3-medium">Crear token</h3>
-        <div class="token-form">
+        <h3 class="h3-medium">{{ $t('createtoken.title') }}</h3>
+        <div class="token-form ">
             <div class="field">
-                <label for="" class="l-medium">Inicia <span>*</span></label>
+                <label for="" class="l-medium">{{ $t('createtoken.start') }} <span>*</span></label>
                 <b-form-input id="" type="date"></b-form-input>
             </div>
             <div class="field">
-                <label for="" class="l-medium">Hasta <span>*</span></label>
+                <label for="" class="l-medium">{{ $t('createtoken.until') }}  <span>*</span></label>
                 <b-form-input id="" type="date"></b-form-input>
             </div>
             <div class="field">
-                <label for="" class="l-medium">Maxima venta <span>*</span></label>
+                <label for="" class="l-medium">{{ $t('createtoken.topSale') }}  <span>*</span></label>
                 <b-form-input id="" type="text"></b-form-input>
             </div>
             <div class="field">
-                <label for="" class="l-medium">Precio USD <span>*</span></label>
+                <label for="" class="l-medium">{{ $t('createtoken.usdPrice') }}  <span>*</span></label>
                 <b-form-input id="" type="number"></b-form-input>
             </div>
             <b-form-radio v-model="enable" :aria-describedby="ariaDescribedby" name="habilitar-token" value="A">
-                <p class="l-medium">Habilitar</p>
+                <p class="l-medium">{{ $t('createtoken.enable') }} </p>
             </b-form-radio>
             <b-form-radio v-model="enable" :aria-describedby="ariaDescribedby" name="habilitar-token" value="B">
-                <p class="l-medium">No habilitar</p>
+                <p class="l-medium">{{ $t('createtoken.disable') }} </p>
             </b-form-radio>
 
         </div>
 
         <div class="form__btns d-flex justify-content-end">
-            <b-button variant="outline">Cancelar</b-button>
-            <b-button variant="primary" @click="isOpen = true">Crear</b-button>
+            <b-button variant="outline">{{ $t('createtoken.cancel') }}</b-button>
+            <b-button variant="primary" @click="isOpen = true">{{ $t('createtoken.create') }}</b-button>
         </div>
     </section>
 
@@ -39,7 +39,7 @@
                 <div class="modal__body" @click="isOpen = false">
                     <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
                     <h3 class="h3-medium text-center">
-                        ¡Se ha creado nuevo token éxitosamente!
+                        {{ $t('createtoken.teleport') }}
                     </h3>
                 </div>
             </div>
@@ -71,7 +71,7 @@ let enable = ref('')
 
 .token-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-gap: 2.6rem 1.6rem;
 
     label {
@@ -97,7 +97,8 @@ let enable = ref('')
         }
     }
 }
-
+</style>
+<style>
 .form-check-input,
 input[type="radio"] {
     margin: 0 !important;

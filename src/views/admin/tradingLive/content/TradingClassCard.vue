@@ -6,7 +6,7 @@
       alt=""
     />
     <b-card-body class="c-body">
-      <h5 class="h5-bold">Clase de Trading - Operaciones Binarías</h5>
+      <h5 class="h5-bold">{{ $t('tradingLive.titleCard') }}</h5>
       <p class="b-light">
         Nunc imperdiet diam vitae fringilla laoreet. Ut sodales purus eu diam
       </p>
@@ -14,9 +14,9 @@
     <b-card-footer>
       <div class="d-flex align-items-center gap-3 w-100">
         <b-button class="btns--white w-100" @click="$emit('editClase')"
-          >Editar</b-button
+          >{{ $t('tradingLive.edit') }}</b-button
         >
-        <b-button variant="primary" class="w-100">Ingresar</b-button>
+        <b-button variant="primary" class="w-100">{{ $t('tradingLive.getInto') }}</b-button>
       </div>
     </b-card-footer>
   </b-card>

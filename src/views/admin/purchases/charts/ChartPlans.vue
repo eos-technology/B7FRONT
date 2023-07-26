@@ -5,9 +5,9 @@
       <div class="chart-plans__item">
         <i class="b7-ratio p-0"></i>
         <div class="chart-plans__info">
-          <p class="l-bold">Membership</p>
+          <p class="l-bold">{{ $t('purchases.membership') }}</p>
           <div class="chart-plans__flex align-items-center">
-            <p class="b-regular">Total compras</p>
+            <p class="b-regular">{{ $t('purchases.total') }}</p>
             <p class="h6-bold text-end">$0.000</p>
           </div>
         </div>
@@ -15,9 +15,9 @@
       <div class="chart-plans__item">
         <i class="b7-globe p-0"></i>
         <div class="chart-plans__info">
-          <p class="l-bold">Cursos</p>
+          <p class="l-bold">{{ $t('purchases.courses') }}</p>
           <div class="chart-plans__flex align-items-center">
-            <p class="b-regular">Total Compras</p>
+            <p class="b-regular">{{ $t('purchases.total') }}</p>
             <p class="h6-bold text-end">$0.000</p>
           </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="chart-plans__info">
           <p class="l-bold">Tokens</p>
           <div class="chart-plans__flex align-items-center">
-            <p class="b-regular">Total compras</p>
+            <p class="b-regular">{{ $t('purchases.total') }}</p>
             <p class="h6-bold text-end">$0.000</p>
           </div>
         </div>
@@ -40,11 +40,11 @@
         <div class="chart-trading__box">
           <div class="chart-trading__label chart-trading__label--blue">
             <div class="dot-chart bg-blue"></div>
-            <p class="b-regular">{{ series[0].name }}</p>
+            <p class="b-regular">{{ $t(series[0].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--yellow">
             <div class="dot-chart bg-warning"></div>
-            <p class="b-regular">{{ series[1].name }}</p>
+            <p class="b-regular">{{ $t(series[1].name) }}</p>
           </div>
           <div class="chart-trading__label chart-trading__label--purple">
             <div class="dot-chart bg-lila"></div>
@@ -67,11 +67,11 @@
 <script setup>
 const series = [
   {
-    name: "Membership",
+    name: "purchases.membership",
     data: [0, 33000, 54000, 3500, 54000, 4000, 0],
   },
   {
-    name: "Cursos",
+    name: "purchases.courses",
     data: [0, 8000, 50000, 62000, 4000, 500, 0],
   },
   {

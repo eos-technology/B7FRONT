@@ -26,10 +26,35 @@
     "whileLearn": "MIENTRAS APRENDES",
     "withb7": "Con B7 Academy puedes ganar mientras aprendes, puedes hacer Staking o compra una membresía en la que obtendrás beneficios y mensualidades ganancias.",
     "activeMembership": "Membresía activa",
-    "clock": "Hora"
+    "clock": "Hora",
+    "rankingReferral": "Ranking de Referidos",
+    "myWallets": "Mis billeteras",
+    "benefits": "Beneficios",
+    "withdrawals": "Retiros",
+    "signs": "Señales",
+    "academy": "Academia",
+    "tradingPlans": "Planes de Trading",
+    "tradingLive": "Trading en vivo"
   },
   "signs": {
-    "signs": "Señales"
+    "signs": "Señales",
+    "createSignal": "Crear señal",
+    "win": "Ganado",
+    "loss": "Perdido",
+    "profit": "Beneficio Total",
+    "delete": "Eliminar",
+    "name": "Nombre *",
+    "type": "Tipo *",
+    "gesture": "Gesto *",
+    "winLabel": "Ganado *",
+    "lossLabel": "Perdido *",
+    "profitLabel": "Beneficio Total *",
+    "selectImage": "Seleccionar imagen *",
+    "cancel": "Cancelar",
+    "create": "Crear",
+    "message": "¡Se ha creado nueva señal éxitosamente!",
+    "sell": "Vender",
+    "buy": "Comprar"
   },
   "filter": {
     "filter": "Filtrar",

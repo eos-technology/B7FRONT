@@ -1,21 +1,21 @@
 <template>
     <div class="accordion" role="tablist">
         <div class="tab">
-            <div v-b-toggle.collapse-1 class="movement">
+            <div v-b-toggle.collapse-1 class="movement flex-wrap">
                 <div>
                     <img :src="getFile('images', 'crypto-ico', 'png')" alt="">
                     <div class="item">
-                        <span class="sm-light">Quantity</span>
+                        <span class="sm-light">{{ $t('wallet.quantity') }}</span>
                         <span class="b-bold">+$0.00</span>
                     </div>
                 </div>
                 <div class="item">
-                    <span class="sm-light">Fecha</span>
+                    <span class="sm-light">{{ $t('wallet.date') }}</span>
                     <span class="b-medium">Febrero 23 2023</span>
                 </div>
                 <div class="item">
-                    <span class="sm-light">Estado</span>
-                    <span class="b-medium">En proceso</span>
+                    <span class="sm-light">{{ $t('wallet.state') }}</span>
+                    <span class="b-medium">{{ $t('wallet.inProgress') }}</span>
                 </div>
                 <i class="b7-arrow-down"></i>
             </div>
@@ -23,12 +23,12 @@
             <b-collapse visible id="collapse-1" class="">
                 <div class="d-flex">
                     <div class="item d-flex flex-column w-50">
-                        <span class="sm-light">From</span>
-                        <span class="b-medium">From</span>
+                        <span class="sm-light">{{ $t('wallet.from') }}</span>
+                        <span class="b-medium">{{ $t('wallet.from') }}</span>
                     </div>
                     <div class="item d-flex flex-column w-50">
-                        <span class="sm-light">To</span>
-                        <span class="b-medium">To</span>
+                        <span class="sm-light">{{ $t('wallet.to') }}</span>
+                        <span class="b-medium">{{ $t('wallet.to') }}</span>
                     </div>
                 </div>
             </b-collapse>

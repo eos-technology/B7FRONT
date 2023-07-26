@@ -1,6 +1,6 @@
 <template>
   <section class="token" v-if="!purchase">
-    <h2 class="h2-bold">Membership</h2>
+    <h2 class="h2-bold">{{ $t('membership.title') }}</h2>
     <div class="token__grid">
       <div class="select">
         <label class="select__item" :class="selected === member.id ? member.color : ''" v-for="member in memberships"

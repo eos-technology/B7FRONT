@@ -2,17 +2,17 @@
   <!-- TABLE -->
   <div class="plan__table">
     <div class="plan__header">
-      <h3 class="h3-medium">Retiros</h3>
+      <h3 class="h3-medium">{{ $t('withdrawals.title') }}</h3>
       <div class="plan__header-box">
-        <b-button class="btns btns--white" >Ver todos</b-button>
+        <b-button class="btns btns--white" >{{ $t('withdrawals.seeAll') }}</b-button>
         <b-button class="btns" variant="primary"
-          >Eliminar seleccionados</b-button
+          >{{ $t('withdrawals.deleteSelected') }}</b-button
         >
         <div class="search-filter">
           <div class="field-search">
             <b-form-input
               type="search"
-              placeholder="search"
+              :placeholder="$t('withdrawals.search')"
               class="b-light"
             ></b-form-input>
             <i class="b7-search"></i>
@@ -25,15 +25,15 @@
       <table class="table__container">
         <thead>
           <tr>
-            <th>USUARIO</th>
-            <th>EMAIL</th>
-            <th>MEMBERSHIP</th>
-            <th>CANTIDAD</th>
-            <th>DISPONIBLE</th>
-            <th>FECHA</th>
-            <th>WALLET</th>
-            <th>ESTADO</th>
-            <th>OPTIONS</th>
+            <th>{{ $t('withdrawals.user') }}</th>
+            <th>{{ $t('withdrawals.email') }}</th>
+            <th>{{ $t('withdrawals.membership') }}</th>
+            <th>{{ $t('withdrawals.amount') }}</th>
+            <th>{{ $t('withdrawals.available') }}</th>
+            <th>{{ $t('withdrawals.date') }}</th>
+            <th>{{ $t('withdrawals.wallet') }}</th>
+            <th>{{ $t('withdrawals.state') }}</th>
+            <th>{{ $t('withdrawals.options') }}</th>
           </tr>
         </thead>
         <tbody class="table__body">
@@ -47,8 +47,8 @@
             <td>TJazxW....eEExQFhR</td>
             <td>$0.00</td>
             <td class="table__actions">
-              <b-button class="btns btns--white">Rechazar</b-button>
-              <b-button class="btns" variant="primary">Aprobar</b-button>
+              <b-button class="btns btns--white">{{ $t('withdrawals.decline') }}</b-button>
+              <b-button class="btns" variant="primary">{{ $t('withdrawals.approve') }}</b-button>
             </td>
           </tr>
         </tbody>

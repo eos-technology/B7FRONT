@@ -7,11 +7,11 @@
     <!-- TABLE -->
     <div class="plan__table">
       <div class="plan__header">
-        <b-button variant="primary" class="ml-auto" @click="deniedModal = true">Aprobar todo</b-button>
+        <b-button variant="primary" class="ml-auto" @click="deniedModal = true">{{ $t('kyc.approveall') }}</b-button>
         <div class="plan__filter">
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input type="search" placeholder="Search" class="b-light"></b-form-input>
+              <b-form-input type="search" :placeholder="$t('kyc.search')" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -22,12 +22,12 @@
         <table class="table__container">
           <thead>
             <tr>
-              <th class="sm-bold">USUARIO</th>
-              <th class="sm-bold">EMAIL</th>
-              <th class="sm-bold">ADDRESS</th>
+              <th class="sm-bold">{{ $t('kyc.user') }}</th>
+              <th class="sm-bold">{{ $t('kyc.email') }}</th>
+              <th class="sm-bold">{{ $t('kyc.addres') }}</th>
               <th class="sm-bold">DOC</th>
-              <th class="sm-bold">TIPO</th>
-              <th class="sm-bold w-25">OPTIONS</th>
+              <th class="sm-bold">{{ $t('kyc.type') }}</th>
+              <th class="sm-bold w-25">{{ $t('kyc.options') }}</th>
             </tr>
           </thead>
           <tbody class="table__body">
@@ -42,11 +42,11 @@
                   <img :src="getFile('images', 'document-icon', 'svg')" alt="">
                   <p class="xs-light">NameDocument.PDF</p>
                 </div>
-                <b-button pill class="bg-light-2 text-black" size="sm">Descargar</b-button>
+                <b-button pill class="bg-light-2 text-black" size="sm">{{ $t('kyc.download') }}</b-button>
                 <b-button variant="outline-primary" pill class="btn-outline-primary" size="sm"
-                  @click="rejectModal = true">Rechazar</b-button>
+                  @click="rejectModal = true">{{ $t('kyc.decline') }}</b-button>
                 <b-button pill variant="primary" size="sm" class="bg-primary"
-                  @click="successfulModal = true">Aprobar</b-button>
+                  @click="successfulModal = true">{{ $t('kyc.approve') }}</b-button>
               </td>
             </tr>
           </tbody>
@@ -67,11 +67,11 @@
         <i class="b7-warning"></i>
         <div class="info">
           <p class="b-regular">KYC</p>
-          <h6 class="h6-regular">¿Estás seguro de rechazar esta solicitud KYC?</h6>
+          <h6 class="h6-regular">{{ $t('kyc.message') }}</h6>
         </div>
         <div class="buttons-modal d-flex justify-content-end mt-3 w-100">
-          <b-button variant="outline-primary" @click="rejectModal = false">Cancelar</b-button>
-          <b-button variant="primary">Aceptar</b-button>
+          <b-button variant="outline-primary" @click="rejectModal = false">{{ $t('kyc.cancel') }}</b-button>
+          <b-button variant="primary">{{ $t('kyc.acept') }}</b-button>
         </div>
       </div>
     </div>
@@ -86,8 +86,8 @@
       <div class="content-modal">
         <i class="b7-done text-success"></i>
         <div class="info">
-          <p class="b-regular">KYC exitoso</p>
-          <h6 class="h6-regular">KYC exitoso.</h6>
+          <p class="b-regular">{{ $t('kyc.succesful') }}</p>
+          <h6 class="h6-regular">{{ $t('kyc.succesful') }}</h6>
         </div>
       </div>
     </div>
@@ -96,14 +96,14 @@
   <div class="modal denied" v-if="deniedModal" @click.self="deniedModal = false">
     <div class="modal__body">
       <div class="header-modal">
-        <h2 class="h2-bold">Retiro</h2>
+        <h2 class="h2-bold">{{ $t('kyc.withdrawal') }}</h2>
         <img :src="getFile('images', 'logo', 'webp')" alt="" />
       </div>
       <div class="content-modal">
         <i class="b7-delete text-danger"></i>
         <div class="info">
-          <p class="b-regular">Retiro negado</p>
-          <h6 class="h6-regular">El retiro ha sido negado.</h6>
+          <p class="b-regular">{{ $t('kyc.withdrawaldenied') }}</p>
+          <h6 class="h6-regular">{{ $t('kyc.messagemodal') }}</h6>
         </div>
       </div>
     </div>

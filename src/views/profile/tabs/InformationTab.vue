@@ -1,46 +1,46 @@
 <template>
   <section class="add-trade">
     <b-form class="form" @submit.stop.prevent>
-      <h3 class="h3-medium">Información básica</h3>
+      <h3 class="h3-medium">{{ $t('profile.basicInformation') }}</h3>
       <label for="user" class="user__profile">
         <img :src="getFile('icons', 'avatar')" alt="" />
         <div>
           <h4 class="h4-bold">Ricardo Gomez Armani</h4>
-          <p class="l-medium user__text">Cambiar foto</p>
+          <p class="l-medium user__text">{{ $t('profile.changePhoto') }}</p>
         </div>
         <input class="user__input" type="file" id="user" />
       </label>
 
       <div class="form__content">
         <!-- Name -->
-        <b-form-group id="input-name" label="Nombre *" label-for="name">
+        <b-form-group id="input-name" :label="$t('profile.name')" label-for="name">
           <b-form-input id="name" v-model="form.name" placeholder="Input placerholder" required></b-form-input>
         </b-form-group>
         <!-- Email -->
-        <b-form-group id="input-email" label="Email *" label-for="email">
+        <b-form-group id="input-email" :label="$t('profile.email')" label-for="email">
           <b-form-input id="email" v-model="form.email" placeholder="Input placerholder" required
             type="email"></b-form-input>
         </b-form-group>
         <!-- Phone -->
-        <b-form-group id="input-phone" label="Teléfono *" label-for="phone">
+        <b-form-group id="input-phone" :label="$t('profile.phone')" label-for="phone">
           <b-form-input id="phone" v-model="form.phone" placeholder="Input placerholder" type="tel"
             required></b-form-input>
         </b-form-group>
         <!-- Country -->
-        <b-form-group id="input-country" label="País *" label-for="country">
+        <b-form-group id="input-country" :label="$t('profile.country')" label-for="country">
           <b-form-select id="country" v-model="form.country" :options="options"></b-form-select>
         </b-form-group>
         <!-- City -->
-        <b-form-group id="input-city" label="Ciudad *" label-for="city">
+        <b-form-group id="input-city" :label="$t('profile.city')" label-for="city">
           <b-form-select id="city" v-model="form.city" :options="options"></b-form-select>
         </b-form-group>
       </div>
       <div class="form__btns justify-content-end">
         <div class="d-flex gap-2">
           <b-button variant="outline">
-            <p class="btn-info">Cancelar</p>
+            <p class="btn-info">{{ $t('profile.cancel') }}</p>
           </b-button>
-          <b-button variant="primary" @click="isOpen = true">Guardar</b-button>
+          <b-button variant="primary" @click="isOpen = true">{{ $t('profile.save') }}</b-button>
         </div>
       </div>
     </b-form>
@@ -52,7 +52,7 @@
         <div class="modal__body" @click="isOpen = false">
           <img class="modal__body-img" :src="getFile('images', 'auth', 'webp')" alt="" />
           <h3 class="h3-medium text-center">
-            ¡Se ha editado membresía éxitosamente!
+            {{ $t('profile.message') }}
           </h3>
         </div>
       </div>

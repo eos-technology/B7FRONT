@@ -4,13 +4,13 @@
     <div class="plan__header">
       <div></div>
       <div class="plan__header-box">
-        <b-button class="btns btns--white">Descargar reporte</b-button>
+        <b-button class="btns btns--white">{{ $t('acquired.download') }}</b-button>
 
         <div class="search-filter">
           <div class="field-search">
             <b-form-input
               type="search"
-              placeholder="search"
+              :placeholder="$t('acquired.search')"
               class="b-light"
             ></b-form-input>
             <i class="b7-search"></i>
@@ -23,14 +23,14 @@
       <table class="table__container">
         <thead>
           <tr>
-            <th>USUARIO</th>
-            <th>EMAIL</th>
-            <th>MEMBERSHIP</th>
-            <th>PRECIO</th>
-            <th>FECHA</th>
-            <th>FECHA FIN</th>
-            <th>ESTADO</th>
-            <th>DISPONIBLE</th>
+            <th>{{ $t('acquired.user') }}</th>
+            <th>{{ $t('acquired.email') }}</th>
+            <th>{{ $t('acquired.membership') }}</th>
+            <th>{{ $t('acquired.price') }}</th>
+            <th>{{ $t('acquired.date') }}</th>
+            <th>{{ $t('acquired.dateEnd') }}</th>
+            <th>{{ $t('acquired.state') }}</th>
+            <th>{{ $t('acquired.available') }}</th>
           </tr>
         </thead>
         <tbody class="table__body">

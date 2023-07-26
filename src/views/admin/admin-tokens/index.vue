@@ -3,44 +3,44 @@
     <!--  Tokens -->
     <div class="dashboard__header">
       <h2 class="h2-bold">Tokens</h2>
-      <b-button variant="primary" @click="createToken = true">Crear tokens</b-button>
+      <b-button variant="primary" @click="createToken = true">{{ $t('tokensadmin.createTokens') }}</b-button>
     </div>
 
     <div class="dashboard__tokens">
       <div class="token__card token__card--blue">
-        <h4 class="h4-bold">Token sale ends in</h4>
+        <h4 class="h4-bold">{{ $t('tokensadmin.tokenSale') }}</h4>
         <div class="count">
           <div class="count__date">
-            <p class="b-medium">Permitir desde</p>
+            <p class="b-medium">{{ $t('tokensadmin.allowFrom') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('tokensadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('tokensadmin.month') }}</p>
                 <div class="count__box-data">10</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('tokensadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
           </div>
           <div class="count__line"></div>
           <div class="count__date">
-            <p class="b-medium">Permitir hasta</p>
+            <p class="b-medium">{{ $t('tokensadmin.allowUp') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('tokensadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('tokensadmin.month') }}</p>
                 <div class="count__box-data">11</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('tokensadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
@@ -52,44 +52,44 @@
           <b-progress variant="success" :value="token" :max="maxToken"></b-progress>
         </div>
         <div class="count__flex">
-          <b-button class="btns--white w-100">Eliminar</b-button>
-          <b-button variant="primary" class="w-100" @click="isOpen = true">Editar</b-button>
+          <b-button class="btns--white w-100">{{ $t('tokensadmin.delete') }}</b-button>
+          <b-button variant="primary" class="w-100" @click="isOpen = true">{{ $t('tokensadmin.edit') }}</b-button>
         </div>
       </div>
       <div class="token__card token__card--blue">
-        <h4 class="h4-bold">Token sale ends in</h4>
+        <h4 class="h4-bold">{{ $t('tokensadmin.tokenSale') }}</h4>
         <div class="count">
           <div class="count__date">
-            <p class="b-medium">Permitir desde</p>
+            <p class="b-medium">{{ $t('tokensadmin.allowFrom') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('tokensadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('tokensadmin.month') }}</p>
                 <div class="count__box-data">10</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('tokensadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
           </div>
           <div class="count__line"></div>
           <div class="count__date">
-            <p class="b-medium">Permitir hasta</p>
+            <p class="b-medium">{{ $t('tokensadmin.allowUp') }}</p>
             <div class="count__date-box">
               <div class="count__box">
-                <p class="l-medium">Days</p>
+                <p class="l-medium">{{ $t('tokensadmin.days') }}</p>
                 <div class="count__box-data">03</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Mes</p>
+                <p class="l-medium">{{ $t('tokensadmin.month') }}</p>
                 <div class="count__box-data">11</div>
               </div>
               <div class="count__box">
-                <p class="l-medium">Año</p>
+                <p class="l-medium">{{ $t('tokensadmin.age') }}</p>
                 <div class="count__box-data">23</div>
               </div>
             </div>
@@ -101,13 +101,13 @@
           <b-progress variant="success" :value="token" :max="maxToken"></b-progress>
         </div>
         <div class="count__flex">
-          <b-button class="btns--white w-100">Eliminar</b-button>
-          <b-button variant="primary" class="w-100" @click="isOpen = true">Editar</b-button>
+          <b-button class="btns--white w-100">{{ $t('tokensadmin.delete') }}</b-button>
+          <b-button variant="primary" class="w-100" @click="isOpen = true">{{ $t('tokensadmin.edit') }}</b-button>
         </div>
       </div>
     </div>
   </section>
-  <section class="create-token d-flex flex-column">
+  <section v-if="createToken" class="create-token d-flex flex-column">
     <GoBackDummy @click="createToken = false" />
     <createToken />
   </section>
@@ -120,7 +120,7 @@ import CreateToken from "./content/CreateToken.vue"
 const token = ref(18090);
 const maxToken = ref(25000);
 
-let createToken = ref(true)
+let createToken = ref(false)
 </script>
 
 <style lang="scss" scoped>

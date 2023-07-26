@@ -1,7 +1,7 @@
 <template>
   <b-button variant="outline-light"
     ><img class="referrals" :src="getFile('icons', 'copy')" alt="" />
-    <p class="referrals__text">Link Referrals</p></b-button
+    <p class="referrals__text">{{ $t('referrals.referralsLink') }}</p></b-button
   >
 </template>
 

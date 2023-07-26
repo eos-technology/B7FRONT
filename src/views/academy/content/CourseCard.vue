@@ -2,7 +2,7 @@
   <b-card no-body>
     <img class="c-body__img" :src="course.image" alt="" />
     <b-card-body class="c-body">
-      <h6 class="l-medium">{{ course.name }}</h6>
+      <h6 class="l-medium">{{ $t(course.name) }}</h6>
       <div class="price">
         <h2 class="h4-bold">${{ course.price }}</h2>
         <h3 class="h6-light">/USD</h3>

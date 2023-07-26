@@ -1,13 +1,13 @@
 <template>
   <section class="dashboard">
-    <h2 class="h2-bold">Dashboard</h2>
+    <h2 class="h2-bold">{{ $t('transactions.title') }}</h2>
     <!-- Cards -->
     <article class="dashboard__banner-cards">
       <div class="dashboard__banner-card">
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Available USD</p>
+            <p class="b-regular">{{ $t('transactions.available') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -27,7 +27,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Total direct</p>
+            <p class="b-regular">{{ $t('transactions.direct') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>
@@ -37,7 +37,7 @@
         <img :src="getFile('images', 'brand', 'png')" alt="" />
         <div class="dashboard__banner-text">
           <div>
-            <p class="b-regular">Total indirect</p>
+            <p class="b-regular">{{ $t('transactions.indirect') }}</p>
             <p class="l-bold">$0.000</p>
           </div>
           <i class="b7-dollar dashboard__banner-icon"></i>

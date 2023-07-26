@@ -36,16 +36,11 @@
       </div>
     </section>
   </Main>
-  <SingleCourse v-if="showSingleCourse" />
   <SingleVideo v-if="showSingleVideo" />
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
-import Slider from "./content/Slider.vue";
-import CourseCard from "./content/CourseCard.vue";
-import MyCourseCard from "./content/MyCourseCard.vue";
-import SingleCourse from "./content/SingleCourse.vue";
 import SingleVideo from "./content/SingleVideo.vue";
 import FilterCourses from './content/Filter.vue'
 export default {

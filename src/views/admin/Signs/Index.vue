@@ -3,7 +3,7 @@
     <div class="header d-flex justify-content-between align-items-center">
       <h2 class="h2-bold">{{ $t("signs.signs") }}</h2>
       <b-button variant="primary" @click="createSign = true"
-        >Crear señal</b-button
+        >{{ $t("signs.createSignal") }}</b-button
       >
     </div>
     <div class="signs__cards">
