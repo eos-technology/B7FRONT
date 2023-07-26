@@ -44,9 +44,9 @@ app.use(store)
 app.component(VueCountdown.name, VueCountdown);
 app.component("file-upload", VueUploadComponent);
 
-app.config.globalProperties.mode = "dev";
+app.config.globalProperties.mode = "prod";
 
-const prodApi = "https://coffeswap.kodexpay.com";
+const prodApi = "https://b7academy-api.kodexpay.com";
 const devApi = "http://127.0.0.1:3000";
 
 app.config.globalProperties.apiUrl =

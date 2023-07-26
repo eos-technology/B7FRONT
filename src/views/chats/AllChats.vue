@@ -9,15 +9,48 @@
             <i class="b7-search position-absolute"></i>
         </div>
         <div class="chats d-flex flex-column align-items-stretch">
-            <SingleChat v-for="chat in 10" :key="chat" />
+            <SingleChat @click="selectUser(chat.id)" v-for="chat in conversations" :key="chat" :chat="chat" />
         </div>
     </div>
 </template>
 
-<script setup>
+<script>
 import SingleChat from "./SingleChat.vue";
-
-
+import { mapActions, mapState } from 'vuex'
+export default {
+    components: { SingleChat },
+    data() {
+        return {
+            loading: false,
+            active: null
+        }
+    },
+    created() {
+        this.loadData()
+    },
+    methods: {
+        ...mapActions('chat', ['getConversations', 'getChat', 'getUsersToChat']),
+        loadData() {
+            this.loading = true
+            this.getConversations().then(() => {
+                this.loading = false
+            })
+        },
+        getUsers() {
+            this.loading = true
+            this.getUsersToChat().then(() => {
+                this.loading = false
+            })
+        },
+        selectUser(id) {
+            this.active = id
+            this.$emit('selected', id)
+        }
+    },
+    computed: {
+        ...mapState('chat', ['conversations'])
+    }
+}
 </script>
 
 <style lang="scss" scoped>

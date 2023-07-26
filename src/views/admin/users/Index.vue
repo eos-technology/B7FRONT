@@ -5,16 +5,10 @@
       <div class="movements-header">
         <h3 class="h3-medium">Todos los usuarios</h3>
         <div class="filter-box">
-          <b-button class="movements__btn" variant="primary"
-            >Descargar reporte</b-button
-          >
+          <b-button class="movements__btn" variant="primary">Descargar reporte</b-button>
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input
-                type="search"
-                placeholder="search"
-                class="b-light"
-              ></b-form-input>
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>
@@ -69,6 +63,7 @@ main {
     border-radius: 1rem;
     padding: 1.6rem;
     background: rgba(255, 255, 255, 0.05);
+
     &__btn {
       height: 44px;
       padding: 0 16px;

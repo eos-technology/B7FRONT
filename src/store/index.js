@@ -11,6 +11,9 @@ import signal from './modules/signal'
 import tradingLive from './modules/tradingLive'
 import tradingPlan from './modules/tradingPlan'
 import membership from './modules/membership'
+import cart from './modules/cart'
+import stage from './modules/stage'
+import chat from './modules/chat'
 
 export default createStore({
   state: {
@@ -30,7 +33,10 @@ export default createStore({
     signal,
     tradingLive,
     tradingPlan,
-    membership
+    membership,
+    cart,
+    stage,
+    chat
   },
   plugins: [vuexPersistence.plugin]
 })

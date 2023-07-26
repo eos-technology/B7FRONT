@@ -1,43 +1,21 @@
 <template>
     <div ref="chatContainer" class="body-chat d-flex flex-column align-items-stretch">
-        <div class="chat-bubble incoming">
-            <p class="message b-regular">Hola buenos días</p>
-            <span class="time xs-regular">00:00 PM</span>
+        <div class="chat-bubble" v-for="chat in chats" :key="chat.id"
+            :class="user.id == chat.from_user_id ? 'outgoing' : 'incoming'">
+            <p class="message b-regular">{{ chat.text }}</p>
+            <span class="time xs-regular">{{ formatDateHumanize(chat.created_at) }}</span>
         </div>
-        <div class="chat-bubble incoming">
-            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
-        <div class="chat-bubble incoming">
-            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
-        <div class="chat-bubble outgoing">
-            <p class="message b-regular">Hola buenos días</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
-        <div class="chat-bubble outgoing">
-            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim tempor mauris sit amet dapibus.</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
-        <div class="chat-bubble incoming">
-            <p class="message b-regular">consectetur adipiscing elit. Donec dignissim</p>
-            <span class="time xs-regular">00:00 PM</span>
-        </div>
-
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const chatContainer = ref(null)
-
-const scrollChatToBottom = () => {
-    chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
+<script>
+import { mapState } from 'vuex';
+export default {
+    computed: {
+        ...mapState('chat', ['chats']),
+        ...mapState('auth', ['user'])
+    }
 }
-
-onMounted(scrollChatToBottom)
 </script>
 
 <style lang="scss" scoped>

@@ -16,7 +16,6 @@ export default {
       state.abilities = data.abilities
     },
     SET_ACCESS_TOKEN (state, data) {
-      console.log({ data })
       state.access_token = data.token
       axios.defaults.headers.common.Authorization = 'Bearer ' + data.token
     },
@@ -30,8 +29,8 @@ export default {
   actions: {
     async login (context, data) {
          const response = await axios.post('/api/v1/signin', data)
-         console.log({ response })
         context.commit('SET_ACCESS_TOKEN', response.data)
+        context.dispatch('getUserInfo')
         return response.data
     },
     async register (context, data) {
@@ -40,7 +39,7 @@ export default {
         return response.data
     },
     async getUserInfo (context) {
-      const accounts = await axios.get('/api/v1/user/info')
+      const accounts = await axios.get('/api/v1/user/getInfo')
       context.commit('SET_USER_DATA', accounts.data)
     },
     async reset (context, data) {

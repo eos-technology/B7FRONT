@@ -60,6 +60,11 @@ const routes = [
         name: "Plans",
         component: () => import("@/views/tradingPlan/Index.vue"),
       },
+      {
+        path: "plans/create",
+        name: "Trading-Plan-Create",
+        component: () => import("@/views/tradingPlan/content/AddTrader.vue"),
+      },
 
       {
         path: "memberships",
@@ -95,6 +100,18 @@ const routes = [
         path: "profile",
         name: "Profile",
         component: () => import("@/views/profile/Index.vue"),
+      },
+      {
+        path: "purchase/:id/:price?",
+        name: "Purchase",
+        component: () => import("@/views/cart/Index.vue"),
+        props: true
+      },
+      {
+        path: "cart/pay/:id",
+        name: "Purchase-Pay",
+        component: () => import("@/views/cart/Qr.vue"),
+        props: true
       },
     ],
   },
@@ -182,15 +199,14 @@ router.beforeEach((to, from, next) => {
       replace: true
     })
   } else {
-    
-    if(loggedIn != null && loggedIn.validated == 0 && loggedIn.validated != null && loggedIn.validated != undefined && to.name != 'Payment-Initial' && to.name != 'Cart') {
+    next()
+    /* if(loggedIn != null && loggedIn.validated == 0 && loggedIn.validated != null && loggedIn.validated != undefined && to.name != 'Payment-Initial' && to.name != 'Cart') {
       next({
         path: '/payment-initial',
         replace: true
       })
     } else {
-      next()
-    }
+    } */
   }
 })
 

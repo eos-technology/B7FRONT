@@ -16,7 +16,7 @@
       <b-form-group id="email" :label="$t('auth.email')" label-for="email">
         <b-form-input id="email" placeholder="example@mail.com" v-model="form.email" type="email" required></b-form-input>
       </b-form-group>
-      <b-form-group id="country" :label="$t('auth.country')" label-for="country">
+      <b-form-group v-if="countries" id="country" :label="$t('auth.country')" label-for="country">
         <VueMultiselect v-model="form.country" :options="countries" :searchable="true" :placeholder="$t('manager.search')"
           track-by="id" label="name" />
       </b-form-group>

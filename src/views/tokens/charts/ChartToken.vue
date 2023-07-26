@@ -1,60 +1,23 @@
 <template>
   <div class="chart-donut__container">
     <div class="chart-donut">
-      <apexchart
-        type="donut"
-        :options="chartOptions"
-        :series="series"
-      ></apexchart>
+      <apexchart type="donut" :options="chartOptions" :series="series"></apexchart>
     </div>
     <div class="chart-donut__info">
       <h5 class="h5-medium mb-4">Tokens</h5>
-      <div class="chart-donut__item">
+      <div class="chart-donut__item" v-for="label in labels">
         <div class="chart-donut__text">
           <div class="dot bg-success"></div>
-          <p class="b-light">Nombre tokens</p>
+          <p class="b-light">{{ label }}</p>
         </div>
-        |
-        <p class="b-bold text-success">Porcentaje %</p>
-      </div>
-      <div class="chart-donut__item">
-        <div class="chart-donut__text">
-          <div class="dot bg-danger"></div>
-          <p class="b-light">Nombre tokens</p>
-        </div>
-        |
-        <p class="b-bold text-danger">Porcentaje %</p>
-      </div>
-      <div class="chart-donut__item">
-        <div class="chart-donut__text">
-          <div class="dot bg-lila"></div>
-          <p class="b-light">Nombre tokens</p>
-        </div>
-        |
-        <p class="b-bold text-lila">Porcentaje %</p>
-      </div>
-      <div class="chart-donut__item">
-        <div class="chart-donut__text">
-          <div class="dot bg-warning"></div>
-          <p class="b-light">Nombre tokens</p>
-        </div>
-        |
-        <p class="b-bold text-warning">Porcentaje %</p>
-      </div>
-      <div class="chart-donut__item">
-        <div class="chart-donut__text">
-          <div class="dot bg-pink"></div>
-          <p class="b-light">Nombre tokens</p>
-        </div>
-        |
-        <p class="b-bold text-pink">Porcentaje %</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const series = [44, 55, 41, 17, 15];
+const series = [102057043, 58318310, 37906901, 29159155, 29159155, 14579577, 14579577, 5831831];
+const labels = ["Private | 102,057,043", "Seed | 58,318,310", "Marketing | 37,906,901", "Public | 29,159,155", "Team | 29,159,155", "Advisory | 14,579,577", "Treasury | 14,579,577", "Contingency | 5,831,831"]
 const chartOptions = {
   chart: {
     type: "donut",
@@ -127,35 +90,42 @@ const chartOptions = {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &__info {
     display: grid;
     column-gap: 2.4rem;
 
     width: 100%;
+
     @media (max-width: 430px) {
       grid-template-columns: 1fr;
     }
   }
+
   &__container {
     display: flex;
     align-items: center;
     gap: 1.6rem;
+
     @media (max-width: 580px) {
       flex-direction: column;
     }
   }
+
   &__item {
     display: flex;
     align-items: center;
     gap: 8px;
     justify-content: space-between;
   }
+
   &__text {
     display: flex;
     gap: 8px;
     align-items: center;
   }
 }
+
 .b-light {
   min-width: 8rem;
 }

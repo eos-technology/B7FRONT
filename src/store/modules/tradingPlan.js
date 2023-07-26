@@ -37,8 +37,11 @@ export default {
     }
   },
   actions: {
-    async getTradings (context) {
-        const response = await axios.get('/api/v1/trading-plans')
+    async getTradings (context, payload) {
+        const response = await axios.get('/api/v1/trading-plans', {params: {
+          page: payload.page,
+          active: payload.active
+        }})
         context.commit('GET_TRADING', response.data)
         return response.data.meta
     },

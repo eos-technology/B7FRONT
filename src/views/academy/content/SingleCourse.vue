@@ -1,7 +1,7 @@
 <template>
     <main>
         <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
-        <section>
+        <section v-if="course">
             <div class="video">
                 <img :src="course.image" style="aspect-ratio: 16 / 9; border-radius: 20px; max-width: 80%;" alt="">
                 <b-card no-body>

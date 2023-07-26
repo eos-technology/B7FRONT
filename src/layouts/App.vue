@@ -11,8 +11,6 @@
   </section>
 </template>
 
-<script setup></script>
-
 <style lang="scss" scoped>
 .app {
   height: 100%;
@@ -21,17 +19,20 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
   &__header {
     background: rgba(255, 255, 255, 0.04);
+
     &-content {
       padding: 2.4rem 4%;
       max-width: 1440px;
       margin: 0 auto;
     }
   }
+
   &__container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 2.4rem 4%;  }
-}
-</style>
+    padding: 2.4rem 4%;
+  }
+}</style>

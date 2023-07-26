@@ -17,9 +17,18 @@ const mixing = {
         return 0;
       }
     },
-    formatDate: function (date) {
+    formatDate: function (date, format = 'Y-MM-DD HH:mm') {
       if (date) {
-        return moment(date).format('Y-MM-DD HH:mm');
+        return moment(date).format(format);
+      } else {
+        return '-';
+      }
+    },
+    formatMiliseconds: function (date) {
+      if (date) {
+        var date = new Date(date); // some mock date
+        var milliseconds = date.getTime(); 
+        return milliseconds
       } else {
         return '-';
       }
