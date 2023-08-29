@@ -583,7 +583,7 @@
   "dropZone": {
     "filesP": "drag and drop the file, or ",
     "browseComputer": "Explore computer",
-    "uploadFiles": "Upload files up to 8 gb",
+    "uploadFiles": "Upload files up to 8 gb"
   },
   "manager": {
     "search": "Start typing to search"
