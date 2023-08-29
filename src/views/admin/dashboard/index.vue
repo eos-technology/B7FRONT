@@ -280,7 +280,9 @@ const maxToken = ref(25000);
 
 <style lang="scss" scoped>
 .dashboard {
-  display: grid;
+  /* display: grid; */
+  display: flex;
+  flex-direction: column;
   gap: 2.4rem;
   &__header {
     display: flex;
@@ -609,6 +611,9 @@ const maxToken = ref(25000);
     display: grid;
     gap: 8px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     &-data {
       display: flex;
       padding: 16px;
@@ -616,6 +621,9 @@ const maxToken = ref(25000);
       align-items: center;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.1);
+    }
+    p{
+      hyphens: auto;
     }
   }
   &__flex {
