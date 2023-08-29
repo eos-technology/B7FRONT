@@ -1,53 +1,46 @@
 <template>
     <main>
-        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> {{ $t('academy.goBack') }}</b-button>
-        <section>
+        <b-button variant="transparent" class="b-light"><i class="b7-back"></i> Regresar</b-button>
+        <section v-if="course">
             <div class="video">
-                <img :src="getFile('images', 'pre-video', 'webp')" style="aspect-ratio: 16 / 9" alt="">
+                <img :src="course.image" style="aspect-ratio: 16 / 9; border-radius: 20px; max-width: 80%;" alt="">
                 <b-card no-body>
                     <b-card-body class="c-body">
-                        <h6 class="l-medium">Nombre del curso</h6>
-                        <span class="curse-topic sm-light text-primary">Finanzas</span>
+                        <h6 class="l-medium">{{ course.name }}</h6>
+                        <span class="curse-topic sm-light text-primary">{{ course.category?.name }}</span>
                         <div class="details">
                             <div class="number-videos">
                                 <i class="b7-video"></i>
-                                <p class="b-regular">20 videos</p>
+                                <p class="b-regular">{{ course.meta?.totalSections }} secciones</p>
                             </div>
                             <div class="start">
                                 <i class="b7-calendar"></i>
-                                <p class="b-light">Inicia 11 de Julio</p>
+                                <p class="b-light">{{ formatDate(course.created_at) }}</p>
                             </div>
                         </div>
                     </b-card-body>
-                    <b-card-footer><b-button variant="primary"
-                            class="w-100">{{ $t('academy.goToCourse') }}</b-button></b-card-footer>
+                    <b-card-footer>
+                        <b-button
+                            @click="$router.push({ name: 'Academy-Video', params: { id: course.id, name: course.name.toLowerCase().replace(/ /g, '-') } })"
+                            variant="primary" class="w-100">
+                            Ir al curso
+                        </b-button>
+                    </b-card-footer>
                 </b-card>
             </div>
             <div class="content">
-                <h3 class="h3-medium">{{ $t('academy.contenido') }}</h3>
-                <div class="category">
-                    <h5 class="h5-medium">U1: {{ $t('academy.category') }}</h5>
+                <h3 class="h3-medium">Contenido</h3>
+                <div class="category" v-for="(section, index) in sections" :key="section.id">
+                    <h5 class="h5-medium">U{{ index + 1 }}: {{ section.name }}</h5>
                     <div class="category-units">
-                        <div class="unit">
+                        <div class="unit" v-for="lesson in section.lessons">
                             <i class="b7-lock"></i>
-                            <p class="sm-light">Nombre</p>
-                        </div>
-                        <div class="unit">
-                            <i class="b7-lock"></i>
-                            <p class="sm-light">Nombre</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="category">
-                    <h5 class="h5-medium">U2: {{ $t('academy.category') }}</h5>
-                    <div class="category-units">
-                        <div class="unit">
-                            <i class="b7-lock"></i>
-                            <p class="sm-light">Nombre</p>
-                        </div>
-                        <div class="unit">
-                            <i class="b7-lock"></i>
-                            <p class="sm-light">Nombre</p>
+                            <div>
+                                <p class="sm-light" style="font-size: 20px;">{{ lesson.name }}</p>
+                                <p class="sm-light">
+                                    {{ lesson.summary }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -61,51 +54,84 @@
         </section>
     </main>
 </template>
-<script setup>
-import CourseCard from "./CourseCard.vue"
 
-let allCourses = [
-    {
-        name: 'Nombre del curso',
-        price: 80,
-        topic: 'Finanzas',
-        numberOfVideos: 20,
-        startDate: 'Inicia 11 de Julio',
-        imagePath: 'images',
-        imageName: 'students',
-        imageExtension: 'webp',
+<script>
+import { mapActions, mapState } from "vuex"
+import CourseCard from "./CourseCard.vue"
+export default {
+    props: ['id', 'name'],
+    data() {
+        return {
+            loading: false,
+            allCourses: [
+                {
+                    name: 'Nombre del curso',
+                    price: 80,
+                    topic: 'Finanzas',
+                    numberOfVideos: 20,
+                    startDate: 'Inicia 11 de Julio',
+                    imagePath: 'images',
+                    imageName: 'students',
+                    imageExtension: 'webp',
+                },
+                {
+                    name: 'Nombre del curso',
+                    price: 70,
+                    topic: 'Coding',
+                    numberOfVideos: 15,
+                    startDate: 'Inicia 15 de Julio',
+                    imagePath: 'images',
+                    imageName: 'students',
+                    imageExtension: 'webp',
+                },
+                {
+                    name: 'Nombre del curso',
+                    price: 80,
+                    topic: 'Finanzas',
+                    numberOfVideos: 20,
+                    startDate: 'Inicia 11 de Julio',
+                    imagePath: 'images',
+                    imageName: 'students',
+                    imageExtension: 'webp',
+                },
+                {
+                    name: 'Nombre del curso',
+                    price: 70,
+                    topic: 'Coding',
+                    numberOfVideos: 15,
+                    startDate: 'Inicia 15 de Julio',
+                    imagePath: 'images',
+                    imageName: 'students',
+                    imageExtension: 'webp',
+                },
+            ]
+        }
     },
-    {
-        name: 'Nombre del curso',
-        price: 70,
-        topic: 'Coding',
-        numberOfVideos: 15,
-        startDate: 'Inicia 15 de Julio',
-        imagePath: 'images',
-        imageName: 'students',
-        imageExtension: 'webp',
+    created() {
+        this.getData()
+        this.getSectionsResponse()
     },
-    {
-        name: 'Nombre del curso',
-        price: 80,
-        topic: 'Finanzas',
-        numberOfVideos: 20,
-        startDate: 'Inicia 11 de Julio',
-        imagePath: 'images',
-        imageName: 'students',
-        imageExtension: 'webp',
+    methods: {
+        ...mapActions('academy', ['getCourse']),
+        ...mapActions('section', ['getSections']),
+        getData() {
+            this.loading = true
+            this.getCourse(this.id).then(() => {
+                this.loading = false
+            })
+        },
+        getSectionsResponse() {
+            this.loading = true
+            this.getSections(this.id).then(() => {
+                this.loading = false
+            })
+        }
     },
-    {
-        name: 'Nombre del curso',
-        price: 70,
-        topic: 'Coding',
-        numberOfVideos: 15,
-        startDate: 'Inicia 15 de Julio',
-        imagePath: 'images',
-        imageName: 'students',
-        imageExtension: 'webp',
-    },
-]
+    computed: {
+        ...mapState('academy', ['course']),
+        ...mapState('section', ['sections'])
+    }
+}
 </script>
 <style lang="scss" scoped>
 main {

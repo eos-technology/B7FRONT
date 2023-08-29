@@ -32,9 +32,9 @@
           </div>
         </div>
       </div>
-      <div class="chart-plans__footer">
-        <b-button variant="primary" class="w-100">{{ $t('plans.viewStatistics') }}</b-button>
-      </div>
+      <!-- <div class="chart-plans__footer">
+        <b-button variant="primary" class="w-100">Ver estadísticas</b-button>
+      </div> -->
     </div>
     <!-- Chart -->
 
@@ -62,13 +62,7 @@
           <b-button size="sm">ALL</b-button>
         </div>
       </div>
-      <apexchart
-        type="line"
-        height="100%"
-        width="100%"
-        :options="chartOptions"
-        :series="series"
-      ></apexchart>
+      <apexchart type="line" height="100%" width="100%" :options="chartOptions" :series="series"></apexchart>
     </div>
   </section>
 </template>
@@ -154,16 +148,20 @@ const chartOptions = {
   display: grid;
   gap: 4.8rem;
   grid-template-columns: min-content 1fr;
+
   @media (max-width: 1100px) {
     gap: 2.4rem;
   }
+
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
+
   i {
     padding-top: 4px;
     font-size: 2.4rem;
   }
+
   &__card {
     min-width: 31.6rem;
     background-color: #3c3987;
@@ -171,24 +169,29 @@ const chartOptions = {
     overflow: hidden;
     display: grid;
     gap: 8px;
+
     @media (max-width:380px) {
       min-width: 100%;
     }
   }
+
   &__item {
     display: flex;
     gap: 8px;
     justify-items: start;
     padding: 1.6rem 2.4rem;
   }
+
   &__info {
     width: 100%;
   }
+
   &__flex {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
+
   &__footer {
     background: #201e61;
     padding: 1.6rem 2.4rem;
@@ -202,9 +205,11 @@ const chartOptions = {
   gap: 24px;
   border-radius: 16px;
   background: #201e61;
+
   @media (max-width:600px) {
     padding: 1.2rem;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -212,11 +217,13 @@ const chartOptions = {
     flex-wrap: wrap;
     gap: 1.6rem;
   }
+
   &__box {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
   }
+
   &__label {
     display: flex;
     padding: 8px 12px;
@@ -224,12 +231,15 @@ const chartOptions = {
     align-items: center;
     gap: 8px;
     border-radius: 8px;
+
     &--blue {
       background: rgba(60, 118, 255, 0.1);
     }
+
     &--yellow {
       background: rgba(255, 171, 27, 0.1);
     }
+
     &--purple {
       background: rgba(144, 90, 220, 0.1);
     }
@@ -244,5 +254,4 @@ const chartOptions = {
 
 .bg-blue {
   background-color: #3c76ff;
-}
-</style>
+}</style>

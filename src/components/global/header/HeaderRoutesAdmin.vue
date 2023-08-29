@@ -1,7 +1,7 @@
 <template>
   <div class="routes">
-    <router-link class="routes__item" v-for="(item, index) in routes" :key="index"
-      :to="{ name: item.route }">{{ $t(item.name) }}</router-link>
+    <router-link class="routes__item" v-for="(item, index) in routes" :key="index" :to="{ name: item.route }">{{ item.name
+    }}</router-link>
   </div>
 </template>
 

@@ -5,10 +5,10 @@
       <div class="movements-header">
         <h3 class="h3-medium">{{ $t('users.allUsers') }}</h3>
         <div class="filter-box">
-          <b-button class="movements__btn" variant="primary">{{ $t('users.download') }}</b-button>
+          <b-button class="movements__btn" variant="primary">Descargar reporte</b-button>
           <div class="search-filter">
             <div class="field-search">
-              <b-form-input type="search" :placeholder="$t('users.search')" class="b-light"></b-form-input>
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
               <i class="b7-search"></i>
             </div>
           </div>

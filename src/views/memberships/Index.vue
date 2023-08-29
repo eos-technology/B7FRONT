@@ -3,155 +3,81 @@
     <h2 class="h2-bold">{{ $t('membership.title') }}</h2>
     <div class="token__grid">
       <div class="select">
-        <label class="select__item" :class="select.q === 'Q1' ? 'select__item--blue' : ''">
-          <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
-            value="Q1"></b-form-radio>
+        <label class="select__item" :class="selected === member.id ? member.color : ''" v-for="member in memberships"
+          :key="member.id">
+          <b-form-radio v-model="selected" :aria-describedby="ariaDescribedby" name="some-radios"
+            :value="member.id"></b-form-radio>
           <div class="select__text">
-            <h3 class="h3-semibold">{{ $t('membership.basic') }}</h3>
-            <h5 class="h5-medium">Upcademy</h5>
-          </div>
-        </label>
-        <label class="select__item" :class="select.q == 'Q2' ? 'bg-success' : ''">
-          <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
-            value="Q2"></b-form-radio>
-          <div class="select__text">
-            <h3 class="h3-semibold">{{ $t('membership.premium') }}</h3>
-            <h5 class="h5-medium">Upcademy</h5>
-          </div>
-        </label>
-        <label class="select__item" :class="select.q == 'Q3' ? 'bg-warning' : ''">
-          <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
-            value="Q3"></b-form-radio>
-          <div class="select__text">
-            <h3 class="h3-semibold">{{ $t('membership.prime') }}</h3>
-            <h5 class="h5-medium">Upcademy</h5>
-          </div>
-        </label>
-        <label class="select__item" :class="select.q == 'Q4' ? 'bg-light' : ''">
-          <b-form-radio v-model="select.q" :aria-describedby="ariaDescribedby" name="some-radios"
-            value="Q4"></b-form-radio>
-          <div class="select__text">
-            <h3 class="h3-semibold">{{ $t('membership.custom') }}</h3>
-            <h5 class="h5-medium">Upcademy</h5>
+            <h3 class="h3-semibold">{{ member.name }}</h3>
+            <h5 class="h5-medium">${{ coinFormat(member.price) }}</h5>
           </div>
         </label>
       </div>
       <!-- Q1 -->
-      <section v-if="select.q === 'Q1'" class="token__card token__card--blue token__height">
-        <video class="token__video" src="@/assets/video/Plan1.mp4" autoplay loop></video>
-        <div class="anim"></div>
-        <h3 class="h3-bold">{{ $t('membership.benefitsBasic') }}</h3>
-        <div class="token__list">
-          <div v-for="(item, index) in q1" :key="index" class="token__list-item">
-            <p class="l-light">{{ item.item }}</p>
-            <i :class="`b7-${item.icon}`"></i>
-          </div>
+      <div>
+        <div v-for="member in memberships" :key="member.id">
+          <section v-if="selected === member.id" class="token__card token__card--blue token__height">
+            <video class="token__video" src="@/assets/video/Plan1.mp4" autoplay loop></video>
+            <div class="anim"></div>
+            <h3 class="h3-bold">Beneficios {{ member.name }}</h3>
+            <div class="token__list">
+              <div v-for="(item, index) in items" :key="index" class="token__list-item">
+                <p class="l-light">{{ item.item }}</p>
+                <i :class="`b7-check-line`" v-if="JSON.parse(member.benefits).includes(item.key)" />
+                <i :class="`b7-close`" v-else />
+              </div>
+            </div>
+            <b-button @click="$router.push({
+              name: 'Purchase', params: {
+                id: member.id
+              }
+            })">Comprar Paquete</b-button>
+          </section>
         </div>
-        <b-button @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
-      </section>
-      <!-- Q2 -->
-      <section v-if="select.q === 'Q2'" class="token__card token__card--green token__height">
-        <video class="token__video" src="@/assets/video/Plan2.mp4" autoplay loop></video>
-        <h3 class="h3-bold">{{ $t('membership.benefitsPremium') }}</h3>
-        <div class="token__list">
-          <div v-for="(item, index) in q2" :key="index" class="token__list-item">
-            <p class="l-light">{{ item.item }}</p>
-            <i :class="`b7-${item.icon}`"></i>
-          </div>
-        </div>
-        <b-button variant="success" class="w-100" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
-      </section>
-      <!-- Q3 -->
-      <section v-if="select.q === 'Q3'" class="token__card token__card--yellow token__height">
-        <video class="token__video" src="@/assets/video/Plan3.mp4" autoplay loop></video>
-        <h3 class="h3-bold">{{ $t('membership.benefitsPrime') }}</h3>
-        <div class="token__list">
-          <div v-for="(item, index) in q3" :key="index" class="token__list-item">
-            <p class="l-light">{{ item.item }}</p>
-            <i :class="`b7-${item.icon}`"></i>
-          </div>
-        </div>
-        <b-button variant="primary" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
-      </section>
-      <!-- Q4 -->
-      <section v-if="select.q === 'Q4'" class="token__card token__card--cyan token__height">
-        <video class="token__video" src="@/assets/video/Plan4.mp4" autoplay loop></video>
-        <h3 class="h3-bold">{{ $t('membership.BenefitsCustom') }}</h3>
-        <div class="token__list">
-          <div v-for="(item, index) in q4" :key="index" class="token__list-item">
-            <p class="l-light">{{ item.item }}</p>
-            <i :class="`b7-${item.icon}`"></i>
-          </div>
-        </div>
-        <b-form-group id="input-invest" label="Ingrese inversión *" label-for="invest">
-          <b-form-input id="invest" v-model="form.invest" placeholder="0" type="number" required></b-form-input>
-          <p class="b-regular mt-2" style="color: #626c87">{{ $t('membership.minimumAmount') }} $0,00</p>
-        </b-form-group>
-        <b-button variant="light" @click="purchase = true">{{ $t('membership.buyPack') }}</b-button>
-      </section>
+      </div>
     </div>
   </section>
   <PurchaseMembership v-if="purchase" @back="purchase = false" />
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      selected: null,
+      items: [
+        { item: "Trading plans", key: "Transaction-Book" },
+        { item: "Trading Live", key: "Trading-Live" },
+        { item: "Signals", key: "Signals" },
+        { item: "Academy", key: "Academy" },
+        { item: "Crypto Wallets", key: "Wallets" },
+        { item: "Team Chat", key: "Chat" },
+        { item: "Transaction Book", key: "Transaction-Book" },
+        { item: "Referrals Benefits", key: "Referral" },
+      ]
+    }
+  },
+  created() {
+    this.getData()
+  },
+  methods: {
+    ...mapActions('membership', ['getMemberships']),
+    getData() {
+      this.getMemberships().then(() => {
+        this.selected = this.memberships[0].id
+      })
+    }
+  },
+  computed: {
+    ...mapState('membership', ['memberships'])
+  }
+}
+</script>
+
 <script setup>
 import { ref } from "vue";
-import PurchaseMembership from "./purchase/PurchaseMembership.vue"
+import { mapActions, mapState } from "vuex";
 
-
-let purchase = ref(false)
-
-const select = ref({
-  q: "Q1",
-});
-
-const form = ref({
-  invest: "",
-});
-
-const q1 = [
-  { item: "Trading plans", icon: "close" },
-  { item: "Trading Live", icon: "close" },
-  { item: "Signals", icon: "check-line" },
-  { item: "Academy", icon: "close" },
-  { item: "Crypto Wallets", icon: "check-line" },
-  { item: "Team Chat", icon: "check-line" },
-  { item: "Transaction Book", icon: "check-line" },
-  { item: "Referrals Benefits", icon: "check-line" },
-];
-
-const q2 = [
-  { item: "Trading plans", icon: "close" },
-  { item: "Trading Live", icon: "close" },
-  { item: "Signals", icon: "check-line" },
-  { item: "Academy", icon: "close" },
-  { item: "Crypto Wallets", icon: "check-line" },
-  { item: "Team Chat", icon: "check-line" },
-  { item: "Transaction Book", icon: "check-line" },
-  { item: "Referrals Benefits", icon: "check-line" },
-];
-
-const q3 = [
-  { item: "Trading plans", icon: "close" },
-  { item: "Trading Live", icon: "close" },
-  { item: "Signals", icon: "check-line" },
-  { item: "Academy", icon: "close" },
-  { item: "Crypto Wallets", icon: "check-line" },
-  { item: "Team Chat", icon: "check-line" },
-  { item: "Transaction Book", icon: "check-line" },
-  { item: "Referrals Benefits", icon: "check-line" },
-];
-
-const q4 = [
-  { item: "Trading plans", icon: "close" },
-  { item: "Trading Live", icon: "close" },
-  { item: "Signals", icon: "check-line" },
-  { item: "Academy", icon: "close" },
-  { item: "Crypto Wallets", icon: "check-line" },
-  { item: "Team Chat", icon: "check-line" },
-  { item: "Transaction Book", icon: "check-line" },
-  { item: "Referrals Benefits", icon: "check-line" },
-];
 </script>
 
 <style lang="scss" scoped>

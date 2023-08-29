@@ -1,20 +1,20 @@
 <template>
   <b-card no-body>
-    <img class="c-body__img" :src="getFile(course.imagePath, course.imageName, course.imageExtension)" alt="" />
+    <img class="c-body__img" :src="course.course?.image" alt="" />
     <b-card-body class="c-body">
-      <h6 class="l-medium">{{ course.name }}</h6>
-      <span class="curse-topic sm-light text-primary">{{ course.topic }}</span>
+      <h6 class="l-medium">{{ course.course?.name }}</h6>
+      <span class="curse-topic sm-light text-primary">{{ course.course?.category?.name }}</span>
       <div class="progress-bar">
         <div class="bar">
           <div v-for="progress in 5" :key="progress" class="white-slots"
-            :class="{ 'bg-primary': progress <= (course.progressPercentage / 20) }"></div>
+            :class="{ 'bg-primary': progress <= (course.advance / 20) }"></div>
         </div>
-        <div class="percentage xs-medium">{{ course.progressPercentage }}%</div>
+        <div class="percentage xs-medium">{{ course.advance }}%</div>
       </div>
       <div class="details">
         <div class="number-videos">
           <i class="b7-video"></i>
-          <p class="b-regular">{{ course.numberOfVideos }} videos</p>
+          <p class="b-regular">{{ formatDate(course.created_at) }}</p>
         </div>
       </div>
     </b-card-body>
@@ -24,8 +24,14 @@
   </b-card>
 </template>
 
-<script setup>
-defineProps({ course: Object })
+<script>
+export default {
+  props: {
+    course: {
+      type: Object
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

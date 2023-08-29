@@ -1,21 +1,19 @@
 <template>
     <div class="single-chat d-flex align-items-stretch">
-        <img :src="getFile('images', 'avatar-chat', 'png')" alt="" />
+        <img :src="chat.image" alt="" />
         <div class="chat-data d-flex align-items-start justify-content-between grow-1">
             <div class="name-message d-flex flex-column grow-1">
-                <p class="name b-regular">Camilo Rodrigez</p>
-                <p class="last-message sm-regular">Hola Andrea!</p>
-            </div>
-            <div class="time-noreaded d-flex flex-column align-items-end">
-                <p class="time sm-regular ">00:00 PM</p>
-                <b-badge pill variant="light" class="xm-semibold">10</b-badge>
+                <p class="name b-regular">{{ chat.names }}</p>
+                <p class="last-message sm-regular">{{ chat.email }}</p>
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
-
+<script>
+export default {
+    props: ['chat']
+}
 </script>
 
 <style lang="scss" scoped>

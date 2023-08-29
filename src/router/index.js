@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import store from '../store'
 
 const routes = [
   {
@@ -9,6 +10,12 @@ const routes = [
         path: "",
         name: "Login",
         component: () => import("@/views/auth/Index.vue"),
+      },
+      {
+        path: "register/:username?",
+        name: "Signup",
+        component: () => import("@/views/auth/Signup.vue"),
+        props: true
       },
     ],
   },
@@ -27,6 +34,18 @@ const routes = [
         component: () => import("@/views/academy/Index.vue"),
       },
       {
+        path: "academy/course/:id/:name",
+        name: "Academy-Course",
+        component: () => import("@/views/academy/content/SingleCourse.vue"),
+        props: true
+      },
+      {
+        path: "academy/video/:id/:name",
+        name: "Academy-Video",
+        component: () => import("@/views/academy/content/SingleVideo.vue"),
+        props: true
+      },
+      {
         path: "signs",
         name: "Signs",
         component: () => import("@/views/signs/Index.vue"),
@@ -40,6 +59,11 @@ const routes = [
         path: "plans",
         name: "Plans",
         component: () => import("@/views/tradingPlan/Index.vue"),
+      },
+      {
+        path: "plans/create",
+        name: "Trading-Plan-Create",
+        component: () => import("@/views/tradingPlan/content/AddTrader.vue"),
       },
 
       {
@@ -76,6 +100,18 @@ const routes = [
         path: "profile",
         name: "Profile",
         component: () => import("@/views/profile/Index.vue"),
+      },
+      {
+        path: "purchase/:id/:price?",
+        name: "Purchase",
+        component: () => import("@/views/cart/Index.vue"),
+        props: true
+      },
+      {
+        path: "cart/pay/:id",
+        name: "Purchase-Pay",
+        component: () => import("@/views/cart/Qr.vue"),
+        props: true
       },
     ],
   },
@@ -147,5 +183,31 @@ const router = createRouter({
   routes,
   linkExactActiveClass: "exact-active",
 });
+
+router.beforeEach((to, from, next) => {
+  const loggedIn = store.state.auth.user
+
+  /* to.name !== 'login' &&  */
+
+  const publicPages = ['Login', 'RecoverPassword', 'Signup', 'RestorePassword']
+
+  const authRequired = !publicPages.includes(to.name)
+
+  if (authRequired && loggedIn === null) {
+    next({
+      name: 'Login',
+      replace: true
+    })
+  } else {
+    next()
+    /* if(loggedIn != null && loggedIn.validated == 0 && loggedIn.validated != null && loggedIn.validated != undefined && to.name != 'Payment-Initial' && to.name != 'Cart') {
+      next({
+        path: '/payment-initial',
+        replace: true
+      })
+    } else {
+    } */
+  }
+})
 
 export default router;

@@ -60,151 +60,12 @@
     "filter": "Filter",
     "category": "Category"
   },
-  "academyadmin": {
-    "academy": "Academy"
-  },
-  "createcourse": {
-    "createcourse": "Create course"
-  },
-  "chartplans": {
-    "totalcourses": "Total courses",
-    "totalpurchases": "Total purchases",
-    "adquired": "Adquired",
-    "inprogress": "In progress",
-    "failed": "Failed"
-  },
-  "charttrading": {
-    "revenue": "revenue",
-    "riskbenefit": "Risk/Benefit"
-  },
-  "coursespicker": {
-    "courses": "Courses",
-    "users": "Users",
-    "teachers": "Teachers"
-  },
-  "allcourses": {
-    "allcourses": "All courses"
-  },
-  "userlist": {
-    "userlist": "User list"
-  },
-  "search": {
-    "search": "search"
-  },
-  "card": {
-    "edit": "Edit",
-    "delete": "Delete"
-  },
-  "plantable": {
-    "downloadreport": "Download report",
-    "user": "USER",
-    "email": "EMAIL",
-    "course": "COURSE",
-    "date": "DATE",
-    "category": "CATEGORY",
-    "price": "PRICE"
-  },
-  "tabteachers": {
-    "nameteachers": "Name Teachers",
-    "phone": "Phone",
-    "state": "State",
-    "approve": "Approve",
-    "category": "Category"
-  },
-  "formcourse": {
-    "name": "Name *",
-    "category": "Category *",
-    "lessons": "Lessons *",
-    "courseprice": "Course price *",
-    "start": "Start *",
-    "end": "End *",
-    "description": "Description *",
-    "selectimage": "Select image *",
-    "cancel": "Cancel",
-    "create": "Create"
-  },
-  "teleport": {
-    "text": "¡New course has been successfully created!"
-  },
-  "editcourse": {
-    "information": "Information",
-    "module": "Module",
-    "comments": "Comments"
-  },
-  "informationtab": {
-    "title": "Edit course",
-    "name": "Name *",
-    "category": "Category *",
-    "lessons": "Lessons *",
-    "courseprice": "Course price *",
-    "start": "Start *",
-    "end": "End *",
-    "description": "Description *",
-    "selectimage": "Select image *",
-    "deletecourse": "Delete course",
-    "cancel": "Cancel",
-    "create": "Create"
-  },
-  "moduletab": {
-    "uploadvideo": "Upload video",
-    "edit": "Edit",
-    "delete": "Delete",
-    "cancel": "Cancel",
-    "create": "Create"
-  },
-  "upvideo": {
-    "title": "New module",
-    "videoname": "Video name *",
-    "description": "Description *",
-    "selectimage": "Select image *",
-    "cancel": "Cancel",
-    "save": "Save"
-  },
-  "commenstab": {
-    "respond": "Respond",
-    "delete": "Delete",
-    "cancel": "Cancel",
-    "save": "Save"
-  },
-  "academy": {
-    "title": "Academy",
-    "courses": "Courses",
-    "myCourses": "My Courses",
-    "search": "Search",
-    "allCourses": "All courses",
-    "courseName": "Course name",
-    "finances": "Finances",
-    "seeCourse": "See course",
-    "goToCourse": "Go to course",
-    "goBack": "Go back",
-    "contenido": "Content",
-    "category": "Category",
-    "comments": "Comments",
-    "reply": "Reply",
-    "detail": "Detail",
-    "buy": "Buy",
-    "paymentMethod": "Payment method",
-    "purchaseLegend": "Send to the wallet the amount equivalent to B7T that you want to receive",
-    "cancel": "Cancel",
-    "payment": "Payment",
-    "paymentAddress": "Payment address",
-    "quantity": "Quantity",
-    "walletASddress": "Wallet Address",
-    "copyWallet": "Copy wallet",
-    "verifyPayment": "Verify payment",
-    "purchase": "Purchase",
-    "successfulPurchase": "Successful purchase",
-    "successfulPurchaseLegend": "The purchase of the membership has been successful.",
-    "continueShopping": "Continue shopping"
-  },
-  "acadey": {
-    "purchase": "Purchase"
-  },
-  "academ": {
-    "confirmPurchase": "Confirm purchase"
-  },
   "auth": {
+    "username": "Username",
+    "names": "Names",
     "email": "Email",
+    "country": "Country",
+    "numberPhone": "Number phone",
     "password": "Password"
   },
   "membership": {
@@ -722,6 +583,9 @@
   "dropZone": {
     "filesP": "drag and drop the file, or ",
     "browseComputer": "Explore computer",
-    "uploadFiles": "Upload files up to 8 gb"
+    "uploadFiles": "Upload files up to 8 gb",
+  },
+  "manager": {
+    "search": "Start typing to search"
   }
 }

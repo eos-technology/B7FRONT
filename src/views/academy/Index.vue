@@ -1,185 +1,123 @@
 <template>
-  <div v-if="!purchase">
-    <Main class="academy" v-if="showAcademyMain">
-      <h2 class="h2-bold">{{ $t('academy.title') }}</h2>
-      <Slider @purchase="purchase = true" />
-      <section>
-        <!-- Tabs -->
-        <header>
-          <div class="courses-picker">
-            <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
-              @click="toggleCourses('all')">{{ $t('academy.courses') }}</b-button>
-            <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50"
-              @click="toggleCourses('own')">{{ $t('academy.myCourses') }}</b-button>
-          </div>
-          <div class="filter-box">
-            <div class="search-filter">
-              <div class="field-search">
-                <b-form-input type="search" :placeholder="$t('academy.search')" class="b-light"></b-form-input>
-                <i class="b7-search"></i>
-              </div>
-            </div>
-            <Filter />
-          </div>
-        </header>
-        <h3 class="h3-medium">{{ $t('academy.allCourses') }}</h3>
-        <div class="courses-grid">
-          <CourseCard v-show="showAllCourses" v-for="(course, index) in allCourses" :key="index" :course="course"
-            :showSingleCourse="showSingleCourse" @changeSingleCourse="showSingleCourse = $event" />
-          <MyCourseCard v-show="!showAllCourses" v-for="(course, index) in myCourses" :key="index" :course="course" />
+  <Main class="academy">
+    <h2 class="h2-bold">Academy</h2>
+    <Slider />
+    <section>
+      <!-- Tabs -->
+      <header>
+        <div class="courses-picker">
+          <b-button :variant="showAllCourses ? 'primary' : 'transparent'" class="w-50"
+            @click="showAllCourses = !showAllCourses">Cursos</b-button>
+          <b-button :variant="!showAllCourses ? 'primary' : 'transparent'" class="w-50"
+            @click="showAllCourses = !showAllCourses">Mis
+            cursos</b-button>
         </div>
-      </section>
-    </Main>
-    <SingleCourse v-if="showSingleCourse" />
-    <SingleVideo v-if="showSingleVideo" />
-  </div>
-  <PurchaseCourse v-if="purchase" @back="purchase = false" />
+        <div class="filter-box" v-if="showAllCourses">
+          <div class="search-filter">
+            <div class="field-search">
+              <b-form-input type="search" placeholder="search" class="b-light"></b-form-input>
+              <i class="b7-search"></i>
+            </div>
+          </div>
+          <FilterCourses />
+        </div>
+      </header>
+      <div v-if="showAllCourses">
+        <h3 class="h3-medium">Todos los cursos</h3>
+        <div class="courses-grid">
+          <CourseCard v-for="(course, index) in courses" :key="index" :course="course" />
+        </div>
+      </div>
+      <div v-else>
+        <h3 class="h3-medium">Mis cursos</h3>
+        <div class="courses-grid">
+          <MyCourseCard v-for="(course, index) in subscriptions" :key="index" :course="course" />
+        </div>
+      </div>
+    </section>
+  </Main>
+  <SingleVideo v-if="showSingleVideo" />
 </template>
 
-<script setup>
-import Slider from "./content/Slider.vue";
-import CourseCard from "./content/CourseCard.vue";
-import MyCourseCard from "./content/MyCourseCard.vue";
-import SingleCourse from "./content/SingleCourse.vue";
+<script>
+import { mapActions, mapState } from "vuex";
 import SingleVideo from "./content/SingleVideo.vue";
-import PurchaseCourse from "./purchase/PurchaseCourse.vue"
-
-import { ref } from "vue";
-
-let showAcademyMain = ref(true);
-let showAllCourses = ref(true);
-let showSingleCourse = ref(false);
-let showSingleVideo = ref(false);
-
-let purchase = ref(false)
-
-let allCourses = [
-  {
-    name: "academy.courseName",
-    price: 80,
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    startDate: "Inicia 11 de Julio",
-    imagePath: "images",
-    imageName: "students",
-    imageExtension: "webp",
+import FilterCourses from './content/Filter.vue'
+export default {
+  components: {
+    FilterCourses,
+    Slider,
+    CourseCard,
+    MyCourseCard,
+    SingleCourse,
+    SingleVideo
   },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 70,
-  //   topic: "Coding",
-  //   numberOfVideos: 15,
-  //   startDate: "Inicia 15 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 80,
-  //   topic: "Finanzas",
-  //   numberOfVideos: 20,
-  //   startDate: "Inicia 11 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 70,
-  //   topic: "Coding",
-  //   numberOfVideos: 15,
-  //   startDate: "Inicia 15 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 80,
-  //   topic: "Finanzas",
-  //   numberOfVideos: 20,
-  //   startDate: "Inicia 11 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 70,
-  //   topic: "Coding",
-  //   numberOfVideos: 15,
-  //   startDate: "Inicia 15 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 80,
-  //   topic: "Finanzas",
-  //   numberOfVideos: 20,
-  //   startDate: "Inicia 11 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-  // {
-  //   name: "Nombre del curso",
-  //   price: 70,
-  //   topic: "Coding",
-  //   numberOfVideos: 15,
-  //   startDate: "Inicia 15 de Julio",
-  //   imagePath: "images",
-  //   imageName: "students",
-  //   imageExtension: "webp",
-  // },
-];
+  data() {
+    return {
+      showAllCourses: true,
+      showSingleCourse: false,
+      showSingleVideo: false,
+      payload: {
+        page: 1,
+        course: null,
+        category: null
+      },
+      myCourses: [
+        {
+          name: "Nombre del curso",
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 20,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Coding",
+          numberOfVideos: 15,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 60,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Finanzas",
+          numberOfVideos: 20,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 20,
+        },
+        {
+          name: "Nombre del curso",
+          topic: "Coding",
+          numberOfVideos: 15,
+          imagePath: "images",
+          imageName: "students-books",
+          imageExtension: "webp",
+          progressPercentage: 60,
+        },
+      ]
+    }
+  },
+  created() {
+    this.getData()
+    this.getCategories()
+    this.getSubscribed()
+  },
+  methods: {
+    ...mapActions('academy', ['getCourses', 'getSubscribed', 'getCategories']),
+    getData() {
+      this.getCourses(this.payload)
+    },
+    toggleCourses() {
 
-let myCourses = [
-  {
-    name: "Nombre del curso",
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 20,
+    }
   },
-  {
-    name: "Nombre del curso",
-    topic: "Coding",
-    numberOfVideos: 15,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 60,
-  },
-  {
-    name: "Nombre del curso",
-    topic: "Finanzas",
-    numberOfVideos: 20,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 20,
-  },
-  {
-    name: "Nombre del curso",
-    topic: "Coding",
-    numberOfVideos: 15,
-    imagePath: "images",
-    imageName: "students-books",
-    imageExtension: "webp",
-    progressPercentage: 60,
-  },
-];
-
-function toggleCourses(whichCourses) {
-  if (whichCourses === "own") {
-    showAllCourses.value = false;
-  } else {
-    showAllCourses.value = true;
+  computed: {
+    ...mapState('academy', ['courses', 'subscriptions'])
   }
 }
 </script>

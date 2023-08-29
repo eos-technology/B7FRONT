@@ -1,40 +1,38 @@
 <template>
   <b-card no-body>
-    <img class="c-body__img" :src="getFile(course.imagePath, course.imageName, course.imageExtension)" alt="" />
+    <img class="c-body__img" :src="course.image" alt="" />
     <b-card-body class="c-body">
       <h6 class="l-medium">{{ $t(course.name) }}</h6>
       <div class="price">
         <h2 class="h4-bold">${{ course.price }}</h2>
-        <h3 class="h6-light">/usd</h3>
+        <h3 class="h6-light">/USD</h3>
       </div>
-      <span class="curse-topic sm-light text-primary">{{ course.topic }}</span>
+      <span class="curse-topic sm-light text-primary">{{ course.category?.name }}</span>
       <div class="details">
         <div class="number-videos">
           <i class="b7-video"></i>
-          <p class="b-regular">{{ course.numberOfVideos }} videos</p>
-        </div>
-        <div class="start">
-          <i class="b7-calendar"></i>
-          <p class="b-regular">{{ course.startDate }}</p>
+          <p class="b-regular">{{ course.meta?.totalSections }} videos</p>
         </div>
       </div>
     </b-card-body>
-    <b-card-footer><b-button variant="primary" class="w-100" @click="showCourse">{{ $t('academy.seeCourse') }}</b-button>
+    <b-card-footer>
+      <b-button variant="primary" class="w-100" v-if="course.name"
+        @click="$router.push({ name: 'Academy-Course', params: { name: course.name.toLowerCase().replace(/ /g, '-'), id: course.id } })">Ver
+        curso</b-button>
     </b-card-footer>
   </b-card>
 </template>
 
-<script setup>
-
-defineProps({ course: Object })
-
-defineEmits(['changeSingleCourse']);
-
-const showCourse = () => {
-  // Cambiar el valor de la variable en el componente padre
-  context.emit('changeSingleCourse', true);
-};
+<script>
+export default {
+  props: {
+    course: {
+      type: Object
+    }
+  }
+}
 </script>
+
 
 <style lang="scss" scoped>
 .c-body {
